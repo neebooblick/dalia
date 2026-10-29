@@ -941,6 +941,14 @@ button:disabled{cursor:not-allowed;opacity:.58}
  .modal:has(.random-word-card) .modal-head h2{font-size:15px}
 }
 @media(prefers-reduced-motion:reduce){.answer-choice-card{animation:none}.answer-review-choice{transition:none}}
+
+/* dalia 8.0.9 — centered, larger next-card action */
+.modal:has(.random-word-card) .modal-head{position:relative;justify-content:center;padding-right:56px;padding-left:56px;min-height:68px}
+.modal:has(.random-word-card) .modal-head h2{display:none}
+.modal:has(.random-word-card) .modal-head-actions{width:100%;justify-content:center;flex-shrink:1}
+.modal:has(.random-word-card) #modal-next-random{min-height:48px;min-width:210px;padding:13px 25px;font-size:15px;font-weight:750;border-radius:15px;justify-content:center}
+.modal:has(.random-word-card) #modal-close{position:absolute;right:16px;top:50%;transform:translateY(-50%)}
+@media(max-width:480px){.modal:has(.random-word-card) .modal-head{padding-left:48px;padding-right:48px;min-height:64px}.modal:has(.random-word-card) #modal-next-random{min-width:0;width:100%;padding:12px 9px;font-size:14px}.modal:has(.random-word-card) #modal-close{right:10px}}
 </style></head><body>
 <header class="topbar"><div class="top-inner"><button class="brand" data-page="learn" aria-label="На главную">dalia.<small>达莉娅</small></button><nav class="topnav" aria-label="Разделы"><button class="navbtn active" data-page="learn">Изучение</button><button class="navbtn" data-page="practice">Практика</button><button class="navbtn" data-page="photo">Фото</button><button class="navbtn" data-page="motivation">Мудрость</button></nav><button class="round-btn" id="settings-open" aria-label="Настройки и резервная копия" title="Настройки">⚙</button></div></header>
 <main><section class="hero"><button type="button" class="orb orb-interactive" id="hero-orb" aria-label="Коснуться сферы Dalia" title="Коснись сферы"></button><div class="eyebrow">изучай китайский красиво</div><h1>Китайский язык. <em>В твоём ритме.</em></h1><p>Слова, иероглифы, произношение и практика. Никаких обязательных целей.</p><div class="collection-cases" role="group" aria-label="Мои подборки слов">
