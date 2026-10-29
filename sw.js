@@ -1,5 +1,5 @@
 // Dalia 7.8.8 — offline app shell. External voice/handwriting/OCR tools are not cached or promised offline.
-const CACHE='dalia-app-v8.0.8';
+const CACHE='dalia-app-v8.0.8-basic-words-20261029';
 const SHELL=['./','./index.html','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('dalia-app-')&&k!==CACHE).map(k=>caches.delete(k)))),self.clients.claim()]))});
