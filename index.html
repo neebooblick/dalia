@@ -2386,27 +2386,40 @@ $('settings-open').onclick=openSettings;
 // Three calm, swipeable personal collections below the sphere. They reuse the existing progress stores.
 let activeCollection=null,collectionReturnFocus=null,collectionDisplayLimit=36;
 const collectionSkipped={learned:new Set(),due:new Set(),favorite:new Set()};
-const collectionUndo={item:null,timer:null};
-function clearCollectionUndo(){if(collectionUndo.timer)clearTimeout(collectionUndo.timer);collectionUndo.timer=null;collectionUndo.item=null}
-function finishCollectionRemoval(){
- const item=collectionUndo.item;if(!item)return;
- clearCollectionUndo();
- if(item.which==='learned')state.learned=state.learned.filter(x=>x!==item.ch);
- else if(item.which==='favorite')state.favorites=state.favorites.filter(x=>x!==item.ch);
- save();updateStats();renderWords();if(activeCollection)renderCollectionDrawer();
+// Each card has its own independent seven-second undo window.
+const collectionUndo=new Map();
+function collectionUndoKey(which,ch){return which+'|'+ch}
+function finishCollectionRemoval(which,ch){
+ const key=collectionUndoKey(which,ch),item=collectionUndo.get(key);
+ if(!item||item.exiting)return;
+ item.exiting=true;
+ const commit=()=>{
+  if(collectionUndo.get(key)!==item)return;
+  clearTimeout(item.timer);clearTimeout(item.animationTimer);collectionUndo.delete(key);
+  if(which==='learned')state.learned=state.learned.filter(x=>x!==ch);
+  else if(which==='favorite')state.favorites=state.favorites.filter(x=>x!==ch);
+  save();updateStats();renderWords();if(activeCollection===which)renderCollectionDrawer();
+ };
+ const card=[...document.querySelectorAll('.collection-catalog-card')].find(el=>el.dataset.collectionWord===ch&&activeCollection===which);
+ if(card&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  card.classList.add('collection-card-exiting');item.animationTimer=setTimeout(commit,360);
+ }else commit();
 }
 function removeCollectionItemWithUndo(which,ch){
  if(!['learned','favorite'].includes(which))return;
- if(collectionUndo.item)finishCollectionRemoval();
+ const key=collectionUndoKey(which,ch);
+ if(collectionUndo.has(key))return;
  if(which==='learned'&&!state.learned.includes(ch))return;
  if(which==='favorite'&&!state.favorites.includes(ch))return;
- collectionUndo.item={which,ch};
- collectionUndo.timer=setTimeout(()=>{const item=collectionUndo.item;if(!item)return;const card=[...document.querySelectorAll('.collection-catalog-card')].find(el=>el.dataset.collectionWord===item.ch);if(card&&activeCollection===item.which&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){card.classList.add('collection-card-exiting');setTimeout(finishCollectionRemoval,360)}else finishCollectionRemoval()},7000);
+ const item={which,ch,timer:null,animationTimer:null,exiting:false};
+ collectionUndo.set(key,item);
+ item.timer=setTimeout(()=>finishCollectionRemoval(which,ch),7000);
  renderCollectionDrawer();
 }
-function undoCollectionRemoval(){
- if(!collectionUndo.item)return;
- clearCollectionUndo();renderCollectionDrawer();
+function undoCollectionRemoval(which,ch){
+ const key=collectionUndoKey(which,ch),item=collectionUndo.get(key);
+ if(!item||item.exiting)return;
+ clearTimeout(item.timer);clearTimeout(item.animationTimer);collectionUndo.delete(key);renderCollectionDrawer();
 }
 
 const collectionNames={learned:'Изученные',due:'К повторению',favorite:'Избранное'};
@@ -2445,15 +2458,15 @@ function renderCollectionDrawer(){
  const grid=document.createElement('div');grid.className='collection-catalog-grid';
  for(const w of arr.slice(0,collectionDisplayLimit)){
   const card=document.createElement('article');card.className='collection-catalog-card';card.dataset.collectionWord=w.ch;
-  if(collectionUndo.item?.which===which&&collectionUndo.item.ch===w.ch)card.classList.add('collection-card-pending');
+  if(collectionUndo.has(collectionUndoKey(which,w.ch)))card.classList.add('collection-card-pending');
   const glyph=document.createElement('div');glyph.className='collection-catalog-glyph';glyph.textContent=w.ch;
   const pin=document.createElement('div');pin.className='collection-catalog-pinyin';pin.textContent=canHidePinyin(w.ch)?'Пиньинь скрыт ✦':w.pinyin;
   if(canHidePinyin(w.ch)){const show=makeBtn('Показать пиньинь','collection-secondary',()=>{pin.textContent=w.pinyin;show.remove()});card.append(glyph,pin,show)}else card.append(glyph,pin);
   const meaning=document.createElement('div');meaning.className='collection-catalog-meaning';meaning.textContent=w.meaning;card.append(meaning);
   const actions=document.createElement('div');actions.className='collection-catalog-actions';
   actions.append(makeBtn('Открыть ↗','collection-primary',()=>openWord(w.ch)));
-  const pending=collectionUndo.item?.which===which&&collectionUndo.item.ch===w.ch;
-  if(which==='favorite'||which==='learned')actions.append(makeBtn(pending?'↶ Вернуть':which==='favorite'?'♡ Убрать':'Убрать отметку',pending?'collection-secondary collection-inline-undo':'collection-secondary',pending?undoCollectionRemoval:()=>removeCollectionItemWithUndo(which,w.ch)));
+  const pending=collectionUndo.has(collectionUndoKey(which,w.ch));
+  if(which==='favorite'||which==='learned')actions.append(makeBtn(pending?'↶ Вернуть':which==='favorite'?'♡ Убрать':'Убрать отметку',pending?'collection-secondary collection-inline-undo':'collection-secondary',pending?()=>undoCollectionRemoval(which,w.ch):()=>removeCollectionItemWithUndo(which,w.ch)));
   else actions.append(makeBtn('Скрыть сейчас','collection-secondary',()=>{collectionSkipped.due.add(w.ch);renderCollectionDrawer()}));
   card.append(actions);grid.append(card);
  }
