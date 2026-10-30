@@ -1866,7 +1866,6 @@ function newQuestion(){
  if(mode==='listening'){
   const reveal=makeBtn('Посмотреть написание','ghost listen-reveal',()=>answerSummary(false,{selfReveal:true}));entrySection.append(reveal);
   // A blocked autoplay does not award points; user can press play deliberately.
-  speakQuestion();
  }
 }
 
