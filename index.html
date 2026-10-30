@@ -2395,20 +2395,14 @@ const collectionUndo=new Map();
 function collectionUndoKey(which,ch){return which+'|'+ch}
 function finishCollectionRemoval(which,ch){
  const key=collectionUndoKey(which,ch),item=collectionUndo.get(key);
- if(!item||item.exiting)return;
- item.exiting=true;
- const commit=()=>{
-  if(collectionUndo.get(key)!==item)return;
-  clearTimeout(item.timer);clearTimeout(item.animationTimer);collectionUndo.delete(key);
-  if(which==='learned')state.learned=state.learned.filter(x=>x!==ch);
-  else if(which==='due')collectionSkipped.due.add(ch);
-  else if(which==='favorite')state.favorites=state.favorites.filter(x=>x!==ch);
-  save();updateStats();renderWords();if(activeCollection===which)renderCollectionDrawer();
- };
- const card=[...document.querySelectorAll('.collection-catalog-card')].find(el=>el.dataset.collectionWord===ch&&activeCollection===which);
- if(card&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  card.classList.add('collection-card-exiting');item.animationTimer=setTimeout(commit,360);
- }else commit();
+ if(!item)return;
+ clearTimeout(item.timer);clearTimeout(item.animationTimer);
+ collectionUndo.delete(key);
+ if(which==='learned')state.learned=state.learned.filter(x=>x!==ch);
+ else if(which==='due')collectionSkipped.due.add(ch);
+ else if(which==='favorite')state.favorites=state.favorites.filter(x=>x!==ch);
+ save();updateStats();renderWords();
+ if(activeCollection===which)renderCollectionDrawer();
 }
 function removeCollectionItemWithUndo(which,ch){
  if(!['learned','favorite','due'].includes(which))return;
