@@ -1181,7 +1181,7 @@ function daliaNote(ctx,{freq=440,when=0,duration=.22,peak=.012,attack=.012,shape
 // Cycling (rather than pure randomness) avoids an unexpectedly loud or dissonant note.
 const daliaSoundSteps={tap:0,choice:0,navigate:0,success:0,error:0,orb:0};
 function daliaSfx(kind='tap'){
- if(kind!=='orb'&&state.uiSounds===false)return;
+ if(kind!=='orb')return; // Only the interactive sphere plays a UI sound.
  const ctx=daliaAudio();if(!ctx)return;
  const now=performance.now();
  if(kind!=='orb'&&now-daliaAudioLast<105)return;
@@ -1230,18 +1230,6 @@ function daliaSfx(kind='tap'){
   daliaNote(ctx,{freq,duration:.13,peak:.0018,attack:.032,cutoff:1000});
  }
 }
-// Delegated listener also covers dynamically created modal and practice buttons.
-document.addEventListener('click',event=>{
- const target=event.target instanceof Element?event.target:null;
- if(!target)return;
- if(target.closest('#hero-orb'))return; // Sphere has its own sound, regardless of settings.
- const btn=target.closest('button, [role="button"], .file-btn');if(!btn||btn.disabled)return;
- if(btn.closest('.quiz-options, .options-grid, .answer-options')||btn.classList.contains('option'))return; // Played after answer evaluation.
- if(btn.matches('[data-page], .navbtn, .brand'))daliaSfx('navigate');
- else if(btn.matches('.chip, [data-level], [data-mode], [data-practice-level], [data-type]'))daliaSfx('choice');
- else daliaSfx('tap');
-},true);
-
 let state=migrateState();state.practiceLevels=validPracticeLevels(state.practiceLevels);state.writingGuideMode=state.writingGuideMode==='trace'?'trace':'memory';state.writingStats=cleanWritingStats(state.writingStats);state.skillStats=cleanSkillStats(state.skillStats);state.custom=state.custom.map(x=>normalizeWord(x,x?.origin||'custom')).filter(x=>validWord(x)&&(!builtins.has(x.ch)||builtins.get(x.ch).origin==='reference'));state.drafts=cleanPhotoDrafts(state.drafts);state.hidden=ownHiddenOnly(state.hidden,state.custom);let displayLimit=48,page='learn',level='all',wordType='all',mode='meaning',dueOnly=false,question=null,previousQuestion=null,answered=false,scan=null,activeQuoteIndex=Math.floor(Math.random()*100),quoteFavoritesOnly=false,wordStack=[],currentWord=null,toastTimer=null,previewURL=null;
 // Wisdom entries are intentionally isolated from the dictionary, training and random cards.
 function isWisdomOnly(w){
@@ -2346,16 +2334,6 @@ function openSettings(){
  voiceActions.append(makeBtn('♫ Прослушать голос','soft',()=>speak('你好，欢迎来到达莉娅。',{preview:true})));
  const voiceInfo=document.createElement('p');voiceInfo.className='settings-section-hint';voiceInfo.textContent='Автовыбор предпочитает женские китайские голоса. Доступность зависит от устройства; нейросетевой голос не скачивается.';
  sound.append(voiceActions,voiceInfo);el.append(sound);
- const effects=document.createElement('section');effects.className='settings-section';
- const effectsTitle=document.createElement('h3');effectsTitle.textContent='Звуки интерфейса';effects.append(effectsTitle);
- const effectsRow=document.createElement('label');effectsRow.className='dalia-sfx-setting';
- const effectsText=document.createElement('span');effectsText.textContent='Тихие звуки нажатий';
- const effectsToggle=document.createElement('input');effectsToggle.type='checkbox';effectsToggle.checked=state.uiSounds!==false;
- effectsToggle.setAttribute('aria-label','Звуки интерфейса');
- effectsToggle.onchange=()=>{state.uiSounds=effectsToggle.checked;save();if(effectsToggle.checked)daliaSfx('choice')};
- effectsRow.append(effectsText,effectsToggle);effects.append(effectsRow);
- const effectsHint=document.createElement('p');effectsHint.className='settings-section-hint';effectsHint.textContent='Очень тихие, мягкие сигналы. Звук сферы звучит отдельно и не зависит от этой настройки.';
- effects.append(effectsHint);el.append(effects);
  fillVoiceSelect(voiceSelect);
  const reading=document.createElement('section');reading.className='settings-section settings-reading';const readingTitle=document.createElement('h3');readingTitle.textContent='Карточки и чтение';reading.append(readingTitle);
  const pinPref=document.createElement('div');pinPref.className='settings-speed';const pinLabel=document.createElement('span');pinLabel.className='settings-speed-label';pinLabel.textContent='Пиньинь у освоенных слов';const pinButtons=document.createElement('div');pinButtons.className='settings-speed-options';for(const [val,label]of [['adaptive','Автоматически скрывать'],['always','Показывать всегда']]){const b=makeBtn(label,state.pinyinPreference===val?'primary':'ghost',()=>{state.pinyinPreference=val;save();openSettings();renderWords()});b.setAttribute('aria-pressed',String(state.pinyinPreference===val));pinButtons.append(b)}pinPref.append(pinLabel,pinButtons);reading.append(pinPref);
