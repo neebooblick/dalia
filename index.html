@@ -965,6 +965,11 @@ button:disabled{cursor:not-allowed;opacity:.58}
 .settings-privacy-link{display:flex;align-items:center;justify-content:center;align-self:flex-start;min-height:42px;box-sizing:border-box;padding:10px 18px;border:1px solid #67465f;border-radius:12px;background:#352539;color:#f3d3e6;text-decoration:none;font-size:13px;font-weight:600;line-height:1.4;text-align:center;max-width:100%;transition:background .2s,border-color .2s}
 .settings-privacy-link:hover,.settings-privacy-link:focus-visible{background:#483149;border-color:#b87d9f;color:#fff}
 @media(max-width:480px){.settings-analytics-row{padding:12px;gap:10px}.settings-analytics-row span{font-size:12px}.settings-privacy-link{width:100%;align-self:stretch}}
+
+.collection-undo{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:12px 0;padding:12px 14px;border:1px solid #a97899;background:#39263b;border-radius:14px;color:#fbe5f2;font-size:13px;line-height:1.45;position:sticky;top:0;z-index:2;box-shadow:0 8px 20px #0004}
+.collection-undo span{min-width:0;overflow-wrap:anywhere}
+.collection-undo-button{flex-shrink:0;background:#f2a5d0!important;color:#2a1426!important;border:0!important;border-radius:10px!important;padding:10px 14px!important;font-weight:700!important;min-height:40px}
+@media(max-width:440px){.collection-undo{gap:8px;padding:10px}.collection-undo-button{padding:9px 11px!important}}
 </style>
 <script>const DALIA_METRIKA_ID=113905321;function daliaEnableAnalytics(){if(window.__daliaAnalyticsStarted)return;window.__daliaAnalyticsStarted=true;window.ym=window.ym||function(){(window.ym.a=window.ym.a||[]).push(arguments)};const s=document.createElement("script");s.async=true;s.src="https://mc.yandex.ru/metrika/tag.js?id="+DALIA_METRIKA_ID;document.head.append(s);ym(DALIA_METRIKA_ID,"init",{ssr:true,webvisor:false,clickmap:false,accurateTrackBounce:true,trackLinks:true})}try{if(localStorage.getItem("dalia_analytics_consent")==="yes")daliaEnableAnalytics()}catch(_){}</script></head><body>
 <header class="topbar"><div class="top-inner"><button class="brand" data-page="learn" aria-label="На главную">dalia<small>达莉娅</small></button><nav class="topnav" aria-label="Разделы"><button class="navbtn active" data-page="learn">Изучение</button><button class="navbtn" data-page="practice">Практика</button><button class="navbtn" data-page="photo">Фото</button><button class="navbtn" data-page="motivation">Мудрость</button></nav><button class="round-btn" id="settings-open" aria-label="Настройки и резервная копия" title="Настройки">⚙</button></div></header>
@@ -2372,6 +2377,23 @@ $('settings-open').onclick=openSettings;
 // Three calm, swipeable personal collections below the sphere. They reuse the existing progress stores.
 let activeCollection=null,collectionReturnFocus=null,collectionDisplayLimit=36;
 const collectionSkipped={learned:new Set(),due:new Set(),favorite:new Set()};
+const collectionUndo={item:null,timer:null};
+function clearCollectionUndo(){if(collectionUndo.timer)clearTimeout(collectionUndo.timer);collectionUndo.timer=null;collectionUndo.item=null}
+function removeCollectionItemWithUndo(which,ch){
+ clearCollectionUndo();
+ if(which==='learned'){if(!state.learned.includes(ch))return;state.learned=state.learned.filter(x=>x!==ch)}
+ else if(which==='favorite'){if(!state.favorites.includes(ch))return;state.favorites=state.favorites.filter(x=>x!==ch)}
+ else return;
+ save();updateStats();renderWords();
+ collectionUndo.item={which,ch};collectionUndo.timer=setTimeout(()=>{collectionUndo.item=null;collectionUndo.timer=null;if(activeCollection)renderCollectionDrawer()},7000);
+ renderCollectionDrawer();
+}
+function undoCollectionRemoval(){
+ const item=collectionUndo.item;if(!item)return;clearCollectionUndo();
+ const key=item.which==='learned'?'learned':'favorites';if(!state[key].includes(item.ch))state[key].push(item.ch);
+ save();updateStats();renderWords();renderCollectionDrawer();
+}
+
 const collectionNames={learned:'Изученные',due:'К повторению',favorite:'Избранное'};
 const collectionDescriptions={learned:'Все изученные слова в одном месте. Открой карточку или убери отметку.',due:'Карточки, которые пора повторить. Просмотр не меняет расписание.',favorite:'Сохранённые слова. Открой карточку или убери из избранного.'};
 function collectionItems(which){
@@ -2403,8 +2425,9 @@ function renderCollectionDrawer(){
  const title=document.createElement('h3');title.id='collection-modal-title';title.textContent=collectionNames[which];
  const description=document.createElement('p');description.textContent=collectionDescriptions[which];info.append(eyebrow,title,description);
  const close=makeBtn('×','collection-close',()=>setCollection(which));close.setAttribute('aria-label','Закрыть подборку');top.append(info,close);drawer.append(top);
- if(!arr.length){const empty=document.createElement('div');empty.className='collection-empty';empty.textContent=which==='learned'?'Здесь появятся изученные слова.':which==='favorite'?'Добавляй карточки в избранное — они появятся здесь.':'Сейчас нет слов к повторению.';drawer.append(empty);return}
+ if(!arr.length&&!collectionUndo.item){const empty=document.createElement('div');empty.className='collection-empty';empty.textContent=which==='learned'?'Здесь появятся изученные слова.':which==='favorite'?'Добавляй карточки в избранное — они появятся здесь.':'Сейчас нет слов к повторению.';drawer.append(empty);return}
  const status=document.createElement('p');status.className='collection-catalog-status';status.textContent=`${arr.length} карточек · показываем ${Math.min(collectionDisplayLimit,arr.length)}`;drawer.append(status);
+ if(collectionUndo.item&&collectionUndo.item.which===which){const undo=document.createElement('div');undo.className='collection-undo';const label=document.createElement('span');label.textContent='«'+collectionUndo.item.ch+'» убрано из подборки';const action=makeBtn('↶ Вернуть','collection-undo-button',undoCollectionRemoval);undo.append(label,action);drawer.append(undo)}
  const grid=document.createElement('div');grid.className='collection-catalog-grid';
  for(const w of arr.slice(0,collectionDisplayLimit)){
   const card=document.createElement('article');card.className='collection-catalog-card';
@@ -2414,8 +2437,8 @@ function renderCollectionDrawer(){
   const meaning=document.createElement('div');meaning.className='collection-catalog-meaning';meaning.textContent=w.meaning;card.append(meaning);
   const actions=document.createElement('div');actions.className='collection-catalog-actions';
   actions.append(makeBtn('Открыть ↗','collection-primary',()=>openWord(w.ch)));
-  if(which==='favorite')actions.append(makeBtn('♡ Убрать','collection-secondary',()=>{state.favorites=state.favorites.filter(ch=>ch!==w.ch);save();updateStats()}));
-  else if(which==='learned')actions.append(makeBtn('Убрать отметку','collection-secondary',()=>{state.learned=state.learned.filter(ch=>ch!==w.ch);save();updateStats();toast('Отметка «Изучено» снята.','good')}));
+  if(which==='favorite')actions.append(makeBtn('♡ Убрать','collection-secondary',()=>removeCollectionItemWithUndo('favorite',w.ch)));
+  else if(which==='learned')actions.append(makeBtn('Убрать отметку','collection-secondary',()=>removeCollectionItemWithUndo('learned',w.ch)));
   else actions.append(makeBtn('Скрыть сейчас','collection-secondary',()=>{collectionSkipped.due.add(w.ch);renderCollectionDrawer()}));
   card.append(actions);grid.append(card);
  }
