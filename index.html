@@ -2330,20 +2330,20 @@ function openSettings(){
  const pinPref=document.createElement('div');pinPref.className='settings-speed';const pinLabel=document.createElement('span');pinLabel.className='settings-speed-label';pinLabel.textContent='Пиньинь у освоенных слов';const pinButtons=document.createElement('div');pinButtons.className='settings-speed-options';for(const [val,label]of [['adaptive','Автоматически скрывать'],['always','Показывать всегда']]){const b=makeBtn(label,state.pinyinPreference===val?'primary':'ghost',()=>{state.pinyinPreference=val;save();openSettings();renderWords()});b.setAttribute('aria-pressed',String(state.pinyinPreference===val));pinButtons.append(b)}pinPref.append(pinLabel,pinButtons);reading.append(pinPref);
  const pinHint=document.createElement('p');pinHint.className='settings-section-hint';pinHint.textContent='Если скрывать автоматически, знакомые слова будут постепенно появляться без подсказки.';reading.append(pinHint);el.append(reading);
  const backup=document.createElement('section');backup.className='settings-section';
- const backupTitle=document.createElement('h3');backupTitle.textContent='Мои данные и резервная копия';backup.append(backupTitle);
- const backupHint=document.createElement('p');backupHint.className='settings-section-hint';backupHint.textContent='Прогресс сохраняется автоматически в этом браузере. При очистке данных или смене устройства он может пропасть. Скачай копию и сохрани её отдельно, например в облачном хранилище.';backup.append(backupHint);
+ const backupTitle=document.createElement('h3');backupTitle.textContent='Мой прогресс';backup.append(backupTitle);
+ const backupHint=document.createElement('p');backupHint.className='settings-section-hint';backupHint.textContent='Прогресс сохраняется автоматически на этом устройстве, в твоём браузере. Чтобы перенести его или защитить от потери, сохрани файл.';backup.append(backupHint);
  const lastCopy=document.createElement('p');lastCopy.className='settings-section-hint';
  const lastRequested=readJSON(BACKUP_LAST_KEY,null);lastCopy.textContent=lastRequested?.date?'Последнее запрошенное скачивание: '+lastRequested.date+'. Проверь, что файл действительно сохранился.':'Резервная копия ещё не скачивалась в этом браузере.';backup.append(lastCopy);
  if(storageFailure){const warning=document.createElement('p');warning.className='note notice-bad';warning.textContent='Внимание: последнее сохранение не удалось. Скачай копию сейчас и проверь настройки браузера.';backup.append(warning)}
  const block=document.createElement('div');block.className='settings-backup-actions';
- const exportBtn=makeBtn('↓ Скачать прогресс','primary',()=>{
+ const exportBtn=makeBtn('↓ Сохранить прогресс','primary',()=>{
  try{const now=new Date();const stamp=`${dayString(now)}-${String(now.getHours()).padStart(2,'0')}${String(now.getMinutes()).padStart(2,'0')}`;
  downloadJSON(`dalia-backup-${stamp}.json`,{app:'dalia',version:7,created:now.toISOString(),data:state});
  try{localStorage.setItem(BACKUP_LAST_KEY,JSON.stringify({date:now.toLocaleString('ru-RU')}))}catch(_){}
  lastCopy.textContent='Скачивание запрошено. Проверь папку загрузок и сохрани файл в надёжном месте.';toast('Скачивание резервной копии запрошено.','good')
  }catch(err){toast('Не удалось подготовить копию: '+err.message,'bad')}
  });
- const importLabel=document.createElement('label');importLabel.className='soft settings-import';importLabel.style.cursor='pointer';importLabel.textContent='↑ Восстановить из файла';
+ const importLabel=document.createElement('label');importLabel.className='soft settings-import';importLabel.style.cursor='pointer';importLabel.textContent='↑ Восстановить прогресс';
  const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.style.display='none';
  input.onchange=async()=>{const f=input.files?.[0];if(!f)return;try{
  if(f.size>10*1024*1024)throw Error('Файл больше 10 МБ. Проверь, что выбрана копия Dalia.');
@@ -2367,17 +2367,6 @@ function openSettings(){
  for(const ch of state.hidden){hidden.append(makeBtn(`${ch} · восстановить`,'ghost',()=>{state.hidden=state.hidden.filter(x=>x!==ch);save();openSettings();renderWords()}))}
  if(!state.hidden.length){const none=document.createElement('p');none.className='settings-section-hint';none.textContent='Нет скрытых личных карточек.';hidden.append(none)}
  custom.append(hidden);el.append(custom);
- const points=readSnapshots();
- const local=document.createElement('section');local.className='settings-section settings-local-history';
- const localTitle=document.createElement('h3');localTitle.textContent='Локальные точки восстановления';local.append(localTitle);
- const localHint=document.createElement('p');localHint.className='settings-section-hint';localHint.textContent='До 5 локальных точек. Они помогают восстановить предыдущие данные, но хранятся в том же браузере и исчезнут при очистке его данных.';local.append(localHint);
- const pointList=document.createElement('div');pointList.className='settings-point-list';
- if(!points.length){const empty=document.createElement('p');empty.className='settings-section-hint';empty.textContent='Пока нет сохранённых точек.';pointList.append(empty)}
- else for(const point of [...points].reverse()){
-  pointList.append(makeBtn(`${point.date} · ${point.label} · восстановить`,'ghost',()=>restoreCheckpoint(point)));
- }local.append(pointList);
- local.append(makeBtn('＋ Сохранить текущую точку','soft',()=>{checkpointState('Вручную',{force:true});openSettings();toast('Локальная точка сохранена.','good')}));
- el.append(local);
  const msg=document.createElement('p');msg.className='settings-footer';msg.textContent='Встроенные слова и иероглифы нельзя скрывать или удалять. Изменять можно только свои карточки.';el.append(msg);
  showModal('Настройки и данные',el)
 }
