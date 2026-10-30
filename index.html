@@ -1406,7 +1406,7 @@ function voicePriority(v){
 }
 function chosenChineseVoice(){
  const voices=refreshChineseVoices();
- if(state.ttsVoiceURI){const preferred=voices.find(v=>v.voiceURI===state.ttsVoiceURI);if(preferred)return preferred}
+ // Always use the highest-ranked available Chinese voice.
  return [...voices].sort((a,b)=>voicePriority(b)-voicePriority(a))[0]||null;
 }
 function speak(text,{preview=false,slow=false,onStart=null,onError=null,requireChineseVoice=false}={}){
@@ -2325,16 +2325,7 @@ function openSettings(){
  volumeRange.oninput=()=>{state.ttsVolume=Number(volumeRange.value)/100;volumeValue.textContent=volumeRange.value+'%';save({quiet:true})};
  volumeRange.onchange=()=>speak('你好，欢迎来到达莉娅。',{preview:true});
  volume.append(volumeRow,volumeRange);sound.append(volume);
- const voiceBox=document.createElement('div');voiceBox.className='settings-voice';
- const voiceLabel=document.createElement('label');voiceLabel.className='settings-speed-label';voiceLabel.textContent='Китайский голос';voiceLabel.htmlFor='settings-voice-select';
- const voiceSelect=document.createElement('select');voiceSelect.id='settings-voice-select';voiceSelect.className='field settings-voice-select';
- voiceSelect.onchange=()=>{state.ttsVoiceURI=voiceSelect.value;save();speak('你好，我很高兴认识你。',{preview:true})};
- voiceBox.append(voiceLabel,voiceSelect);sound.append(voiceBox);
- const voiceActions=document.createElement('div');voiceActions.className='settings-voice-actions';
- voiceActions.append(makeBtn('♫ Прослушать голос','soft',()=>speak('你好，欢迎来到达莉娅。',{preview:true})));
- const voiceInfo=document.createElement('p');voiceInfo.className='settings-section-hint';voiceInfo.textContent='Автовыбор предпочитает женские китайские голоса. Доступность зависит от устройства; нейросетевой голос не скачивается.';
- sound.append(voiceActions,voiceInfo);el.append(sound);
- fillVoiceSelect(voiceSelect);
+ el.append(sound);
  const reading=document.createElement('section');reading.className='settings-section settings-reading';const readingTitle=document.createElement('h3');readingTitle.textContent='Карточки и чтение';reading.append(readingTitle);
  const pinPref=document.createElement('div');pinPref.className='settings-speed';const pinLabel=document.createElement('span');pinLabel.className='settings-speed-label';pinLabel.textContent='Пиньинь у освоенных слов';const pinButtons=document.createElement('div');pinButtons.className='settings-speed-options';for(const [val,label]of [['adaptive','Автоматически скрывать'],['always','Показывать всегда']]){const b=makeBtn(label,state.pinyinPreference===val?'primary':'ghost',()=>{state.pinyinPreference=val;save();openSettings();renderWords()});b.setAttribute('aria-pressed',String(state.pinyinPreference===val));pinButtons.append(b)}pinPref.append(pinLabel,pinButtons);reading.append(pinPref);
  const pinHint=document.createElement('p');pinHint.className='settings-section-hint';pinHint.textContent='Если скрывать автоматически, знакомые слова будут постепенно появляться без подсказки.';reading.append(pinHint);el.append(reading);
