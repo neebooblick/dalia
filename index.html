@@ -2401,6 +2401,7 @@ function finishCollectionRemoval(which,ch){
   if(collectionUndo.get(key)!==item)return;
   clearTimeout(item.timer);clearTimeout(item.animationTimer);collectionUndo.delete(key);
   if(which==='learned')state.learned=state.learned.filter(x=>x!==ch);
+  else if(which==='due')collectionSkipped.due.add(ch);
   else if(which==='favorite')state.favorites=state.favorites.filter(x=>x!==ch);
   save();updateStats();renderWords();if(activeCollection===which)renderCollectionDrawer();
  };
@@ -2410,11 +2411,12 @@ function finishCollectionRemoval(which,ch){
  }else commit();
 }
 function removeCollectionItemWithUndo(which,ch){
- if(!['learned','favorite'].includes(which))return;
+ if(!['learned','favorite','due'].includes(which))return;
  const key=collectionUndoKey(which,ch);
  if(collectionUndo.has(key))return;
  if(which==='learned'&&!state.learned.includes(ch))return;
  if(which==='favorite'&&!state.favorites.includes(ch))return;
+ if(which==='due'&&(!dueNow(ch)||collectionSkipped.due.has(ch)))return;
  const item={which,ch,startedAt:Date.now(),timer:null,animationTimer:null,exiting:false};
  collectionUndo.set(key,item);
  item.timer=setTimeout(()=>finishCollectionRemoval(which,ch),7000);
@@ -2470,8 +2472,8 @@ function renderCollectionDrawer(){
   const actions=document.createElement('div');actions.className='collection-catalog-actions';
   actions.append(makeBtn('Открыть ↗','collection-primary',()=>openWord(w.ch)));
   const pending=collectionUndo.has(collectionUndoKey(which,w.ch));
-  if(which==='favorite'||which==='learned'){
-   const action=makeBtn(pending?'↶ Вернуть':which==='favorite'?'♡ Убрать':'Убрать отметку',pending?'collection-secondary collection-inline-undo':'collection-secondary',pending?()=>undoCollectionRemoval(which,w.ch):()=>removeCollectionItemWithUndo(which,w.ch));
+  if(which==='favorite'||which==='learned'||which==='due'){
+   const action=makeBtn(pending?'↶ Вернуть':which==='favorite'?'♡ Убрать':which==='learned'?'Убрать отметку':'Скрыть сейчас',pending?'collection-secondary collection-inline-undo':'collection-secondary',pending?()=>undoCollectionRemoval(which,w.ch):()=>removeCollectionItemWithUndo(which,w.ch));
    if(pending){
     const item=collectionUndo.get(collectionUndoKey(which,w.ch));
     const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
@@ -2483,7 +2485,6 @@ function renderCollectionDrawer(){
    }
    actions.append(action);
   }
-  else actions.append(makeBtn('Скрыть сейчас','collection-secondary',()=>{collectionSkipped.due.add(w.ch);renderCollectionDrawer()}));
   card.append(actions);grid.append(card);
  }
  drawer.append(grid);
