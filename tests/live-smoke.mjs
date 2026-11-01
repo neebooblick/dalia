@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { chromium } from 'playwright-core';
 
 const site=process.env.DALIA_PUBLIC_URL || 'https://daliastudy.ru/';
-const assets=['assets/dalia-style-v8.1.4.css','assets/dalia-data-v8.1.1.js','assets/dalia-app-v8.1.3.js'];
+const assets=['assets/dalia-style-v8.1.5.css','assets/dalia-data-v8.1.1.js','assets/dalia-app-v8.1.3.js'];
 const outcome={site,checkedAt:new Date().toISOString(),http:[],browser:null};
 const fetchWithTimeout=async url=>{
  const res=await fetch(url,{redirect:'follow',signal:AbortSignal.timeout(18000),headers:{'Cache-Control':'no-cache'}});

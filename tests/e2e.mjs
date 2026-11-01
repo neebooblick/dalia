@@ -193,6 +193,16 @@ try{
   assert.ok(Math.abs(details.buttonWidth-details.available)<3,'Mobile button width mismatch: '+JSON.stringify(details));
   assert.ok(details.buttonHeight>=48&&details.left>=-2&&details.right<=details.viewport+2,'Mobile button overflow: '+JSON.stringify(details));
  },{mobile:true});
+ await test('Narrow screen label legibility',async page=>{
+  const values=await page.evaluate(()=>{
+   const nav=document.querySelector('.mobile-nav [data-page="learn"]');
+   const meaning=document.querySelector('.word-card .meaning');
+   return {navSize:parseFloat(getComputedStyle(nav).fontSize),meaningSize:parseFloat(getComputedStyle(meaning).fontSize),width:document.documentElement.scrollWidth,viewport:innerWidth};
+  });
+  assert.ok(values.navSize>=11,'Navigation label too small: '+JSON.stringify(values));
+  assert.ok(values.meaningSize>=12,'Card translation too small: '+JSON.stringify(values));
+  assert.ok(values.width<=values.viewport+2,'New typography caused overflow');
+ },{mobile:true});
  await test('Mobile UI and card interaction',async page=>{
   const size=await page.evaluate(()=>({viewport:window.innerWidth,scroll:document.documentElement.scrollWidth}));
   assert.ok(size.scroll<=size.viewport+4,'Horizontal viewport overflow: '+JSON.stringify(size));
