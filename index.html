@@ -988,6 +988,7 @@ button:disabled{cursor:not-allowed;opacity:.58}
 .learn-guide h2{margin:0 0 15px;font-size:clamp(21px,2.7vw,28px);line-height:1.25;color:#f4d6e9;letter-spacing:-.02em}
 .learn-guide p{font-size:14px;line-height:1.85;margin:0 0 12px}
 @media(max-width:600px){.learn-guide{margin-top:54px;padding:23px 2px 0}.learn-guide p{font-size:13px}}
+.study-progress{font-size:11px;line-height:1.5;font-weight:600;color:#dbacd0;margin-top:7px;letter-spacing:.01em}
 </style>
 <script>const DALIA_METRIKA_ID=113905321;function daliaEnableAnalytics(){if(window.__daliaAnalyticsStarted)return;window.__daliaAnalyticsStarted=true;window.ym=window.ym||function(){(window.ym.a=window.ym.a||[]).push(arguments)};const s=document.createElement("script");s.async=true;s.src="https://mc.yandex.ru/metrika/tag.js?id="+DALIA_METRIKA_ID;document.head.append(s);ym(DALIA_METRIKA_ID,"init",{ssr:true,webvisor:false,clickmap:false,accurateTrackBounce:true,trackLinks:true})}try{if(localStorage.getItem("dalia_analytics_consent")==="yes")daliaEnableAnalytics()}catch(_){}</script></head><body>
 <header class="topbar"><div class="top-inner"><button class="brand" data-page="learn" aria-label="На главную">dalia<small>达莉娅</small></button><nav class="topnav" aria-label="Разделы"><button class="navbtn active" data-page="learn">Изучение</button><button class="navbtn" data-page="practice">Практика</button><button class="navbtn" data-page="photo">Фото</button><button class="navbtn" data-page="motivation">Мудрость</button></nav><button class="round-btn" id="settings-open" aria-label="Настройки и резервная копия" title="Настройки">⚙</button></div></header>
@@ -1079,7 +1080,7 @@ const readJSON=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))
 const PRACTICE_LEVELS=['1','2','3','4','5','6','additional','custom'];
 const DEFAULT_PRACTICE_LEVELS=['1','2','3','4','5','6','additional','custom'];
 const validPracticeLevels=(value)=>Array.isArray(value)?PRACTICE_LEVELS.filter(x=>value.includes(x)||(x==='additional'&&['1','2','3','4','5','6','custom'].every(y=>value.includes(y)))||(/^[1-6]$/.test(x)&&value.includes('reference'))):[...DEFAULT_PRACTICE_LEVELS];
-const initial=()=>({custom:[],drafts:[],hidden:[],learned:[],favorites:[],quoteFavorites:[],srs:{},daily:{},quizTotals:{correct:0,wrong:0},quoteSchema:2,ttsRate:1,ttsVolume:.85,uiSounds:true,ttsVoiceURI:'',writingGuideMode:'memory',writingStats:{},skillStats:{},pinyinPreference:'adaptive',wisdomShowPinyin:true,version:7,practiceLevels:[...DEFAULT_PRACTICE_LEVELS]});
+const initial=()=>({custom:[],drafts:[],hidden:[],learned:[],favorites:[],quoteFavorites:[],srs:{},daily:{},quizTotals:{correct:0,wrong:0},quoteSchema:2,ttsRate:1,ttsVolume:.85,uiSounds:true,ttsVoiceURI:'',writingGuideMode:'memory',writingStats:{},skillStats:{},studyDays:{},pinyinPreference:'adaptive',wisdomShowPinyin:true,version:7,practiceLevels:[...DEFAULT_PRACTICE_LEVELS]});
 const approxPinyin=ch=>{const n=ch.codePointAt(0);return n>=0x4e00&&n<=0x9fff?PINYIN_MAP[n-0x4e00]||'':''};
 const WISDOM_ONLY_KEYS=new Set([...QUOTE_DATA,...SAYING_CARD_DATA].map(q=>[...String(q[0])].filter(c=>isHanzi(c)).join('')));
 const referenceRows=new Set(REFERENCE_HANZI_DATA),additionalRows=new Set(ADDITIONAL_WORD_DATA),builtins=new Map();
@@ -1151,6 +1152,37 @@ function cleanSkillStats(raw){
  }
  return out;
 }
+// A word is automatically studied only after clean answers on three distinct dates.
+// Legacy learned flags remain intact; older data cannot distinguish manual from automatic marks.
+const STUDY_DAYS_REQUIRED=3;
+function cleanStudyDays(raw){
+ const out={};if(!raw||typeof raw!=='object'||Array.isArray(raw))return out;
+ let count=0;
+ for(const [ch,days] of Object.entries(raw)){
+  if(++count>10000)break;
+  if(!isHanzi(ch)||[...ch].length>28||!Array.isArray(days))continue;
+  const valid=[...new Set(days.filter(d=>typeof d==='string'&&/^\\d{4}-\\d{2}-\\d{2}$/.test(d)))].sort().slice(-STUDY_DAYS_REQUIRED);
+  if(valid.length)out[ch]=valid;
+ }
+ return out;
+}
+function studyDaysCount(ch){return Math.min(STUDY_DAYS_REQUIRED,state.studyDays?.[ch]?.length||0)}
+function noteSuccessfulStudyDay(ch){
+ if(state.learned.includes(ch))return false;
+ const today=dayString();
+ state.studyDays??={};
+ const days=state.studyDays[ch]||[];
+ if(days.includes(today))return false;
+ days.push(today);
+ state.studyDays[ch]=days.slice(-STUDY_DAYS_REQUIRED);
+ if(days.length>=STUDY_DAYS_REQUIRED){
+  state.learned.push(ch);
+  markActivity('learn');
+  return true;
+ }
+ return false;
+}
+function resetStudyDays(ch){if(state.studyDays)delete state.studyDays[ch]}
 function skillEntry(ch,skill){state.skillStats[ch]??={};return state.skillStats[ch][skill]??={attempts:0,correct:0,errors:0,hints:0,streak:0,interval:0,next:'',last:''}}
 function skillDue(ch,skill){const e=state.skillStats[ch]?.[skill];if(e?.next)return e.next<=dayString();if(skill==='recognition')return dueNowLegacy(ch);return false}
 function dueNowLegacy(ch){const s=state.srs[ch];if(!s||!s.next)return state.learned.includes(ch);return s.next<=dayString()}
@@ -1169,7 +1201,7 @@ function recordSkill(ch,skill,{correct=false,hint=false,assisted=false}={}){
  else{e.errors++;if(hint||assisted)e.hints++;e.streak=0;e.interval=0}
  const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()+e.interval);
  e.last=dayString();e.next=dayString(d);
- if(correct&&!hint&&!assisted){state.quizTotals.correct++;markActivity('correct');if(!state.learned.includes(ch))state.learned.push(ch)}
+ if(correct&&!hint&&!assisted){state.quizTotals.correct++;markActivity('correct');noteSuccessfulStudyDay(ch)}
  else{state.quizTotals.wrong++;markActivity('wrong')}
  save({quiet:true});return e;
 }
@@ -1177,7 +1209,7 @@ function skillSchedule(ch){const all=Object.values(state.skillStats[ch]||{}).fil
 function todayReview(ch){const skill=state.skillStats[ch];if(skill&&Object.keys(skill).length)return Object.values(skill).some(x=>x.next&&x.next<=dayString())||(!skill.recognition&&dueNowLegacy(ch));return dueNowLegacy(ch)}
 
 function migrateState(){
-  const exists=readJSON(STORE,null);if(exists&&typeof exists==='object'&&!Array.isArray(exists)){const s={...initial(),...exists};s.practiceLevels=validPracticeLevels(s.practiceLevels);s.custom=Array.isArray(s.custom)?s.custom:[];s.drafts=cleanPhotoDrafts(s.drafts);s.hidden=unique(s.hidden);s.learned=unique(s.learned);s.favorites=unique(s.favorites);s.quoteFavorites=(Number(s.quoteSchema)===2?(Array.isArray(s.quoteFavorites)?s.quoteFavorites:[]):remapOldQuotes(s.quoteFavorites)).filter(i=>Number.isInteger(i)&&i>=0&&i<QUOTE_DATA.length);s.quoteSchema=2;s.srs=s.srs&&typeof s.srs==='object'&&!Array.isArray(s.srs)?s.srs:{};s.writingGuideMode=s.writingGuideMode==='trace'?'trace':'memory';s.writingStats=cleanWritingStats(s.writingStats);s.skillStats=cleanSkillStats(s.skillStats);s.pinyinPreference=['adaptive','always'].includes(s.pinyinPreference)?s.pinyinPreference:'adaptive';s.wisdomShowPinyin=s.wisdomShowPinyin!==false;s.daily=s.daily&&typeof s.daily==='object'&&!Array.isArray(s.daily)?s.daily:{};s.quizTotals=s.quizTotals&&typeof s.quizTotals==='object'&&!Array.isArray(s.quizTotals)?s.quizTotals:{correct:0,wrong:0};return s}
+  const exists=readJSON(STORE,null);if(exists&&typeof exists==='object'&&!Array.isArray(exists)){const s={...initial(),...exists};s.practiceLevels=validPracticeLevels(s.practiceLevels);s.custom=Array.isArray(s.custom)?s.custom:[];s.drafts=cleanPhotoDrafts(s.drafts);s.hidden=unique(s.hidden);s.learned=unique(s.learned);s.favorites=unique(s.favorites);s.quoteFavorites=(Number(s.quoteSchema)===2?(Array.isArray(s.quoteFavorites)?s.quoteFavorites:[]):remapOldQuotes(s.quoteFavorites)).filter(i=>Number.isInteger(i)&&i>=0&&i<QUOTE_DATA.length);s.quoteSchema=2;s.srs=s.srs&&typeof s.srs==='object'&&!Array.isArray(s.srs)?s.srs:{};s.writingGuideMode=s.writingGuideMode==='trace'?'trace':'memory';s.writingStats=cleanWritingStats(s.writingStats);s.skillStats=cleanSkillStats(s.skillStats);s.studyDays=cleanStudyDays(s.studyDays);s.pinyinPreference=['adaptive','always'].includes(s.pinyinPreference)?s.pinyinPreference:'adaptive';s.wisdomShowPinyin=s.wisdomShowPinyin!==false;s.daily=s.daily&&typeof s.daily==='object'&&!Array.isArray(s.daily)?s.daily:{};s.quizTotals=s.quizTotals&&typeof s.quizTotals==='object'&&!Array.isArray(s.quizTotals)?s.quizTotals:{correct:0,wrong:0};return s}
   const s=initial();s.learned=unique(readJSON('hanzi_learned',[]));s.favorites=unique(readJSON('hanzi_favs',[]));
   const photo=readJSON('hanzi_photo_words_v3',[]);for(const raw of Array.isArray(photo)?photo:[]){const w=normalizeWord(raw,'photo');if(!isHanzi(w.ch)||builtins.has(w.ch)||s.custom.some(x=>x.ch===w.ch))continue;if(validWord(w))s.custom.push(w);else {} /* неполные карточки удалены */}
   const old=readJSON('hanzi_activity_v6',{});if(old&&typeof old==='object'){for(const [k,v] of Object.entries(old)){if(/^\d{4}-\d{2}-\d{2}$/.test(k)&&v&&typeof v==='object'){s.daily[k]={learn:Math.max(0,Number(v.learn)||0),correct:Math.max(0,Number(v.correct)||0),wrong:Math.max(0,Number(v.wrong)||0)};s.quizTotals.correct+=s.daily[k].correct;s.quizTotals.wrong+=s.daily[k].wrong}}}
@@ -1287,7 +1319,7 @@ function verifyStorage(){try{const raw=localStorage.getItem(STORE);return !!raw&
 function validateBackup(data){
  if(!data||typeof data!=='object'||Array.isArray(data)||!Array.isArray(data.custom))throw Error('Файл не содержит данных Dalia.');
  for(const field of ['learned','favorites','hidden','drafts','quoteFavorites'])if(data[field]!==undefined&&!Array.isArray(data[field]))throw Error('Повреждён раздел '+field+'.');
- for(const field of ['srs','daily','writingStats','skillStats'])if(data[field]!==undefined&&(!data[field]||typeof data[field]!=='object'||Array.isArray(data[field])))throw Error('Повреждён раздел '+field+'.');
+ for(const field of ['srs','daily','writingStats','skillStats','studyDays'])if(data[field]!==undefined&&(!data[field]||typeof data[field]!=='object'||Array.isArray(data[field])))throw Error('Повреждён раздел '+field+'.');
  if(data.custom.length>10000||data.drafts?.length>10000)throw Error('Слишком много карточек в файле.');
  return data;
 }
@@ -1318,7 +1350,7 @@ function restoreCheckpoint(point){
  catch(err){toast('Не удалось восстановить: '+err.message,'bad')}
 }
 
-function save({quiet=false}={}){checkpointState();state.practiceLevels=validPracticeLevels(state.practiceLevels);state.writingGuideMode=state.writingGuideMode==='trace'?'trace':'memory';state.writingStats=cleanWritingStats(state.writingStats);state.skillStats=cleanSkillStats(state.skillStats);state.drafts=cleanPhotoDrafts(state.drafts);state.custom=[...new Map(state.custom.map(x=>[keyOf(x.ch),x])).values()].filter(w=>validWord(normalizeWord(w))&&(!builtins.has(w.ch)||builtins.get(w.ch).origin==='reference'));state.hidden=ownHiddenOnly(state.hidden,state.custom);state.favorites=unique(state.favorites);state.learned=unique(state.learned);try{const payload=JSON.stringify(state);localStorage.setItem(STORE,payload);if(localStorage.getItem(STORE)!==payload)throw Error('Проверка записи не прошла');storageFailure=false;updateStats();return true}catch(e){if(!storageFailure||!quiet)toast('Прогресс не сохранился! Проверь место в браузере и скачай резервную копию в настройках.','bad');storageFailure=true;updateStats();return false}}
+function save({quiet=false}={}){checkpointState();state.practiceLevels=validPracticeLevels(state.practiceLevels);state.writingGuideMode=state.writingGuideMode==='trace'?'trace':'memory';state.writingStats=cleanWritingStats(state.writingStats);state.skillStats=cleanSkillStats(state.skillStats);state.studyDays=cleanStudyDays(state.studyDays);state.drafts=cleanPhotoDrafts(state.drafts);state.custom=[...new Map(state.custom.map(x=>[keyOf(x.ch),x])).values()].filter(w=>validWord(normalizeWord(w))&&(!builtins.has(w.ch)||builtins.get(w.ch).origin==='reference'));state.hidden=ownHiddenOnly(state.hidden,state.custom);state.favorites=unique(state.favorites);state.learned=unique(state.learned);try{const payload=JSON.stringify(state);localStorage.setItem(STORE,payload);if(localStorage.getItem(STORE)!==payload)throw Error('Проверка записи не прошла');storageFailure=false;updateStats();return true}catch(e){if(!storageFailure||!quiet)toast('Прогресс не сохранился! Проверь место в браузере и скачай резервную копию в настройках.','bad');storageFailure=true;updateStats();return false}}
 function stats(){const words=wordsMap(),learned=[...words.keys()].filter(c=>state.learned.includes(c)).length;const due=[...words.keys()].filter(c=>dueNow(c)).length;return {total:words.size,learned,due,favorites:state.favorites.filter(c=>words.has(c)).length,correct:Math.max(0,Number(state.quizTotals.correct)||0),wrong:Math.max(0,Number(state.quizTotals.wrong)||0)}}
 function updateStats(){const s=stats();for(const [id,count] of [['learned',s.learned],['due',s.due],['favorite',s.favorites]]){const el=$('collection-count-'+id);if(el)el.textContent=count}if(typeof renderCollectionDrawer==='function'&&activeCollection)renderCollectionDrawer()}
 function markActivity(type){const d=dayString();state.daily[d]??={learn:0,correct:0,wrong:0};state.daily[d][type]=(Number(state.daily[d][type])||0)+1}
@@ -1340,7 +1372,7 @@ function recordReview(ch,rating){
  const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()+interval);s.next=dayString(d);state.srs[ch]=s;
  state.quizTotals[rating==='again'?'wrong':'correct']++;
  markActivity(rating==='again'?'wrong':'correct');
- if(rating!=='again'&&!state.learned.includes(ch))state.learned.push(ch);
+ if(rating==='good'||rating==='easy')noteSuccessfulStudyDay(ch);
  save();return s;
 }
 function recordAnswer(ch,correct){return recordReview(ch,correct?'good':'again')}
@@ -1365,8 +1397,8 @@ const viewNames={learned:'Изученные карточки',due:'К повт�
 const view=$('catalog-view-label');
 view.classList.toggle('hidden',!viewNames[level]);
 if(viewNames[level]){view.replaceChildren();const caption=document.createElement('span');caption.textContent=`${viewNames[level]} · ${arr.length}`;const clear=makeBtn('Все слова ×','catalog-clear',()=>selectCatalogFilter('all',{resetSearch:true,resetType:true}));view.append(caption,clear)}
-$('favorite-hint').classList.toggle('hidden',level!=='favorite');$('word-grid').replaceChildren();$('more-words').classList.toggle('hidden',arr.length<=displayLimit);$('more-words').textContent='Показать ещё';if(!arr.length){const empty=document.createElement('div');empty.className='empty';empty.textContent=query?'По этому запросу карточки не найдены. Попробуй изменить поиск.':level==='learned'?'Пока нет изученных карточек. Открой слово и нажми «Изучить».':level==='due'?'Сейчас нет карточек к повторению. Они появятся здесь, когда придёт время.':level==='favorite'?'В избранном пока пусто. Добавляй карточки нажатием на сердечко.':'По этим условиям пока ничего нет. Попробуй другой фильтр.';$('word-grid').append(empty);return}
-for(const w of arr.slice(0,displayLimit)){const el=document.createElement('article');el.className='word-card';el.style.setProperty('--reveal-index',Math.min(14,Math.max(0,arr.indexOf(w))));el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label',`${w.ch}, ${w.meaning}. Открыть карточку`);el.innerHTML=`<div class="tag">${w.origin==='additional'?'Уровень '+w.level+' · вне HSK':(w.origin==='builtin'||w.origin==='reference')?((w.origin==='reference'?'≈ HSK ':'HSK ')+w.level+(w.origin==='reference'?' · знак':'')):'✦ добавлен'}</div><div class="glyph">${escapeHTML(w.ch)}</div><div class="pin">${canHidePinyin(w.ch)?"✦ пиньинь скрыт":escapeHTML(w.pinyin)}</div><div class="meaning">${escapeHTML(w.meaning)}</div>${state.learned.includes(w.ch)?'<div class="done">✓ изучено</div>':''}`;installCardLongPress(el,w.ch);el.addEventListener('click',()=>openWord(w.ch));el.addEventListener('keydown',e=>{if(e.target!==el)return;if(e.key==='Enter'||e.key===' '){e.preventDefault();openWord(w.ch)}});if(level==='favorite'){
+$('favorite-hint').classList.toggle('hidden',level!=='favorite');$('word-grid').replaceChildren();$('more-words').classList.toggle('hidden',arr.length<=displayLimit);$('more-words').textContent='Показать ещё';if(!arr.length){const empty=document.createElement('div');empty.className='empty';empty.textContent=query?'По этому запросу карточки не найдены. Попробуй изменить поиск.':level==='learned'?'Пока нет изученных карточек. Повтори слово правильно в три разных дня или отметь его вручную.':level==='due'?'Сейчас нет карточек к повторению. Они появятся здесь, когда придёт время.':level==='favorite'?'В избранном пока пусто. Добавляй карточки нажатием на сердечко.':'По этим условиям пока ничего нет. Попробуй другой фильтр.';$('word-grid').append(empty);return}
+for(const w of arr.slice(0,displayLimit)){const el=document.createElement('article');el.className='word-card';el.style.setProperty('--reveal-index',Math.min(14,Math.max(0,arr.indexOf(w))));el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label',`${w.ch}, ${w.meaning}. Открыть карточку`);el.innerHTML=`<div class="tag">${w.origin==='additional'?'Уровень '+w.level+' · вне HSK':(w.origin==='builtin'||w.origin==='reference')?((w.origin==='reference'?'≈ HSK ':'HSK ')+w.level+(w.origin==='reference'?' · знак':'')):'✦ добавлен'}</div><div class="glyph">${escapeHTML(w.ch)}</div><div class="pin">${canHidePinyin(w.ch)?"✦ пиньинь скрыт":escapeHTML(w.pinyin)}</div><div class="meaning">${escapeHTML(w.meaning)}</div>${state.learned.includes(w.ch)?'<div class="done">✓ изучено</div>':studyDaysCount(w.ch)?'<div class="study-progress">✦ в изучении · '+studyDaysCount(w.ch)+'/3 дня</div>':''}`;installCardLongPress(el,w.ch);el.addEventListener('click',()=>openWord(w.ch));el.addEventListener('keydown',e=>{if(e.target!==el)return;if(e.key==='Enter'||e.key===' '){e.preventDefault();openWord(w.ch)}});if(level==='favorite'){
   const remove=makeBtn('× Убрать','favorite-remove',e=>{e.stopPropagation();removeFavorite(w.ch)});
   remove.setAttribute('aria-label',`Убрать «${w.ch}» из избранного`);
   remove.title='Убрать из избранного, не удаляя слово';
@@ -1552,7 +1584,7 @@ function openHanziPeek(ch,trigger){
  const actions=document.createElement('div');actions.className='hanzi-peek-actions';
  actions.append(makeBtn('♫ Послушать','soft',()=>speak(w.ch)));
  const study=makeBtn('', 'study-toggle',()=>{
-  if(state.learned.includes(ch)){state.learned=state.learned.filter(c=>c!==ch);toast('Отметка «Изучено» снята.')}else{state.learned.push(ch);markActivity('learn');toast('Иероглиф отмечен как изученный.','good')}
+  if(state.learned.includes(ch)){state.learned=state.learned.filter(c=>c!==ch);resetStudyDays(ch);toast('Отметка «Изучено» снята.')}else{state.learned.push(ch);markActivity('learn');toast('Иероглиф отмечен как изученный.','good')}
   save();renderWords();setStudy();
  });
  function setStudy(){const known=state.learned.includes(ch);study.textContent=known?'✓ Изучено':'＋ Изучить';study.className='study-toggle '+(known?'is-learned':'is-not-learned');study.setAttribute('aria-pressed',String(known))}
@@ -1604,7 +1636,7 @@ function openWord(ch,fromSentence=false,randomSession=false){const w=lookup(ch);
  let justMarkedHere=false;
  const learnedButton=makeBtn('', 'study-toggle',()=>{
   if(state.learned.includes(ch)){
-   state.learned=state.learned.filter(c=>c!==ch);
+   state.learned=state.learned.filter(c=>c!==ch);resetStudyDays(ch);
    if(justMarkedHere){const d=state.daily[dayString()];if(d&&Number(d.learn)>0)d.learn--;justMarkedHere=false}
    toast('Отметка «Изучено» снята.','good');
   }else{
@@ -1632,7 +1664,7 @@ function openWord(ch,fromSentence=false,randomSession=false){const w=lookup(ch);
   if(!confirm(`Удалить иероглиф «${ch}» из каталога?`))return;
   downloadJSON(`dalia-before-delete-${dayString()}.json`,{app:'dalia',version:7,created:new Date().toISOString(),data:state});
   state.custom=state.custom.filter(x=>x.ch!==ch);state.hidden=state.hidden.filter(x=>x!==ch);
-  state.learned=state.learned.filter(x=>x!==ch);state.favorites=state.favorites.filter(x=>x!==ch);
+  state.learned=state.learned.filter(x=>x!==ch);state.favorites=state.favorites.filter(x=>x!==ch);resetStudyDays(ch);
   delete state.srs[ch];delete state.skillStats[ch];delete state.writingStats[ch];save();closeModal();renderWords();toast('Иероглиф удалён.');
  }));
 }box.append(controls);
@@ -1680,7 +1712,7 @@ function addNewWord(prefill={}){showModal('Добавить слово или и
  if(complete)toast(`✦ ${w.ch} добавлен в каталог.`,'good');
  else{navigate('photo');$('photo-drafts')?.scrollIntoView({behavior:'smooth',block:'start'});toast(`✦ ${w.ch} сохранён для уточнения. Можно дополнить позже.`,'good')}
 },'Сохранить',true))}
-function openEditor(w){showModal(`Редактировать ${w.ch}`,wordForm(w,x=>{if(x.ch!==w.ch&&(builtins.has(x.ch)||state.custom.some(i=>i.ch===x.ch))){toast('Нельзя заменить на уже существующий символ.','bad');return}const index=state.custom.findIndex(i=>i.ch===w.ch);if(index<0)return;state.custom[index]={...x,origin:w.origin||'custom'};if(x.ch!==w.ch){state.learned=state.learned.map(c=>c===w.ch?x.ch:c);state.favorites=state.favorites.map(c=>c===w.ch?x.ch:c);if(state.srs[w.ch]){state.srs[x.ch]=state.srs[w.ch];delete state.srs[w.ch]}if(state.skillStats[w.ch]){state.skillStats[x.ch]=state.skillStats[w.ch];delete state.skillStats[w.ch]}if(state.writingStats[w.ch]){state.writingStats[x.ch]=state.writingStats[w.ch];delete state.writingStats[w.ch]}}save();renderWords();openWord(x.ch);toast('Карточка обновлена.','good')},'Сохранить изменения'))}
+function openEditor(w){showModal(`Редактировать ${w.ch}`,wordForm(w,x=>{if(x.ch!==w.ch&&(builtins.has(x.ch)||state.custom.some(i=>i.ch===x.ch))){toast('Нельзя заменить на уже существующий символ.','bad');return}const index=state.custom.findIndex(i=>i.ch===w.ch);if(index<0)return;state.custom[index]={...x,origin:w.origin||'custom'};if(x.ch!==w.ch){state.learned=state.learned.map(c=>c===w.ch?x.ch:c);state.favorites=state.favorites.map(c=>c===w.ch?x.ch:c);if(state.srs[w.ch]){state.srs[x.ch]=state.srs[w.ch];delete state.srs[w.ch]}if(state.skillStats[w.ch]){state.skillStats[x.ch]=state.skillStats[w.ch];delete state.skillStats[w.ch]}if(state.studyDays[w.ch]){state.studyDays[x.ch]=state.studyDays[w.ch];delete state.studyDays[w.ch]}if(state.writingStats[w.ch]){state.writingStats[x.ch]=state.writingStats[w.ch];delete state.writingStats[w.ch]}}save();renderWords();openWord(x.ch);toast('Карточка обновлена.','good')},'Сохранить изменения'))}
 $('manual-open').addEventListener('click',()=>addNewWord());
 function pick(pool){return pool[Math.floor(Math.random()*pool.length)]}function pickWeighted(pool){
  const weights=pool.map(w=>{
@@ -2400,7 +2432,7 @@ function openSettings(){
  const msg=document.createElement('p');msg.className='settings-footer';msg.textContent='Встроенные слова и иероглифы нельзя удалять. Свои карточки можно изменять или удалять.';el.append(msg);
  showModal('Настройки и данные',el)
 }
-function mergeBackup(data){if(Array.isArray(data.practiceLevels))state.practiceLevels=validPracticeLevels(data.practiceLevels);const oldTotals={correct:Number(state.quizTotals.correct)||0,wrong:Number(state.quizTotals.wrong)||0};const incomingTotals={correct:Number(data.quizTotals?.correct)||0,wrong:Number(data.quizTotals?.wrong)||0};const allCustom=[...state.custom,...data.custom];const seen=new Set([...builtins.keys()].filter(x=>builtins.get(x).origin==='builtin')),custom=[];for(const raw of allCustom){const w=normalizeWord(raw,raw.origin||'custom');if(!validWord(w)||seen.has(w.ch))continue;seen.add(w.ch);custom.push(w)}state.custom=custom;state.drafts=cleanPhotoDrafts([...(state.drafts||[]),...(Array.isArray(data.drafts)?data.drafts:[])]).filter(d=>!custom.some(w=>w.ch===d.ch));state.learned=unique([...state.learned,...(Array.isArray(data.learned)?data.learned:[])]);state.favorites=unique([...state.favorites,...(Array.isArray(data.favorites)?data.favorites:[])]);state.hidden=ownHiddenOnly([...state.hidden,...(Array.isArray(data.hidden)?data.hidden:[])],state.custom);state.quoteFavorites=[...new Set([...state.quoteFavorites,...(Number(data.quoteSchema)===2?(Array.isArray(data.quoteFavorites)?data.quoteFavorites:[]):remapOldQuotes(data.quoteFavorites))].filter(i=>Number.isInteger(i)&&i>=0&&i<QUOTES.length))];if(data.ttsRate&&[.75,.85,1,1.25].includes(Number(data.ttsRate)))state.ttsRate=Number(data.ttsRate);if(data.ttsVolume!==undefined&&Number.isFinite(Number(data.ttsVolume)))state.ttsVolume=Math.max(0,Math.min(1,Number(data.ttsVolume)));if(typeof data.ttsVoiceURI==='string'&&!state.ttsVoiceURI)state.ttsVoiceURI=data.ttsVoiceURI;if(data.pinyinPreference==='always')state.pinyinPreference='always';if(typeof data.wisdomShowPinyin==='boolean')state.wisdomShowPinyin=data.wisdomShowPinyin;if(data.skillStats&&typeof data.skillStats==='object'){const incoming=cleanSkillStats(data.skillStats);for(const [ch,skills]of Object.entries(incoming)){state.skillStats[ch]??={};for(const [kind,entry]of Object.entries(skills)){const old=state.skillStats[ch][kind];state.skillStats[ch][kind]=!old||Number(entry.attempts)>Number(old.attempts)?entry:old}}}if(data.writingGuideMode==='trace'&&state.writingGuideMode!=='trace')state.writingGuideMode='trace';if(data.writingStats&&typeof data.writingStats==='object'){const incoming=cleanWritingStats(data.writingStats);for(const [ch,s] of Object.entries(incoming)){const old=state.writingStats[ch];if(!old){state.writingStats[ch]=s;continue}const merged={};for(const key of ['attempts','completed','mistakes','hints','clean','streak','score'])merged[key]=Math.max(Number(old[key])||0,Number(s[key])||0);merged.last=String(old.last||'')>=String(s.last||'')?old.last:s.last;state.writingStats[ch]=merged}}if(data.srs&&typeof data.srs==='object')for(const [ch,entry]of Object.entries(data.srs))if(isHanzi(ch)&&entry&&typeof entry==='object')state.srs[ch]=(!state.srs[ch]||String(entry.last||'')>=String(state.srs[ch].last||''))?{...state.srs[ch],...entry}:state.srs[ch];if(data.daily&&typeof data.daily==='object')for(const [day,entry]of Object.entries(data.daily))if(/^\d{4}-\d{2}-\d{2}$/.test(day)&&entry&&typeof entry==='object'){const old=state.daily[day]||{};state.daily[day]={learn:Math.max(Number(old.learn)||0,Number(entry.learn)||0),correct:Math.max(Number(old.correct)||0,Number(entry.correct)||0),wrong:Math.max(Number(old.wrong)||0,Number(entry.wrong)||0)}}const entries=Object.values(state.daily);state.quizTotals={correct:Math.max(oldTotals.correct,incomingTotals.correct,entries.reduce((n,x)=>n+(Number(x.correct)||0),0)),wrong:Math.max(oldTotals.wrong,incomingTotals.wrong,entries.reduce((n,x)=>n+(Number(x.wrong)||0),0))}}
+function mergeBackup(data){if(Array.isArray(data.practiceLevels))state.practiceLevels=validPracticeLevels(data.practiceLevels);const oldTotals={correct:Number(state.quizTotals.correct)||0,wrong:Number(state.quizTotals.wrong)||0};const incomingTotals={correct:Number(data.quizTotals?.correct)||0,wrong:Number(data.quizTotals?.wrong)||0};const allCustom=[...state.custom,...data.custom];const seen=new Set([...builtins.keys()].filter(x=>builtins.get(x).origin==='builtin')),custom=[];for(const raw of allCustom){const w=normalizeWord(raw,raw.origin||'custom');if(!validWord(w)||seen.has(w.ch))continue;seen.add(w.ch);custom.push(w)}state.custom=custom;state.drafts=cleanPhotoDrafts([...(state.drafts||[]),...(Array.isArray(data.drafts)?data.drafts:[])]).filter(d=>!custom.some(w=>w.ch===d.ch));state.learned=unique([...state.learned,...(Array.isArray(data.learned)?data.learned:[])]);state.favorites=unique([...state.favorites,...(Array.isArray(data.favorites)?data.favorites:[])]);state.hidden=ownHiddenOnly([...state.hidden,...(Array.isArray(data.hidden)?data.hidden:[])],state.custom);state.quoteFavorites=[...new Set([...state.quoteFavorites,...(Number(data.quoteSchema)===2?(Array.isArray(data.quoteFavorites)?data.quoteFavorites:[]):remapOldQuotes(data.quoteFavorites))].filter(i=>Number.isInteger(i)&&i>=0&&i<QUOTES.length))];if(data.ttsRate&&[.75,.85,1,1.25].includes(Number(data.ttsRate)))state.ttsRate=Number(data.ttsRate);if(data.ttsVolume!==undefined&&Number.isFinite(Number(data.ttsVolume)))state.ttsVolume=Math.max(0,Math.min(1,Number(data.ttsVolume)));if(typeof data.ttsVoiceURI==='string'&&!state.ttsVoiceURI)state.ttsVoiceURI=data.ttsVoiceURI;if(data.pinyinPreference==='always')state.pinyinPreference='always';if(typeof data.wisdomShowPinyin==='boolean')state.wisdomShowPinyin=data.wisdomShowPinyin;if(data.skillStats&&typeof data.skillStats==='object'){const incoming=cleanSkillStats(data.skillStats);for(const [ch,skills]of Object.entries(incoming)){state.skillStats[ch]??={};for(const [kind,entry]of Object.entries(skills)){const old=state.skillStats[ch][kind];state.skillStats[ch][kind]=!old||Number(entry.attempts)>Number(old.attempts)?entry:old}}}if(data.studyDays&&typeof data.studyDays==='object'){const incoming=cleanStudyDays(data.studyDays);for(const [ch,days] of Object.entries(incoming)){state.studyDays[ch]=[...new Set([...(state.studyDays[ch]||[]),...days])].sort().slice(-STUDY_DAYS_REQUIRED)}}if(data.writingGuideMode==='trace'&&state.writingGuideMode!=='trace')state.writingGuideMode='trace';if(data.writingStats&&typeof data.writingStats==='object'){const incoming=cleanWritingStats(data.writingStats);for(const [ch,s] of Object.entries(incoming)){const old=state.writingStats[ch];if(!old){state.writingStats[ch]=s;continue}const merged={};for(const key of ['attempts','completed','mistakes','hints','clean','streak','score'])merged[key]=Math.max(Number(old[key])||0,Number(s[key])||0);merged.last=String(old.last||'')>=String(s.last||'')?old.last:s.last;state.writingStats[ch]=merged}}if(data.srs&&typeof data.srs==='object')for(const [ch,entry]of Object.entries(data.srs))if(isHanzi(ch)&&entry&&typeof entry==='object')state.srs[ch]=(!state.srs[ch]||String(entry.last||'')>=String(state.srs[ch].last||''))?{...state.srs[ch],...entry}:state.srs[ch];if(data.daily&&typeof data.daily==='object')for(const [day,entry]of Object.entries(data.daily))if(/^\d{4}-\d{2}-\d{2}$/.test(day)&&entry&&typeof entry==='object'){const old=state.daily[day]||{};state.daily[day]={learn:Math.max(Number(old.learn)||0,Number(entry.learn)||0),correct:Math.max(Number(old.correct)||0,Number(entry.correct)||0),wrong:Math.max(Number(old.wrong)||0,Number(entry.wrong)||0)}}const entries=Object.values(state.daily);state.quizTotals={correct:Math.max(oldTotals.correct,incomingTotals.correct,entries.reduce((n,x)=>n+(Number(x.correct)||0),0)),wrong:Math.max(oldTotals.wrong,incomingTotals.wrong,entries.reduce((n,x)=>n+(Number(x.wrong)||0),0))}}
 $('settings-open').onclick=openSettings;
 
 // Three calm, swipeable personal collections below the sphere. They reuse the existing progress stores.
@@ -2414,7 +2446,7 @@ function finishCollectionRemoval(which,ch){
  if(!item)return;
  clearTimeout(item.timer);clearTimeout(item.animationTimer);
  collectionUndo.delete(key);
- if(which==='learned')state.learned=state.learned.filter(x=>x!==ch);
+ if(which==='learned'){state.learned=state.learned.filter(x=>x!==ch);resetStudyDays(ch)}
  else if(which==='due')collectionSkipped.due.add(ch);
  else if(which==='favorite')state.favorites=state.favorites.filter(x=>x!==ch);
  save();updateStats();renderWords();
@@ -2439,7 +2471,7 @@ function undoCollectionRemoval(which,ch){
 }
 
 const collectionNames={learned:'Изученные',due:'К повторению',favorite:'Избранное'};
-const collectionDescriptions={learned:'Все изученные слова в одном месте. Открой карточку или убери отметку.',due:'Карточки, которые пора повторить. Просмотр не меняет расписание.',favorite:'Сохранённые слова. Открой карточку или убери из избранного.'};
+const collectionDescriptions={learned:'Изучены после правильной практики в три разных дня или отмечены вручную. Открой карточку или убери отметку.',due:'Карточки, которые пора повторить. Просмотр не меняет расписание.',favorite:'Сохранённые слова. Открой карточку или убери из избранного.'};
 function collectionItems(which){
  const all=[...wordsMap().values()];
  return all.filter(w=>!collectionSkipped[which].has(w.ch)&&(which==='learned'?state.learned.includes(w.ch):which==='due'?dueNow(w.ch):state.favorites.includes(w.ch)));
