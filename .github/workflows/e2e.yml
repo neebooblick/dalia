@@ -1,0 +1,39 @@
+name: Dalia browser E2E
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'assets/**'
+      - 'sw.js'
+      - 'tests/**'
+      - '.github/workflows/e2e.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright browser driver
+        run: npm install --no-save --no-package-lock playwright-core
+      - name: Run real Chromium user journeys
+        run: |
+          export CHROME_PATH="$(command -v google-chrome || command -v chromium || true)"
+          if [ -z "$CHROME_PATH" ]; then echo "Chromium/Chrome not installed"; exit 1; fi
+          node tests/e2e.mjs
+      - name: Attach failure screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dalia-e2e-failure-screenshots
+          path: test-results/
+          if-no-files-found: ignore
