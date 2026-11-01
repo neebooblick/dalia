@@ -137,7 +137,7 @@ try{
   assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem("dalia_state_v7")).learned[0]),"你好");
  });
  await test("Mobile screen no horizontal overflow, modal fits",async page=>{
-  const x=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));
+  const x=await page.evaluate(()=>({width:innerWidth,client:document.documentElement.clientWidth,visual:visualViewport.width,scroll:document.documentElement.scrollWidth,offenders:[...document.querySelectorAll("body *")].map(e=>({name:e.tagName+"."+String(e.className).slice(0,40),left:Math.round(e.getBoundingClientRect().left),right:Math.round(e.getBoundingClientRect().right),w:Math.round(e.getBoundingClientRect().width)})).filter(x=>x.right>340 && x.w>0).slice(0,30)}));console.log("mobile overflow debug",JSON.stringify(x));
   assert.ok(x.scroll<=x.width+2,JSON.stringify(x));
   await page.locator(".word-open").first().click();
   const rect=await page.locator(".modal").evaluate(e=>{const r=e.getBoundingClientRect();return{left:r.left,right:r.right,vp:innerWidth}});
