@@ -74,3 +74,21 @@ jobs:
           name: dalia-webkit-failures
           path: test-results/
           if-no-files-found: ignore
+
+  native-safari:
+    runs-on: macos-15
+    timeout-minutes: 10
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Enable Apple Safari WebDriver
+        run: |
+          safaridriver --version
+          sudo safaridriver --enable
+      - name: Install Selenium WebDriver
+        run: npm install --no-save --no-package-lock selenium-webdriver
+      - name: Exercise site in actual desktop Safari
+        run: node tests/native-safari.mjs
