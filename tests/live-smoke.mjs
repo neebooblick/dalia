@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { chromium } from 'playwright-core';
 
 const site=process.env.DALIA_PUBLIC_URL || 'https://daliastudy.ru/';
-const assets=['assets/dalia-style-v8.1.2.css','assets/dalia-data-v8.1.1.js','assets/dalia-app-v8.1.2.js'];
+const assets=['assets/dalia-style-v8.1.3.css','assets/dalia-data-v8.1.1.js','assets/dalia-app-v8.1.3.js'];
 const outcome={site,checkedAt:new Date().toISOString(),http:[],browser:null};
 const fetchWithTimeout=async url=>{
  const res=await fetch(url,{redirect:'follow',signal:AbortSignal.timeout(18000),headers:{'Cache-Control':'no-cache'}});
@@ -12,7 +12,7 @@ try{
  const root=await fetchWithTimeout(site);
  outcome.http.push({resource:'/',status:root.status,bytes:root.bytes,url:root.finalUrl});
  assert.equal(root.status,200,'Published homepage must return HTTP 200');
- assert.match(root.text,/dalia-app-v8\.1\.2\.js/,'Published HTML has not been updated yet');
+ assert.match(root.text,/dalia-app-v8\.1\.3\.js/,'Published HTML has not been updated yet');
  for(const path of assets){
   const url=new URL(path,site).href;
   const res=await fetchWithTimeout(url);
