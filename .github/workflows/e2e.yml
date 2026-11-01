@@ -52,3 +52,25 @@ jobs:
           name: dalia-e2e-failure-screenshots
           path: test-results/
           if-no-files-found: ignore
+
+  safari-webkit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright WebKit and its OS dependencies
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps webkit
+      - name: Test Safari engine with desktop and iPhone simulations
+        run: node tests/safari-webkit.mjs
+      - name: Attach WebKit failure screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dalia-webkit-failures
+          path: test-results/
+          if-no-files-found: ignore
