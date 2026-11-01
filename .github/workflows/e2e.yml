@@ -30,6 +30,10 @@ jobs:
           export CHROME_PATH="$(command -v google-chrome || command -v chromium || true)"
           if [ -z "$CHROME_PATH" ]; then echo "Chromium/Chrome not installed"; exit 1; fi
           node tests/e2e.mjs
+      - name: Install CJK fonts for accurate Chinese rendering
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
       - name: Audit design across desktop and mobile screens
         run: |
           export CHROME_PATH="$(command -v google-chrome || command -v chromium || true)"

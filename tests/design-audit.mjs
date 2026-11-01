@@ -36,11 +36,11 @@ const sample=async(page,id)=>{
  console.log('DALIA_AUDIT_IMAGE:'+id+':'+thumb.toString('base64'));
  audit.push({id,...report});
 };
-const scenes=[{name:'learn',go:async()=>{}},{name:'card',go:async page=>{await page.locator('.word-card').first().click()}},{name:'settings',go:async page=>{await page.locator('#settings-open').click()}},{name:'feedback',go:async page=>{await page.locator('#settings-open').click();await page.getByRole('button',{name:'Сообщить об ошибке'}).click()}},{name:'practice',go:async page=>{await page.locator('[data-page="practice"]').first().click()}},{name:'reverse',go:async page=>{await page.locator('[data-page="practice"]').first().click();await page.locator('[data-mode="reverse"]').click()}},{name:'photo',go:async page=>{await page.locator('[data-page="photo"]').first().click()}},{name:'wisdom',go:async page=>{await page.locator('[data-page="motivation"]').first().click()}}];
+const scenes=[{name:'learn',go:async()=>{}},{name:'card',go:async page=>{await page.locator('.word-card').first().click()}},{name:'settings',go:async page=>{await page.locator('#settings-open').click()}},{name:'settings-bottom',go:async page=>{await page.locator('#settings-open').click();await page.locator('.settings-report-button').scrollIntoViewIfNeeded()}},{name:'feedback',go:async page=>{await page.locator('#settings-open').click();await page.getByRole('button',{name:'Сообщить об ошибке'}).click()}},{name:'practice',go:async page=>{await page.locator('[data-page="practice"]:visible').first().click()}},{name:'reverse',go:async page=>{await page.locator('[data-page="practice"]:visible').first().click();await page.locator('[data-mode="reverse"]').click()}},{name:'photo',go:async page=>{await page.locator('[data-page="photo"]:visible').first().click()}},{name:'wisdom',go:async page=>{await page.locator('[data-page="motivation"]:visible').first().click()}}];
 try{
  for(const width of [320,390,768,1440]){
   for(const scene of scenes){
-   if(width===320&&!['learn','card','settings','practice'].includes(scene.name))continue;
+   if(width===320&&!['learn','card','settings','settings-bottom','practice'].includes(scene.name))continue;
    if(width===768&&!['learn','settings','practice'].includes(scene.name))continue;
    if(width===1440&&!['learn','settings','practice','wisdom'].includes(scene.name))continue;
    const context=await browser.newContext({viewport:{width,height:width<=390?844:900},deviceScaleFactor:1,isMobile:width<=390,hasTouch:width<=390});
