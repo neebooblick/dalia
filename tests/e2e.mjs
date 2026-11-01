@@ -55,6 +55,30 @@ try{
   await search.fill('');
   assert.ok(await page.locator('.word-card').count()>1);
  });
+ await test('Complete additional dictionary and exact headword search',async page=>{
+  const counts=await page.evaluate(()=>({
+   total:wordsMap().size,
+   additional:[...wordsMap().values()].filter(w=>w.origin==='additional').length
+  }));
+  assert.ok(counts.additional>=500,'500 additional entries are not available: '+JSON.stringify(counts));
+  assert.ok(counts.total>=2700,'Dictionary appears incomplete: '+JSON.stringify(counts));
+  const search=page.locator('#word-search');
+  await search.fill('登机牌');
+  assert.equal(await page.locator('.word-card .glyph').first().innerText(),'登机牌');
+  await search.fill('deng1 ji1 pai2');
+  assert.equal(await page.locator('.word-card .glyph').first().innerText(),'登机牌');
+  await search.fill('посадочный талон');
+  assert.equal(await page.locator('.word-card .glyph').first().innerText(),'登机牌');
+  await search.fill('ребенок');
+  assert.ok(await page.locator('.word-card').count()>0,'Russian е must match ё in text');
+  await search.fill('你好nihao');
+  assert.equal(await page.locator('.word-card').count(),0,'Search must not match across unrelated fields');
+  await search.fill('');
+  await page.locator('[data-level="additional"]').click();
+  assert.ok((await page.locator('#word-count').innerText()).includes(' из '));
+  await search.fill('登机牌');
+  assert.equal(await page.locator('.word-card .glyph').first().innerText(),'登机牌');
+ });
  await test('Catalog HSK filter',async page=>{
   await page.locator('[data-level="1"]').click();
   assert.match(await page.locator('#word-count').innerText(),/\d+ из \d+/);

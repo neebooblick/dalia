@@ -9,6 +9,14 @@ on:
       - 'sw.js'
       - 'tests/**'
       - '.github/workflows/e2e.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'assets/**'
+      - 'sw.js'
+      - 'tests/**'
+      - '.github/workflows/e2e.yml'
   workflow_dispatch:
 
 permissions:
