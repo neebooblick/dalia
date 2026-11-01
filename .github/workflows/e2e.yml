@@ -30,6 +30,11 @@ jobs:
           export CHROME_PATH="$(command -v google-chrome || command -v chromium || true)"
           if [ -z "$CHROME_PATH" ]; then echo "Chromium/Chrome not installed"; exit 1; fi
           node tests/e2e.mjs
+      - name: Check published daliastudy.ru in Chromium
+        continue-on-error: true
+        run: |
+          export CHROME_PATH="$(command -v google-chrome || command -v chromium || true)"
+          node tests/live-smoke.mjs
       - name: Attach failure screenshots
         if: failure()
         uses: actions/upload-artifact@v4
