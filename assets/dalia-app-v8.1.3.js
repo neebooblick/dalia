@@ -4,7 +4,29 @@ const escapeHTML=(v)=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt
 const keyOf=(s)=>String(s??'').normalize('NFKC').trim();
 const searchKey=(s)=>String(s??'').toLocaleLowerCase().replace(/[üǖǘǚǜ]/g,'v').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[\s·’']/g,'').trim();
 const pinyinSearchKey=s=>searchKey(s).replace(/([a-zv])[1-5](?=[a-zv]|$)/g,'$1');
-const searchMatches=(w,q)=>{if(!q)return true;const text=searchKey([w.ch,w.pinyin,w.meaning,w.cn,w.ru].join(' '));return text.includes(q)||pinyinSearchKey(w.pinyin).includes(pinyinSearchKey(q));};
+// Compare each field separately: joining fields used to create false matches across boundaries.
+// Keep pinyin tone-insensitive (including number-style tones), and rank headwords first.
+const wordSearchCache=new WeakMap();
+function wordSearchFields(w){
+ let fields=wordSearchCache.get(w);
+ if(!fields){
+  fields={ch:searchKey(w.ch),pinyin:pinyinSearchKey(w.pinyin),meaning:searchKey(w.meaning),cn:searchKey(w.cn),ru:searchKey(w.ru)};
+  wordSearchCache.set(w,fields);
+ }
+ return fields;
+}
+function searchScore(w,q){
+ if(!q)return 0;
+ const f=wordSearchFields(w),p=pinyinSearchKey(q);
+ if(f.ch===q||f.pinyin===p)return 0;
+ if(f.ch.startsWith(q)||f.pinyin.startsWith(p))return 1;
+ if(f.meaning===q)return 2;
+ if(f.meaning.startsWith(q))return 3;
+ if(f.ch.includes(q)||f.pinyin.includes(p)||f.meaning.includes(q))return 4;
+ if(f.cn.includes(q)||f.ru.includes(q))return 5;
+ return Infinity;
+}
+const searchMatches=(w,q)=>searchScore(w,q)!==Infinity;
 const isHanzi=(s)=>/^[\u3400-\u9fff\uf900-\ufaff]+$/u.test(s);
 const unique=(list)=>[...new Set((Array.isArray(list)?list:[]).map(keyOf).filter(Boolean))];
 const dayString=(date=new Date())=>`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
@@ -22,7 +44,7 @@ const initial=()=>({custom:[],drafts:[],hidden:[],learned:[],autoLearned:[],favo
 const approxPinyin=ch=>{const n=ch.codePointAt(0);return n>=0x4e00&&n<=0x9fff?PINYIN_MAP[n-0x4e00]||'':''};
 const WISDOM_ONLY_KEYS=new Set([...QUOTE_DATA,...SAYING_CARD_DATA].map(q=>[...String(q[0])].filter(c=>isHanzi(c)).join('')));
 const referenceRows=new Set(REFERENCE_HANZI_DATA),additionalRows=new Set(ADDITIONAL_WORD_DATA),builtins=new Map();
-for(const raw of [...WORD_DATA,...REFERENCE_HANZI_DATA]){
+for(const raw of [...WORD_DATA,...ADDITIONAL_WORD_DATA,...REFERENCE_HANZI_DATA]){
  const ch=keyOf(raw[0]);
  if(WISDOM_ONLY_KEYS.has([...ch].filter(c=>isHanzi(c)).join('')))continue;
  if(!builtins.has(ch)&&validWord({ch,pinyin:raw[1],meaning:raw[2],cn:raw[3],ru:raw[4],origin:'builtin'}))
@@ -370,7 +392,7 @@ function openCardQuickActions(ch){
 }
 function installCardLongPress(el,ch){ /* Долгое нажатие больше не открывает меню. */ }
 let practiceNextOverride=null;
-function renderWords(){const query=searchKey($('word-search').value);const all=[...wordsMap().values()];const arr=all.filter(w=>{const filter=level==='all'||(level==='custom'?(w.origin==='custom'||w.origin==='photo'):level==='additional'?w.origin==='additional':level==='favorite'?state.favorites.includes(w.ch):level==='learned'?state.learned.includes(w.ch):level==='due'?dueNow(w.ch):((w.origin==='builtin'||w.origin==='reference')&&String(w.level)===level));return filter&&(wordType==='all'||(wordType==='character'?[...w.ch].length===1:[...w.ch].length>1))&&searchMatches(w,query)});$('word-count').textContent=`${arr.length} из ${all.length}`;
+function renderWords(){const query=searchKey($('word-search').value);const all=[...wordsMap().values()];const arr=all.filter(w=>{const filter=level==='all'||(level==='custom'?(w.origin==='custom'||w.origin==='photo'):level==='additional'?w.origin==='additional':level==='favorite'?state.favorites.includes(w.ch):level==='learned'?state.learned.includes(w.ch):level==='due'?dueNow(w.ch):((w.origin==='builtin'||w.origin==='reference')&&String(w.level)===level));return filter&&(wordType==='all'||(wordType==='character'?[...w.ch].length===1:[...w.ch].length>1))&&searchMatches(w,query)});if(query)arr.sort((a,b)=>searchScore(a,query)-searchScore(b,query));$('word-count').textContent=`${arr.length} из ${all.length}`;
 const viewNames={learned:'Изученные карточки',due:'К повторению',favorite:'Избранные карточки'};
 const view=$('catalog-view-label');
 view.classList.toggle('hidden',!viewNames[level]);
