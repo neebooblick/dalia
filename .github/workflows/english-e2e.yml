@@ -1,0 +1,32 @@
+name: Dalia English browser tests
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'english/**'
+      - 'tests/english-e2e.mjs'
+      - '.github/workflows/english-e2e.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'english/**'
+      - 'tests/english-e2e.mjs'
+      - '.github/workflows/english-e2e.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  english-chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser driver
+        run: npm install --no-save --no-package-lock playwright-core
+      - name: Test English edition on desktop and mobile
+        run: |
+          export CHROME_PATH="$(command -v google-chrome || command -v chromium || true)"
+          node tests/english-e2e.mjs
