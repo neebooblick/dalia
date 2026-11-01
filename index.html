@@ -988,7 +988,7 @@ button:disabled{cursor:not-allowed;opacity:.58}
 .learn-guide h2{margin:0 0 15px;font-size:clamp(21px,2.7vw,28px);line-height:1.25;color:#f4d6e9;letter-spacing:-.02em}
 .learn-guide p{font-size:14px;line-height:1.85;margin:0 0 12px}
 @media(max-width:600px){.learn-guide{margin-top:54px;padding:23px 2px 0}.learn-guide p{font-size:13px}}
-.study-progress{font-size:11px;line-height:1.5;font-weight:600;color:#dbacd0;margin-top:7px;letter-spacing:.01em}
+
 </style>
 <script>const DALIA_METRIKA_ID=113905321;function daliaEnableAnalytics(){if(window.__daliaAnalyticsStarted)return;window.__daliaAnalyticsStarted=true;window.ym=window.ym||function(){(window.ym.a=window.ym.a||[]).push(arguments)};const s=document.createElement("script");s.async=true;s.src="https://mc.yandex.ru/metrika/tag.js?id="+DALIA_METRIKA_ID;document.head.append(s);ym(DALIA_METRIKA_ID,"init",{ssr:true,webvisor:false,clickmap:false,accurateTrackBounce:true,trackLinks:true})}try{if(localStorage.getItem("dalia_analytics_consent")==="yes")daliaEnableAnalytics()}catch(_){}</script></head><body>
 <header class="topbar"><div class="top-inner"><button class="brand" data-page="learn" aria-label="На главную">dalia<small>达莉娅</small></button><nav class="topnav" aria-label="Разделы"><button class="navbtn active" data-page="learn">Изучение</button><button class="navbtn" data-page="practice">Практика</button><button class="navbtn" data-page="photo">Фото</button><button class="navbtn" data-page="motivation">Мудрость</button></nav><button class="round-btn" id="settings-open" aria-label="Настройки и резервная копия" title="Настройки">⚙</button></div></header>
@@ -1176,14 +1176,6 @@ function nextStudyDate(ch){
  if(!Number.isFinite(d.getTime()))return '';
  d.setDate(d.getDate()+STUDY_INTERVAL_DAYS[Math.min(days.length-1,STUDY_INTERVAL_DAYS.length-1)]);
  return dayString(d);
-}
-function studyProgressText(ch){
- if(state.learned.includes(ch))return '✓ Изучено · повторения продолжаются';
- const count=studyDaysCount(ch);
- if(!count)return 'Пока изучается · для статуса «Изучено» нужны 3 успешных повторения в разные дни';
- const next=nextStudyDate(ch),now=dayString();
- const suffix=next&&next>now?' · следующее с '+next.split('-').reverse().join('.'):' · можно повторить сейчас';
- return 'В изучении · '+count+'/3 повторений'+suffix;
 }
 function noteSuccessfulStudyDay(ch){
  if(state.learned.includes(ch))return false;
@@ -1429,8 +1421,8 @@ const viewNames={learned:'Изученные карточки',due:'К повт�
 const view=$('catalog-view-label');
 view.classList.toggle('hidden',!viewNames[level]);
 if(viewNames[level]){view.replaceChildren();const caption=document.createElement('span');caption.textContent=`${viewNames[level]} · ${arr.length}`;const clear=makeBtn('Все слова ×','catalog-clear',()=>selectCatalogFilter('all',{resetSearch:true,resetType:true}));view.append(caption,clear)}
-$('favorite-hint').classList.toggle('hidden',level!=='favorite');$('word-grid').replaceChildren();$('more-words').classList.toggle('hidden',arr.length<=displayLimit);$('more-words').textContent='Показать ещё';if(!arr.length){const empty=document.createElement('div');empty.className='empty';empty.textContent=query?'По этому запросу карточки не найдены. Попробуй изменить поиск.':level==='learned'?'Пока нет изученных карточек. Нужны 3 успешных повторения с интервалами 1 и 3 дня, либо ручная отметка.':level==='due'?'Сейчас нет карточек к повторению. Они появятся здесь, когда придёт время.':level==='favorite'?'В избранном пока пусто. Добавляй карточки нажатием на сердечко.':'По этим условиям пока ничего нет. Попробуй другой фильтр.';$('word-grid').append(empty);return}
-for(const w of arr.slice(0,displayLimit)){const el=document.createElement('article');el.className='word-card';el.style.setProperty('--reveal-index',Math.min(14,Math.max(0,arr.indexOf(w))));el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label',`${w.ch}, ${w.meaning}. Открыть карточку`);el.innerHTML=`<div class="tag">${w.origin==='additional'?'Уровень '+w.level+' · вне HSK':(w.origin==='builtin'||w.origin==='reference')?((w.origin==='reference'?'≈ HSK ':'HSK ')+w.level+(w.origin==='reference'?' · знак':'')):'✦ добавлен'}</div><div class="glyph">${escapeHTML(w.ch)}</div><div class="pin">${canHidePinyin(w.ch)?"✦ пиньинь скрыт":escapeHTML(w.pinyin)}</div><div class="meaning">${escapeHTML(w.meaning)}</div>${state.learned.includes(w.ch)?'<div class="done">✓ изучено</div>':studyDaysCount(w.ch)?'<div class="study-progress">✦ в изучении · '+studyDaysCount(w.ch)+'/3 повторения</div>':''}`;installCardLongPress(el,w.ch);el.addEventListener('click',()=>openWord(w.ch));el.addEventListener('keydown',e=>{if(e.target!==el)return;if(e.key==='Enter'||e.key===' '){e.preventDefault();openWord(w.ch)}});if(level==='favorite'){
+$('favorite-hint').classList.toggle('hidden',level!=='favorite');$('word-grid').replaceChildren();$('more-words').classList.toggle('hidden',arr.length<=displayLimit);$('more-words').textContent='Показать ещё';if(!arr.length){const empty=document.createElement('div');empty.className='empty';empty.textContent=query?'По этому запросу карточки не найдены. Попробуй изменить поиск.':level==='learned'?'Пока нет изученных карточек. Продолжай практиковаться или отметь нужные слова вручную.':level==='due'?'Сейчас нет карточек к повторению. Они появятся здесь, когда придёт время.':level==='favorite'?'В избранном пока пусто. Добавляй карточки нажатием на сердечко.':'По этим условиям пока ничего нет. Попробуй другой фильтр.';$('word-grid').append(empty);return}
+for(const w of arr.slice(0,displayLimit)){const el=document.createElement('article');el.className='word-card';el.style.setProperty('--reveal-index',Math.min(14,Math.max(0,arr.indexOf(w))));el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label',`${w.ch}, ${w.meaning}. Открыть карточку`);el.innerHTML=`<div class="tag">${w.origin==='additional'?'Уровень '+w.level+' · вне HSK':(w.origin==='builtin'||w.origin==='reference')?((w.origin==='reference'?'≈ HSK ':'HSK ')+w.level+(w.origin==='reference'?' · знак':'')):'✦ добавлен'}</div><div class="glyph">${escapeHTML(w.ch)}</div><div class="pin">${canHidePinyin(w.ch)?"✦ пиньинь скрыт":escapeHTML(w.pinyin)}</div><div class="meaning">${escapeHTML(w.meaning)}</div>${state.learned.includes(w.ch)?'<div class="done">✓ изучено</div>':''}`;installCardLongPress(el,w.ch);el.addEventListener('click',()=>openWord(w.ch));el.addEventListener('keydown',e=>{if(e.target!==el)return;if(e.key==='Enter'||e.key===' '){e.preventDefault();openWord(w.ch)}});if(level==='favorite'){
   const remove=makeBtn('× Убрать','favorite-remove',e=>{e.stopPropagation();removeFavorite(w.ch)});
   remove.setAttribute('aria-label',`Убрать «${w.ch}» из избранного`);
   remove.title='Убрать из избранного, не удаляя слово';
@@ -1616,10 +1608,10 @@ function openHanziPeek(ch,trigger){
  const actions=document.createElement('div');actions.className='hanzi-peek-actions';
  actions.append(makeBtn('♫ Послушать','soft',()=>speak(w.ch)));
  const study=makeBtn('', 'study-toggle',()=>{
-  if(state.learned.includes(ch)){clearLearnedMark(ch);toast('Ручная отметка «Изучено» снята.')}else{state.learned.push(ch);markActivity('learn');toast('Вручную отмечено как изученное.','good')}
+  if(state.learned.includes(ch)){clearLearnedMark(ch);toast('Ручная отметка «Изучено» снята.')}else{state.learned.push(ch);markActivity('learn');toast('Иероглиф отмечен как изученный.','good')}
   save();renderWords();setStudy();
  });
- function setStudy(){const known=state.learned.includes(ch);study.textContent=known?'✓ Изучено':'＋ Отметить вручную';study.className='study-toggle '+(known?'is-learned':'is-not-learned');study.setAttribute('aria-pressed',String(known))}
+ function setStudy(){const known=state.learned.includes(ch);study.textContent=known?'✓ Изучено':'＋ Изучить';study.className='study-toggle '+(known?'is-learned':'is-not-learned');study.setAttribute('aria-pressed',String(known))}
  setStudy();actions.append(study);peek.append(actions);
  peek.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'nearest'});
  requestAnimationFrame(()=>close.focus({preventScroll:true}));
@@ -1673,16 +1665,16 @@ function openWord(ch,fromSentence=false,randomSession=false){const w=lookup(ch);
    toast('Отметка «Изучено» снята.','good');
   }else{
    state.learned.push(ch);markActivity('learn');justMarkedHere=true;
-   toast('Отмечено вручную. Повторное нажатие снимет отметку.','good');
+   toast('Отмечено как изученное. Повторное нажатие снимет отметку.','good');
   }
   save();renderWords();refreshLearnedButton();
  });
  function refreshLearnedButton(){
   const learned=state.learned.includes(ch);
-  learnedButton.textContent=learned?'✓ Изучено':'＋ Отметить вручную';
+  learnedButton.textContent=learned?'✓ Изучено':'＋ Изучить';
   learnedButton.className='study-toggle '+(learned?'is-learned':'is-not-learned');
   learnedButton.setAttribute('aria-pressed',String(learned));
-  learnedButton.title=learned?'Нажми, чтобы снять отметку «Изучено»':'Отметить карточку изученной вручную, без тренировки';
+  learnedButton.title=learned?'Нажми, чтобы снять отметку «Изучено»':'Отметить карточку как изученную';
  }
  refreshLearnedButton();actions.append(learnedButton);box.append(actions);const controls=document.createElement('div');controls.className='fullrow'+(randomSession?' random-word-controls':'');controls.append(makeBtn(state.favorites.includes(ch)?'♥ Убрать из избранного':'♡ В избранное','ghost',()=>{
  const wasFavorite=state.favorites.includes(ch);
@@ -1862,7 +1854,7 @@ function newQuestion(){
   const result=document.createElement('section');result.className='answer-summary '+(effective?'answer-is-correct':'answer-is-wrong');result.setAttribute('aria-live','polite');
   const header=document.createElement('div');header.className='answer-summary-head';const mark=document.createElement('span');mark.className='answer-mark';mark.textContent=effective?'✓':'↗';
   const status=document.createElement('div');status.className='answer-status';status.textContent=selfReveal?'Ответ открыт':effective?'Верно':'Разберём ответ';header.append(mark,status);result.append(header);
-  const progressNote=document.createElement('p');progressNote.className='tiny muted';progressNote.textContent=studyProgressText(question.ch);result.append(progressNote);
+  
   if(guess&&!effective){const tried=document.createElement('p');tried.className='answer-typed';tried.textContent='Твой ответ: '+guess;result.append(tried)}
   const definition=document.createElement('div');definition.className='answer-definition';definition.innerHTML=`<div class="answer-hanzi">${escapeHTML(question.ch)}</div><div class="answer-pinyin">${escapeHTML(question.pinyin)}</div><div class="answer-meaning">${escapeHTML(question.meaning)}</div>`;result.append(definition);
   const example=document.createElement('div');example.className='answer-example';
@@ -2504,7 +2496,7 @@ function undoCollectionRemoval(which,ch){
 }
 
 const collectionNames={learned:'Изученные',due:'К повторению',favorite:'Избранное'};
-const collectionDescriptions={learned:'Изучены после трёх успешных повторений с интервалами 1 и 3 дня или отмечены вручную. Позже они снова появятся в повторении.',due:'Карточки, которые пора повторить. Просмотр не меняет расписание.',favorite:'Сохранённые слова. Открой карточку или убери из избранного.'};
+const collectionDescriptions={learned:'Слова, которые ты уже знаешь. Они продолжат появляться в повторении.',due:'Карточки, которые пора повторить. Просмотр не меняет расписание.',favorite:'Сохранённые слова. Открой карточку или убери из избранного.'};
 function collectionItems(which){
  const all=[...wordsMap().values()];
  return all.filter(w=>!collectionSkipped[which].has(w.ch)&&(which==='learned'?state.learned.includes(w.ch):which==='due'?dueNow(w.ch):state.favorites.includes(w.ch)));
