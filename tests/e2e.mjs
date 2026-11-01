@@ -22,7 +22,7 @@ const port=server.address().port, local='http://127.0.0.1:'+port;
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
 const results=[];
 async function test(name,fn,options={}){
- const context=await browser.newContext({viewport:options.mobile?{width:390,height:844}:{width:1440,height:900},isMobile:!!options.mobile,hasTouch:!!options.mobile,deviceScaleFactor:options.mobile?2:1,serviceWorkers:'allow'});
+ const context=await browser.newContext({viewport:options.mobile?{width:options.width||390,height:844}:{width:1440,height:900},isMobile:!!options.mobile,hasTouch:!!options.mobile,deviceScaleFactor:options.mobile?2:1,serviceWorkers:'allow'});
  const page=await context.newPage();
  const errors=[];
  page.on('pageerror',error=>errors.push(error.message));
@@ -203,6 +203,14 @@ try{
   assert.ok(values.meaningSize>=12,'Card translation too small: '+JSON.stringify(values));
   assert.ok(values.width<=values.viewport+2,'New typography caused overflow');
  },{mobile:true});
+ await test('320-pixel navigation and translation readability',async page=>{
+  const x=await page.evaluate(()=>{
+   const nav=document.querySelector('.mobile-nav [data-page="learn"]');
+   const meaning=document.querySelector('.word-card .meaning');
+   return {nav:parseFloat(getComputedStyle(nav).fontSize),meaning:parseFloat(getComputedStyle(meaning).fontSize),width:document.documentElement.scrollWidth,viewport:innerWidth};
+  });
+  assert.ok(x.nav>=11&&x.meaning>=12&&x.width<=x.viewport+2,'Small phone typography: '+JSON.stringify(x));
+ },{mobile:true,width:320});
  await test('Mobile UI and card interaction',async page=>{
   const size=await page.evaluate(()=>({viewport:window.innerWidth,scroll:document.documentElement.scrollWidth}));
   assert.ok(size.scroll<=size.viewport+4,'Horizontal viewport overflow: '+JSON.stringify(size));
