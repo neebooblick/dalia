@@ -166,6 +166,33 @@ try{
   assert.ok(url.searchParams.get('title').includes('Ошибка в работе сайта'));
   assert.ok(!url.searchParams.get('body').includes('Слово или иероглиф'));
  });
+ await test('Settings report button layout desktop and mobile',async page=>{
+  await page.locator('#settings-open').click();
+  const details=await page.locator('.settings-feedback').evaluate(section=>{
+   const button=section.querySelector('.settings-report-button');
+   const br=button.getBoundingClientRect();
+   const sr=section.getBoundingClientRect();
+   const sc=getComputedStyle(section),bc=getComputedStyle(button);
+   const contentWidth=sr.width-parseFloat(sc.paddingLeft)-parseFloat(sc.paddingRight);
+   return {buttonWidth:br.width,contentWidth,buttonHeight:br.height,left:br.left,right:br.right,sectionLeft:sr.left,sectionRight:sr.right,display:bc.display,align:bc.alignItems,justify:bc.justifyContent};
+  });
+  assert.ok(Math.abs(details.buttonWidth-details.contentWidth)<3,'Report button not full-width: '+JSON.stringify(details));
+  assert.ok(details.buttonHeight>=48,'Report button is too short: '+JSON.stringify(details));
+  assert.equal(details.display,'flex');
+  assert.equal(details.justify,'center');
+  assert.ok(details.left>=details.sectionLeft-2&&details.right<=details.sectionRight+2);
+ });
+ await test('Mobile report button fits in settings',async page=>{
+  await page.locator('#settings-open').click();
+  const details=await page.locator('.settings-feedback').evaluate(section=>{
+   const button=section.querySelector('.settings-report-button');
+   const br=button.getBoundingClientRect(),sr=section.getBoundingClientRect();
+   const cs=getComputedStyle(section);
+   return {buttonWidth:br.width,available:sr.width-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight),buttonHeight:br.height,left:br.left,right:br.right,viewport:innerWidth,sectionRight:sr.right};
+  });
+  assert.ok(Math.abs(details.buttonWidth-details.available)<3,'Mobile button width mismatch: '+JSON.stringify(details));
+  assert.ok(details.buttonHeight>=48&&details.left>=-2&&details.right<=details.viewport+2,'Mobile button overflow: '+JSON.stringify(details));
+ },{mobile:true});
  await test('Mobile UI and card interaction',async page=>{
   const size=await page.evaluate(()=>({viewport:window.innerWidth,scroll:document.documentElement.scrollWidth}));
   assert.ok(size.scroll<=size.viewport+4,'Horizontal viewport overflow: '+JSON.stringify(size));
