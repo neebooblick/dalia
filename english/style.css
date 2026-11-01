@@ -13,3 +13,6 @@ main{max-width:1250px;margin:auto;padding:0 34px}.hero{min-height:455px;display:
 @media(max-width:380px){main{padding:0 14px}.topbar{padding-inline:14px}.brand-sub{font-size:9px;letter-spacing:1px}.card-grid{gap:9px}.word-card{padding:15px 12px;min-height:173px}.card-meaning{font-size:12px}.card-word{font-size:21px}.hero-text>p{font-size:14px}.hero-art{right:-130px}.button{padding:12px 17px}.reverse-entry{flex-direction:column}.footer{padding-inline:14px}}
 /* Keep modal controls above mobile scroll layers and clickable inside dialog. */
 .modal-head{position:sticky;top:0;z-index:3;background:#211a29}.modal-close{position:relative;z-index:4;pointer-events:auto;touch-action:manipulation}
+
+/* Oversized decorative glows must not enlarge the mobile layout viewport. */
+@media(max-width:730px){.ambient-one,.ambient-two{display:none}}
