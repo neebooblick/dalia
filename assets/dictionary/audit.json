@@ -1,0 +1,292 @@
+{
+  "total": 2941,
+  "pinyinMatched": 2809,
+  "missing": [
+    "多少钱",
+    "独立思考",
+    "适应能力",
+    "相互理解",
+    "发挥作用",
+    "交流经验",
+    "鸡蛋面",
+    "鸭蛋",
+    "修车厂",
+    "消防站",
+    "牙科诊所",
+    "水果店",
+    "宠物店",
+    "家具店",
+    "鞋店",
+    "珠宝店",
+    "电子市场",
+    "电水壶",
+    "水杯",
+    "咖啡杯",
+    "垃圾袋",
+    "太阳伞",
+    "电脑桌",
+    "学生会主席",
+    "翻译员",
+    "心理医生",
+    "护士长",
+    "出租车司机",
+    "地铁票",
+    "手提行李",
+    "检票口",
+    "喝水",
+    "看电影",
+    "看电视",
+    "听音乐",
+    "打篮球",
+    "踢足球",
+    "打乒乓球",
+    "打羽毛球",
+    "发邮件",
+    "洗衣服",
+    "换工作",
+    "找工作",
+    "增重",
+    "跨文化交流",
+    "文件名",
+    "医院急诊",
+    "消毒液",
+    "体检报告",
+    "检查结果",
+    "一寸",
+    "一步",
+    "穿衣服",
+    "发消息",
+    "同情心",
+    "幸福感",
+    "人生观",
+    "批判性",
+    "候机室",
+    "行李额",
+    "首班车",
+    "往返票",
+    "共享单车",
+    "指示牌",
+    "空房",
+    "空调遥控器",
+    "转换插头",
+    "报修",
+    "加菜",
+    "热菜",
+    "辣酱",
+    "香浓",
+    "饺子皮",
+    "一勺",
+    "一撮",
+    "一把",
+    "一瓶",
+    "一袋",
+    "一盒",
+    "一包",
+    "生产日期",
+    "配料表",
+    "全脂",
+    "纯天然",
+    "快递柜",
+    "自提",
+    "牙疼",
+    "喉咙痛",
+    "补水",
+    "体脂率",
+    "平衡感",
+    "呼吸频率",
+    "运动量",
+    "过度训练",
+    "可再生能源",
+    "空气质量",
+    "噪音污染",
+    "回收利用",
+    "废弃物",
+    "节约用水",
+    "山体滑坡",
+    "声速",
+    "细菌感染",
+    "扫描件",
+    "证明材料",
+    "截止日期",
+    "换货"
+  ],
+  "mismatch": [
+    {
+      "ch": "苍蝇",
+      "current": "cāng yíng",
+      "source": [
+        "cāng ying"
+      ]
+    },
+    {
+      "ch": "抽屉",
+      "current": "chōu tì",
+      "source": [
+        "chōu ti"
+      ]
+    },
+    {
+      "ch": "种子",
+      "current": "zhǒng zǐ",
+      "source": [
+        "zhǒng zi"
+      ]
+    },
+    {
+      "ch": "休息",
+      "current": "xiū xī",
+      "source": [
+        "xiū xi"
+      ]
+    },
+    {
+      "ch": "关系",
+      "current": "guān xì",
+      "source": [
+        "guān xi"
+      ]
+    },
+    {
+      "ch": "消息",
+      "current": "xiāo xī",
+      "source": [
+        "xiāo xi"
+      ]
+    },
+    {
+      "ch": "额头",
+      "current": "é tou",
+      "source": [
+        "é tóu"
+      ]
+    },
+    {
+      "ch": "喉咙",
+      "current": "hóu long",
+      "source": [
+        "hóu lóng"
+      ]
+    },
+    {
+      "ch": "肩膀",
+      "current": "jiān bang",
+      "source": [
+        "jiān bǎng"
+      ]
+    },
+    {
+      "ch": "指甲",
+      "current": "zhǐ jiǎ",
+      "source": [
+        "zhǐ jia"
+      ]
+    },
+    {
+      "ch": "出去",
+      "current": "chū qu",
+      "source": [
+        "chū qù"
+      ]
+    },
+    {
+      "ch": "起来",
+      "current": "qǐ lái",
+      "source": [
+        "qi lai",
+        "qǐ lai"
+      ]
+    },
+    {
+      "ch": "坐下",
+      "current": "zuò xià",
+      "source": [
+        "zuò xia"
+      ]
+    },
+    {
+      "ch": "太阳",
+      "current": "tài yáng",
+      "source": [
+        "tài yang"
+      ]
+    },
+    {
+      "ch": "前面",
+      "current": "qián mian",
+      "source": [
+        "qián miàn"
+      ]
+    },
+    {
+      "ch": "里面",
+      "current": "lǐ mian",
+      "source": [
+        "lǐ miàn"
+      ]
+    },
+    {
+      "ch": "外面",
+      "current": "wài mian",
+      "source": [
+        "wài miàn"
+      ]
+    },
+    {
+      "ch": "不客气",
+      "current": "bú kè qi",
+      "source": [
+        "bù kè qi"
+      ]
+    },
+    {
+      "ch": "一起",
+      "current": "yì qǐ",
+      "source": [
+        "yī qǐ"
+      ]
+    },
+    {
+      "ch": "山药",
+      "current": "shān yào",
+      "source": [
+        "shān yao"
+      ]
+    },
+    {
+      "ch": "一块",
+      "current": "yí kuài",
+      "source": [
+        "yī kuài"
+      ]
+    },
+    {
+      "ch": "一次性",
+      "current": "yí cì xìng",
+      "source": [
+        "yī cì xìng"
+      ]
+    },
+    {
+      "ch": "收成",
+      "current": "shōu cheng",
+      "source": [
+        "shōu chéng"
+      ]
+    },
+    {
+      "ch": "钥",
+      "current": "yào",
+      "source": [
+        "yuè"
+      ]
+    },
+    {
+      "ch": "血",
+      "current": "xiě",
+      "source": [
+        "xuè"
+      ]
+    }
+  ],
+  "note": "Matches check pronunciation only, not Russian senses, examples or HSK. Tone sandhi and neutral tones require editorial review. No automatic corrections."
+}
