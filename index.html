@@ -1153,7 +1153,7 @@ function cleanSkillStats(raw){
  return out;
 }
 // Three successful, unaided recalls spaced across days; same-day repetitions never farm mastery.
-// After round 1 wait 1 day; after round 2 wait 3 days. Errors set mastery back one step.
+// After round 1 wait 1 day; after round 2 wait 3 days. Errors set progress back.
 // Existing manually marked and legacy learned cards stay intact on migration.
 const STUDY_DAYS_REQUIRED=3;
 const STUDY_INTERVAL_DAYS=[1,3];
@@ -1205,7 +1205,7 @@ function noteFailedStudy(ch){
   state.learned=state.learned.filter(c=>c!==ch);
  }
  const days=state.studyDays[ch]||[];
- if(days.length)state.studyDays[ch]=days.slice(0,-1);
+ if(days.length)state.studyDays[ch]=days.slice(0,automated?-2:-1);
  return automated||days.length>0;
 }
 function clearLearnedMark(ch){
@@ -1238,7 +1238,7 @@ function recordSkill(ch,skill,{correct=false,hint=false,assisted=false}={}){
  save({quiet:true});return e;
 }
 function skillSchedule(ch){const all=Object.values(state.skillStats[ch]||{}).filter(v=>v&&v.next);if(!all.length)return null;return all.map(v=>v.next).sort()[0]}
-function todayReview(ch){const next=nextStudyDate(ch);if(!state.learned.includes(ch)&&next&&next<=dayString())return true;const skill=state.skillStats[ch];if(skill&&Object.keys(skill).length)return Object.values(skill).some(x=>x.next&&x.next<=dayString())||(!skill.recognition&&dueNowLegacy(ch));return dueNowLegacy(ch)}
+function todayReview(ch){const next=nextStudyDate(ch);if(!state.learned.includes(ch)&&next)return next<=dayString();const skill=state.skillStats[ch];if(skill&&Object.keys(skill).length)return Object.values(skill).some(x=>x.next&&x.next<=dayString())||(!skill.recognition&&dueNowLegacy(ch));return dueNowLegacy(ch)}
 
 function migrateState(){
   const exists=readJSON(STORE,null);if(exists&&typeof exists==='object'&&!Array.isArray(exists)){const s={...initial(),...exists};s.practiceLevels=validPracticeLevels(s.practiceLevels);s.custom=Array.isArray(s.custom)?s.custom:[];s.drafts=cleanPhotoDrafts(s.drafts);s.hidden=unique(s.hidden);s.learned=unique(s.learned);s.autoLearned=unique(s.autoLearned).filter(ch=>s.learned.includes(ch));s.favorites=unique(s.favorites);s.quoteFavorites=(Number(s.quoteSchema)===2?(Array.isArray(s.quoteFavorites)?s.quoteFavorites:[]):remapOldQuotes(s.quoteFavorites)).filter(i=>Number.isInteger(i)&&i>=0&&i<QUOTE_DATA.length);s.quoteSchema=2;s.srs=s.srs&&typeof s.srs==='object'&&!Array.isArray(s.srs)?s.srs:{};s.writingGuideMode=s.writingGuideMode==='trace'?'trace':'memory';s.writingStats=cleanWritingStats(s.writingStats);s.skillStats=cleanSkillStats(s.skillStats);s.studyDays=cleanStudyDays(s.studyDays);s.pinyinPreference=['adaptive','always'].includes(s.pinyinPreference)?s.pinyinPreference:'adaptive';s.wisdomShowPinyin=s.wisdomShowPinyin!==false;s.daily=s.daily&&typeof s.daily==='object'&&!Array.isArray(s.daily)?s.daily:{};s.quizTotals=s.quizTotals&&typeof s.quizTotals==='object'&&!Array.isArray(s.quizTotals)?s.quizTotals:{correct:0,wrong:0};return s}
