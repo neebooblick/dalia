@@ -1,6 +1,6 @@
 {
-  "name": "Dalia — изучай китайский",
-  "short_name": "dalia.",
+  "name": "dalia — изучай китайский",
+  "short_name": "dalia",
   "description": "Dalia — изучение китайского языка, практика, написание и повторение.",
   "start_url": "./",
   "scope": "./",
