@@ -129,6 +129,35 @@ try{
   await page.locator('#modal-close').click();
   assert.ok(await page.locator('#modal-overlay').isHidden());
  });
+
+ await test('Report issue form from card',async page=>{
+  await page.locator('.word-card').first().click();
+  const ch=await page.locator('#modal-body .big-glyph').innerText();
+  await page.getByRole('button',{name:'Сообщить об ошибке'}).click();
+  assert.equal(await page.locator('#word-report-kind').count(),1);
+  assert.ok(await page.locator('#word-report-details').isVisible());
+  assert.match(await page.locator('#modal-body').innerText(),new RegExp(ch));
+  await page.locator('#word-report-kind').selectOption('Ошибка в пиньине');
+  await page.locator('#word-report-details').fill('Пожалуйста, проверьте чтение слова.');
+  await page.evaluate(()=>{window.open=(url)=>{window.__lastReportUrl=url;return {}}});
+  await page.getByRole('button',{name:'Продолжить на GitHub'}).click();
+  const url=await page.evaluate(()=>window.__lastReportUrl);
+  assert.ok(url?.startsWith('https://github.com/neebooblick/dalia/issues/new?'));
+  const u=new URL(url);
+  assert.ok(u.searchParams.get('title').includes(ch));
+  assert.ok(u.searchParams.get('body').includes('Пожалуйста, проверьте чтение слова.'));
+  assert.ok(!u.searchParams.get('body').includes('dalia_state_v7'));
+  await page.getByRole('button',{name:'Вернуться к карточке'}).click();
+  assert.ok(await page.locator('#modal-body .big-glyph').isVisible());
+ });
+ await test('Report issue form from practice feedback',async page=>{
+  await page.locator('[data-page="practice"]').first().click();
+  await page.locator('#quiz-area .option').first().click();
+  await page.getByRole('button',{name:'Нашёл ошибку в карточке?'}).click();
+  assert.ok(await page.locator('#word-report-kind').isVisible());
+  await page.getByRole('button',{name:'Вернуться к тренировке'}).click();
+  assert.ok(await page.locator('#quiz-area .answer-summary').isVisible());
+ });
  await test('Mobile UI and card interaction',async page=>{
   const size=await page.evaluate(()=>({viewport:window.innerWidth,scroll:document.documentElement.scrollWidth}));
   assert.ok(size.scroll<=size.viewport+4,'Horizontal viewport overflow: '+JSON.stringify(size));
