@@ -160,9 +160,19 @@ try{
   await page.getByRole('button',{name:'Сообщить об ошибке'}).click();
   await page.locator('#word-report-kind').selectOption('Ошибка в работе сайта');
   await page.locator('#word-report-details').fill('Кнопка на телефоне перекрывает текст.');
+  const validity=await page.locator('.word-report-form').evaluate(form=>({
+   valid:form.checkValidity(),
+   controls:[...form.querySelectorAll('input,select,textarea')].map(el=>({
+    id:el.id,value:el.value,required:el.required,valid:el.validity.valid,
+    validityMessage:el.validationMessage
+   }))
+  }));
+  assert.ok(validity.valid,'Generic issue form unexpectedly invalid: '+JSON.stringify(validity));
   await page.evaluate(()=>{window.open=url=>{window.__lastReportUrl=url;return {}}});
   await page.getByRole('button',{name:'Продолжить на GitHub'}).click();
-  const url=new URL(await page.evaluate(()=>window.__lastReportUrl));
+  const rawUrl=await page.evaluate(()=>window.__lastReportUrl);
+  assert.ok(rawUrl,'GitHub issue link not opened, validity '+JSON.stringify(validity));
+  const url=new URL(rawUrl);
   assert.ok(url.searchParams.get('title').includes('Ошибка в работе сайта'));
   assert.ok(!url.searchParams.get('body').includes('Слово или иероглиф'));
  });
@@ -277,7 +287,7 @@ try{
   await page.locator('[data-mode="writing"]').click();
   await page.locator('.writing-draw-target').waitFor();
   const bounds=await page.locator('.writing-draw-target').boundingBox();
-  assert.ok(bounds&&bounds.width>160&&bounds.width<innerWidth||bounds?.width>160,'Writing target missing or zero width');
+  assert.ok(bounds?.width>160,'Writing target missing or zero width');
  },{mobile:true});
  await test('Small iPhone WebKit 320px layout',async page=>{
   const outer=await page.evaluate(()=>({w:document.documentElement.scrollWidth,inner:innerWidth}));
