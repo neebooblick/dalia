@@ -178,7 +178,7 @@ function navigate(to){
  screen=to;
  for(const name of ["words","practice","context","phrases"])$("screen-"+name).hidden=name!==to;
  $("hero").hidden=to!=="words";
- document.querySelectorAll("[data-screen]").forEach(b=>{const active=b.dataset.screen===to;b.classList.toggle("is-active",active);if(active)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
+ document.querySelectorAll("[data-screen]").forEach(b=>{const active=b.dataset.screen===to;b.classList.toggle("is-active",active);b.classList.toggle("active",active);if(active)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
  if(to==="words")renderWords();if(to==="practice")newQuiz();if(to==="phrases")renderPhrases();
  window.scrollTo({top:0,behavior:"instant"});
 }
