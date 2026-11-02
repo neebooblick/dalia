@@ -15,7 +15,7 @@ try{
  assert.match(root.text,/dalia-app-v8\.1\.3\.js/,'Published HTML has not been updated yet');
  const englishBase=new URL('english/',site).href;
  const englishIndex=await fetchWithTimeout(englishBase);
- outcome.http.push({resource:'/english/',status:englishIndex.status,bytes:englishIndex.bytes,url:englishIndex.finalUrl,title:englishIndex.text.match(/<title>([^<]*)<\\/title>/i)?.[1]||''});
+ outcome.http.push({resource:'/english/',status:englishIndex.status,bytes:englishIndex.bytes,url:englishIndex.finalUrl,title:englishIndex.text.match(/<title>([^<]*)/i)?.[1]||''});
  assert.equal(englishIndex.status,200,'Published English edition must return HTTP 200');
  assert.match(englishIndex.text,/dalia.*english/i,'English edition content missing');
  for(const path of ['index.html','app.js','style.css','words.js']){
