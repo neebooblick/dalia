@@ -28,6 +28,7 @@ async function test(name,fn,{mobile=false,width=390}={}){
  page.on("pageerror",e=>errors.push(e.message));
  try{
   await page.goto(url,{waitUntil:"domcontentloaded"});
+  await page.locator(".dalia-language-dialog a").filter({hasText:"Английский"}).click();
   await page.locator(".word-card").first().waitFor({timeout:15000});
   await fn(page);
   assert.deepEqual(errors,[],"Unexpected JS exceptions");
@@ -152,3 +153,4 @@ try{
 const failures=results.filter(r=>!r.pass);
 console.log(JSON.stringify({passed:results.length-failures.length,failed:failures.length,results},null,2));
 if(failures.length)process.exitCode=1;
+
