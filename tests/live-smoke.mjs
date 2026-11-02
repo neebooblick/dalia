@@ -1,20 +1,9 @@
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright-core';
-import { resolve4, resolve6, resolveNs } from 'node:dns/promises';
 
 const site=process.env.DALIA_PUBLIC_URL || 'https://daliastudy.ru/';
 const assets=['assets/dalia-style-v8.1.6.css','assets/dalia-data-v8.1.1.js','assets/dalia-app-v8.1.3.js'];
-const outcome={site,checkedAt:new Date().toISOString(),dns:{},http:[],browser:null};
-for(const hostname of ['daliastudy.ru','www.daliastudy.ru','neebooblick.github.io']){
- const result={};for(const [record,fn] of [['A',resolve4],['AAAA',resolve6],['NS',resolveNs]]){
-  try{result[record]=await fn(hostname)}catch(e){result[record]={code:e.code,message:e.message}}
- }
- outcome.dns[hostname]=result;
-}
-for(const url of ['https://daliastudy.ru/','https://www.daliastudy.ru/','https://neebooblick.github.io/dalia/english/']){
- try{const response=await fetch(url,{signal:AbortSignal.timeout(10000),redirect:'manual'});outcome.http.push({resource:'diagnostic',url,status:response.status,location:response.headers.get('location')})}
- catch(e){outcome.http.push({resource:'diagnostic',url,error:String(e),cause:e.cause?.code||String(e.cause||'')})}
-}
+const outcome={site,checkedAt:new Date().toISOString(),http:[],browser:null};
 const fetchWithTimeout=async url=>{
  const res=await fetch(url,{redirect:'follow',signal:AbortSignal.timeout(18000),headers:{'Cache-Control':'no-cache'}});
  const text=await res.text();return {status:res.status,bytes:Buffer.byteLength(text),text,finalUrl:res.url};
