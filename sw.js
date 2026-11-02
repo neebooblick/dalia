@@ -1,13 +1,19 @@
 // Dalia 7.8.8 — offline app shell. External voice/handwriting/OCR tools are not cached or promised offline.
-const CACHE='dalia-app-v8.1.9-dictionary-20261101';
-const SHELL=['./','./index.html','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./assets/dalia-style-v8.1.6.css','./assets/dalia-data-v8.1.1.js','./assets/dalia-app-v8.1.3.js?v=8.1.9','./assets/dalia-pilot-100-v1.js','./vocabulary-sources.html'];
+const CACHE='dalia-app-v8.2.0-languages';
+const SHELL=['./assets/language-choice-v1.js','./assets/language-choice-v1.css','./english/','./english/app.js?v=1.0.0','./english/words.js?v=1.0.0','./english/style.css','./','./index.html','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./assets/dalia-style-v8.1.6.css','./assets/dalia-data-v8.1.1.js','./assets/dalia-app-v8.1.3.js?v=8.1.9','./assets/dalia-pilot-100-v1.js','./vocabulary-sources.html'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('dalia-app-')&&k!==CACHE).map(k=>caches.delete(k)))),self.clients.claim()]))});
 self.addEventListener('fetch',event=>{
  const request=event.request;if(request.method!=='GET')return;
  const url=new URL(request.url);if(url.origin!==self.location.origin)return;
  if(request.mode==='navigate'){
-  event.respondWith(fetch(request).then(response=>{if(response.ok&&(url.pathname.endsWith('/')||url.pathname.endsWith('/index.html'))){const cloned=response.clone();caches.open(CACHE).then(cache=>cache.put('./index.html',cloned)).catch(()=>{})}return response}).catch(async()=>await caches.match('./index.html')||Response.error()));return;
+  const base=new URL('./',self.registration.scope);
+  const english=new URL('english/',base);
+  const isEnglish=url.pathname===english.pathname||url.pathname===english.pathname+'index.html';
+  const isChinese=url.pathname===base.pathname||url.pathname===base.pathname+'index.html';
+  const key=isEnglish?english.href:isChinese?new URL('index.html',base).href:request;
+  event.respondWith(fetch(request).then(response=>{if(response.ok){const cloned=response.clone();caches.open(CACHE).then(cache=>cache.put(key,cloned)).catch(()=>{})}return response}).catch(async()=>await caches.match(key)||Response.error()));return;
  }
  event.respondWith(caches.match(request).then(cached=>cached||fetch(request).then(response=>{if(response.ok){const clone=response.clone();caches.open(CACHE).then(cache=>cache.put(request,clone)).catch(()=>{})}return response})))
 });
+
