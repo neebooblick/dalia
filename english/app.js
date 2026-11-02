@@ -1,4 +1,4 @@
-/* dalia English — self-contained edition. Never touches the Chinese site's storage. */
+/* dalia English edition. */
 (() => {
 "use strict";
 const $ = id => document.getElementById(id);
@@ -38,7 +38,7 @@ function sanitize(raw){
 }
 let state;
 try{state=sanitize(JSON.parse(localStorage.getItem(STORAGE)||"null"));}catch(_){state=defaultState();}
-let screen="words",filter="all",level="all",search="",limit=36,lastWord=null;
+let screen="words",filter="all",level="all",search="",limit=36,lastWord=null,phraseIndex=0;
 let openWordId=null,previousFocus=null,toastTimer=null,previousQuizId="",currentQuiz=null;
 const make=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=String(text);return el;};
 const button=(label,cls,fn)=>{const el=make("button",cls,label);el.type="button";el.addEventListener("click",fn);return el;};
@@ -174,16 +174,28 @@ function showWord(id){
  body.append(lev,en,ru,example,actions);
 }
 function navigate(to){
- if(!["words","practice"].includes(to))return;
- screen=to;const learning=to==="words";
- $("screen-words").hidden=!learning;$("screen-practice").hidden=learning;$("hero").hidden=!learning;
- document.querySelectorAll("[data-screen]").forEach(b=>{
-  const active=b.dataset.screen===to;
-  b.classList.toggle("is-active",active);
-  if(active)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");
- });
- if(learning)renderWords();else newQuiz();
+ if(!["words","practice","context","phrases"].includes(to))return;
+ screen=to;
+ for(const name of ["words","practice","context","phrases"])$("screen-"+name).hidden=name!==to;
+ $("hero").hidden=to!=="words";
+ document.querySelectorAll("[data-screen]").forEach(b=>{const active=b.dataset.screen===to;b.classList.toggle("is-active",active);b.classList.toggle("active",active);if(active)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
+ if(to==="words")renderWords();if(to==="practice")newQuiz();if(to==="phrases")renderPhrases();
  window.scrollTo({top:0,behavior:"instant"});
+}
+function renderContext(){
+ const raw=$("context-input").value.toLocaleLowerCase("en");
+ const found=words.filter(w=>raw.includes(w.en.toLocaleLowerCase("en"))).slice(0,36);
+ $("context-count").textContent=found.length?`${found.length} ${found.length===1?"слово найдено":"слов найдено"}`:"";
+ const grid=$("context-results");grid.replaceChildren();
+ if(!found.length){grid.append(make("div","empty","Подходящие слова появятся здесь."));return;}
+ for(const w of found){const card=make("article","word-card");const open=button("","word-open",()=>showWord(w.id));open.append(make("span","card-level",w.level),make("span","card-word",w.en),make("span","card-meaning",w.ru));card.append(open);grid.append(card);}
+}
+function renderPhrases(){
+ const examples=words.filter(w=>w.example&&w.exampleRu);if(!examples.length)return;
+ phraseIndex=(phraseIndex+examples.length)%examples.length;const w=examples[phraseIndex];
+ $("phrase-level").textContent=w.level+" · ПРИМЕР ИЗ СЛОВАРЯ";$("phrase-en").textContent=w.example;$("phrase-ru").textContent=w.exampleRu;$("phrase-speak").onclick=()=>speak(w.example);
+ const grid=$("phrase-grid");grid.replaceChildren();
+ for(const item of examples.slice(phraseIndex+1,phraseIndex+9)){const card=make("article","word-card phrase-card");card.append(make("span","card-level",item.level),make("span","phrase-en-small",item.example),make("span","card-meaning",item.exampleRu));grid.append(card);}
 }
 function scramble(items){const a=[...items];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function practicePool(){
@@ -279,7 +291,7 @@ function download(name,data){
 function settings(){
  openWordId=null;showModal("Настройки и данные");
  const body=$("modal-body"),wrap=make("div","settings-copy");
- wrap.append(make("p","","Это отдельная английская версия dalia. Данные китайской версии не затрагиваются."));
+ wrap.append(make("p","","Английская версия dalia хранит прогресс отдельно на этом устройстве."));
  wrap.append(make("h3","","Мой прогресс"));
  wrap.append(make("p","","Прогресс хранится в этом браузере. Чтобы перенести его на другое устройство, сохрани резервную копию."));
  const actions=make("div","settings-buttons");
@@ -330,6 +342,8 @@ function init(){
  $("level").addEventListener("change",e=>{level=e.target.value;limit=36;renderWords();});
  $("more").addEventListener("click",()=>{limit+=36;renderWords();});
  $("random-word").addEventListener("click",()=>showWord(words[Math.floor(Math.random()*words.length)].id));
+ $("context-find").addEventListener("click",renderContext);
+ $("phrase-next").addEventListener("click",()=>{phraseIndex++;renderPhrases();});
  $("settings").addEventListener("click",settings);
  $("mobile-settings").addEventListener("click",settings);
  $("modal-close").addEventListener("click",closeModal);
