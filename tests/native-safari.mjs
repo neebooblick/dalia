@@ -29,6 +29,7 @@ try{
  await driver.manage().setTimeouts({pageLoad:30000,script:20000,implicit:1500});
  await step('Actual macOS Safari launches dalia',async()=>{
   await driver.get(site);
+  await driver.findElement(By.css('.dalia-language-dialog a[href="'+site+'"]')).click();
   await driver.wait(until.elementLocated(By.css('.word-card')),15000);
   assert.ok((await driver.findElements(By.css('.word-card'))).length>20);
   assert.ok((await driver.getTitle()).toLowerCase().includes('dalia'));

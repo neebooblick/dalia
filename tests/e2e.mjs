@@ -28,6 +28,7 @@ async function test(name,fn,options={}){
  page.on('pageerror',error=>errors.push(error.message));
  try{
   await page.goto(local,{waitUntil:'domcontentloaded',timeout:30000});
+  await page.locator('.dalia-language-dialog a').filter({hasText:'Китайский'}).click();
   await page.locator('.word-card').first().waitFor({state:'attached',timeout:20000});
   await fn(page);
   assert.deepEqual(errors,[],'Unhandled JavaScript errors');
