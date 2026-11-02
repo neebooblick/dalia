@@ -1,4 +1,4 @@
-/* dalia English — self-contained edition. Never touches the Chinese site's storage. */
+/* dalia English edition. */
 (() => {
 "use strict";
 const $ = id => document.getElementById(id);
@@ -279,7 +279,7 @@ function download(name,data){
 function settings(){
  openWordId=null;showModal("Настройки и данные");
  const body=$("modal-body"),wrap=make("div","settings-copy");
- wrap.append(make("p","","Это отдельная английская версия dalia. Данные китайской версии не затрагиваются."));
+ wrap.append(make("p","","Английская версия dalia хранит прогресс отдельно на этом устройстве."));
  wrap.append(make("h3","","Мой прогресс"));
  wrap.append(make("p","","Прогресс хранится в этом браузере. Чтобы перенести его на другое устройство, сохрани резервную копию."));
  const actions=make("div","settings-buttons");
@@ -317,32 +317,6 @@ function settings(){
  wrap.append(make("p","","Стартовая подборка "+words.length+" слов A1–C2. Уровни ориентировочные; примеры и переводы подготовлены для первого выпуска. Внешняя регистрация не нужна."));
  body.append(wrap);
 }
-function initFeatured(){
- const pool=words.filter(w=>w.level==="A1"||w.level==="A2");
- if(!pool.length)return;
- let index=Math.max(0,pool.findIndex(w=>w.en==="journey"));
- function render(){
-  const w=pool[index];
-  $("featured-level").textContent=w.level;
-  $("featured-word").textContent=w.en;
-  $("featured-word").lang="en";
-  $("featured-meaning").textContent=w.ru;
-  $("featured-example").textContent=w.example;
-  $("featured-example-ru").textContent=w.exampleRu;
-  $("featured-answer").hidden=true;
-  $("featured-reveal").hidden=false;
-  $("featured-reveal").setAttribute("aria-expanded","false");
-  $("featured-sound").setAttribute("aria-label","Прослушать "+w.en);
- }
- $("featured-reveal").addEventListener("click",()=>{
-  $("featured-answer").hidden=false;
-  $("featured-reveal").setAttribute("aria-expanded","true");
-  $("featured-reveal").hidden=true;
- });
- $("featured-sound").addEventListener("click",()=>speak(pool[index].en));
- $("featured-next").addEventListener("click",()=>{index=(index+1)%pool.length;render();});
- render();
-}
 function init(){
  if(!words.length){notify("Словарь не загрузился. Обнови страницу.");return;}
  document.querySelectorAll("[data-screen]").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.screen)));
@@ -370,7 +344,7 @@ function init(){
  $("practice-level").value=state.practiceLevel;
  $("practice-level").addEventListener("change",e=>{state.practiceLevel=e.target.value;save();newQuiz();});
  $("due-only").addEventListener("change",newQuiz);
- initFeatured();stats();renderWords();
+ stats();renderWords();
 }
 init();
 })();
