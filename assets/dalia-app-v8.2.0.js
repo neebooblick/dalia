@@ -836,7 +836,7 @@ function renderPractice(){
 }
 function nextQuestion(){advanceQuestion()}
 function renderSentenceTranslation(area,w){
- const guide=document.createElement('div');guide.className='tiny muted';guide.textContent='Пиши китайскими иероглифами. Пробелы и знаки препинания не влияют на оценку. Для части заданий принимаются несколько вариантов.';area.append(guide);
+ const guide=document.createElement('div');guide.className='tiny muted';guide.textContent='Пиши китайскими иероглифами. Пробелы и знаки препинания не влияют на оценку. Для части заданий принимаются несколько вариантов. После проверки ответа нажми «Следующее предложение» — появится другое задание.';area.append(guide);
  const prompt=document.createElement('div');prompt.className='translation-prompt';prompt.textContent=w.ru;area.append(prompt);
  const input=document.createElement('textarea');input.className='field translation-input';input.rows=2;input.maxLength=600;input.autocomplete='off';input.spellcheck=false;input.lang='zh-CN';input.setAttribute('aria-label','Перевод предложения на китайский');input.placeholder='Например: 我今天很忙';area.append(input);
  const feedback=document.createElement('div');feedback.className='feedback translation-feedback';feedback.id='translation-feedback';feedback.setAttribute('aria-live','polite');input.setAttribute('aria-describedby',feedback.id);area.append(feedback);
