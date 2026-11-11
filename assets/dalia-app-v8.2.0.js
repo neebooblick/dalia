@@ -836,25 +836,52 @@ function renderPractice(){
 }
 function nextQuestion(){advanceQuestion()}
 function renderSentenceTranslation(area,w){
- const guide=document.createElement('div');guide.className='tiny muted';guide.textContent='Переведи предложение на китайский. Можно ответить с китайской клавиатуры.';area.append(guide);
+ const guide=document.createElement('div');guide.className='tiny muted';guide.textContent='Пиши китайскими иероглифами. Пробелы и знаки препинания не влияют на оценку. Для части заданий принимаются несколько вариантов.';area.append(guide);
  const prompt=document.createElement('div');prompt.className='translation-prompt';prompt.textContent=w.ru;area.append(prompt);
- const input=document.createElement('textarea');input.className='field translation-input';input.rows=2;input.maxLength=100;input.autocomplete='off';input.spellcheck=false;input.setAttribute('aria-label','Перевод предложения на китайский');input.placeholder='Например: 我今天很忙';area.append(input);
- const feedback=document.createElement('div');feedback.className='feedback';feedback.setAttribute('aria-live','polite');area.append(feedback);
+ const input=document.createElement('textarea');input.className='field translation-input';input.rows=2;input.maxLength=600;input.autocomplete='off';input.spellcheck=false;input.lang='zh-CN';input.setAttribute('aria-label','Перевод предложения на китайский');input.placeholder='Например: 我今天很忙';area.append(input);
+ const feedback=document.createElement('div');feedback.className='feedback translation-feedback';feedback.id='translation-feedback';feedback.setAttribute('aria-live','polite');input.setAttribute('aria-describedby',feedback.id);area.append(feedback);
+ const examples=document.createElement('div');examples.className='translation-examples';area.append(examples);
  const actions=document.createElement('div');actions.className='row translation-actions';area.append(actions);
- let hinted=false,finished=false;
- const norm=s=>String(s||'').normalize('NFKC').replace(/[\s\p{P}]/gu,'');
+ let hinted=false,finished=false,hadError=false,unconfirmed=false,compared=false;
+ const showFeedback=(text,status='')=>{feedback.textContent=text;feedback.classList.toggle('good',status==='good');feedback.classList.toggle('bad',status==='bad');input.setAttribute('aria-invalid',String(status==='bad'))};
+ const showExamples=()=>{
+  examples.replaceChildren();
+  const title=document.createElement('p');title.className='tiny muted';title.textContent='Один из вариантов перевода';examples.append(title,interactiveSentence(w.cn,w.ch));
+  const variants=DaliaTranslation.variants(w).filter(s=>DaliaTranslation.normalize(s)!==DaliaTranslation.normalize(w.cn));
+  if(variants.length){const details=document.createElement('details'),summary=document.createElement('summary'),list=document.createElement('ul');summary.textContent='Другие допустимые варианты';for(const s of variants){const item=document.createElement('li');item.lang='zh-CN';item.textContent=s;list.append(item)}details.append(summary,list);examples.append(details)}
+  const note=DaliaTranslation.check(w,w.cn).note;
+  if(note){const explanation=document.createElement('p');explanation.className='tiny muted';explanation.textContent=note;examples.append(explanation)}
+  examples.append(makeBtn('♫ Прослушать пример','ghost',()=>speak(w.cn)));
+ };
  const finish=(correct,reveal=false)=>{
   if(finished)return;finished=true;input.disabled=true;actions.replaceChildren();
-  const effective=correct&&!hinted&&!reveal;
-  recordSkill(w.ch,'translation',{correct:effective,hint:hinted||reveal});
-  feedback.textContent=effective?'Верно! Отличный перевод.':reveal?'Ответ: '+w.cn:correct?'Верно, но подсказка не засчитывается в прогресс.':'Правильный вариант: '+w.cn;
-  feedback.classList.toggle('good',effective);feedback.classList.toggle('bad',!effective);
-  const next=makeBtn('Следующее предложение →','primary',()=>advanceQuestion());actions.append(next);
+  // An unrecognised answer is not evidence of a mistake. Revealing after it
+  // permits self-comparison without recording either success or failure.
+  const neutral=unconfirmed&&(reveal||hinted)&&!hadError;
+  if(!neutral)recordSkill(w.ch,'translation',{correct:correct&&!hadError,hint:hinted||reveal,assisted:hadError});
+  showFeedback(neutral?(correct?'Этот вариант подходит. После сравнения ответ оставлен без оценки.':'Сравни свой перевод с примером. Ответ оставлен без оценки.'):reveal?'Посмотри пример и попробуй похожее задание позже.':hinted?'Верно. В этот раз ты воспользовался подсказкой.':hadError?'Верно, ты исправил ошибку. Это слово ещё встретится в повторении.':'Верно! Этот вариант подходит.',correct?'good':'');
+  showExamples();actions.append(makeBtn('Следующее предложение →','primary',()=>advanceQuestion()));
  };
- actions.append(makeBtn('Проверить','primary',()=>{const answer=input.value.trim();if(!answer){feedback.textContent='Сначала введи перевод.';input.focus();return}finish(norm(answer)===norm(w.cn))}));
- actions.append(makeBtn('Подсказка','ghost',()=>{if(finished)return;hinted=true;feedback.textContent='Первая часть ответа: '+[...w.cn][0]+'…';}));
+ const check=()=>{
+  if(finished)return;
+  const result=DaliaTranslation.check(w,input.value);
+  if(result.status==='correct'){finish(true);return}
+  if(result.status==='incorrect')hadError=true;
+  if(result.status==='unknown')unconfirmed=true;
+  showFeedback(result.message,result.status==='incorrect'?'bad':'');
+  checkButton.textContent='Проверить ещё раз';input.focus({preventScroll:true});
+ };
+ const checkButton=makeBtn('Проверить','primary',check);actions.append(checkButton);
+ actions.append(makeBtn('Подсказка','ghost',()=>{if(finished)return;hinted=true;showFeedback('Начало одного из вариантов: '+[...w.cn].slice(0,2).join('')+'…')}));
  actions.append(makeBtn('Показать ответ','ghost',()=>finish(false,true)));
- input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();actions.querySelector('.primary')?.click()}});
+ actions.append(makeBtn('Сравнить с примером','ghost',()=>{
+  if(finished)return;
+  compared=true;hinted=true;showExamples();
+  showFeedback('Сравни слова и их порядок. Если твой вариант тоже верен, пропусти задание без оценки. Можно продолжить с опорой на пример.');
+ }));
+ actions.append(makeBtn('Пропустить без оценки','ghost',()=>{if(finished)return;finished=true;advanceQuestion()}));
+ input.addEventListener('input',()=>{if(finished)return;showFeedback('');if(!compared)examples.replaceChildren()});
+ input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing&&e.keyCode!==229){e.preventDefault();check()}});
  input.focus({preventScroll:true});
 }
 function newQuestion(){
