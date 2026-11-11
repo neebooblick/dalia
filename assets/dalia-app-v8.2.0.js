@@ -874,11 +874,6 @@ function renderSentenceTranslation(area,w){
  const checkButton=makeBtn('Проверить','primary',check);actions.append(checkButton);
  actions.append(makeBtn('Подсказка','ghost',()=>{if(finished)return;hinted=true;showFeedback('Начало одного из вариантов: '+[...w.cn].slice(0,2).join('')+'…')}));
  actions.append(makeBtn('Показать ответ','ghost',()=>finish(false,true)));
- actions.append(makeBtn('Сравнить с примером','ghost',()=>{
-  if(finished)return;
-  compared=true;hinted=true;showExamples();
-  showFeedback('Сравни слова и их порядок. Если твой вариант тоже верен, продолжи с опорой на пример или открой ответ.');
- }));
  input.addEventListener('input',()=>{if(finished)return;showFeedback('');if(!compared)examples.replaceChildren()});
  input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing&&e.keyCode!==229){e.preventDefault();check()}});
  input.focus({preventScroll:true});
