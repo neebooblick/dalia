@@ -877,9 +877,8 @@ function renderSentenceTranslation(area,w){
  actions.append(makeBtn('Сравнить с примером','ghost',()=>{
   if(finished)return;
   compared=true;hinted=true;showExamples();
-  showFeedback('Сравни слова и их порядок. Если твой вариант тоже верен, пропусти задание без оценки. Можно продолжить с опорой на пример.');
+  showFeedback('Сравни слова и их порядок. Если твой вариант тоже верен, продолжи с опорой на пример или открой ответ.');
  }));
- actions.append(makeBtn('Пропустить без оценки','ghost',()=>{if(finished)return;finished=true;advanceQuestion()}));
  input.addEventListener('input',()=>{if(finished)return;showFeedback('');if(!compared)examples.replaceChildren()});
  input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing&&e.keyCode!==229){e.preventDefault();check()}});
  input.focus({preventScroll:true});
