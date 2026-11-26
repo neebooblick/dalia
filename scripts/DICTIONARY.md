@@ -1,3 +1,0 @@
-## Import English vocabulary
-
-Download the English JSONL dump from https://kaikki.org/dictionary/English/ . Install `wordfreq` with `python -m pip install wordfreq`. Run `python scripts/import_dictionary.py path/to/dump.jsonl.gz --limit 500` from the repository root. The output is `english/dictionary-candidates.json`. Review each translation in context, assign CEFR levels, write original bilingual examples, and preserve source attribution before publishing. Frequency is not a CEFR level. No unreviewed candidates are automatically added to the live app. Respect Wiktionary and wordfreq licensing terms.
