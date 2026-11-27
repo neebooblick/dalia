@@ -442,7 +442,7 @@ function showModal(title,body){
  closeHanziPeek({restoreFocus:false});$('modal-title').textContent=title;$('modal-body').replaceChildren();
  $('modal-next-random').classList.add('hidden');$('modal-next-random').onclick=null;
  if(typeof body==='string')$('modal-body').innerHTML=body;else $('modal-body').append(body);
- $('modal-body').scrollTop=0;
+ $('modal-body').scrollTop=0;overlay.querySelector('.modal').scrollTop=0;
  overlay.classList.remove('hidden');document.body.style.overflow='hidden';
  requestAnimationFrame(()=>$('modal-close').focus({preventScroll:true}));
 }
@@ -1295,7 +1295,7 @@ function openSettings(){
  const introCard=document.createElement('div');introCard.className='settings-welcome';
  const kicker=document.createElement('span');kicker.className='settings-kicker';kicker.textContent='Твоё пространство';
  const intro=document.createElement('p');intro.className='settings-intro';intro.textContent='Учись в своём ритме. Прогресс сохраняется в этом браузере — сохрани резервную копию, если захочешь перенести его на другое устройство.';introCard.append(kicker,intro);el.append(introCard);
- const language=document.createElement('section');language.className='settings-section';const languageTitle=document.createElement('h3');languageTitle.textContent='Язык изучения';const languageHint=document.createElement('p');languageHint.className='settings-section-hint';languageHint.textContent='Сейчас: китайский';language.append(languageTitle,languageHint,makeBtn('Перейти к английскому','soft settings-report-button',()=>{location.href='./english/'}));el.append(language);
+ if(!$('settings-language-switch')){const language=document.createElement('section');language.className='settings-section';const languageTitle=document.createElement('h3');languageTitle.textContent='Язык изучения';const languageHint=document.createElement('p');languageHint.className='settings-section-hint';languageHint.textContent='Сейчас: китайский';language.append(languageTitle,languageHint,makeBtn('Перейти к английскому','soft settings-report-button',()=>{location.href='./english/'}));el.append(language);}
 
  const summary=document.createElement('div');summary.className='settings-metrics';
  for(const [value,label] of [[s.total,'В каталоге'],[s.learned,'Изучено'],[s.due,'К повторению'],[s.favorites,'В избранном']]){
@@ -1493,5 +1493,5 @@ if(heroOrb){
 $('word-search').addEventListener('keydown',e=>{if(e.key==='Escape'&&e.target.value){e.target.value='';displayLimit=48;renderWords()}});
 $('quote-search').addEventListener('keydown',e=>{if(e.key==='Escape'&&e.target.value){e.target.value='';renderQuotesList()}});
 
-if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
+if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js',{scope:'./',updateViaCache:'none'}).catch(()=>{}))}
 save({quiet:true});renderWords();renderDrafts();updateStats();
