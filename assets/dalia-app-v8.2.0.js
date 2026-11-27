@@ -1295,6 +1295,8 @@ function openSettings(){
  const introCard=document.createElement('div');introCard.className='settings-welcome';
  const kicker=document.createElement('span');kicker.className='settings-kicker';kicker.textContent='Твоё пространство';
  const intro=document.createElement('p');intro.className='settings-intro';intro.textContent='Учись в своём ритме. Прогресс сохраняется в этом браузере — сохрани резервную копию, если захочешь перенести его на другое устройство.';introCard.append(kicker,intro);el.append(introCard);
+ const language=document.createElement('section');language.className='settings-section';const languageTitle=document.createElement('h3');languageTitle.textContent='Язык изучения';const languageHint=document.createElement('p');languageHint.className='settings-section-hint';languageHint.textContent='Сейчас: китайский';language.append(languageTitle,languageHint,makeBtn('Перейти к английскому','soft settings-report-button',()=>{location.href='./english/'}));el.append(language);
+
  const summary=document.createElement('div');summary.className='settings-metrics';
  for(const [value,label] of [[s.total,'В каталоге'],[s.learned,'Изучено'],[s.due,'К повторению'],[s.favorites,'В избранном']]){
   const metric=document.createElement('div');metric.className='settings-metric';
