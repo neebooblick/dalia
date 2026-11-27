@@ -52,7 +52,7 @@ window.daliaGrammarLessons=[
           "is",
           "are"
         ],
-        "why": "С I употребляется am."
+        "why": "I всегда сочетается с am. В русском «я студент» обходится без глагола, в английском он обязателен."
       },
       {
         "prompt": "They ___ at home.",
@@ -63,7 +63,7 @@ window.daliaGrammarLessons=[
           "is",
           "am"
         ],
-        "why": "С they употребляется are."
+        "why": "They — несколько людей; для they используется are."
       },
       {
         "prompt": "___ she your sister?",
@@ -74,7 +74,7 @@ window.daliaGrammarLessons=[
           "Does",
           "Are"
         ],
-        "why": "Вопрос начинается с is."
+        "why": "She сочетается с is. Для вопроса переносим is перед she, не добавляя does."
       },
       {
         "prompt": "He ___ not busy.",
@@ -85,7 +85,7 @@ window.daliaGrammarLessons=[
           "are",
           "am"
         ],
-        "why": "С he используется is."
+        "why": "He сочетается с is. Not после is образует отрицание."
       },
       {
         "prompt": "We ___ friends.",
@@ -93,7 +93,7 @@ window.daliaGrammarLessons=[
           "are"
         ],
         "wrong": [],
-        "why": "С we используется are."
+        "why": "We сочетается с are: мы друзья — we are friends."
       }
     ]
   },
@@ -149,7 +149,7 @@ window.daliaGrammarLessons=[
           "study",
           "is study"
         ],
-        "why": "С she: study → studies."
+        "why": "Every day указывает на привычку, а с she study получает окончание -ies: studies."
       },
       {
         "prompt": "He doesn't ___ coffee.",
@@ -160,7 +160,7 @@ window.daliaGrammarLessons=[
           "drinks",
           "drinking"
         ],
-        "why": "После doesn't — начальная форма."
+        "why": "Doesn't уже выражает отрицание и форму третьего лица. Поэтому drink без окончания -s."
       },
       {
         "prompt": "___ you work here?",
@@ -171,7 +171,7 @@ window.daliaGrammarLessons=[
           "Does",
           "Are"
         ],
-        "why": "Вопрос с you образуется через do."
+        "why": "Это вопрос о постоянной работе. С you помощник do, а work остаётся в обычной форме."
       },
       {
         "prompt": "My brother ___ to school by bus.",
@@ -182,7 +182,7 @@ window.daliaGrammarLessons=[
           "go",
           "going"
         ],
-        "why": "Go → goes с he."
+        "why": "My brother можно заменить на he. С he у go появляется -es: goes."
       },
       {
         "prompt": "They ___ football on Sundays. (play)",
@@ -190,7 +190,7 @@ window.daliaGrammarLessons=[
           "play"
         ],
         "wrong": [],
-        "why": "С they окончание -s не требуется."
+        "why": "On Sundays — регулярность. С they не добавляем -s: play."
       }
     ]
   },
@@ -243,7 +243,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "She is ___ engineer.",
+        "prompt": "She is ___ engineer. (название профессии)",
         "answers": [
           "an"
         ],
@@ -251,7 +251,7 @@ window.daliaGrammarLessons=[
           "a",
           "the"
         ],
-        "why": "Перед гласным звуком — an."
+        "why": "Engineer — исчисляемое название профессии в единственном числе. Оно начинается с гласного звука, поэтому в нейтральном представлении профессии нужно an."
       },
       {
         "prompt": "He studies at ___ university.",
@@ -262,7 +262,7 @@ window.daliaGrammarLessons=[
           "an",
           "—"
         ],
-        "why": "University начинается со звука /j/."
+        "why": "University начинается со звука «й», а не с гласного звука. Поэтому a university."
       },
       {
         "prompt": "I saw a dog. ___ dog was black.",
@@ -273,7 +273,7 @@ window.daliaGrammarLessons=[
           "A",
           "An"
         ],
-        "why": "Собака уже упоминалась."
+        "why": "Собака уже была упомянута, слушатель понимает, о какой собаке речь: the dog."
       },
       {
         "prompt": "I like ___ music in general.",
@@ -284,7 +284,7 @@ window.daliaGrammarLessons=[
           "a",
           "an"
         ],
-        "why": "Music в общем смысле без артикля."
+        "why": "Music in general — музыка вообще. Здесь не говорим об отдельном предмете, поэтому артикль не нужен."
       },
       {
         "prompt": "It takes ___ hour.",
@@ -295,7 +295,7 @@ window.daliaGrammarLessons=[
           "a",
           "—"
         ],
-        "why": "В hour буква h не произносится."
+        "why": "В hour буква h не произносится. Первый звук гласный, поэтому an hour."
       }
     ]
   },
@@ -371,7 +371,7 @@ window.daliaGrammarLessons=[
           "Me",
           "My"
         ],
-        "why": "Подлежащее — I."
+        "why": "Нужен тот, кто испытывает состояние: I — я. Me означает «меня/мне», my — «мой»."
       },
       {
         "prompt": "Can you help ___? (меня)",
@@ -382,7 +382,7 @@ window.daliaGrammarLessons=[
           "I",
           "my"
         ],
-        "why": "После help — объектная форма me."
+        "why": "Help направлено на меня. Поэтому объектная форма me, а не I."
       },
       {
         "prompt": "This is ___ book. (мой)",
@@ -393,7 +393,7 @@ window.daliaGrammarLessons=[
           "mine",
           "me"
         ],
-        "why": "Перед существительным — my."
+        "why": "После пропуска есть предмет book, поэтому my book. Mine заменяло бы предмет целиком."
       },
       {
         "prompt": "The car is ___. (наш)",
@@ -404,7 +404,7 @@ window.daliaGrammarLessons=[
           "our",
           "us"
         ],
-        "why": "Без существительного — ours."
+        "why": "Слово car уже названо. Ours означает «наш» без повторения существительного."
       },
       {
         "prompt": "I know ___. (их)",
@@ -412,7 +412,7 @@ window.daliaGrammarLessons=[
           "them"
         ],
         "wrong": [],
-        "why": "Объектная форма they — them."
+        "why": "Они — they, но «их» после know — them: I know them."
       }
     ]
   },
@@ -473,7 +473,7 @@ window.daliaGrammarLessons=[
           "book",
           "bookes"
         ],
-        "why": "Обычное множественное число: books."
+        "why": "Two означает два предмета. Обычное множественное число book — books."
       },
       {
         "prompt": "Three ___ are here. (child)",
@@ -484,7 +484,7 @@ window.daliaGrammarLessons=[
           "childs",
           "childrens"
         ],
-        "why": "Child → children."
+        "why": "У child особая форма children. Она уже множественная, поэтому дополнительное -s не нужно."
       },
       {
         "prompt": "These ___ are big. (city)",
@@ -495,7 +495,7 @@ window.daliaGrammarLessons=[
           "citys",
           "cityes"
         ],
-        "why": "После согласной y меняется на ies."
+        "why": "City заканчивается на согласную t + y. Y меняем на -ies: cities."
       },
       {
         "prompt": "We need two ___. (box)",
@@ -506,7 +506,7 @@ window.daliaGrammarLessons=[
           "boxs",
           "boxies"
         ],
-        "why": "После x добавляем es."
+        "why": "После x нужно окончание -es: boxes."
       },
       {
         "prompt": "Two ___ are waiting. (man)",
@@ -514,7 +514,7 @@ window.daliaGrammarLessons=[
           "men"
         ],
         "wrong": [],
-        "why": "Man → men."
+        "why": "Man — неправильное существительное: один man, несколько men."
       }
     ]
   },
@@ -570,7 +570,7 @@ window.daliaGrammarLessons=[
           "in",
           "at"
         ],
-        "why": "С днями недели — on."
+        "why": "Monday — конкретный день недели. Для дня используется on."
       },
       {
         "prompt": "The lesson starts ___ nine.",
@@ -581,7 +581,7 @@ window.daliaGrammarLessons=[
           "in",
           "on"
         ],
-        "why": "С точным временем — at."
+        "why": "Nine здесь точное время, поэтому at nine."
       },
       {
         "prompt": "I was born ___ April.",
@@ -592,7 +592,7 @@ window.daliaGrammarLessons=[
           "on",
           "at"
         ],
-        "why": "С месяцами — in."
+        "why": "April — месяц, а для месяцев используется in."
       },
       {
         "prompt": "The book is ___ the table. (на поверхности)",
@@ -603,7 +603,7 @@ window.daliaGrammarLessons=[
           "at",
           "in"
         ],
-        "why": "На поверхности — on."
+        "why": "Книга лежит на поверхности стола. Для поверхности используется on."
       },
       {
         "prompt": "He lives ___ Paris.",
@@ -611,7 +611,7 @@ window.daliaGrammarLessons=[
           "in"
         ],
         "wrong": [],
-        "why": "С городом — in."
+        "why": "С городом, внутри которого живёт человек, используем in: in Paris."
       }
     ]
   },
@@ -662,7 +662,7 @@ window.daliaGrammarLessons=[
           "are",
           "am"
         ],
-        "why": "Cat в единственном числе."
+        "why": "Сообщаем о наличии одного кота: there is a cat."
       },
       {
         "prompt": "There ___ three books on the table.",
@@ -673,7 +673,7 @@ window.daliaGrammarLessons=[
           "is",
           "am"
         ],
-        "why": "Books во множественном числе."
+        "why": "Three books — несколько предметов, поэтому there are."
       },
       {
         "prompt": "___ there any milk?",
@@ -684,7 +684,7 @@ window.daliaGrammarLessons=[
           "Are",
           "Do"
         ],
-        "why": "Milk неисчисляемое."
+        "why": "Milk обычно нельзя посчитать поштучно, поэтому is. В вопросе is ставим перед there."
       },
       {
         "prompt": "There ___ not any chairs.",
@@ -695,7 +695,7 @@ window.daliaGrammarLessons=[
           "is",
           "am"
         ],
-        "why": "Chairs — множественное число."
+        "why": "Chairs — множественное число: there are not any chairs."
       },
       {
         "prompt": "There ___ some water in the glass.",
@@ -703,7 +703,7 @@ window.daliaGrammarLessons=[
           "is"
         ],
         "wrong": [],
-        "why": "Water неисчисляемое."
+        "why": "Water — неисчисляемое существительное, поэтому there is some water."
       }
     ]
   },
@@ -754,7 +754,7 @@ window.daliaGrammarLessons=[
           "are",
           "does"
         ],
-        "why": "It + is + raining."
+        "why": "Look! обращает внимание на действие сейчас. С it используем is + raining."
       },
       {
         "prompt": "I am ___ a book now.",
@@ -765,7 +765,7 @@ window.daliaGrammarLessons=[
           "read",
           "reads"
         ],
-        "why": "После am нужна форма -ing."
+        "why": "В конструкции am + -ing нельзя оставить read без окончания: am reading."
       },
       {
         "prompt": "___ they waiting for us?",
@@ -776,7 +776,7 @@ window.daliaGrammarLessons=[
           "Do",
           "Is"
         ],
-        "why": "Вопрос начинается с are."
+        "why": "Вопрос о происходящем действии: переносим are перед they."
       },
       {
         "prompt": "She ___ working today. (отрицание)",
@@ -788,7 +788,7 @@ window.daliaGrammarLessons=[
           "doesn't",
           "don't"
         ],
-        "why": "Для отрицания действия сейчас ставим not после is. Isn't — сокращение is not."
+        "why": "Для отрицания Continuous добавляем not после is. Isn't и is not — одна и та же форма по смыслу."
       },
       {
         "prompt": "We are ___ dinner now. (cook)",
@@ -796,7 +796,7 @@ window.daliaGrammarLessons=[
           "cooking"
         ],
         "wrong": [],
-        "why": "Cook → cooking."
+        "why": "Are уже стоит на месте. Для действия нужен глагол cook с -ing: cooking."
       }
     ]
   },
@@ -847,7 +847,7 @@ window.daliaGrammarLessons=[
           "see",
           "seen"
         ],
-        "why": "See → saw."
+        "why": "Yesterday — законченный момент в прошлом. У see особая прошедшая форма saw."
       },
       {
         "prompt": "She didn't ___ to school.",
@@ -858,7 +858,7 @@ window.daliaGrammarLessons=[
           "went",
           "gone"
         ],
-        "why": "После didn't — начальная форма."
+        "why": "Didn't уже показывает прошлое и отрицание, поэтому go, а не went."
       },
       {
         "prompt": "___ you call me yesterday?",
@@ -869,7 +869,7 @@ window.daliaGrammarLessons=[
           "Do",
           "Were"
         ],
-        "why": "Вопрос: did + глагол."
+        "why": "Для вопроса о законченном действии в прошлом нужен did перед you."
       },
       {
         "prompt": "They ___ at home last night.",
@@ -880,7 +880,7 @@ window.daliaGrammarLessons=[
           "was",
           "are"
         ],
-        "why": "С they — were."
+        "why": "Это состояние в прошлом. С they прошедшая форма be — were."
       },
       {
         "prompt": "He ___ the door yesterday. (open)",
@@ -888,7 +888,7 @@ window.daliaGrammarLessons=[
           "opened"
         ],
         "wrong": [],
-        "why": "Open + ed."
+        "why": "Open — обычный глагол. Для Past Simple добавляем -ed: opened."
       }
     ]
   },
@@ -999,7 +999,7 @@ window.daliaGrammarLessons=[
           "goed",
           "gone"
         ],
-        "why": "Go → went → gone."
+        "why": "Went — вторая форма go, которую используем в обычном утвердительном Past Simple."
       },
       {
         "prompt": "write — wrote — ___",
@@ -1010,7 +1010,7 @@ window.daliaGrammarLessons=[
           "writed",
           "wrote"
         ],
-        "why": "V3 — written."
+        "why": "Written — третья форма write. Wrote — вторая, для Past Simple."
       },
       {
         "prompt": "I ___ breakfast at eight yesterday. (eat)",
@@ -1021,7 +1021,7 @@ window.daliaGrammarLessons=[
           "eaten",
           "eat"
         ],
-        "why": "Past Simple: ate."
+        "why": "Yesterday указывает на Past Simple; у eat прошедшая форма ate."
       },
       {
         "prompt": "She has ___ her homework. (do)",
@@ -1032,7 +1032,7 @@ window.daliaGrammarLessons=[
           "did",
           "do"
         ],
-        "why": "После has — V3."
+        "why": "После has нужна третья форма do — done. Did употребляется в Past Simple."
       },
       {
         "prompt": "take — took — ___",
@@ -1040,7 +1040,7 @@ window.daliaGrammarLessons=[
           "taken"
         ],
         "wrong": [],
-        "why": "V3 от take — taken."
+        "why": "Три формы take: take, took, taken. Последняя — taken."
       }
     ]
   },
@@ -1091,7 +1091,7 @@ window.daliaGrammarLessons=[
           "am",
           "going"
         ],
-        "why": "Для обещания подходит will."
+        "why": "I promise вводит обещание; will естественно передаёт обязательство позвонить."
       },
       {
         "prompt": "Look at the clouds! It is ___ rain.",
@@ -1102,7 +1102,7 @@ window.daliaGrammarLessons=[
           "go to",
           "will"
         ],
-        "why": "Прогноз по видимым признакам: be going to."
+        "why": "Тучи — видимый признак дождя. После is подходит going to, затем rain."
       },
       {
         "prompt": "I ___ going to study.",
@@ -1113,7 +1113,7 @@ window.daliaGrammarLessons=[
           "will",
           "are"
         ],
-        "why": "С I — am going to."
+        "why": "Перед going to нужен be; с I его форма am."
       },
       {
         "prompt": "She will ___ tomorrow.",
@@ -1124,7 +1124,7 @@ window.daliaGrammarLessons=[
           "comes",
           "coming"
         ],
-        "why": "После will — начальная форма."
+        "why": "После will основной глагол не меняется: come, а не comes."
       },
       {
         "prompt": "They are going ___ travel.",
@@ -1132,7 +1132,7 @@ window.daliaGrammarLessons=[
           "to"
         ],
         "wrong": [],
-        "why": "Be going to + V1."
+        "why": "Конструкция намерения: are going to + travel. To — её обязательная часть."
       }
     ]
   },
@@ -1193,7 +1193,7 @@ window.daliaGrammarLessons=[
           "much",
           "little"
         ],
-        "why": "Books — исчисляемое множественное."
+        "why": "Books можно посчитать по одному, поэтому many: how many books?"
       },
       {
         "prompt": "How ___ water do you need?",
@@ -1204,7 +1204,7 @@ window.daliaGrammarLessons=[
           "many",
           "few"
         ],
-        "why": "Water неисчисляемое."
+        "why": "Water обычно не считают поштучно, поэтому how much water?"
       },
       {
         "prompt": "There isn't ___ milk left.",
@@ -1215,7 +1215,7 @@ window.daliaGrammarLessons=[
           "many",
           "few"
         ],
-        "why": "В отрицании — any."
+        "why": "В нейтральном отрицании о наличии молока используется any."
       },
       {
         "prompt": "Would you like ___ tea?",
@@ -1226,7 +1226,7 @@ window.daliaGrammarLessons=[
           "many",
           "few"
         ],
-        "why": "В предложении угощения обычно some."
+        "why": "В предложении угощения обычно используют some, хотя формально это вопрос."
       },
       {
         "prompt": "We have a ___ apples. (несколько)",
@@ -1234,7 +1234,7 @@ window.daliaGrammarLessons=[
           "few"
         ],
         "wrong": [],
-        "why": "A few + исчисляемые."
+        "why": "Apples можно посчитать. A few значит «несколько», a little — для неисчисляемых."
       }
     ]
   },
@@ -1295,7 +1295,7 @@ window.daliaGrammarLessons=[
           "more big",
           "biggest"
         ],
-        "why": "Big → bigger."
+        "why": "Than показывает сравнение двух предметов. Big удваивает g перед -er: bigger."
       },
       {
         "prompt": "She is the ___ student. (good)",
@@ -1306,7 +1306,7 @@ window.daliaGrammarLessons=[
           "better",
           "goodest"
         ],
-        "why": "Good → better → best."
+        "why": "The ... student выделяет одного среди группы. Good → better → best."
       },
       {
         "prompt": "This film is ___ interesting than the other.",
@@ -1317,7 +1317,7 @@ window.daliaGrammarLessons=[
           "most",
           "muchest"
         ],
-        "why": "More interesting."
+        "why": "Interesting — длинное прилагательное, для сравнения с другим используем more."
       },
       {
         "prompt": "It is the ___ day of the year. (cold)",
@@ -1328,7 +1328,7 @@ window.daliaGrammarLessons=[
           "colder",
           "most cold"
         ],
-        "why": "Превосходная степень: coldest."
+        "why": "Of the year задаёт группу сравнения: нужен самый холодный день, coldest."
       },
       {
         "prompt": "Today is ___ than yesterday. (bad)",
@@ -1336,7 +1336,7 @@ window.daliaGrammarLessons=[
           "worse"
         ],
         "wrong": [],
-        "why": "Bad → worse."
+        "why": "Than требует сравнительной формы. Bad → worse, не badder."
       }
     ]
   },
@@ -1402,7 +1402,7 @@ window.daliaGrammarLessons=[
           "sings",
           "to sing"
         ],
-        "why": "После can — форма без to."
+        "why": "После can нужен глагол без to и без -s, независимо от лица: she can sing."
       },
       {
         "prompt": "You ___ smoke here. It is forbidden. (используй must)",
@@ -1414,7 +1414,7 @@ window.daliaGrammarLessons=[
           "don't have to",
           "should"
         ],
-        "why": "Mustn't и must not означают запрет; don't have to означает отсутствие необходимости."
+        "why": "Mustn't / must not означает запрет. Don't have to — всего лишь отсутствие необходимости."
       },
       {
         "prompt": "You look tired. You ___ rest. (совет)",
@@ -1425,7 +1425,7 @@ window.daliaGrammarLessons=[
           "mustn't",
           "can't"
         ],
-        "why": "Should выражает совет."
+        "why": "Нужен совет, а не запрет: should rest."
       },
       {
         "prompt": "He ___ to work tomorrow.",
@@ -1436,7 +1436,7 @@ window.daliaGrammarLessons=[
           "have",
           "must"
         ],
-        "why": "С he — has to."
+        "why": "Have to меняется по лицам; с he используем has to."
       },
       {
         "prompt": "I can ___ English. (speak)",
@@ -1444,7 +1444,7 @@ window.daliaGrammarLessons=[
           "speak"
         ],
         "wrong": [],
-        "why": "После can — speak."
+        "why": "Can уже выражает способность, после него обычная форма speak."
       }
     ]
   },
@@ -1500,7 +1500,7 @@ window.daliaGrammarLessons=[
           "do",
           "is"
         ],
-        "why": "С she в вопросе — does."
+        "why": "Where начинает вопрос. С she в Present Simple помощник does, затем she live."
       },
       {
         "prompt": "Who ___ you yesterday? (call)",
@@ -1511,7 +1511,7 @@ window.daliaGrammarLessons=[
           "did called",
           "calling"
         ],
-        "why": "Who — подлежащее."
+        "why": "Who сам обозначает того, кто звонил, поэтому обычный вопрос строится без did: Who called you?"
       },
       {
         "prompt": "___ you like music?",
@@ -1522,7 +1522,7 @@ window.daliaGrammarLessons=[
           "Does",
           "Is"
         ],
-        "why": "Общий вопрос Present Simple."
+        "why": "Вопрос о предпочтении в Present Simple с you начинается с do."
       },
       {
         "prompt": "What did he ___?",
@@ -1533,7 +1533,7 @@ window.daliaGrammarLessons=[
           "said",
           "says"
         ],
-        "why": "После did — начальная форма."
+        "why": "Did уже выражает прошлое, поэтому say остаётся в начальной форме."
       },
       {
         "prompt": "Where ___ they going?",
@@ -1541,7 +1541,7 @@ window.daliaGrammarLessons=[
           "are"
         ],
         "wrong": [],
-        "why": "В Continuous вспомогательный are."
+        "why": "Действие выражено going. С they нужна форма are, которую ставим перед they в вопросе."
       }
     ]
   },
@@ -1584,7 +1584,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "I ___ lost my keys.",
+        "prompt": "I ___ lost my keys. I can't find them now.",
         "answers": [
           "have"
         ],
@@ -1592,7 +1592,7 @@ window.daliaGrammarLessons=[
           "has",
           "am"
         ],
-        "why": "С I — have + V3."
+        "why": "Важен результат сейчас: ключи потеряны. С I используем have + lost."
       },
       {
         "prompt": "She has ___ the letter. (write)",
@@ -1603,7 +1603,7 @@ window.daliaGrammarLessons=[
           "wrote",
           "write"
         ],
-        "why": "После has — V3."
+        "why": "После has нужна третья форма write — written."
       },
       {
         "prompt": "We have lived here ___ 2020.",
@@ -1614,7 +1614,7 @@ window.daliaGrammarLessons=[
           "for",
           "at"
         ],
-        "why": "Since — начальный момент."
+        "why": "2020 — начальная точка периода, поэтому since, не for."
       },
       {
         "prompt": "I ___ him yesterday. (see)",
@@ -1625,7 +1625,7 @@ window.daliaGrammarLessons=[
           "have seen",
           "has seen"
         ],
-        "why": "Yesterday — Past Simple."
+        "why": "Yesterday — законченный момент в прошлом, здесь Past Simple: saw."
       },
       {
         "prompt": "He has ___ his homework. (do)",
@@ -1633,7 +1633,7 @@ window.daliaGrammarLessons=[
           "done"
         ],
         "wrong": [],
-        "why": "Do → did → done."
+        "why": "После has нужна третья форма do — done, не did."
       }
     ]
   },
@@ -1684,7 +1684,7 @@ window.daliaGrammarLessons=[
           "were",
           "did"
         ],
-        "why": "С I — was + -ing."
+        "why": "Сон уже происходил, когда раздался звонок. С I используем was sleeping."
       },
       {
         "prompt": "They were ___ when I arrived. (eat)",
@@ -1695,10 +1695,10 @@ window.daliaGrammarLessons=[
           "ate",
           "eat"
         ],
-        "why": "После were — -ing."
+        "why": "Were показывает прошлый процесс; eat получает -ing: eating."
       },
       {
-        "prompt": "While she was walking, it ___ to rain.",
+        "prompt": "While she was walking yesterday, it ___ to rain.",
         "answers": [
           "started"
         ],
@@ -1706,7 +1706,7 @@ window.daliaGrammarLessons=[
           "was start",
           "starts"
         ],
-        "why": "Начало дождя — отдельное событие."
+        "why": "Прогулка — фон, начало дождя — отдельное событие, поэтому started."
       },
       {
         "prompt": "___ you working at six?",
@@ -1717,7 +1717,7 @@ window.daliaGrammarLessons=[
           "Was",
           "Did"
         ],
-        "why": "С you — were."
+        "why": "Вопрос о процессе в прошлом с you начинается с were."
       },
       {
         "prompt": "He was ___ a book. (read)",
@@ -1725,7 +1725,7 @@ window.daliaGrammarLessons=[
           "reading"
         ],
         "wrong": [],
-        "why": "Read → reading."
+        "why": "После was нужен глагол с -ing: reading."
       }
     ]
   },
@@ -1768,7 +1768,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "If it rains tomorrow, I ___ stay home.",
+        "prompt": "If it rains tomorrow, I ___ stay home. (First Conditional)",
         "answers": [
           "will"
         ],
@@ -1776,10 +1776,10 @@ window.daliaGrammarLessons=[
           "would",
           "am"
         ],
-        "why": "Реальное будущее: First Conditional."
+        "why": "Завтрашний дождь — возможное условие. В результате First Conditional подходит will."
       },
       {
-        "prompt": "If I had more money, I ___ travel.",
+        "prompt": "If I had more money, I ___ travel. (Second Conditional)",
         "answers": [
           "would"
         ],
@@ -1787,10 +1787,10 @@ window.daliaGrammarLessons=[
           "will",
           "can"
         ],
-        "why": "Гипотетическое условие: would."
+        "why": "Если бы денег было больше — воображаемая ситуация. Для результата используем would."
       },
       {
-        "prompt": "If you heat ice, it ___.",
+        "prompt": "If you heat ice, it ___. (общая закономерность)",
         "answers": [
           "melts"
         ],
@@ -1798,7 +1798,7 @@ window.daliaGrammarLessons=[
           "would melt",
           "melt"
         ],
-        "why": "Общий факт."
+        "why": "Таяние льда при нагревании — закономерность, поэтому Present Simple: melts."
       },
       {
         "prompt": "If she ___ tomorrow, we'll talk.",
@@ -1809,7 +1809,7 @@ window.daliaGrammarLessons=[
           "will come",
           "came"
         ],
-        "why": "После if в первом типе — Present Simple."
+        "why": "В обычном условии после if не ставим will, даже о завтра. С she — comes."
       },
       {
         "prompt": "If I ___ you, I would apologize.",
@@ -1818,7 +1818,7 @@ window.daliaGrammarLessons=[
           "was"
         ],
         "wrong": [],
-        "why": "Were предпочтительно, was встречается в разговорной речи."
+        "why": "If I were you — устойчивый способ дать совет; were предпочтительно, was встречается разговорно."
       }
     ]
   },
@@ -1874,7 +1874,7 @@ window.daliaGrammarLessons=[
           "build",
           "building"
         ],
-        "why": "Was + built."
+        "why": "Дом — объект строительства. Was задаёт время, built — третья форма build."
       },
       {
         "prompt": "The letters ___ sent every day.",
@@ -1885,7 +1885,7 @@ window.daliaGrammarLessons=[
           "is",
           "do"
         ],
-        "why": "Letters во множественном числе."
+        "why": "Letters — несколько писем; повторяющееся действие выражено are sent."
       },
       {
         "prompt": "The work will ___ finished tomorrow.",
@@ -1896,7 +1896,7 @@ window.daliaGrammarLessons=[
           "is",
           "been"
         ],
-        "why": "Will be + V3."
+        "why": "После will в пассивной конструкции нужна начальная форма be: will be finished."
       },
       {
         "prompt": "The door has been ___. (close)",
@@ -1907,7 +1907,7 @@ window.daliaGrammarLessons=[
           "close",
           "closing"
         ],
-        "why": "Has been + V3."
+        "why": "Has been уже образует основу Perfect Passive; close → closed."
       },
       {
         "prompt": "This book was ___ by her. (write)",
@@ -1915,7 +1915,7 @@ window.daliaGrammarLessons=[
           "written"
         ],
         "wrong": [],
-        "why": "Write → written."
+        "why": "Книга — объект действия. После was употребляется третья форма write: written."
       }
     ]
   },
@@ -1966,7 +1966,7 @@ window.daliaGrammarLessons=[
           "to read",
           "read"
         ],
-        "why": "После enjoy — -ing."
+        "why": "Enjoy требует форму -ing для следующего действия: enjoy reading."
       },
       {
         "prompt": "She decided ___ home.",
@@ -1977,7 +1977,7 @@ window.daliaGrammarLessons=[
           "going",
           "go"
         ],
-        "why": "После decide — to + глагол."
+        "why": "После decide употребляем to + обычный глагол: decided to go."
       },
       {
         "prompt": "He is interested in ___ English.",
@@ -1988,7 +1988,7 @@ window.daliaGrammarLessons=[
           "to learn",
           "learn"
         ],
-        "why": "После in — -ing."
+        "why": "In — предлог; следующий глагол обычно получает -ing: learning."
       },
       {
         "prompt": "They finished ___ dinner.",
@@ -1999,7 +1999,7 @@ window.daliaGrammarLessons=[
           "to cook",
           "cook"
         ],
-        "why": "После finish — -ing."
+        "why": "После finish употребляется -ing: finished cooking."
       },
       {
         "prompt": "I hope ___ you soon. (see)",
@@ -2007,7 +2007,7 @@ window.daliaGrammarLessons=[
           "to see"
         ],
         "wrong": [],
-        "why": "После hope — инфинитив с to."
+        "why": "После hope обычно идёт to + начальная форма: hope to see."
       }
     ]
   },
@@ -2064,7 +2064,7 @@ window.daliaGrammarLessons=[
           "which",
           "whose"
         ],
-        "why": "Для человека — who или that."
+        "why": "Woman — человек. В уточнении без запятых подходят who и that, оба обозначают того, кто звонил."
       },
       {
         "prompt": "My car, ___ is old, still works.",
@@ -2075,7 +2075,7 @@ window.daliaGrammarLessons=[
           "that",
           "who"
         ],
-        "why": "После запятой для предмета — which."
+        "why": "Запятые выделяют дополнительную информацию о вещи. Используем which, не that."
       },
       {
         "prompt": "I know the man ___ daughter studies here.",
@@ -2086,7 +2086,7 @@ window.daliaGrammarLessons=[
           "who",
           "which"
         ],
-        "why": "Whose означает принадлежность."
+        "why": "Речь о дочери этого мужчины. Whose выражает принадлежность: чья дочь."
       },
       {
         "prompt": "The book ___ I bought was useful. (вставь союзное слово)",
@@ -2098,7 +2098,7 @@ window.daliaGrammarLessons=[
           "who",
           "whose"
         ],
-        "why": "That и which подходят для предмета. В таком уточнении, где слово обозначает объект bought, его также можно опустить, но здесь требуется вставить слово."
+        "why": "That и which подходят для предмета. В таком уточнении, где это слово обозначает объект bought, его также можно опустить, но здесь требуется вставить слово."
       },
       {
         "prompt": "My sister, ___ lives in Rome, is a teacher.",
@@ -2106,7 +2106,7 @@ window.daliaGrammarLessons=[
           "who"
         ],
         "wrong": [],
-        "why": "В неопределительном придаточном — who."
+        "why": "Дополнительная информация о человеке между запятыми вводится who, а не that."
       }
     ]
   },
@@ -2157,7 +2157,7 @@ window.daliaGrammarLessons=[
           "leaved",
           "leaving"
         ],
-        "why": "Leave → left → left."
+        "why": "Had показывает более раннее действие, а третья форма leave — left."
       },
       {
         "prompt": "He ___ finished by six yesterday. (Past Perfect)",
@@ -2168,7 +2168,7 @@ window.daliaGrammarLessons=[
           "has",
           "have"
         ],
-        "why": "Had + V3."
+        "why": "Past Perfect образуется через had для всех лиц, независимо от he."
       },
       {
         "prompt": "Had you ___ him before? (meet)",
@@ -2179,7 +2179,7 @@ window.daliaGrammarLessons=[
           "meet",
           "meeting"
         ],
-        "why": "После had — met."
+        "why": "В вопросе had уже перенесено в начало. Третья форма meet — met."
       },
       {
         "prompt": "She hadn't ___ the film before that day.",
@@ -2190,7 +2190,7 @@ window.daliaGrammarLessons=[
           "saw",
           "see"
         ],
-        "why": "V3 от see — seen."
+        "why": "Hadn't требует третью форму see — seen, а saw относится к Past Simple."
       },
       {
         "prompt": "They had ___ the work before noon. (do)",
@@ -2198,7 +2198,7 @@ window.daliaGrammarLessons=[
           "done"
         ],
         "wrong": [],
-        "why": "V3 от do — done."
+        "why": "После had ставим третью форму do — done."
       }
     ]
   },
@@ -2254,7 +2254,7 @@ window.daliaGrammarLessons=[
           "is",
           "were"
         ],
-        "why": "Am/is → was."
+        "why": "При заданном сдвиге времени am/is меняется на was. Then задаёт прошлую точку отсчёта."
       },
       {
         "prompt": "She told ___ that she was busy.",
@@ -2265,7 +2265,7 @@ window.daliaGrammarLessons=[
           "I",
           "my"
         ],
-        "why": "Tell требует объектную форму."
+        "why": "После told обычно указываем того, кому сказали: me, не I."
       },
       {
         "prompt": "He asked where I ___. (сдвиг времени)",
@@ -2276,7 +2276,7 @@ window.daliaGrammarLessons=[
           "did live",
           "live"
         ],
-        "why": "Косвенный вопрос: утверждение и сдвиг."
+        "why": "В косвенном вопросе обычный порядок слов. При заданном сдвиге live → lived."
       },
       {
         "prompt": "She said she ___ come the next day. (сдвиг)",
@@ -2287,7 +2287,7 @@ window.daliaGrammarLessons=[
           "will",
           "can"
         ],
-        "why": "Will → would."
+        "why": "При заданном сдвиге will становится would; the next day означает следующий день относительно прошлого."
       },
       {
         "prompt": "He asked ___ I was ready. (ли)",
@@ -2296,7 +2296,7 @@ window.daliaGrammarLessons=[
           "whether"
         ],
         "wrong": [],
-        "why": "Общий косвенный вопрос вводится if или whether."
+        "why": "Вопрос без вопросительного слова передаётся через if или whether — «ли»."
       }
     ]
   },
@@ -2347,7 +2347,7 @@ window.daliaGrammarLessons=[
           "be",
           "being"
         ],
-        "why": "Have been + -ing."
+        "why": "Для процесса до настоящего момента нужны все три части: have been waiting."
       },
       {
         "prompt": "She ___ been studying since nine.",
@@ -2358,7 +2358,7 @@ window.daliaGrammarLessons=[
           "have",
           "is"
         ],
-        "why": "She + has been."
+        "why": "С she используем has, далее been studying."
       },
       {
         "prompt": "They have been ___ all day. (work)",
@@ -2369,7 +2369,7 @@ window.daliaGrammarLessons=[
           "worked",
           "work"
         ],
-        "why": "После been — -ing."
+        "why": "После have been форма -ing показывает процесс: working."
       },
       {
         "prompt": "He has been waiting ___ two hours.",
@@ -2380,7 +2380,7 @@ window.daliaGrammarLessons=[
           "since",
           "at"
         ],
-        "why": "For + длительность."
+        "why": "Two hours — длительность, поэтому for. Since обозначает начальный момент."
       },
       {
         "prompt": "I have been ___ English. (learn)",
@@ -2388,7 +2388,7 @@ window.daliaGrammarLessons=[
           "learning"
         ],
         "wrong": [],
-        "why": "Learn → learning."
+        "why": "Learn получает -ing: have been learning."
       }
     ]
   },
@@ -2439,7 +2439,7 @@ window.daliaGrammarLessons=[
           "help",
           "helping"
         ],
-        "why": "Would have + V3."
+        "why": "Результат относится к нереализованному прошлому: would have + третья форма helped."
       },
       {
         "prompt": "If she ___ left earlier, she would have caught the train.",
@@ -2450,7 +2450,7 @@ window.daliaGrammarLessons=[
           "has",
           "would have"
         ],
-        "why": "If + Past Perfect."
+        "why": "Условие касается уже прошедшего события, поэтому if + had left."
       },
       {
         "prompt": "If I had saved money, I ___ be able to travel now.",
@@ -2461,7 +2461,7 @@ window.daliaGrammarLessons=[
           "will",
           "had"
         ],
-        "why": "Результат сейчас: would + V1."
+        "why": "Now показывает результат в настоящем, поэтому would be able, без have."
       },
       {
         "prompt": "If he had listened, he wouldn't have ___ that mistake. (make)",
@@ -2472,7 +2472,7 @@ window.daliaGrammarLessons=[
           "make",
           "making"
         ],
-        "why": "Would have + made."
+        "why": "Wouldn't have относится к нереализованному прошлому. Третья форма make — made."
       },
       {
         "prompt": "If they had ___, we would have waited. (call)",
@@ -2480,7 +2480,7 @@ window.daliaGrammarLessons=[
           "called"
         ],
         "wrong": [],
-        "why": "Had + called."
+        "why": "Условие относится к прошлому: had + третья форма called."
       }
     ]
   },
@@ -2536,7 +2536,7 @@ window.daliaGrammarLessons=[
           "do",
           "am"
         ],
-        "why": "Never + have + I + V3."
+        "why": "Never вынесено в начало; в Present Perfect have перемещается перед I."
       },
       {
         "prompt": "Only then ___ she realize the truth. (Past Simple)",
@@ -2547,7 +2547,7 @@ window.daliaGrammarLessons=[
           "does",
           "was"
         ],
-        "why": "Did + she + realize."
+        "why": "Only then требует инверсии. Для Past Simple добавляем did перед she и оставляем realize без окончания."
       },
       {
         "prompt": "Rarely ___ he complain. (Present Simple)",
@@ -2558,7 +2558,7 @@ window.daliaGrammarLessons=[
           "do",
           "is"
         ],
-        "why": "После rarely — does + he + V1."
+        "why": "Rarely в начале вызывает инверсию. С he в Present Simple добавляем does, complain остаётся обычным."
       },
       {
         "prompt": "Not until midnight ___ they arrive. (Past Simple)",
@@ -2569,7 +2569,7 @@ window.daliaGrammarLessons=[
           "were",
           "had"
         ],
-        "why": "Инверсия с did."
+        "why": "Not until вынесено в начало. В Past Simple ставим did перед they, arrive без окончания."
       },
       {
         "prompt": "Never ___ we been so busy. (Present Perfect)",
@@ -2577,7 +2577,7 @@ window.daliaGrammarLessons=[
           "have"
         ],
         "wrong": [],
-        "why": "Have + we + been."
+        "why": "Never вызывает инверсию. Для Present Perfect с we помощник have стоит перед we."
       }
     ]
   },
@@ -2610,7 +2610,7 @@ window.daliaGrammarLessons=[
         "сильное отрицание предположения"
       ]
     ],
-    "note": "Must have left означает уверенный вывод о прошлом, а не прошлую обязанность. Had to leave — пришлось уйти. Can't have left означает сильное сомнение, что человек ушёл.",
+    "note": "Must have left означает уверенный вывод о прошлом, а не прошлую обязанность. Had to leave — пришлось уйти. Can't have left означает уверенный вывод, что человек не мог уйти.",
     "examples": [
       [
         "The results may indicate a trend.",
@@ -2633,7 +2633,7 @@ window.daliaGrammarLessons=[
           "miss",
           "missing"
         ],
-        "why": "May have + V3."
+        "why": "May have выражает предположение о прошлом; после have нужна третья форма missed."
       },
       {
         "prompt": "He ___ have left. His coat is gone. (уверенный вывод)",
@@ -2644,7 +2644,7 @@ window.daliaGrammarLessons=[
           "shouldn't",
           "can't"
         ],
-        "why": "Must have — сильное предположение."
+        "why": "Исчезнувшее пальто — основание для уверенного вывода, поэтому must have left."
       },
       {
         "prompt": "The findings ___ suggest a link. (осторожное утверждение)",
@@ -2655,7 +2655,7 @@ window.daliaGrammarLessons=[
           "mustn't",
           "can't"
         ],
-        "why": "May выражает возможность."
+        "why": "May делает вывод осторожным: связь возможна, но не утверждается как факт."
       },
       {
         "prompt": "He had to ___ early. (уйти)",
@@ -2666,7 +2666,7 @@ window.daliaGrammarLessons=[
           "left",
           "leaving"
         ],
-        "why": "Had to + V1."
+        "why": "Had to описывает прошлую необходимость; после to начальная форма leave."
       },
       {
         "prompt": "It might have ___ a mistake. (be)",
@@ -2674,7 +2674,7 @@ window.daliaGrammarLessons=[
           "been"
         ],
         "wrong": [],
-        "why": "Might have + been."
+        "why": "Might have выражает возможность в прошлом. Третья форма be — been."
       }
     ]
   },
@@ -2726,7 +2726,7 @@ window.daliaGrammarLessons=[
           "which",
           "whose"
         ],
-        "why": "Who/that выделяет человека."
+        "why": "Конструкция It was Jane ... выделяет человека. Who и that здесь допустимы."
       },
       {
         "prompt": "___ I need is more time.",
@@ -2737,7 +2737,7 @@ window.daliaGrammarLessons=[
           "That",
           "Which"
         ],
-        "why": "What-cleft."
+        "why": "What I need задаёт тему, is more time выделяет нужное: именно больше времени."
       },
       {
         "prompt": "It was yesterday ___ I heard the news.",
@@ -2748,7 +2748,7 @@ window.daliaGrammarLessons=[
           "who",
           "whose"
         ],
-        "why": "It-cleft выделяет время через that."
+        "why": "It was yesterday ... выделяет момент времени через that."
       },
       {
         "prompt": "All I want ___ a little peace.",
@@ -2759,7 +2759,7 @@ window.daliaGrammarLessons=[
           "are",
           "be"
         ],
-        "why": "All I want is..."
+        "why": "All I want — «всё, чего я хочу». Перед a little peace используется is."
       },
       {
         "prompt": "What surprised me ___ his reaction. (прошлое)",
@@ -2767,7 +2767,7 @@ window.daliaGrammarLessons=[
           "was"
         ],
         "wrong": [],
-        "why": "What-cleft в прошлом: was."
+        "why": "Прошлое событие задано в surprised и условии, поэтому was."
       }
     ]
   },
@@ -2823,7 +2823,7 @@ window.daliaGrammarLessons=[
           "Although",
           "Even though"
         ],
-        "why": "После despite — именная группа."
+        "why": "The heavy rain — именная группа, не целое предложение. Подходит despite; although требует подлежащее и глагол."
       },
       {
         "prompt": "Although she ___ tired, she continued.",
@@ -2834,7 +2834,7 @@ window.daliaGrammarLessons=[
           "being",
           "been"
         ],
-        "why": "Although вводит придаточное с глаголом."
+        "why": "Although вводит целое предложение. She was tired содержит подлежащее и глагол."
       },
       {
         "prompt": "In spite ___ the delay, we arrived on time.",
@@ -2845,7 +2845,7 @@ window.daliaGrammarLessons=[
           "to",
           "for"
         ],
-        "why": "In spite of."
+        "why": "In spite of — устойчивое сочетание из трёх слов."
       },
       {
         "prompt": "The approach succeeded, ___ slowly.",
@@ -2856,7 +2856,7 @@ window.daliaGrammarLessons=[
           "despite of",
           "although of"
         ],
-        "why": "Albeit + наречие."
+        "why": "Albeit slowly означает «хотя и медленно»; после него допустимо наречие."
       },
       {
         "prompt": "Despite ___ tired, he kept working. (be)",
@@ -2864,7 +2864,7 @@ window.daliaGrammarLessons=[
           "being"
         ],
         "wrong": [],
-        "why": "После despite возможна форма -ing."
+        "why": "После despite здесь нужна форма -ing. Be → being."
       }
     ]
   }
