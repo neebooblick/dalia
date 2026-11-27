@@ -1238,6 +1238,755 @@ window.daliaGrammarLessons=[
     ]
   },
   {
+    "id": "demonstratives",
+    "level": "A1",
+    "category": "Местоимения",
+    "title": "This / that / these / those",
+    "subtitle": "Этот, тот, эти, те",
+    "rule": "Если показываешь на один предмет рядом, скажи this; на один дальше — that. Для нескольких предметов рядом — these, дальше — those. В русском расстояние тоже различается: «этот» и «тот».",
+    "note": "Не соединяй this с множественным числом: this books — ошибка. Говори these books. С this/that используется is, с these/those — are.",
+    "table": [
+      [
+        "this / that",
+        "this book / that book",
+        "один предмет"
+      ],
+      [
+        "these / those",
+        "these bags / those bags",
+        "несколько"
+      ],
+      [
+        "вопрос",
+        "Is this yours? / Are those yours?",
+        "согласование"
+      ]
+    ],
+    "examples": [
+      [
+        "This is my phone.",
+        "Это мой телефон.",
+        "Телефон один и находится рядом."
+      ],
+      [
+        "Those shoes are nice.",
+        "Те туфли красивые.",
+        "Those указывает на несколько предметов дальше."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "___ is my bag here.",
+        "answers": [
+          "This"
+        ],
+        "wrong": [
+          "These",
+          "Those"
+        ],
+        "why": "Одна сумка рядом — this."
+      },
+      {
+        "prompt": "___ are the mountains over there.",
+        "answers": [
+          "Those"
+        ],
+        "wrong": [
+          "That",
+          "This"
+        ],
+        "why": "Горы далеко и их несколько."
+      },
+      {
+        "prompt": "These ___ my keys.",
+        "answers": [
+          "are"
+        ],
+        "wrong": [
+          "is",
+          "am"
+        ],
+        "why": "These во множественном числе."
+      },
+      {
+        "prompt": "That ___ your coat.",
+        "answers": [
+          "is"
+        ],
+        "wrong": [
+          "are",
+          "am"
+        ],
+        "why": "That обозначает один предмет."
+      },
+      {
+        "prompt": "___ apples here are fresh.",
+        "answers": [
+          "These"
+        ],
+        "wrong": [
+          "This",
+          "That"
+        ],
+        "why": "Яблоки рядом, их несколько."
+      },
+      {
+        "type": "translate",
+        "prompt": "Эта книга моя. (рядом)",
+        "answers": [
+          "This book is mine."
+        ],
+        "wrong": [],
+        "why": "This для одного предмета рядом."
+      },
+      {
+        "type": "correct",
+        "prompt": "Those is my shoes.",
+        "answers": [
+          "Those are my shoes."
+        ],
+        "wrong": [],
+        "why": "Those требует are."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "These are my friends."
+        ],
+        "wrong": [],
+        "words": [
+          "These",
+          "are",
+          "my",
+          "friends"
+        ],
+        "why": "These + are для нескольких людей."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "This chair is red. → Сделай множественное число.",
+        "answers": [
+          "These chairs are red."
+        ],
+        "wrong": [],
+        "why": "This → these, is → are."
+      },
+      {
+        "type": "translate",
+        "prompt": "Тот дом большой. (вдали)",
+        "answers": [
+          "That house is big.",
+          "That house is large."
+        ],
+        "wrong": [],
+        "why": "That для одного предмета дальше."
+      }
+    ]
+  },
+  {
+    "id": "possessive-s",
+    "level": "A1",
+    "category": "Существительные",
+    "title": "Possessive ’s",
+    "subtitle": "Как сказать «книга Анны»",
+    "rule": "Чтобы показать, кому что принадлежит, часто добавляем 's к владельцу: Anna's book — книга Анны. У обычного множественного числа на -s ставим только апостроф: the students' books.",
+    "note": "Не путай 's принадлежности с сокращением is. Anna's bag — сумка Анны, Anna's tired — Анна устала. Children не заканчивается на s, поэтому children's toys.",
+    "table": [
+      [
+        "один владелец",
+        "Tom's bike",
+        "велосипед Тома"
+      ],
+      [
+        "несколько на -s",
+        "the teachers' room",
+        "комната учителей"
+      ],
+      [
+        "особая форма",
+        "children's toys",
+        "игрушки детей"
+      ]
+    ],
+    "examples": [
+      [
+        "This is Mary's bag.",
+        "Это сумка Мэри.",
+        "'s стоит после имени владельца."
+      ],
+      [
+        "The boys' room is small.",
+        "Комната мальчиков маленькая.",
+        "Boys уже заканчивается на s."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "This is ___ car. (Tom)",
+        "answers": [
+          "Tom's"
+        ],
+        "wrong": [
+          "Toms",
+          "Toms'"
+        ],
+        "why": "Один владелец — Tom's."
+      },
+      {
+        "prompt": "The ___ toys are here. (children)",
+        "answers": [
+          "children's"
+        ],
+        "wrong": [
+          "childrens'",
+          "children"
+        ],
+        "why": "Неправильное множественное требует 's."
+      },
+      {
+        "prompt": "The two ___ bags are heavy. (girls)",
+        "answers": [
+          "girls'"
+        ],
+        "wrong": [
+          "girl's",
+          "girls"
+        ],
+        "why": "Несколько девочек: апостроф после s."
+      },
+      {
+        "prompt": "___ book is new. (Anna)",
+        "answers": [
+          "Anna's"
+        ],
+        "wrong": [
+          "Annas",
+          "Annas'"
+        ],
+        "why": "Принадлежность одному человеку."
+      },
+      {
+        "prompt": "The ___ tail is long. (cat)",
+        "answers": [
+          "cat's"
+        ],
+        "wrong": [
+          "cats'",
+          "cats"
+        ],
+        "why": "У одного кота — cat's."
+      },
+      {
+        "type": "translate",
+        "prompt": "Это телефон Тома.",
+        "answers": [
+          "This is Tom's phone."
+        ],
+        "wrong": [],
+        "why": "'s обозначает владельца."
+      },
+      {
+        "type": "correct",
+        "prompt": "This is Marys bag.",
+        "answers": [
+          "This is Mary's bag."
+        ],
+        "wrong": [],
+        "why": "Нужен апостроф."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "The girl's bike is blue."
+        ],
+        "wrong": [],
+        "words": [
+          "The",
+          "girl's",
+          "bike",
+          "is",
+          "blue"
+        ],
+        "why": "Girl's указывает на одну владелицу."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "The book belongs to Ben. → Используй Ben's.",
+        "answers": [
+          "It is Ben's book.",
+          "It's Ben's book.",
+          "This is Ben's book.",
+          "The book is Ben's."
+        ],
+        "wrong": [],
+        "why": "Ben's показывает принадлежность."
+      },
+      {
+        "type": "translate",
+        "prompt": "Книги учителей (несколько учителей, словосочетание).",
+        "answers": [
+          "the teachers' books",
+          "teachers' books"
+        ],
+        "wrong": [],
+        "why": "Апостроф после множественного -s."
+      }
+    ]
+  },
+  {
+    "id": "imperatives",
+    "level": "A1",
+    "category": "Предложения",
+    "title": "Imperatives",
+    "subtitle": "Просьбы и инструкции",
+    "rule": "Когда даёшь инструкцию или просьбу, начинай с обычной формы глагола: Open the door. Подлежащее you обычно не пишут. Для запрета добавь Don't: Don't touch it. Please делает просьбу вежливее.",
+    "note": "Не добавляй to в начало обычной команды: To sit down — не повелительное предложение. Для совместного предложения можно Let's go — давай пойдём.",
+    "table": [
+      [
+        "команда",
+        "Sit down.",
+        "Сядь."
+      ],
+      [
+        "запрет",
+        "Don't run.",
+        "Не беги."
+      ],
+      [
+        "предложение",
+        "Let's go.",
+        "Давай пойдём."
+      ]
+    ],
+    "examples": [
+      [
+        "Please wait here.",
+        "Пожалуйста, подожди здесь.",
+        "Please смягчает просьбу."
+      ],
+      [
+        "Don't open the window.",
+        "Не открывай окно.",
+        "Don't делает команду отрицательной."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "___ the door, please.",
+        "answers": [
+          "Close"
+        ],
+        "wrong": [
+          "Closes",
+          "Closing"
+        ],
+        "why": "Команда начинается с начальной формы."
+      },
+      {
+        "prompt": "___ touch the glass.",
+        "answers": [
+          "Don't"
+        ],
+        "wrong": [
+          "Doesn't",
+          "Not"
+        ],
+        "why": "Запрет — Don't."
+      },
+      {
+        "prompt": "Let's ___ home.",
+        "answers": [
+          "go"
+        ],
+        "wrong": [
+          "going",
+          "to go"
+        ],
+        "why": "После let's обычная форма."
+      },
+      {
+        "prompt": "Please ___ down.",
+        "answers": [
+          "sit"
+        ],
+        "wrong": [
+          "sits",
+          "sitting"
+        ],
+        "why": "Просьба без подлежащего."
+      },
+      {
+        "prompt": "Don't ___ late.",
+        "answers": [
+          "be"
+        ],
+        "wrong": [
+          "are",
+          "is"
+        ],
+        "why": "После don't начальная форма be."
+      },
+      {
+        "type": "translate",
+        "prompt": "Открой окно.",
+        "answers": [
+          "Open the window."
+        ],
+        "wrong": [],
+        "why": "Команда начинается с open."
+      },
+      {
+        "type": "correct",
+        "prompt": "Don't to run.",
+        "answers": [
+          "Don't run.",
+          "Do not run."
+        ],
+        "wrong": [],
+        "why": "После don't без to."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "Please turn off the light."
+        ],
+        "wrong": [],
+        "words": [
+          "Please",
+          "turn",
+          "off",
+          "the",
+          "light"
+        ],
+        "why": "Turn off — выключить; please смягчает просьбу."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Touch the glass. → Сделай запрет.",
+        "answers": [
+          "Don't touch the glass.",
+          "Do not touch the glass."
+        ],
+        "wrong": [],
+        "why": "Добавь don't."
+      },
+      {
+        "type": "translate",
+        "prompt": "Давай пойдём домой.",
+        "answers": [
+          "Let's go home.",
+          "Let us go home."
+        ],
+        "wrong": [],
+        "why": "Let's + обычная форма."
+      }
+    ]
+  },
+  {
+    "id": "frequency",
+    "level": "A1",
+    "category": "Предложения",
+    "title": "Always / usually / never",
+    "subtitle": "Как часто что-то происходит",
+    "rule": "Наречия частоты показывают привычки: always — всегда, usually — обычно, often — часто, sometimes — иногда, never — никогда. Обычно они стоят перед обычным глаголом, но после am/is/are: I often read, she is often late.",
+    "note": "Never уже содержит отрицание: I never smoke, а не I don't never smoke в стандартном английском. Sometimes может стоять и в начале предложения.",
+    "table": [
+      [
+        "обычный глагол",
+        "I often read.",
+        "перед глаголом"
+      ],
+      [
+        "to be",
+        "She is always busy.",
+        "после be"
+      ],
+      [
+        "вопрос",
+        "Do you usually walk?",
+        "после подлежащего"
+      ]
+    ],
+    "examples": [
+      [
+        "He usually walks to work.",
+        "Он обычно ходит на работу пешком.",
+        "Usually перед walks."
+      ],
+      [
+        "I am never late.",
+        "Я никогда не опаздываю.",
+        "Never после am."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "I ___ drink tea. (часто)",
+        "answers": [
+          "often"
+        ],
+        "wrong": [
+          "always",
+          "never"
+        ],
+        "why": "Often означает часто."
+      },
+      {
+        "prompt": "She is ___ tired after work. (всегда)",
+        "answers": [
+          "always"
+        ],
+        "wrong": [
+          "never",
+          "sometimes"
+        ],
+        "why": "После is — always."
+      },
+      {
+        "prompt": "He ___ goes there. (никогда)",
+        "answers": [
+          "never"
+        ],
+        "wrong": [
+          "always",
+          "usually"
+        ],
+        "why": "Never уже передаёт отрицание."
+      },
+      {
+        "prompt": "Do you ___ work on Sundays? (обычно)",
+        "answers": [
+          "usually"
+        ],
+        "wrong": [
+          "never",
+          "always"
+        ],
+        "why": "Usually означает обычно."
+      },
+      {
+        "prompt": "We ___ eat out. (иногда)",
+        "answers": [
+          "sometimes"
+        ],
+        "wrong": [
+          "never",
+          "always"
+        ],
+        "why": "Sometimes — иногда."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я всегда завтракаю. (have breakfast)",
+        "answers": [
+          "I always have breakfast."
+        ],
+        "wrong": [],
+        "why": "Always перед have."
+      },
+      {
+        "type": "correct",
+        "prompt": "He doesn't never read. (убери лишнее отрицание)",
+        "answers": [
+          "He never reads."
+        ],
+        "wrong": [],
+        "why": "Never уже отрицание, reads с he."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "She is usually at home."
+        ],
+        "wrong": [],
+        "words": [
+          "She",
+          "is",
+          "usually",
+          "at",
+          "home"
+        ],
+        "why": "Наречие после is."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "I drink coffee. → Добавь often.",
+        "answers": [
+          "I often drink coffee.",
+          "I drink coffee often."
+        ],
+        "wrong": [],
+        "why": "Often обычно перед глаголом, возможна конечная позиция."
+      },
+      {
+        "type": "translate",
+        "prompt": "Он никогда не опаздывает. (be late)",
+        "answers": [
+          "He is never late.",
+          "He's never late."
+        ],
+        "wrong": [],
+        "why": "Never после is."
+      }
+    ]
+  },
+  {
+    "id": "countability",
+    "level": "A1",
+    "category": "Существительные",
+    "title": "Countable / uncountable",
+    "subtitle": "Что можно посчитать",
+    "rule": "Book можно посчитать: one book, two books. Water, rice, information обычно считаются массой или общим понятием, поэтому не говорят two waters в нейтральном значении. Чтобы посчитать порции, назови единицу: two glasses of water.",
+    "note": "Advice и information в английском обычно неисчисляемые, хотя по-русски «советы» и «сведения» могут считаться. Используй a piece of advice, some information.",
+    "table": [
+      [
+        "исчисляемое",
+        "a chair / two chairs",
+        "стулья"
+      ],
+      [
+        "неисчисляемое",
+        "some water",
+        "вода"
+      ],
+      [
+        "порция",
+        "a cup of tea",
+        "чашка чая"
+      ]
+    ],
+    "examples": [
+      [
+        "I need some information.",
+        "Мне нужна информация.",
+        "Information не требует множественного числа."
+      ],
+      [
+        "We bought two bottles of water.",
+        "Мы купили две бутылки воды.",
+        "Считаем бутылки, а не воду."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "I need some ___. (информация)",
+        "answers": [
+          "information"
+        ],
+        "wrong": [
+          "informations",
+          "an information"
+        ],
+        "why": "Information неисчисляемое."
+      },
+      {
+        "prompt": "Two ___ of water, please.",
+        "answers": [
+          "glasses"
+        ],
+        "wrong": [
+          "glass",
+          "water"
+        ],
+        "why": "Считаем стаканы."
+      },
+      {
+        "prompt": "She gave me some ___. (совет)",
+        "answers": [
+          "advice"
+        ],
+        "wrong": [
+          "advices",
+          "an advice"
+        ],
+        "why": "Advice неисчисляемое."
+      },
+      {
+        "prompt": "There are three ___. (chair)",
+        "answers": [
+          "chairs"
+        ],
+        "wrong": [
+          "chair",
+          "chaires"
+        ],
+        "why": "Chair можно посчитать."
+      },
+      {
+        "prompt": "A piece of ___. (совет)",
+        "answers": [
+          "advice"
+        ],
+        "wrong": [
+          "advices",
+          "an advice"
+        ],
+        "why": "Piece делает количество исчисляемым."
+      },
+      {
+        "type": "translate",
+        "prompt": "Мне нужна вода.",
+        "answers": [
+          "I need water.",
+          "I need some water."
+        ],
+        "wrong": [],
+        "why": "Water обычно неисчисляемое."
+      },
+      {
+        "type": "correct",
+        "prompt": "He gave me an advice.",
+        "answers": [
+          "He gave me some advice.",
+          "He gave me a piece of advice.",
+          "He gave me advice."
+        ],
+        "wrong": [],
+        "why": "Advice не сочетается с an."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "There are two cups of tea."
+        ],
+        "wrong": [],
+        "words": [
+          "There",
+          "are",
+          "two",
+          "cups",
+          "of",
+          "tea"
+        ],
+        "why": "Считаются чашки."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Some advice → один совет, используй piece.",
+        "answers": [
+          "a piece of advice",
+          "one piece of advice"
+        ],
+        "wrong": [],
+        "why": "Piece of advice обозначает один совет."
+      },
+      {
+        "type": "translate",
+        "prompt": "Две бутылки воды (словосочетание).",
+        "answers": [
+          "two bottles of water"
+        ],
+        "wrong": [],
+        "why": "Bottles можно посчитать."
+      }
+    ]
+  },
+  {
     "id": "past-simple",
     "level": "A2",
     "category": "Времена",
@@ -2379,6 +3128,755 @@ window.daliaGrammarLessons=[
     ]
   },
   {
+    "id": "reflexives",
+    "level": "A2",
+    "category": "Местоимения",
+    "title": "Reflexive pronouns",
+    "subtitle": "Myself, yourself, themselves",
+    "rule": "Когда действие возвращается к тому, кто его делает, используй myself, yourself, himself, herself, itself, ourselves, yourselves, themselves. She hurt herself — она поранилась. Эти формы также подчёркивают, что человек сделал что-то сам.",
+    "note": "Не говори I enjoyed me, если имеешь в виду себя: I enjoyed myself. Но для обычных действий вроде wash или dress возвратное местоимение часто не нужно.",
+    "table": [
+      [
+        "I / you",
+        "myself / yourself",
+        "себя / сам"
+      ],
+      [
+        "he / she / it",
+        "himself / herself / itself",
+        "себя / сам"
+      ],
+      [
+        "we / they",
+        "ourselves / themselves",
+        "себя / сами"
+      ]
+    ],
+    "examples": [
+      [
+        "He taught himself French.",
+        "Он сам выучил французский.",
+        "Himself относится к he."
+      ],
+      [
+        "I made it myself.",
+        "Я сделал это сам.",
+        "Myself подчёркивает самостоятельность."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "She hurt ___.",
+        "answers": [
+          "herself"
+        ],
+        "wrong": [
+          "himself",
+          "her"
+        ],
+        "why": "She действует на себя."
+      },
+      {
+        "prompt": "We enjoyed ___.",
+        "answers": [
+          "ourselves"
+        ],
+        "wrong": [
+          "ourself",
+          "us"
+        ],
+        "why": "We → ourselves."
+      },
+      {
+        "prompt": "They introduced ___.",
+        "answers": [
+          "themselves"
+        ],
+        "wrong": [
+          "theirselves",
+          "them"
+        ],
+        "why": "They представились сами."
+      },
+      {
+        "prompt": "I did it ___.",
+        "answers": [
+          "myself"
+        ],
+        "wrong": [
+          "me",
+          "mine"
+        ],
+        "why": "Myself подчёркивает самостоятельность."
+      },
+      {
+        "prompt": "Help ___, Tom. (угощайся)",
+        "answers": [
+          "yourself"
+        ],
+        "wrong": [
+          "yourselves",
+          "you"
+        ],
+        "why": "Обращение к одному человеку."
+      },
+      {
+        "type": "translate",
+        "prompt": "Он поранился. (hurt)",
+        "answers": [
+          "He hurt himself."
+        ],
+        "wrong": [],
+        "why": "Himself возвращает действие к he."
+      },
+      {
+        "type": "correct",
+        "prompt": "We enjoyed ourself.",
+        "answers": [
+          "We enjoyed ourselves."
+        ],
+        "wrong": [],
+        "why": "We требует ourselves."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "She did it herself."
+        ],
+        "wrong": [],
+        "words": [
+          "She",
+          "did",
+          "it",
+          "herself"
+        ],
+        "why": "Herself подчёркивает самостоятельность."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "I made this cake without help. → Используй myself.",
+        "answers": [
+          "I made this cake myself."
+        ],
+        "wrong": [],
+        "why": "Myself — сам."
+      },
+      {
+        "type": "translate",
+        "prompt": "Они представились.",
+        "answers": [
+          "They introduced themselves."
+        ],
+        "wrong": [],
+        "why": "They → themselves."
+      }
+    ]
+  },
+  {
+    "id": "too-enough",
+    "level": "A2",
+    "category": "Прилагательные",
+    "title": "Too / enough",
+    "subtitle": "Слишком или достаточно",
+    "rule": "Too означает «слишком»: too cold — слишком холодно. Enough означает «достаточно». После прилагательного enough ставится сзади: warm enough. Перед существительным — спереди: enough money.",
+    "note": "Very cold — просто очень холодно, too cold — холоднее, чем нужно. Не переставляй enough перед прилагательным: old enough, а не enough old.",
+    "table": [
+      [
+        "too + признак",
+        "too expensive",
+        "слишком дорого"
+      ],
+      [
+        "признак + enough",
+        "good enough",
+        "достаточно хорошо"
+      ],
+      [
+        "enough + предмет",
+        "enough time",
+        "достаточно времени"
+      ]
+    ],
+    "examples": [
+      [
+        "It's too late to call.",
+        "Слишком поздно звонить.",
+        "Too выражает препятствие."
+      ],
+      [
+        "We have enough money.",
+        "У нас достаточно денег.",
+        "Enough перед существительным."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "This bag is ___ heavy to carry.",
+        "answers": [
+          "too"
+        ],
+        "wrong": [
+          "enough",
+          "many"
+        ],
+        "why": "Too heavy — чрезмерно тяжёлая."
+      },
+      {
+        "prompt": "He is old ___ to drive.",
+        "answers": [
+          "enough"
+        ],
+        "wrong": [
+          "too",
+          "much"
+        ],
+        "why": "Enough после прилагательного."
+      },
+      {
+        "prompt": "We don't have ___ time.",
+        "answers": [
+          "enough"
+        ],
+        "wrong": [
+          "too",
+          "many"
+        ],
+        "why": "Enough перед существительным."
+      },
+      {
+        "prompt": "It's ___ cold to swim.",
+        "answers": [
+          "too"
+        ],
+        "wrong": [
+          "enough",
+          "many"
+        ],
+        "why": "Холод мешает плавать."
+      },
+      {
+        "prompt": "The room is big ___.",
+        "answers": [
+          "enough"
+        ],
+        "wrong": [
+          "too",
+          "much"
+        ],
+        "why": "Enough после big."
+      },
+      {
+        "type": "translate",
+        "prompt": "Слишком дорого.",
+        "answers": [
+          "It is too expensive.",
+          "It's too expensive.",
+          "Too expensive."
+        ],
+        "wrong": [],
+        "why": "Too перед признаком."
+      },
+      {
+        "type": "correct",
+        "prompt": "She is enough tall.",
+        "answers": [
+          "She is tall enough.",
+          "She's tall enough."
+        ],
+        "wrong": [],
+        "why": "Enough после tall."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "We have enough food."
+        ],
+        "wrong": [],
+        "words": [
+          "We",
+          "have",
+          "enough",
+          "food"
+        ],
+        "why": "Enough перед food."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "The box is so heavy that I can't lift it. → Используй too heavy to.",
+        "answers": [
+          "The box is too heavy for me to lift.",
+          "The box is too heavy to lift."
+        ],
+        "wrong": [],
+        "why": "Too heavy выражает препятствие."
+      },
+      {
+        "type": "translate",
+        "prompt": "У нас достаточно времени.",
+        "answers": [
+          "We have enough time.",
+          "We've got enough time.",
+          "We have got enough time."
+        ],
+        "wrong": [],
+        "why": "Enough перед time."
+      }
+    ]
+  },
+  {
+    "id": "used-to",
+    "level": "A2",
+    "category": "Глаголы",
+    "title": "Used to",
+    "subtitle": "Привычки в прошлом",
+    "rule": "Used to + начальная форма описывает прежнюю привычку или состояние, которого теперь обычно нет. I used to live here — раньше я жил здесь. Это не просто разовое событие.",
+    "note": "После did/didn't обычно пишут use to: Did you use to live here? Не путай с be used to — быть привыкшим к чему-то: I'm used to working late.",
+    "table": [
+      [
+        "утверждение",
+        "I used to play.",
+        "раньше играл"
+      ],
+      [
+        "отрицание",
+        "I didn't use to play.",
+        "раньше не играл"
+      ],
+      [
+        "вопрос",
+        "Did you use to play?",
+        "раньше играл?"
+      ]
+    ],
+    "examples": [
+      [
+        "I used to walk to school.",
+        "Раньше я ходил в школу пешком.",
+        "Прежняя привычка."
+      ],
+      [
+        "She used to be shy.",
+        "Раньше она была стеснительной.",
+        "Used to может описывать состояние."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "I used to ___ here.",
+        "answers": [
+          "live"
+        ],
+        "wrong": [
+          "lived",
+          "living"
+        ],
+        "why": "После used to начальная форма."
+      },
+      {
+        "prompt": "Did you ___ to work here?",
+        "answers": [
+          "use"
+        ],
+        "wrong": [
+          "used",
+          "using"
+        ],
+        "why": "После did — use."
+      },
+      {
+        "prompt": "He didn't ___ to drink tea.",
+        "answers": [
+          "use"
+        ],
+        "wrong": [
+          "used",
+          "using"
+        ],
+        "why": "После didn't — use."
+      },
+      {
+        "prompt": "She used ___ play tennis.",
+        "answers": [
+          "to"
+        ],
+        "wrong": [
+          "at",
+          "for"
+        ],
+        "why": "Used to + глагол."
+      },
+      {
+        "prompt": "They used to ___ friends.",
+        "answers": [
+          "be"
+        ],
+        "wrong": [
+          "were",
+          "being"
+        ],
+        "why": "После used to — be."
+      },
+      {
+        "type": "translate",
+        "prompt": "Раньше я жил в Москве. (used to)",
+        "answers": [
+          "I used to live in Moscow."
+        ],
+        "wrong": [],
+        "why": "Прежнее состояние."
+      },
+      {
+        "type": "correct",
+        "prompt": "He used to played tennis.",
+        "answers": [
+          "He used to play tennis."
+        ],
+        "wrong": [],
+        "why": "После used to — начальная форма."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "We used to meet every week."
+        ],
+        "wrong": [],
+        "words": [
+          "We",
+          "used",
+          "to",
+          "meet",
+          "every",
+          "week"
+        ],
+        "why": "Прежняя регулярность."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "She used to work here. → Задай общий вопрос.",
+        "answers": [
+          "Did she use to work here?"
+        ],
+        "wrong": [],
+        "why": "После did — use to."
+      },
+      {
+        "type": "translate",
+        "prompt": "Раньше он не пил кофе. (used to)",
+        "answers": [
+          "He didn't use to drink coffee.",
+          "He did not use to drink coffee."
+        ],
+        "wrong": [],
+        "why": "Didn't use to выражает прошлую привычку в отрицании."
+      }
+    ]
+  },
+  {
+    "id": "present-contrast",
+    "level": "A2",
+    "category": "Времена",
+    "title": "Present Simple vs Continuous",
+    "subtitle": "Привычка или процесс сейчас",
+    "rule": "Present Simple описывает привычку или факт: I work here. Present Continuous описывает действие сейчас или временную ситуацию: I'm working from home this week. Выбирай по смыслу, а не только по слову now.",
+    "note": "Глаголы состояния вроде know, want, believe обычно идут в Simple. Некоторые глаголы меняют смысл: I think you're right — мнение, I'm thinking about it — процесс размышления.",
+    "table": [
+      [
+        "регулярно",
+        "I walk to school.",
+        "привычка"
+      ],
+      [
+        "сейчас",
+        "I'm walking home.",
+        "процесс"
+      ],
+      [
+        "состояние",
+        "I know him.",
+        "факт"
+      ]
+    ],
+    "examples": [
+      [
+        "She works in a bank.",
+        "Она работает в банке.",
+        "Постоянная работа."
+      ],
+      [
+        "She's working from home today.",
+        "Сегодня она работает из дома.",
+        "Временная ситуация."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "He usually ___ tea. (drink)",
+        "answers": [
+          "drinks"
+        ],
+        "wrong": [
+          "is drinking",
+          "drink"
+        ],
+        "why": "Usually показывает привычку."
+      },
+      {
+        "prompt": "Look! She ___ outside. (run)",
+        "answers": [
+          "is running"
+        ],
+        "wrong": [
+          "runs",
+          "run"
+        ],
+        "why": "Look обращает внимание на процесс."
+      },
+      {
+        "prompt": "I ___ the answer. (know)",
+        "answers": [
+          "know"
+        ],
+        "wrong": [
+          "am knowing",
+          "knows"
+        ],
+        "why": "Know обычно состояние."
+      },
+      {
+        "prompt": "They ___ with friends this week. (stay, временно)",
+        "answers": [
+          "are staying"
+        ],
+        "wrong": [
+          "stays",
+          "is staying"
+        ],
+        "why": "Временная ситуация."
+      },
+      {
+        "prompt": "My sister ___ every morning. (read)",
+        "answers": [
+          "reads"
+        ],
+        "wrong": [
+          "read",
+          "is read"
+        ],
+        "why": "Регулярность, третье лицо."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я сейчас готовлю ужин.",
+        "answers": [
+          "I am cooking dinner now.",
+          "I'm cooking dinner now.",
+          "I am cooking dinner.",
+          "I'm cooking dinner."
+        ],
+        "wrong": [],
+        "why": "Процесс сейчас."
+      },
+      {
+        "type": "correct",
+        "prompt": "I am knowing her.",
+        "answers": [
+          "I know her."
+        ],
+        "wrong": [],
+        "why": "Know обычно Simple."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "He often plays tennis."
+        ],
+        "wrong": [],
+        "words": [
+          "He",
+          "often",
+          "plays",
+          "tennis"
+        ],
+        "why": "Often показывает привычку."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "She reads every evening. → Опиши, что она читает прямо сейчас.",
+        "answers": [
+          "She is reading now.",
+          "She's reading now.",
+          "She is reading right now.",
+          "She's reading right now."
+        ],
+        "wrong": [],
+        "why": "Переход к Continuous."
+      },
+      {
+        "type": "translate",
+        "prompt": "Он работает здесь каждый день.",
+        "answers": [
+          "He works here every day.",
+          "He works here daily."
+        ],
+        "wrong": [],
+        "why": "Регулярность — Simple."
+      }
+    ]
+  },
+  {
+    "id": "movement",
+    "level": "A2",
+    "category": "Предлоги",
+    "title": "To / into / out of / across",
+    "subtitle": "Предлоги движения",
+    "rule": "To показывает направление к месту, into — движение внутрь, out of — наружу, across — с одной стороны на другую, through — сквозь пространство. I walked to the park — я дошёл до парка; I walked into the room — вошёл в комнату.",
+    "note": "С home после go обычно нет to: go home. In и on чаще обозначают положение, into и onto подчёркивают движение, хотя в реальной речи варианты иногда пересекаются.",
+    "table": [
+      [
+        "to / into",
+        "go to school / walk into a room",
+        "к / внутрь"
+      ],
+      [
+        "out of / across",
+        "get out of a car / cross a road",
+        "наружу / через"
+      ],
+      [
+        "through / along",
+        "walk through a tunnel / along a road",
+        "сквозь / вдоль"
+      ]
+    ],
+    "examples": [
+      [
+        "She ran across the street.",
+        "Она перебежала улицу.",
+        "Across — от одной стороны к другой."
+      ],
+      [
+        "He walked into the kitchen.",
+        "Он вошёл на кухню.",
+        "Into подчёркивает вход внутрь."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "We drove ___ the airport.",
+        "answers": [
+          "to"
+        ],
+        "wrong": [
+          "at",
+          "on"
+        ],
+        "why": "Направление к аэропорту."
+      },
+      {
+        "prompt": "She stepped ___ the room. (внутрь)",
+        "answers": [
+          "into"
+        ],
+        "wrong": [
+          "across",
+          "along"
+        ],
+        "why": "Into — движение внутрь."
+      },
+      {
+        "prompt": "He got ___ the car. (наружу)",
+        "answers": [
+          "out of"
+        ],
+        "wrong": [
+          "into",
+          "across"
+        ],
+        "why": "Out of — выход изнутри."
+      },
+      {
+        "prompt": "They walked ___ the tunnel. (сквозь)",
+        "answers": [
+          "through"
+        ],
+        "wrong": [
+          "onto",
+          "across"
+        ],
+        "why": "Through — через внутреннее пространство."
+      },
+      {
+        "prompt": "I went ___ home.",
+        "answers": [
+          "—"
+        ],
+        "wrong": [
+          "to",
+          "at"
+        ],
+        "why": "Go home без предлога."
+      },
+      {
+        "type": "translate",
+        "prompt": "Она пошла в школу.",
+        "answers": [
+          "She went to school.",
+          "She walked to school."
+        ],
+        "wrong": [],
+        "why": "To обозначает направление."
+      },
+      {
+        "type": "correct",
+        "prompt": "I went to home.",
+        "answers": [
+          "I went home."
+        ],
+        "wrong": [],
+        "why": "После go перед home не нужен to."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "We walked along the river."
+        ],
+        "wrong": [],
+        "words": [
+          "We",
+          "walked",
+          "along",
+          "the",
+          "river"
+        ],
+        "why": "Along — вдоль реки."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "He is in the room. → Он вошёл в комнату (используй walked).",
+        "answers": [
+          "He walked into the room."
+        ],
+        "wrong": [],
+        "why": "Into подчёркивает движение внутрь."
+      },
+      {
+        "type": "translate",
+        "prompt": "Мы перешли улицу пешком. (walk across)",
+        "answers": [
+          "We walked across the street.",
+          "We walked across the road."
+        ],
+        "wrong": [],
+        "why": "Across — через поверхность с одной стороны на другую."
+      }
+    ]
+  },
+  {
     "id": "present-perfect",
     "level": "B1",
     "category": "Времена",
@@ -3290,6 +4788,914 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Whose означает «чья»."
+      }
+    ]
+  },
+  {
+    "id": "perfect-vs-past",
+    "level": "B1",
+    "category": "Времена",
+    "title": "Present Perfect vs Past Simple",
+    "subtitle": "Опыт сейчас или завершённое прошлое",
+    "rule": "I saw that film yesterday — событие помещено во вчера. I've seen that film — важен опыт, время не указано. Present Perfect связывает прошлое с настоящим; Past Simple рассказывает о завершённом прошлом.",
+    "note": "Не выбирай время только по русскому переводу: оба могут звучать как «видел». Today может сочетаться с обоими в зависимости от смысла. В американском английском Past Simple чаще встречается с just/already.",
+    "table": [
+      [
+        "завершённый момент",
+        "I saw him yesterday.",
+        "Past Simple"
+      ],
+      [
+        "опыт",
+        "I've seen him before.",
+        "Present Perfect"
+      ],
+      [
+        "продолжающийся период",
+        "I've lived here since 2020.",
+        "Present Perfect"
+      ]
+    ],
+    "examples": [
+      [
+        "I lost my phone last week.",
+        "Я потерял телефон на прошлой неделе.",
+        "Last week задаёт завершённый период."
+      ],
+      [
+        "I've lost my phone and can't call you.",
+        "Я потерял телефон и не могу позвонить.",
+        "Результат важен сейчас."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "I ___ her yesterday. (meet)",
+        "answers": [
+          "met"
+        ],
+        "wrong": [
+          "have met",
+          "has met"
+        ],
+        "why": "Yesterday — завершённый момент."
+      },
+      {
+        "prompt": "She has never ___ abroad. (be)",
+        "answers": [
+          "been"
+        ],
+        "wrong": [
+          "was",
+          "be"
+        ],
+        "why": "Have/has + V3 для опыта."
+      },
+      {
+        "prompt": "We ___ here since 2020 and still live here.",
+        "answers": [
+          "have lived"
+        ],
+        "wrong": [
+          "lived",
+          "has lived"
+        ],
+        "why": "Период продолжается."
+      },
+      {
+        "prompt": "He ___ in 2019. (move)",
+        "answers": [
+          "moved"
+        ],
+        "wrong": [
+          "has moved",
+          "have moved"
+        ],
+        "why": "2019 — завершённое прошлое."
+      },
+      {
+        "prompt": "Have you ever ___ sushi? (try)",
+        "answers": [
+          "tried"
+        ],
+        "wrong": [
+          "try",
+          "trying"
+        ],
+        "why": "Ever и опыт: have + V3."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я видел её вчера.",
+        "answers": [
+          "I saw her yesterday.",
+          "Yesterday I saw her."
+        ],
+        "wrong": [],
+        "why": "Завершённое прошлое."
+      },
+      {
+        "type": "correct",
+        "prompt": "I have seen him last week.",
+        "answers": [
+          "I saw him last week."
+        ],
+        "wrong": [],
+        "why": "Last week требует Past Simple в этом контексте."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "Have you ever visited London?"
+        ],
+        "wrong": [],
+        "words": [
+          "Have",
+          "you",
+          "ever",
+          "visited",
+          "London"
+        ],
+        "why": "Опыт без указания завершённого времени."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "I visited Paris in 2022. → Спроси о жизненном опыте, используя ever.",
+        "answers": [
+          "Have you ever visited Paris?",
+          "Have you ever been to Paris?"
+        ],
+        "wrong": [],
+        "why": "Вопрос об опыте — Present Perfect."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я никогда не пробовал суши. (Present Perfect)",
+        "answers": [
+          "I have never tried sushi.",
+          "I've never tried sushi."
+        ],
+        "wrong": [],
+        "why": "Опыт до настоящего."
+      }
+    ]
+  },
+  {
+    "id": "future-time",
+    "level": "B1",
+    "category": "Времена",
+    "title": "Future time clauses",
+    "subtitle": "Будущее после when, until, as soon as",
+    "rule": "В придаточной части времени после when, until, as soon as, before обычно не ставят will, даже если событие произойдёт завтра. I'll call when I arrive — позвоню, когда приеду. Главная часть может содержать will.",
+    "note": "Когда when вводит не временное условие, а вопрос, will возможен: I don't know when he will arrive. Сравни смысл: «когда приедет» как вопрос и как момент действия.",
+    "table": [
+      [
+        "when",
+        "I'll call when I arrive.",
+        "когда"
+      ],
+      [
+        "until",
+        "Wait until she comes.",
+        "пока не"
+      ],
+      [
+        "as soon as",
+        "I'll text as soon as I land.",
+        "как только"
+      ]
+    ],
+    "examples": [
+      [
+        "I'll wait until you finish.",
+        "Я подожду, пока ты закончишь.",
+        "Finish вместо will finish."
+      ],
+      [
+        "I don't know when she will arrive.",
+        "Не знаю, когда она приедет.",
+        "Это косвенный вопрос, will допустим."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "I'll call when I ___. (arrive)",
+        "answers": [
+          "arrive"
+        ],
+        "wrong": [
+          "will arrive",
+          "arrived"
+        ],
+        "why": "Временная часть — Present Simple."
+      },
+      {
+        "prompt": "Wait until he ___. (come)",
+        "answers": [
+          "comes"
+        ],
+        "wrong": [
+          "will come",
+          "come"
+        ],
+        "why": "После until используем comes."
+      },
+      {
+        "prompt": "I'll text as soon as I ___. (land)",
+        "answers": [
+          "land"
+        ],
+        "wrong": [
+          "will land",
+          "landed"
+        ],
+        "why": "As soon as + настоящее в будущем контексте."
+      },
+      {
+        "prompt": "Before she ___, we'll clean. (arrive)",
+        "answers": [
+          "arrives"
+        ],
+        "wrong": [
+          "will arrive",
+          "arrive"
+        ],
+        "why": "Before вводит часть времени."
+      },
+      {
+        "prompt": "I don't know when he ___ arrive. (будущее)",
+        "answers": [
+          "will"
+        ],
+        "wrong": [
+          "is",
+          "does"
+        ],
+        "why": "Косвенный вопрос допускает will."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я позвоню, когда приеду.",
+        "answers": [
+          "I will call when I arrive.",
+          "I'll call when I arrive.",
+          "When I arrive, I'll call.",
+          "When I arrive, I will call."
+        ],
+        "wrong": [],
+        "why": "When + Present Simple."
+      },
+      {
+        "type": "correct",
+        "prompt": "I'll wait until you will finish.",
+        "answers": [
+          "I'll wait until you finish.",
+          "I will wait until you finish."
+        ],
+        "wrong": [],
+        "why": "В части времени will не нужен."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "We will leave when she arrives."
+        ],
+        "wrong": [],
+        "words": [
+          "We",
+          "will",
+          "leave",
+          "when",
+          "she",
+          "arrives"
+        ],
+        "why": "Главная часть с will, временная — arrives."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "I will get home. Then I will text you. → Объедини с as soon as.",
+        "answers": [
+          "I will text you as soon as I get home.",
+          "I'll text you as soon as I get home.",
+          "As soon as I get home, I'll text you.",
+          "As soon as I get home, I will text you."
+        ],
+        "wrong": [],
+        "why": "После as soon as используем get."
+      },
+      {
+        "type": "translate",
+        "prompt": "Подожди, пока он придёт.",
+        "answers": [
+          "Wait until he comes."
+        ],
+        "wrong": [],
+        "why": "Until + Present Simple."
+      }
+    ]
+  },
+  {
+    "id": "question-tags",
+    "level": "B1",
+    "category": "Предложения",
+    "title": "Question tags",
+    "subtitle": "Вопросы-хвостики",
+    "rule": "Чтобы попросить подтверждение, добавь короткий вопрос в конце: You're tired, aren't you? В обычном подтверждающем вопросе после утверждения используется отрицательный хвостик, после отрицания — положительный. Помощник зависит от времени.",
+    "note": "I am right, aren't I? — особая форма. Если в утверждении нет помощника, используй do/does/did: She works here, doesn't she?",
+    "table": [
+      [
+        "утверждение",
+        "You are ready, aren't you?",
+        "не так ли?"
+      ],
+      [
+        "отрицание",
+        "He isn't here, is he?",
+        "верно?"
+      ],
+      [
+        "обычный глагол",
+        "She works, doesn't she?",
+        "does"
+      ]
+    ],
+    "examples": [
+      [
+        "You know him, don't you?",
+        "Ты ведь его знаешь?",
+        "Present Simple требует do."
+      ],
+      [
+        "They didn't come, did they?",
+        "Они ведь не пришли?",
+        "После отрицания положительный хвостик."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "You're ready, ___ you?",
+        "answers": [
+          "aren't"
+        ],
+        "wrong": [
+          "are",
+          "don't"
+        ],
+        "why": "Положительное be → отрицательный tag."
+      },
+      {
+        "prompt": "She works here, ___ she?",
+        "answers": [
+          "doesn't"
+        ],
+        "wrong": [
+          "isn't",
+          "don't"
+        ],
+        "why": "Present Simple, she → doesn't."
+      },
+      {
+        "prompt": "They didn't call, ___ they?",
+        "answers": [
+          "did"
+        ],
+        "wrong": [
+          "didn't",
+          "do"
+        ],
+        "why": "Отрицание → положительный did."
+      },
+      {
+        "prompt": "He can swim, ___ he?",
+        "answers": [
+          "can't"
+        ],
+        "wrong": [
+          "doesn't",
+          "isn't"
+        ],
+        "why": "Повторяем модальный can."
+      },
+      {
+        "prompt": "I'm late, ___ I?",
+        "answers": [
+          "aren't"
+        ],
+        "wrong": [
+          "amn't",
+          "isn't"
+        ],
+        "why": "Стандартный tag для I am — aren't I."
+      },
+      {
+        "type": "translate",
+        "prompt": "Ты ведь готов? (question tag)",
+        "answers": [
+          "You're ready, aren't you?",
+          "You are ready, aren't you?"
+        ],
+        "wrong": [],
+        "why": "После are нужен aren't."
+      },
+      {
+        "type": "correct",
+        "prompt": "She likes tea, isn't she?",
+        "answers": [
+          "She likes tea, doesn't she?"
+        ],
+        "wrong": [],
+        "why": "Likes требует does."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "He is not here is he"
+        ],
+        "wrong": [],
+        "words": [
+          "He",
+          "is",
+          "not",
+          "here",
+          "is",
+          "he"
+        ],
+        "why": "После отрицания tag положительный."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "They came yesterday. → Добавь вопрос-хвостик.",
+        "answers": [
+          "They came yesterday, didn't they?"
+        ],
+        "wrong": [],
+        "why": "Past Simple требует didn't."
+      },
+      {
+        "type": "translate",
+        "prompt": "Он ведь не устал? (question tag)",
+        "answers": [
+          "He isn't tired, is he?",
+          "He's not tired, is he?",
+          "He is not tired, is he?"
+        ],
+        "wrong": [],
+        "why": "После отрицательного is положительный tag."
+      }
+    ]
+  },
+  {
+    "id": "indirect-questions",
+    "level": "B1",
+    "category": "Предложения",
+    "title": "Indirect questions",
+    "subtitle": "Вежливые косвенные вопросы",
+    "rule": "Вместо Where is the station? можно сказать Could you tell me where the station is? Внутри косвенного вопроса порядок как в утверждении: the station is. Если вопрос да/нет, используй if или whether.",
+    "note": "Не переноси do/does/did из прямого вопроса внутрь косвенного: Do you know where she lives? Но вопросительная форма внешней части сохраняется.",
+    "table": [
+      [
+        "прямой вопрос",
+        "Where is he?",
+        "где он?"
+      ],
+      [
+        "косвенный",
+        "Do you know where he is?",
+        "знаешь, где он?"
+      ],
+      [
+        "да/нет",
+        "I wonder if he is home.",
+        "интересно, дома ли он"
+      ]
+    ],
+    "examples": [
+      [
+        "Could you tell me where the bank is?",
+        "Не могли бы вы сказать, где банк?",
+        "Внутри bank is."
+      ],
+      [
+        "I wonder whether she knows.",
+        "Интересно, знает ли она.",
+        "Whether вводит общий вопрос."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "Do you know where she ___? (live)",
+        "answers": [
+          "lives"
+        ],
+        "wrong": [
+          "does live",
+          "live"
+        ],
+        "why": "Внутри обычный порядок и форма lives."
+      },
+      {
+        "prompt": "Can you tell me where the station ___?",
+        "answers": [
+          "is"
+        ],
+        "wrong": [
+          "are",
+          "does"
+        ],
+        "why": "Station is в конце."
+      },
+      {
+        "prompt": "I wonder ___ he is ready. (ли)",
+        "answers": [
+          "if",
+          "whether"
+        ],
+        "wrong": [
+          "what",
+          "where"
+        ],
+        "why": "Общий вопрос через if/whether."
+      },
+      {
+        "prompt": "Do you know what he ___ yesterday? (say)",
+        "answers": [
+          "said"
+        ],
+        "wrong": [
+          "did say",
+          "says"
+        ],
+        "why": "Внутри Past Simple без did."
+      },
+      {
+        "prompt": "Could you tell me how much it ___? (cost)",
+        "answers": [
+          "costs"
+        ],
+        "wrong": [
+          "does cost",
+          "cost"
+        ],
+        "why": "It costs — порядок утверждения."
+      },
+      {
+        "type": "translate",
+        "prompt": "Ты знаешь, где он живёт?",
+        "answers": [
+          "Do you know where he lives?"
+        ],
+        "wrong": [],
+        "why": "Внутри he lives."
+      },
+      {
+        "type": "correct",
+        "prompt": "Do you know where does she work?",
+        "answers": [
+          "Do you know where she works?"
+        ],
+        "wrong": [],
+        "why": "Убираем does из вложенного вопроса."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "I wonder if she is home."
+        ],
+        "wrong": [],
+        "words": [
+          "I",
+          "wonder",
+          "if",
+          "she",
+          "is",
+          "home"
+        ],
+        "why": "If означает ли."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Where is the bank? → Начни с Could you tell me.",
+        "answers": [
+          "Could you tell me where the bank is?"
+        ],
+        "wrong": [],
+        "why": "The bank is — обычный порядок."
+      },
+      {
+        "type": "translate",
+        "prompt": "Интересно, готов ли он.",
+        "answers": [
+          "I wonder if he is ready.",
+          "I wonder whether he is ready.",
+          "I wonder if he's ready.",
+          "I wonder whether he's ready."
+        ],
+        "wrong": [],
+        "why": "If или whether."
+      }
+    ]
+  },
+  {
+    "id": "phrasal-order",
+    "level": "B1",
+    "category": "Глаголы",
+    "title": "Phrasal verbs: word order",
+    "subtitle": "Порядок слов во фразовых глаголах",
+    "rule": "Некоторые фразовые глаголы допускают разделение: turn off the light или turn the light off. Если объект — местоимение, оно обязательно между частями: turn it off. Но look after не разделяется: look after him.",
+    "note": "Не все глаголы можно разделять. Изучай конкретное сочетание вместе с примером. Look him after — ошибка; pick him up — правильно.",
+    "table": [
+      [
+        "разделяемый",
+        "turn the light off",
+        "выключить"
+      ],
+      [
+        "с местоимением",
+        "turn it off",
+        "выключить его"
+      ],
+      [
+        "неразделяемый",
+        "look after him",
+        "присматривать"
+      ]
+    ],
+    "examples": [
+      [
+        "Pick up the phone.",
+        "Подними трубку.",
+        "Pick up допускает разделение."
+      ],
+      [
+        "Please turn it off.",
+        "Пожалуйста, выключи это.",
+        "Местоимение между turn и off."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "Turn ___ off. (это)",
+        "answers": [
+          "it"
+        ],
+        "wrong": [
+          "its",
+          "off it"
+        ],
+        "why": "Местоимение между частями."
+      },
+      {
+        "prompt": "She looks ___ her brother. (присматривает)",
+        "answers": [
+          "after"
+        ],
+        "wrong": [
+          "up",
+          "off"
+        ],
+        "why": "Look after — присматривать."
+      },
+      {
+        "prompt": "Pick ___ up at six. (меня)",
+        "answers": [
+          "me"
+        ],
+        "wrong": [
+          "I",
+          "my"
+        ],
+        "why": "Местоимение в середине."
+      },
+      {
+        "prompt": "Take your shoes ___. (сними)",
+        "answers": [
+          "off"
+        ],
+        "wrong": [
+          "after",
+          "into"
+        ],
+        "why": "Take off — снять."
+      },
+      {
+        "prompt": "We ran ___ of milk. (закончилось)",
+        "answers": [
+          "out"
+        ],
+        "wrong": [
+          "off",
+          "up"
+        ],
+        "why": "Run out of — исчерпать запас."
+      },
+      {
+        "type": "translate",
+        "prompt": "Выключи это. (turn off)",
+        "answers": [
+          "Turn it off."
+        ],
+        "wrong": [],
+        "why": "Местоимение в середине."
+      },
+      {
+        "type": "correct",
+        "prompt": "Please pick up me.",
+        "answers": [
+          "Please pick me up.",
+          "Pick me up, please."
+        ],
+        "wrong": [],
+        "why": "Me между pick и up."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "She looks after her sister."
+        ],
+        "wrong": [],
+        "words": [
+          "She",
+          "looks",
+          "after",
+          "her",
+          "sister"
+        ],
+        "why": "Look after не разделяется."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Turn off the light. → Замени the light на it.",
+        "answers": [
+          "Turn it off."
+        ],
+        "wrong": [],
+        "why": "It ставится между частями."
+      },
+      {
+        "type": "translate",
+        "prompt": "У нас закончилось молоко. (run out of, Past Simple)",
+        "answers": [
+          "We ran out of milk."
+        ],
+        "wrong": [],
+        "why": "Ran out of — закончился запас."
+      }
+    ]
+  },
+  {
+    "id": "so-such",
+    "level": "B1",
+    "category": "Прилагательные",
+    "title": "So / such",
+    "subtitle": "Такой, настолько",
+    "rule": "So усиливает прилагательное или наречие: so beautiful, so quickly. Such усиливает группу с существительным: such a beautiful day, such good news. Если существительное исчисляемое и одно, нужен a/an после such.",
+    "note": "So many, so much, so few, so little — особые сочетания. Не говори so a good idea: such a good idea или so good an idea в формальном стиле.",
+    "table": [
+      [
+        "so + признак",
+        "so tired",
+        "так устал"
+      ],
+      [
+        "such + a/an + предмет",
+        "such a nice day",
+        "такой хороший день"
+      ],
+      [
+        "such + множественное/масса",
+        "such good news",
+        "такие хорошие новости"
+      ]
+    ],
+    "examples": [
+      [
+        "It was so cold that we stayed home.",
+        "Было так холодно, что мы остались дома.",
+        "So усиливает cold."
+      ],
+      [
+        "It was such a cold day.",
+        "Это был такой холодный день.",
+        "Such относится ко всей группе a cold day."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "She's ___ kind.",
+        "answers": [
+          "so"
+        ],
+        "wrong": [
+          "such",
+          "such a"
+        ],
+        "why": "So перед прилагательным."
+      },
+      {
+        "prompt": "It was ___ a good film.",
+        "answers": [
+          "such"
+        ],
+        "wrong": [
+          "so",
+          "very"
+        ],
+        "why": "Such перед a good film."
+      },
+      {
+        "prompt": "We had ___ much fun.",
+        "answers": [
+          "so"
+        ],
+        "wrong": [
+          "such",
+          "many"
+        ],
+        "why": "So much — устойчивое сочетание."
+      },
+      {
+        "prompt": "They are ___ nice people.",
+        "answers": [
+          "such"
+        ],
+        "wrong": [
+          "so",
+          "such a"
+        ],
+        "why": "Such перед группой с существительным во множественном."
+      },
+      {
+        "prompt": "He spoke ___ quickly.",
+        "answers": [
+          "so"
+        ],
+        "wrong": [
+          "such",
+          "such a"
+        ],
+        "why": "So усиливает наречие."
+      },
+      {
+        "type": "translate",
+        "prompt": "Это такая хорошая идея!",
+        "answers": [
+          "It's such a good idea!",
+          "It is such a good idea!",
+          "That's such a good idea!",
+          "That is such a good idea!"
+        ],
+        "wrong": [],
+        "why": "Such a + существительное."
+      },
+      {
+        "type": "correct",
+        "prompt": "It was so a nice day.",
+        "answers": [
+          "It was such a nice day.",
+          "It was so nice a day."
+        ],
+        "wrong": [],
+        "why": "Such a — обычная форма."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "It was so quiet."
+        ],
+        "wrong": [],
+        "words": [
+          "It",
+          "was",
+          "so",
+          "quiet"
+        ],
+        "why": "So усиливает quiet."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "The film was so good. → Начни с It was such.",
+        "answers": [
+          "It was such a good film.",
+          "It was such a good movie."
+        ],
+        "wrong": [],
+        "why": "Such a good film."
+      },
+      {
+        "type": "translate",
+        "prompt": "Он так быстро бежал!",
+        "answers": [
+          "He ran so quickly!",
+          "He ran so fast!"
+        ],
+        "wrong": [],
+        "why": "So перед наречием."
       }
     ]
   },
