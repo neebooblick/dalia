@@ -67,7 +67,7 @@ function renderSession(){
  let meta=node('div','grammar-task-meta');meta.append(node('span','grammar-level',item.t.level),node('span','tiny muted',(session.index+1)+' из '+session.items.length));panel.append(meta);let track=node('div','grammar-progress'),bar=node('div','grammar-progress-fill');bar.style.width=(session.index/session.items.length*100)+'%';track.append(bar);panel.append(track);
  if(q.type)panel.append(node('span','grammar-task-kind',taskLabels[q.type]));
  panel.append(node('p','grammar-instruction',(q.type==='correct'&&q.prompt.includes('Исправь пунктуацию')?'Исправь знаки препинания. Напиши оба предложения целиком.':instructions[q.type])||(q.wrong.length?'Выбери вариант, который подходит вместо пропуска.':'Впиши только пропущенное слово или выражение.')));
- if(!isOrder)panel.append(node('h3','grammar-question',q.prompt));
+ if(q.prompt)panel.append(node('h3','grammar-question',q.prompt));
  let feedback=node('div','grammar-feedback');feedback.setAttribute('role','status');let actions=node('div','grammar-practice-actions'),choices=node('div','grammar-options'),inputs=[],input=null,check=null;let options=session.options,wordButtons=[],orderArea=null;
  if(isOrder){
  if(!session.wordBank){session.wordBank=shuffle(q.words.map((word,i)=>({word:word.replace(/[,;:]$/,''),i})));if(session.wordBank.length>1&&orderNorm(session.wordBank.map(x=>x.word).join(' '))===orderNorm(q.words.join(' ')))session.wordBank.push(session.wordBank.shift())}
