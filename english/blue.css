@@ -1050,3 +1050,6 @@ button:disabled{cursor:not-allowed;opacity:.58}
 .english-peek-actions button{flex:1 1 auto;min-width:0;font-size:.84rem;padding:8px 12px}
 @keyframes english-peek-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.english-word-peek{animation:none}}
+
+/* Contextual phrase inside an example word translation. */
+.english-peek-phrase{border-top:1px solid var(--stroke);padding-top:10px;margin-top:12px;overflow-wrap:anywhere}.english-peek-phrase strong{display:block;color:var(--pink2);font-size:.96rem;margin-top:4px}.english-peek-phrase .english-peek-meaning{margin-top:3px}
