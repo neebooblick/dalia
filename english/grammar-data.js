@@ -1467,7 +1467,7 @@ window.daliaGrammarLessons=[
         "why": "Принадлежность одному человеку."
       },
       {
-        "prompt": "The ___ tail is long. (cat)",
+        "prompt": "The ___ tail is long. (один кот)",
         "answers": [
           "cat's"
         ],
@@ -1651,7 +1651,10 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "Please turn off the light."
+          "Please turn off the light.",
+          "Turn off the light please.",
+          "Please turn the light off.",
+          "Turn the light off please."
         ],
         "wrong": [],
         "words": [
@@ -1800,7 +1803,9 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "She is usually at home."
+          "She is usually at home.",
+          "Usually she is at home.",
+          "She usually is at home."
         ],
         "wrong": [],
         "words": [
@@ -2647,8 +2652,7 @@ window.daliaGrammarLessons=[
         "answers": [
           "We have a little time.",
           "We've got a little time.",
-          "We have got a little time.",
-          "We have some time."
+          "We have got a little time."
         ],
         "wrong": [],
         "why": "Time неисчисляемое. A little и some передают небольшое или неопределённое количество."
@@ -3166,7 +3170,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "She hurt ___.",
+        "prompt": "She hurt ___. (она поранилась сама)",
         "answers": [
           "herself"
         ],
@@ -3177,7 +3181,7 @@ window.daliaGrammarLessons=[
         "why": "She действует на себя."
       },
       {
-        "prompt": "We enjoyed ___.",
+        "prompt": "We enjoyed ___. (мы хорошо провели время)",
         "answers": [
           "ourselves"
         ],
@@ -3188,7 +3192,7 @@ window.daliaGrammarLessons=[
         "why": "We → ourselves."
       },
       {
-        "prompt": "They introduced ___.",
+        "prompt": "They introduced ___. (они представились)",
         "answers": [
           "themselves"
         ],
@@ -3540,7 +3544,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "We used to meet every week."
+          "We used to meet every week.",
+          "Every week we used to meet."
         ],
         "wrong": [],
         "words": [
@@ -3692,7 +3697,9 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "He often plays tennis."
+          "He often plays tennis.",
+          "Often he plays tennis.",
+          "He plays tennis often."
         ],
         "wrong": [],
         "words": [
@@ -3923,7 +3930,7 @@ window.daliaGrammarLessons=[
           "has",
           "am"
         ],
-        "why": "Важен результат сейчас: ключи потеряны. С I используем have + lost."
+        "why": "Have + lost образует Present Perfect с I. Контекст показывает, что результат важен сейчас."
       },
       {
         "prompt": "She has ___ the letter. (write)",
@@ -3992,7 +3999,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "We have lived here since 2020."
+          "We have lived here since 2020.",
+          "Since 2020 we have lived here."
         ],
         "wrong": [],
         "words": [
@@ -5002,7 +5010,7 @@ window.daliaGrammarLessons=[
         "why": "После until используем comes."
       },
       {
-        "prompt": "I'll text as soon as I ___. (land)",
+        "prompt": "I'll text as soon as I ___. (land, Present Simple)",
         "answers": [
           "land"
         ],
@@ -5060,7 +5068,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "We will leave when she arrives."
+          "We will leave when she arrives.",
+          "When she arrives we will leave."
         ],
         "wrong": [],
         "words": [
@@ -6597,7 +6606,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "They will have left by then."
+          "They will have left by then.",
+          "By then they will have left."
         ],
         "wrong": [],
         "words": [
@@ -7352,7 +7362,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "Having finished the work, she left."
+          "Having finished the work, she left.",
+          "She left having finished the work."
         ],
         "wrong": [],
         "words": [
@@ -8260,7 +8271,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "She can swim and I can too."
+          "She can swim and I can too.",
+          "I can swim and she can too."
         ],
         "wrong": [],
         "words": [
@@ -8409,7 +8421,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "He did call me yesterday."
+          "He did call me yesterday.",
+          "Yesterday he did call me."
         ],
         "wrong": [],
         "words": [
@@ -8864,7 +8877,9 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "Nevertheless, we finished the task."
+          "Nevertheless, we finished the task.",
+          "We nevertheless finished the task.",
+          "We finished the task nevertheless."
         ],
         "wrong": [],
         "words": [
@@ -9817,7 +9832,7 @@ window.daliaGrammarLessons=[
     "category": "Прилагательные",
     "title": "Correlative and advanced comparison",
     "subtitle": "Чем больше, тем лучше и другие сравнения",
-    "rule": "The more you practise, the easier it becomes — чем больше практикуешься, тем легче становится. Два сравнительных оборота выражают связь изменений. No sooner... than относится к почти одновременным событиям, а no more than и not more than различаются оттенком: всего лишь и не более.",
+    "rule": "The more you practise, the easier it becomes — чем больше практикуешься, тем легче становится. Два сравнительных оборота выражают связь изменений. No sooner... than описывает событие, сразу после которого произошло другое. No more than и not more than могут обозначать верхний предел; первое также часто подчёркивает, что количество невелико.",
     "note": "Не убирай the перед обеими сравнительными частями в конструкции the more..., the better. Это не обычный артикль перед существительным. В зависимости от контекста сокращённая форма тоже возможна: The sooner, the better.",
     "table": [
       [
@@ -9831,9 +9846,14 @@ window.daliaGrammarLessons=[
         "чем усерднее, тем лучше"
       ],
       [
+        "no sooner... than",
+        "No sooner had she arrived than it rained.",
+        "едва она приехала, как пошёл дождь"
+      ],
+      [
         "ограничение",
-        "no more than five",
-        "всего пять / не более пяти"
+        "no more than five / not more than five",
+        "всего пять / не более пяти (по контексту)"
       ]
     ],
     "examples": [
