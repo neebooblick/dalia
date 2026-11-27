@@ -1112,3 +1112,10 @@ button:disabled{cursor:not-allowed;opacity:.58}
 .grammar-order-reset{min-height:44px;margin-top:8px}
 .grammar-match-note{font-size:13px;line-height:1.5}
 @media(max-width:550px){.grammar-word{padding:9px 11px}.grammar-order-answer,.grammar-word-bank{gap:6px}.grammar-sentence-input{min-height:110px}}
+
+/* Expanded grammar catalog: clear level groups. */
+.grammar-level-heading{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 2px;padding:0 2px 8px;border-bottom:1px solid var(--stroke)}
+.grammar-level-heading:first-child{margin-top:2px}
+.grammar-level-heading h3{font-size:17px;line-height:1.4;margin:0;color:var(--text);font-weight:650}
+.grammar-level-heading span{white-space:nowrap}
+@media(max-width:550px){.grammar-level-heading h3{font-size:15px}.grammar-level-heading{margin-top:14px}}
