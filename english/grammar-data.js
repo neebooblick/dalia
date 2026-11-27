@@ -6323,6 +6323,1222 @@ window.daliaGrammarLessons=[
     ]
   },
   {
+    "id": "future-cont",
+    "level": "B2",
+    "category": "Времена",
+    "title": "Future Continuous",
+    "subtitle": "Процесс в будущем",
+    "rule": "Will be + -ing показывает, что действие будет идти в определённый момент будущего: at eight tomorrow I'll be working. Мы как будто смотрим на один кадр из будущего. Эта форма также подходит для нейтрального вопроса о планах.",
+    "note": "Не путай I'll work — буду работать, с I'll be working at eight — в восемь буду в процессе работы. После will be нужен -ing.",
+    "table": [
+      [
+        "утверждение",
+        "I'll be working.",
+        "буду работать"
+      ],
+      [
+        "отрицание",
+        "I won't be working.",
+        "не буду работать"
+      ],
+      [
+        "вопрос",
+        "Will you be working?",
+        "будешь работать?"
+      ]
+    ],
+    "examples": [
+      [
+        "This time tomorrow, I'll be flying to Rome.",
+        "Завтра в это время я буду лететь в Рим.",
+        "Действие в процессе в будущем."
+      ],
+      [
+        "Will you be using the car tonight?",
+        "Ты будешь пользоваться машиной сегодня вечером?",
+        "Нейтральный вопрос о планах."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "At eight tomorrow I will be ___ . (work)",
+        "answers": [
+          "working"
+        ],
+        "wrong": [
+          "work",
+          "worked"
+        ],
+        "why": "Will be + -ing."
+      },
+      {
+        "prompt": "She will ___ sleeping at midnight.",
+        "answers": [
+          "be"
+        ],
+        "wrong": [
+          "been",
+          "being"
+        ],
+        "why": "После will начальная форма be."
+      },
+      {
+        "prompt": "___ you be studying tonight?",
+        "answers": [
+          "Will"
+        ],
+        "wrong": [
+          "Do",
+          "Are"
+        ],
+        "why": "Will в начале вопроса."
+      },
+      {
+        "prompt": "They won't be ___ tomorrow morning. (travel)",
+        "answers": [
+          "travelling",
+          "traveling"
+        ],
+        "wrong": [
+          "travel",
+          "travelled"
+        ],
+        "why": "Нужна форма -ing."
+      },
+      {
+        "prompt": "At noon he'll be ___ lunch. (have)",
+        "answers": [
+          "having"
+        ],
+        "wrong": [
+          "have",
+          "had"
+        ],
+        "why": "Have → having."
+      },
+      {
+        "type": "translate",
+        "prompt": "Завтра в восемь я буду работать. (Future Continuous)",
+        "answers": [
+          "I will be working at eight tomorrow.",
+          "I'll be working at eight tomorrow.",
+          "At eight tomorrow I'll be working.",
+          "At eight tomorrow I will be working."
+        ],
+        "wrong": [],
+        "why": "Will be working описывает процесс."
+      },
+      {
+        "type": "correct",
+        "prompt": "She will be sleep at nine.",
+        "answers": [
+          "She will be sleeping at nine.",
+          "She'll be sleeping at nine."
+        ],
+        "wrong": [],
+        "why": "Нужен -ing."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "We will be waiting for you."
+        ],
+        "wrong": [],
+        "words": [
+          "We",
+          "will",
+          "be",
+          "waiting",
+          "for",
+          "you"
+        ],
+        "why": "Will be waiting — процесс."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "He will be working tonight. → Задай общий вопрос.",
+        "answers": [
+          "Will he be working tonight?"
+        ],
+        "wrong": [],
+        "why": "Will переносится в начало."
+      },
+      {
+        "type": "translate",
+        "prompt": "Мы будем лететь завтра в это время. (Future Continuous)",
+        "answers": [
+          "We will be flying this time tomorrow.",
+          "We'll be flying this time tomorrow.",
+          "This time tomorrow we'll be flying.",
+          "This time tomorrow we will be flying."
+        ],
+        "wrong": [],
+        "why": "Процесс в определённый момент будущего."
+      }
+    ]
+  },
+  {
+    "id": "future-perfect",
+    "level": "B2",
+    "category": "Времена",
+    "title": "Future Perfect",
+    "subtitle": "Результат к моменту в будущем",
+    "rule": "Will have + V3 показывает, что к будущему моменту действие уже завершится. By Friday I'll have finished — к пятнице я уже закончу. By указывает крайний срок, а не длительность процесса.",
+    "note": "Не путай by Friday — к пятнице, и until Friday — до пятницы. Future Perfect выделяет результат к моменту, Future Continuous — процесс в этот момент.",
+    "table": [
+      [
+        "результат",
+        "I'll have finished.",
+        "уже закончу"
+      ],
+      [
+        "отрицание",
+        "I won't have finished.",
+        "ещё не закончу"
+      ],
+      [
+        "срок",
+        "by next week",
+        "к следующей неделе"
+      ]
+    ],
+    "examples": [
+      [
+        "By noon, she will have arrived.",
+        "К полудню она уже приедет.",
+        "Будущая точка отсчёта."
+      ],
+      [
+        "We'll have paid by Friday.",
+        "К пятнице мы уже заплатим.",
+        "Важно завершение оплаты."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "By Friday I will have ___ the report. (finish)",
+        "answers": [
+          "finished"
+        ],
+        "wrong": [
+          "finish",
+          "finishing"
+        ],
+        "why": "Will have + V3."
+      },
+      {
+        "prompt": "She will ___ arrived by noon.",
+        "answers": [
+          "have"
+        ],
+        "wrong": [
+          "has",
+          "had"
+        ],
+        "why": "После will нужна have."
+      },
+      {
+        "prompt": "They will have left ___ six. (к шести)",
+        "answers": [
+          "by"
+        ],
+        "wrong": [
+          "until",
+          "since"
+        ],
+        "why": "By указывает срок."
+      },
+      {
+        "prompt": "He won't have ___ the book by then. (read)",
+        "answers": [
+          "read"
+        ],
+        "wrong": [
+          "reading",
+          "reads"
+        ],
+        "why": "Третья форма read."
+      },
+      {
+        "prompt": "___ you have finished by Monday?",
+        "answers": [
+          "Will"
+        ],
+        "wrong": [
+          "Have",
+          "Do"
+        ],
+        "why": "Вопрос начинается с will."
+      },
+      {
+        "type": "translate",
+        "prompt": "К пятнице я закончу отчёт. (Future Perfect)",
+        "answers": [
+          "I will have finished the report by Friday.",
+          "I'll have finished the report by Friday.",
+          "By Friday I'll have finished the report.",
+          "By Friday I will have finished the report."
+        ],
+        "wrong": [],
+        "why": "Результат к сроку."
+      },
+      {
+        "type": "correct",
+        "prompt": "She will has arrived by noon.",
+        "answers": [
+          "She will have arrived by noon.",
+          "She'll have arrived by noon."
+        ],
+        "wrong": [],
+        "why": "Will + have."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "They will have left by then."
+        ],
+        "wrong": [],
+        "words": [
+          "They",
+          "will",
+          "have",
+          "left",
+          "by",
+          "then"
+        ],
+        "why": "Will have left — действие завершится."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "You will have finished by six. → Задай общий вопрос.",
+        "answers": [
+          "Will you have finished by six?"
+        ],
+        "wrong": [],
+        "why": "Will перед you."
+      },
+      {
+        "type": "translate",
+        "prompt": "К тому времени он уже уйдёт. (Future Perfect)",
+        "answers": [
+          "He will have left by then.",
+          "He'll have left by then.",
+          "By then he will have left.",
+          "By then he'll have left."
+        ],
+        "wrong": [],
+        "why": "By then задаёт будущую точку."
+      }
+    ]
+  },
+  {
+    "id": "past-perfect-cont",
+    "level": "B2",
+    "category": "Времена",
+    "title": "Past Perfect Continuous",
+    "subtitle": "Процесс до момента в прошлом",
+    "rule": "Had been + -ing показывает, сколько длился процесс до другого момента в прошлом. I had been waiting for an hour when she arrived — к её приходу я ждал уже час. В отличие от Past Perfect Simple, здесь акцент на процессе.",
+    "note": "Had been не меняется по лицам. Глаголы состояния обычно не используют в Continuous: I had known her for years, а не had been knowing.",
+    "table": [
+      [
+        "процесс",
+        "had been working",
+        "работал до момента"
+      ],
+      [
+        "отрицание",
+        "hadn't been working",
+        "не работал"
+      ],
+      [
+        "длительность",
+        "for two hours",
+        "в течение двух часов"
+      ]
+    ],
+    "examples": [
+      [
+        "He was tired because he had been running.",
+        "Он устал, потому что бегал.",
+        "Предыдущий процесс объясняет состояние."
+      ],
+      [
+        "She had been studying for hours before the exam.",
+        "Перед экзаменом она занималась несколько часов.",
+        "Длительность до прошлого момента."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "I had ___ waiting for an hour.",
+        "answers": [
+          "been"
+        ],
+        "wrong": [
+          "be",
+          "being"
+        ],
+        "why": "Had been + -ing."
+      },
+      {
+        "prompt": "She had been ___ before I arrived. (study)",
+        "answers": [
+          "studying"
+        ],
+        "wrong": [
+          "studied",
+          "study"
+        ],
+        "why": "Форма -ing."
+      },
+      {
+        "prompt": "They had been working ___ two hours.",
+        "answers": [
+          "for"
+        ],
+        "wrong": [
+          "since",
+          "at"
+        ],
+        "why": "For + длительность."
+      },
+      {
+        "prompt": "He was wet because he had been ___ . (walk)",
+        "answers": [
+          "walking"
+        ],
+        "wrong": [
+          "walked",
+          "walk"
+        ],
+        "why": "Предыдущий процесс."
+      },
+      {
+        "prompt": "___ she been sleeping before you called?",
+        "answers": [
+          "Had"
+        ],
+        "wrong": [
+          "Has",
+          "Did"
+        ],
+        "why": "Вопрос с had."
+      },
+      {
+        "type": "translate",
+        "prompt": "До её прихода я ждал уже час. (Past Perfect Continuous)",
+        "answers": [
+          "I had been waiting for an hour before she arrived.",
+          "I'd been waiting for an hour before she arrived."
+        ],
+        "wrong": [],
+        "why": "Процесс до прошлого события."
+      },
+      {
+        "type": "correct",
+        "prompt": "She had been worked all day.",
+        "answers": [
+          "She had been working all day.",
+          "She'd been working all day."
+        ],
+        "wrong": [],
+        "why": "После been нужен -ing."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "They had been waiting for hours."
+        ],
+        "wrong": [],
+        "words": [
+          "They",
+          "had",
+          "been",
+          "waiting",
+          "for",
+          "hours"
+        ],
+        "why": "Длительность до прошлого момента."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "He had been running. → Сделай отрицание.",
+        "answers": [
+          "He had not been running.",
+          "He hadn't been running."
+        ],
+        "wrong": [],
+        "why": "Not после had."
+      },
+      {
+        "type": "translate",
+        "prompt": "Он занимался два часа до экзамена. (Past Perfect Continuous, study)",
+        "answers": [
+          "He had been studying for two hours before the exam.",
+          "He'd been studying for two hours before the exam."
+        ],
+        "wrong": [],
+        "why": "Предыдущий процесс."
+      }
+    ]
+  },
+  {
+    "id": "modal-deduction",
+    "level": "B2",
+    "category": "Глаголы",
+    "title": "Modal deduction",
+    "subtitle": "Must, might, can't: выводы",
+    "rule": "Must be — очень вероятный вывод по признакам, might/may/could be — возможность, can't be — уверенность, что это невозможно. He must be tired — должно быть, он устал. Это не приказ и не обязанность.",
+    "note": "Mustn't обычно означает запрет, а can't be — отрицательный вывод. Для предположений о прошлом используется have + V3: must have left.",
+    "table": [
+      [
+        "сильный вывод",
+        "He must be home.",
+        "должно быть"
+      ],
+      [
+        "возможность",
+        "He might be home.",
+        "возможно"
+      ],
+      [
+        "невозможность",
+        "He can't be home.",
+        "не может быть"
+      ]
+    ],
+    "examples": [
+      [
+        "The lights are on. She must be home.",
+        "Свет горит. Должно быть, она дома.",
+        "Вывод по признаку."
+      ],
+      [
+        "It might be a mistake.",
+        "Возможно, это ошибка.",
+        "Неуверенное предположение."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "He ___ be tired after that trip. (сильный вывод)",
+        "answers": [
+          "must"
+        ],
+        "wrong": [
+          "mustn't",
+          "can't"
+        ],
+        "why": "Must выражает уверенный вывод."
+      },
+      {
+        "prompt": "It ___ be true. (возможно)",
+        "answers": [
+          "might",
+          "may",
+          "could"
+        ],
+        "wrong": [
+          "mustn't",
+          "can't"
+        ],
+        "why": "Might/may/could выражают возможность."
+      },
+      {
+        "prompt": "That ___ be him; he's abroad. (невозможно)",
+        "answers": [
+          "can't",
+          "cannot"
+        ],
+        "wrong": [
+          "must",
+          "should"
+        ],
+        "why": "Can't выражает невозможность."
+      },
+      {
+        "prompt": "She must ___ busy.",
+        "answers": [
+          "be"
+        ],
+        "wrong": [
+          "is",
+          "been"
+        ],
+        "why": "После modal начальная форма."
+      },
+      {
+        "prompt": "He might have ___ . (leave)",
+        "answers": [
+          "left"
+        ],
+        "wrong": [
+          "leave",
+          "leaving"
+        ],
+        "why": "Предположение о прошлом: V3."
+      },
+      {
+        "type": "translate",
+        "prompt": "Должно быть, она устала. (must)",
+        "answers": [
+          "She must be tired."
+        ],
+        "wrong": [],
+        "why": "Must be — вывод."
+      },
+      {
+        "type": "correct",
+        "prompt": "He might is at home.",
+        "answers": [
+          "He might be at home.",
+          "He might be home."
+        ],
+        "wrong": [],
+        "why": "После might — be."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "It could be a mistake."
+        ],
+        "wrong": [],
+        "words": [
+          "It",
+          "could",
+          "be",
+          "a",
+          "mistake"
+        ],
+        "why": "Could выражает возможность."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Perhaps she is busy. → Используй might.",
+        "answers": [
+          "She might be busy."
+        ],
+        "wrong": [],
+        "why": "Might be заменяет perhaps."
+      },
+      {
+        "type": "translate",
+        "prompt": "Не может быть, что он дома. (can't)",
+        "answers": [
+          "He can't be at home.",
+          "He cannot be at home.",
+          "He can't be home.",
+          "He cannot be home."
+        ],
+        "wrong": [],
+        "why": "Can't be — отрицательный вывод."
+      }
+    ]
+  },
+  {
+    "id": "wish",
+    "level": "B2",
+    "category": "Сложная грамматика",
+    "title": "Wish / if only",
+    "subtitle": "Желание изменить реальность",
+    "rule": "I wish I knew — жаль, что я не знаю; форма Past показывает нереальное настоящее. I wish I had studied — жаль, что не учился; Past Perfect относится к прошлому. I wish you would stop — желание, чтобы поведение изменилось.",
+    "note": "Для реальной надежды используй hope: I hope she comes. Wish с would часто выражает желание изменения или недовольство; для своего состояния обычно wish + Past.",
+    "table": [
+      [
+        "сейчас",
+        "I wish I knew.",
+        "хотел бы знать"
+      ],
+      [
+        "прошлое",
+        "I wish I had gone.",
+        "жаль, что не пошёл"
+      ],
+      [
+        "изменение",
+        "I wish it would stop.",
+        "хотел бы, чтобы прекратилось"
+      ]
+    ],
+    "examples": [
+      [
+        "I wish I had more time.",
+        "Хотел бы иметь больше времени.",
+        "Had обозначает нереальное настоящее."
+      ],
+      [
+        "If only I had listened.",
+        "Если бы только я послушал.",
+        "Сожаление о прошлом."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "I wish I ___ the answer. (сейчас)",
+        "answers": [
+          "knew"
+        ],
+        "wrong": [
+          "know",
+          "had known"
+        ],
+        "why": "Past обозначает нереальное настоящее."
+      },
+      {
+        "prompt": "I wish I had ___ earlier. (leave)",
+        "answers": [
+          "left"
+        ],
+        "wrong": [
+          "leave",
+          "leaving"
+        ],
+        "why": "Сожаление о прошлом."
+      },
+      {
+        "prompt": "I wish it ___ stop raining. (хочу изменения)",
+        "answers": [
+          "would"
+        ],
+        "wrong": [
+          "will",
+          "has"
+        ],
+        "why": "Would выражает желаемое изменение."
+      },
+      {
+        "prompt": "If only she ___ here now. (be)",
+        "answers": [
+          "were",
+          "was"
+        ],
+        "wrong": [
+          "is",
+          "had been"
+        ],
+        "why": "Нереальное настоящее."
+      },
+      {
+        "prompt": "I wish I ___ more time now. (have)",
+        "answers": [
+          "had"
+        ],
+        "wrong": [
+          "have",
+          "had had"
+        ],
+        "why": "Past для настоящего желания."
+      },
+      {
+        "type": "translate",
+        "prompt": "Хотел бы я знать ответ. (wish, сейчас)",
+        "answers": [
+          "I wish I knew the answer."
+        ],
+        "wrong": [],
+        "why": "Нереальное настоящее."
+      },
+      {
+        "type": "correct",
+        "prompt": "I wish I know the answer.",
+        "answers": [
+          "I wish I knew the answer."
+        ],
+        "wrong": [],
+        "why": "После wish для настоящего — Past."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "I wish I had listened."
+        ],
+        "wrong": [],
+        "words": [
+          "I",
+          "wish",
+          "I",
+          "had",
+          "listened"
+        ],
+        "why": "Сожаление о прошлом."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "I didn't study. I regret it. → Начни с I wish.",
+        "answers": [
+          "I wish I had studied.",
+          "I wish I'd studied."
+        ],
+        "wrong": [],
+        "why": "Past Perfect для сожаления."
+      },
+      {
+        "type": "translate",
+        "prompt": "Если бы только у меня было больше времени сейчас. (If only)",
+        "answers": [
+          "If only I had more time now.",
+          "If only I had more time."
+        ],
+        "wrong": [],
+        "why": "Нереальное настоящее."
+      }
+    ]
+  },
+  {
+    "id": "causative",
+    "level": "B2",
+    "category": "Сложная грамматика",
+    "title": "Have / get something done",
+    "subtitle": "Услуга: кто-то делает за тебя",
+    "rule": "I had my hair cut — мне подстригли волосы. Have/get + объект + V3 показывает, что действие выполняет другой человек по твоей просьбе или что с объектом что-то случилось. I cut my hair — я сам подстригся.",
+    "note": "Have someone do something — попросить конкретного человека сделать что-то; get someone to do something — уговорить или организовать. Это не та же конструкция, что have something done.",
+    "table": [
+      [
+        "услуга",
+        "have my car repaired",
+        "отремонтировать машину у мастера"
+      ],
+      [
+        "разговорный вариант",
+        "get my phone fixed",
+        "отдать телефон в ремонт"
+      ],
+      [
+        "исполнитель",
+        "have someone repair it",
+        "поручить ремонт"
+      ]
+    ],
+    "examples": [
+      [
+        "I had my windows cleaned.",
+        "Мне помыли окна.",
+        "Объект windows + V3 cleaned."
+      ],
+      [
+        "She's getting her phone repaired.",
+        "Ей ремонтируют телефон.",
+        "Get + объект + V3."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "I had my hair ___ . (cut)",
+        "answers": [
+          "cut"
+        ],
+        "wrong": [
+          "cutting",
+          "cuts"
+        ],
+        "why": "Объект + V3."
+      },
+      {
+        "prompt": "She got her phone ___ . (fix)",
+        "answers": [
+          "fixed"
+        ],
+        "wrong": [
+          "fix",
+          "fixing"
+        ],
+        "why": "Get something done."
+      },
+      {
+        "prompt": "We will ___ the car repaired. (have)",
+        "answers": [
+          "have"
+        ],
+        "wrong": [
+          "had",
+          "having"
+        ],
+        "why": "После will начальная форма."
+      },
+      {
+        "prompt": "He had someone ___ it. (repair)",
+        "answers": [
+          "repair"
+        ],
+        "wrong": [
+          "to repair",
+          "repaired"
+        ],
+        "why": "Have someone + V1."
+      },
+      {
+        "prompt": "I got him ___ help.",
+        "answers": [
+          "to"
+        ],
+        "wrong": [
+          "for",
+          "at"
+        ],
+        "why": "Get someone to do."
+      },
+      {
+        "type": "translate",
+        "prompt": "Мне подстригли волосы. (have something done, Past Simple)",
+        "answers": [
+          "I had my hair cut."
+        ],
+        "wrong": [],
+        "why": "Had + объект + V3."
+      },
+      {
+        "type": "correct",
+        "prompt": "She had her car repair.",
+        "answers": [
+          "She had her car repaired."
+        ],
+        "wrong": [],
+        "why": "Repair → repaired."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "I got my phone fixed."
+        ],
+        "wrong": [],
+        "words": [
+          "I",
+          "got",
+          "my",
+          "phone",
+          "fixed"
+        ],
+        "why": "Ремонт выполняет другой человек."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "A mechanic repaired my car for me. → Начни с I had.",
+        "answers": [
+          "I had my car repaired."
+        ],
+        "wrong": [],
+        "why": "Акцент на полученной услуге."
+      },
+      {
+        "type": "translate",
+        "prompt": "Нам помыли окна. (have something done, Past Simple)",
+        "answers": [
+          "We had our windows cleaned."
+        ],
+        "wrong": [],
+        "why": "Had + windows + cleaned."
+      }
+    ]
+  },
+  {
+    "id": "participle-clauses",
+    "level": "B2",
+    "category": "Предложения",
+    "title": "Participle clauses",
+    "subtitle": "Обороты с -ing и V3",
+    "rule": "Вместо отдельного придаточного можно использовать оборот: Walking home, I saw Tom — идя домой, я увидел Тома. -ing обычно выражает активное действие, V3 — пассивное: Written in 1900, the book is still popular.",
+    "note": "У оборота должен быть тот же смысловой исполнитель, что и у главной части. Walking home, the rain started — ошибка: дождь не шёл домой. Перефразируй: While I was walking home, it started to rain.",
+    "table": [
+      [
+        "актив",
+        "Walking home, I saw Tom.",
+        "идя домой"
+      ],
+      [
+        "пассив",
+        "Built in 1900, the house is old.",
+        "построенный"
+      ],
+      [
+        "раньше",
+        "Having finished, she left.",
+        "закончив"
+      ]
+    ],
+    "examples": [
+      [
+        "Feeling tired, she went home.",
+        "Почувствовав усталость, она ушла домой.",
+        "She испытывает состояние и уходит."
+      ],
+      [
+        "Written in simple English, the guide is easy to read.",
+        "Написанное простым английским, руководство легко читать.",
+        "Пассивный оборот относится к guide."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "___ tired, she went home. (feel)",
+        "answers": [
+          "Feeling"
+        ],
+        "wrong": [
+          "Felt",
+          "Feel"
+        ],
+        "why": "Активный оборот."
+      },
+      {
+        "prompt": "___ in 1900, the house is old. (build)",
+        "answers": [
+          "Built"
+        ],
+        "wrong": [
+          "Building",
+          "Build"
+        ],
+        "why": "Пассивный оборот."
+      },
+      {
+        "prompt": "Having ___ the work, he left. (finish)",
+        "answers": [
+          "finished"
+        ],
+        "wrong": [
+          "finish",
+          "finishing"
+        ],
+        "why": "Having + V3."
+      },
+      {
+        "prompt": "___ the door, I saw her. (open)",
+        "answers": [
+          "Opening"
+        ],
+        "wrong": [
+          "Opened",
+          "Open"
+        ],
+        "why": "I открывает дверь."
+      },
+      {
+        "prompt": "___ by experts, the report is reliable. (write)",
+        "answers": [
+          "Written"
+        ],
+        "wrong": [
+          "Writing",
+          "Wrote"
+        ],
+        "why": "Отчёт написан экспертами."
+      },
+      {
+        "type": "translate",
+        "prompt": "Почувствовав усталость, он ушёл домой. (начни с Feeling)",
+        "answers": [
+          "Feeling tired, he went home.",
+          "Feeling tired he went home."
+        ],
+        "wrong": [],
+        "why": "Исполнитель обоих действий — he."
+      },
+      {
+        "type": "correct",
+        "prompt": "Building in 1900, the house is old. (дом был построен)",
+        "answers": [
+          "Built in 1900, the house is old."
+        ],
+        "wrong": [],
+        "why": "Пассивная форма built."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "Having finished the work she left."
+        ],
+        "wrong": [],
+        "words": [
+          "Having",
+          "finished",
+          "the",
+          "work",
+          "she",
+          "left"
+        ],
+        "why": "Having finished показывает более раннее действие."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "As she felt tired, she went home. → Начни с Feeling.",
+        "answers": [
+          "Feeling tired, she went home.",
+          "Feeling tired she went home."
+        ],
+        "wrong": [],
+        "why": "Один исполнитель."
+      },
+      {
+        "type": "translate",
+        "prompt": "Написанная простым языком, книга легко читается. (начни с Written, use simple language)",
+        "answers": [
+          "Written in simple language, the book is easy to read.",
+          "Written in simple language the book is easy to read."
+        ],
+        "wrong": [],
+        "why": "Пассивный оборот."
+      }
+    ]
+  },
+  {
+    "id": "reduced-relatives",
+    "level": "B2",
+    "category": "Предложения",
+    "title": "Reduced relative clauses",
+    "subtitle": "Сокращённые придаточные с who/which",
+    "rule": "The man who is standing there → the man standing there. The book that was written in 1900 → the book written in 1900. Убираем относительное местоимение и соответствующую форму be, если смысл сохраняется. Активные обороты обычно используют -ing, пассивные — V3.",
+    "note": "Не сокращай механически любое придаточное. The man who called me yesterday не всегда равно the man calling me yesterday: меняется смысл действия. Проверяй время и значение.",
+    "table": [
+      [
+        "актив",
+        "people waiting outside",
+        "люди, ожидающие снаружи"
+      ],
+      [
+        "пассив",
+        "a letter written yesterday",
+        "письмо, написанное вчера"
+      ],
+      [
+        "полная форма",
+        "people who are waiting",
+        "люди, которые ждут"
+      ]
+    ],
+    "examples": [
+      [
+        "The students sitting here are new.",
+        "Студенты, сидящие здесь, новенькие.",
+        "Sitting = who are sitting."
+      ],
+      [
+        "The documents sent yesterday arrived.",
+        "Документы, отправленные вчера, пришли.",
+        "Sent = that were sent."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "The man ___ there is my uncle. (stand)",
+        "answers": [
+          "standing"
+        ],
+        "wrong": [
+          "stood",
+          "stands"
+        ],
+        "why": "Активный сокращённый оборот."
+      },
+      {
+        "prompt": "The book ___ in 1900 is rare. (write)",
+        "answers": [
+          "written"
+        ],
+        "wrong": [
+          "writing",
+          "wrote"
+        ],
+        "why": "Пассивный оборот."
+      },
+      {
+        "prompt": "The people ___ outside are waiting. (sit)",
+        "answers": [
+          "sitting"
+        ],
+        "wrong": [
+          "sat",
+          "sit"
+        ],
+        "why": "People who are sitting."
+      },
+      {
+        "prompt": "The goods ___ yesterday arrived. (send)",
+        "answers": [
+          "sent"
+        ],
+        "wrong": [
+          "sending",
+          "send"
+        ],
+        "why": "Goods that were sent."
+      },
+      {
+        "prompt": "The woman ___ next to me smiled. (sit, сокращённо)",
+        "answers": [
+          "sitting"
+        ],
+        "wrong": [
+          "sits",
+          "was sitting"
+        ],
+        "why": "Сокращённая форма -ing."
+      },
+      {
+        "type": "translate",
+        "prompt": "Люди, ожидающие снаружи. (словосочетание, без who)",
+        "answers": [
+          "people waiting outside",
+          "the people waiting outside"
+        ],
+        "wrong": [],
+        "why": "Активный оборот waiting."
+      },
+      {
+        "type": "correct",
+        "prompt": "The letter writing yesterday arrived. (письмо было написано)",
+        "answers": [
+          "The letter written yesterday arrived."
+        ],
+        "wrong": [],
+        "why": "Пассивная форма written."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "The man standing there is my uncle."
+        ],
+        "wrong": [],
+        "words": [
+          "The",
+          "man",
+          "standing",
+          "there",
+          "is",
+          "my",
+          "uncle"
+        ],
+        "why": "Standing уточняет man."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "The woman who is sitting here is my aunt. → Сократи who is.",
+        "answers": [
+          "The woman sitting here is my aunt."
+        ],
+        "wrong": [],
+        "why": "Убираем who is."
+      },
+      {
+        "type": "translate",
+        "prompt": "Дом, построенный в 1900 году. (словосочетание)",
+        "answers": [
+          "a house built in 1900",
+          "the house built in 1900"
+        ],
+        "wrong": [],
+        "why": "Built — пассивный оборот."
+      }
+    ]
+  },
+  {
     "id": "inversion",
     "level": "C1",
     "category": "Сложная грамматика",
@@ -6624,6 +7840,1214 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Had to — обязанность, не предположение."
+      }
+    ]
+  },
+  {
+    "id": "mandative",
+    "level": "C1",
+    "category": "Сложная грамматика",
+    "title": "Mandative subjunctive",
+    "subtitle": "Требования и рекомендации",
+    "rule": "После suggest, recommend, insist, demand в значении требования можно использовать that + обычную форму глагола для всех лиц: I suggest that he go. В британском английском также обычен should: I suggest that he should go.",
+    "note": "He go здесь не ошибка: это особая форма для предложения или требования. Но insist может означать утверждение факта: She insisted that she was right — она настаивала, что права.",
+    "table": [
+      [
+        "рекомендация",
+        "I suggest that he go.",
+        "предлагаю, чтобы он пошёл"
+      ],
+      [
+        "необходимость",
+        "It is vital that she be informed.",
+        "важно сообщить ей"
+      ],
+      [
+        "вариант",
+        "that he should go",
+        "форма с should"
+      ]
+    ],
+    "examples": [
+      [
+        "They demanded that he resign.",
+        "Они потребовали, чтобы он ушёл в отставку.",
+        "Resign без -s после требования."
+      ],
+      [
+        "It is essential that everyone be present.",
+        "Важно, чтобы все присутствовали.",
+        "Be не меняется по лицам."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "I suggest that he ___ . (leave, subjunctive)",
+        "answers": [
+          "leave"
+        ],
+        "wrong": [
+          "leaves",
+          "left"
+        ],
+        "why": "Начальная форма после рекомендации."
+      },
+      {
+        "prompt": "It is vital that she ___ informed. (subjunctive)",
+        "answers": [
+          "be"
+        ],
+        "wrong": [
+          "is",
+          "was"
+        ],
+        "why": "Be в неизменяемой форме."
+      },
+      {
+        "prompt": "They demanded that he ___ . (resign, subjunctive)",
+        "answers": [
+          "resign"
+        ],
+        "wrong": [
+          "resigns",
+          "resigned"
+        ],
+        "why": "Форма требования."
+      },
+      {
+        "prompt": "I recommend that she should ___ . (wait)",
+        "answers": [
+          "wait"
+        ],
+        "wrong": [
+          "waits",
+          "waited"
+        ],
+        "why": "После should V1."
+      },
+      {
+        "prompt": "It is important that he ___ not be late. (subjunctive, вставь not перед be: выбери помощник, если нужен)",
+        "answers": [
+          "—"
+        ],
+        "wrong": [
+          "does",
+          "is"
+        ],
+        "why": "В subjunctive отрицание — not be без помощника."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я предлагаю, чтобы он ушёл. (suggest that, subjunctive)",
+        "answers": [
+          "I suggest that he leave.",
+          "I suggest he leave."
+        ],
+        "wrong": [],
+        "why": "Начальная форма leave."
+      },
+      {
+        "type": "correct",
+        "prompt": "They demanded that he resigns. (subjunctive)",
+        "answers": [
+          "They demanded that he resign."
+        ],
+        "wrong": [],
+        "why": "Без -s."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "It is essential that everyone be present."
+        ],
+        "wrong": [],
+        "words": [
+          "It",
+          "is",
+          "essential",
+          "that",
+          "everyone",
+          "be",
+          "present"
+        ],
+        "why": "Be не меняется по лицам."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "She should wait. I recommend it. → Начни с I recommend that, используй subjunctive.",
+        "answers": [
+          "I recommend that she wait."
+        ],
+        "wrong": [],
+        "why": "Wait в начальной форме."
+      },
+      {
+        "type": "translate",
+        "prompt": "Важно, чтобы он был здесь. (essential, subjunctive)",
+        "answers": [
+          "It is essential that he be here.",
+          "It's essential that he be here."
+        ],
+        "wrong": [],
+        "why": "Be в mandative subjunctive."
+      }
+    ]
+  },
+  {
+    "id": "conditional-inversion",
+    "level": "C1",
+    "category": "Сложная грамматика",
+    "title": "Conditional inversion",
+    "subtitle": "Условия без if",
+    "rule": "В формальном стиле некоторые if-условия можно выразить инверсией: If I had known → Had I known; If I were you → Were I you; If you should need help → Should you need help. Это сокращает ввод условия и звучит официальнее.",
+    "note": "Не применяй инверсию к любому if. If it rains нельзя превращать в Rains it. Используй конструкции с had, were или should. В отрицании not обычно после подлежащего: Had I not known.",
+    "table": [
+      [
+        "прошлое",
+        "Had I known, ...",
+        "если бы я знал"
+      ],
+      [
+        "гипотеза",
+        "Were I you, ...",
+        "на твоём месте"
+      ],
+      [
+        "возможность",
+        "Should you need help, ...",
+        "если понадобится помощь"
+      ]
+    ],
+    "examples": [
+      [
+        "Had we known, we would have stayed.",
+        "Если бы мы знали, мы бы остались.",
+        "Had перед we заменяет if."
+      ],
+      [
+        "Should you have questions, contact us.",
+        "Если возникнут вопросы, свяжитесь с нами.",
+        "Формальное условие с should."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "___ I known, I would have helped.",
+        "answers": [
+          "Had"
+        ],
+        "wrong": [
+          "Have",
+          "Did"
+        ],
+        "why": "Had заменяет if + had."
+      },
+      {
+        "prompt": "___ I you, I would wait.",
+        "answers": [
+          "Were"
+        ],
+        "wrong": [
+          "Was",
+          "Am"
+        ],
+        "why": "Were в начале условия."
+      },
+      {
+        "prompt": "___ you need help, call me.",
+        "answers": [
+          "Should"
+        ],
+        "wrong": [
+          "Would",
+          "Do"
+        ],
+        "why": "Should вводит возможное условие."
+      },
+      {
+        "prompt": "Had he ___ earlier, we would have met. (leave)",
+        "answers": [
+          "left"
+        ],
+        "wrong": [
+          "leave",
+          "leaving"
+        ],
+        "why": "Had + V3."
+      },
+      {
+        "prompt": "Were she ___ agree, we could proceed.",
+        "answers": [
+          "to"
+        ],
+        "wrong": [
+          "for",
+          "at"
+        ],
+        "why": "Were + подлежащее + to."
+      },
+      {
+        "type": "translate",
+        "prompt": "Если бы я знал, я бы помог. (начни с Had)",
+        "answers": [
+          "Had I known, I would have helped.",
+          "Had I known, I'd have helped."
+        ],
+        "wrong": [],
+        "why": "Had I known заменяет if I had known."
+      },
+      {
+        "type": "correct",
+        "prompt": "Had I knew, I would have helped.",
+        "answers": [
+          "Had I known, I would have helped.",
+          "Had I known, I'd have helped."
+        ],
+        "wrong": [],
+        "why": "После had — V3 known."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "Were I you I would wait."
+        ],
+        "wrong": [],
+        "words": [
+          "Were",
+          "I",
+          "you",
+          "I",
+          "would",
+          "wait"
+        ],
+        "why": "Were I you — условие без if."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "If you should need help, call us. → Убери if, начни с Should.",
+        "answers": [
+          "Should you need help, call us."
+        ],
+        "wrong": [],
+        "why": "Should перед you."
+      },
+      {
+        "type": "translate",
+        "prompt": "Если бы он был здесь, мы могли бы начать. (начни с Were)",
+        "answers": [
+          "Were he here, we could start.",
+          "Were he here, we could begin."
+        ],
+        "wrong": [],
+        "why": "Were he here заменяет if he were here."
+      }
+    ]
+  },
+  {
+    "id": "ellipsis",
+    "level": "C1",
+    "category": "Предложения",
+    "title": "Ellipsis and substitution",
+    "subtitle": "Как не повторять слова",
+    "rule": "В английском часто опускают то, что уже понятно: I can swim and she can too. Здесь can заменяет can swim. Do so заменяет действие, one/ones — повторяемое исчисляемое существительное. Это делает речь естественнее.",
+    "note": "Выбирай заместитель по структуре. One/ones заменяет предмет, не вещество в общем смысле; so может заменять содержание мысли: I think so. Не оставляй пропуск, если смысл неясен.",
+    "table": [
+      [
+        "помощник",
+        "I can, and she can too.",
+        "опущен глагол"
+      ],
+      [
+        "действие",
+        "He promised to call and did so.",
+        "сделал это"
+      ],
+      [
+        "предмет",
+        "I'll take the red one.",
+        "красный предмет"
+      ]
+    ],
+    "examples": [
+      [
+        "I don't like this shirt. I prefer the blue one.",
+        "Мне не нравится эта рубашка. Предпочитаю синюю.",
+        "One заменяет shirt."
+      ],
+      [
+        "She said she would help, and she did.",
+        "Она сказала, что поможет, и помогла.",
+        "Did заменяет helped."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "I prefer the red ___. (одна рубашка)",
+        "answers": [
+          "one"
+        ],
+        "wrong": [
+          "ones",
+          "it"
+        ],
+        "why": "One заменяет исчисляемое в единственном."
+      },
+      {
+        "prompt": "I like the blue ___. (несколько туфель)",
+        "answers": [
+          "ones"
+        ],
+        "wrong": [
+          "one",
+          "it"
+        ],
+        "why": "Ones заменяет множественное."
+      },
+      {
+        "prompt": "He promised to help and did ___. (это)",
+        "answers": [
+          "so"
+        ],
+        "wrong": [
+          "such",
+          "one"
+        ],
+        "why": "Do so заменяет действие."
+      },
+      {
+        "prompt": "She can swim and I can ___. (тоже)",
+        "answers": [
+          "too"
+        ],
+        "wrong": [
+          "either",
+          "neither"
+        ],
+        "why": "Too в утвердительной части."
+      },
+      {
+        "prompt": "Will it rain? I think ___. (думаю, да)",
+        "answers": [
+          "so"
+        ],
+        "wrong": [
+          "one",
+          "it"
+        ],
+        "why": "Think so заменяет содержание мысли."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я предпочитаю красную. (одна рубашка, one)",
+        "answers": [
+          "I prefer the red one."
+        ],
+        "wrong": [],
+        "why": "One заменяет shirt."
+      },
+      {
+        "type": "correct",
+        "prompt": "I prefer the blue one. (речь о нескольких туфлях)",
+        "answers": [
+          "I prefer the blue ones."
+        ],
+        "wrong": [],
+        "why": "Множественное — ones."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "She can swim and I can too."
+        ],
+        "wrong": [],
+        "words": [
+          "She",
+          "can",
+          "swim",
+          "and",
+          "I",
+          "can",
+          "too"
+        ],
+        "why": "Can заменяет повторяющееся действие."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "He promised to call, and he called. → Замени второе called на did so.",
+        "answers": [
+          "He promised to call, and he did so."
+        ],
+        "wrong": [],
+        "why": "Did so заменяет called."
+      },
+      {
+        "type": "translate",
+        "prompt": "Думаю, да. (think)",
+        "answers": [
+          "I think so."
+        ],
+        "wrong": [],
+        "why": "So заменяет содержание ответа."
+      }
+    ]
+  },
+  {
+    "id": "emphatic-do",
+    "level": "C1",
+    "category": "Глаголы",
+    "title": "Emphatic do",
+    "subtitle": "Как подчеркнуть, что это правда",
+    "rule": "Do, does и did можно добавить в утвердительное предложение для акцента: I do understand — я действительно понимаю. She does care — ей действительно не всё равно. Did подчёркивает факт прошлого: I did call you.",
+    "note": "После emphatic do/does/did основной глагол в начальной форме. С be и обычными модальными глаголами акцент обычно передаётся ударением: I AM ready, а не I do am ready.",
+    "table": [
+      [
+        "настоящее",
+        "I do agree.",
+        "я действительно согласен"
+      ],
+      [
+        "третье лицо",
+        "She does care.",
+        "ей действительно не всё равно"
+      ],
+      [
+        "прошлое",
+        "I did call.",
+        "я ведь звонил"
+      ]
+    ],
+    "examples": [
+      [
+        "I do appreciate your help.",
+        "Я действительно ценю твою помощь.",
+        "Do усиливает утверждение."
+      ],
+      [
+        "He did try his best.",
+        "Он действительно старался изо всех сил.",
+        "Did подчёркивает прошлое."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "I ___ understand. (эмфаза, настоящее)",
+        "answers": [
+          "do"
+        ],
+        "wrong": [
+          "does",
+          "did"
+        ],
+        "why": "Do усиливает I understand."
+      },
+      {
+        "prompt": "She ___ care. (эмфаза, настоящее)",
+        "answers": [
+          "does"
+        ],
+        "wrong": [
+          "do",
+          "did"
+        ],
+        "why": "С she — does."
+      },
+      {
+        "prompt": "I ___ call you yesterday. (эмфаза)",
+        "answers": [
+          "did"
+        ],
+        "wrong": [
+          "do",
+          "does"
+        ],
+        "why": "Yesterday — прошедшее."
+      },
+      {
+        "prompt": "He does ___ . (agree)",
+        "answers": [
+          "agree"
+        ],
+        "wrong": [
+          "agrees",
+          "agreed"
+        ],
+        "why": "После does V1."
+      },
+      {
+        "prompt": "They did ___ . (try)",
+        "answers": [
+          "try"
+        ],
+        "wrong": [
+          "tried",
+          "trying"
+        ],
+        "why": "После did начальная форма."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я действительно понимаю. (emphatic do)",
+        "answers": [
+          "I do understand."
+        ],
+        "wrong": [],
+        "why": "Do подчёркивает утверждение."
+      },
+      {
+        "type": "correct",
+        "prompt": "She does cares.",
+        "answers": [
+          "She does care."
+        ],
+        "wrong": [],
+        "why": "После does нет -s."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "He did call me yesterday."
+        ],
+        "wrong": [],
+        "words": [
+          "He",
+          "did",
+          "call",
+          "me",
+          "yesterday"
+        ],
+        "why": "Did выделяет факт звонка."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "I told you. → Добавь эмфатическое did.",
+        "answers": [
+          "I did tell you."
+        ],
+        "wrong": [],
+        "why": "Did + tell."
+      },
+      {
+        "type": "translate",
+        "prompt": "Она действительно согласна. (emphatic do, agree)",
+        "answers": [
+          "She does agree."
+        ],
+        "wrong": [],
+        "why": "Does + agree."
+      }
+    ]
+  },
+  {
+    "id": "nominalisation",
+    "level": "C1",
+    "category": "Существительные",
+    "title": "Nominalisation",
+    "subtitle": "Как превратить действие в понятие",
+    "rule": "В формальной речи действие иногда выражают существительным: The company decided → the company's decision. Это помогает связывать идеи и строить компактные сообщения: the increase in prices — рост цен. Но не нужно превращать каждый глагол в существительное.",
+    "note": "У существительного меняется окружение: decide to leave → decision to leave; approve the plan → approval of the plan. Избегай тяжёлых цепочек существительных, если простой глагол яснее.",
+    "table": [
+      [
+        "decide",
+        "decision",
+        "решение"
+      ],
+      [
+        "approve",
+        "approval",
+        "одобрение"
+      ],
+      [
+        "expand",
+        "expansion",
+        "расширение"
+      ]
+    ],
+    "examples": [
+      [
+        "The decision to postpone the meeting was unexpected.",
+        "Решение отложить встречу было неожиданным.",
+        "Decision заменяет действие decided."
+      ],
+      [
+        "The expansion of the network took years.",
+        "Расширение сети заняло годы.",
+        "Expansion of выражает процесс как понятие."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "The ___ to leave was difficult. (decide)",
+        "answers": [
+          "decision"
+        ],
+        "wrong": [
+          "decide",
+          "deciding"
+        ],
+        "why": "Decision — существительное."
+      },
+      {
+        "prompt": "The ___ of the plan was delayed. (approve)",
+        "answers": [
+          "approval"
+        ],
+        "wrong": [
+          "approve",
+          "approved"
+        ],
+        "why": "Approval of."
+      },
+      {
+        "prompt": "The ___ of the network took years. (expand)",
+        "answers": [
+          "expansion"
+        ],
+        "wrong": [
+          "expand",
+          "expanded"
+        ],
+        "why": "Expansion — расширение."
+      },
+      {
+        "prompt": "Her ___ of the problem was clear. (explain)",
+        "answers": [
+          "explanation"
+        ],
+        "wrong": [
+          "explain",
+          "explained"
+        ],
+        "why": "Explanation — объяснение."
+      },
+      {
+        "prompt": "The ___ in prices was unexpected. (increase, существительное)",
+        "answers": [
+          "increase"
+        ],
+        "wrong": [
+          "increasing",
+          "increased"
+        ],
+        "why": "Increase употребляется как существительное."
+      },
+      {
+        "type": "translate",
+        "prompt": "Решение уйти было трудным. (decision)",
+        "answers": [
+          "The decision to leave was difficult.",
+          "The decision to leave was hard."
+        ],
+        "wrong": [],
+        "why": "Decision to + V1."
+      },
+      {
+        "type": "correct",
+        "prompt": "The approve of the plan was delayed.",
+        "answers": [
+          "The approval of the plan was delayed."
+        ],
+        "wrong": [],
+        "why": "Нужна форма существительного."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "The expansion of the network took years."
+        ],
+        "wrong": [],
+        "words": [
+          "The",
+          "expansion",
+          "of",
+          "the",
+          "network",
+          "took",
+          "years"
+        ],
+        "why": "Expansion обозначает процесс."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "They decided to leave. → Назови это решение словосочетанием, начни с their.",
+        "answers": [
+          "their decision to leave"
+        ],
+        "wrong": [],
+        "why": "Decision to leave."
+      },
+      {
+        "type": "translate",
+        "prompt": "Рост цен (словосочетание, increase).",
+        "answers": [
+          "the increase in prices",
+          "an increase in prices",
+          "increase in prices"
+        ],
+        "wrong": [],
+        "why": "Increase in указывает, что выросло."
+      }
+    ]
+  },
+  {
+    "id": "advanced-articles",
+    "level": "C1",
+    "category": "Артикли",
+    "title": "Articles: general vs specific",
+    "subtitle": "Общее понятие или конкретный случай",
+    "rule": "Life is short — жизнь вообще; the life of a doctor — конкретизированная жизнь. Work, education, society и другие абстрактные понятия часто употребляются без артикля в общем смысле, но получают the, когда контекст выделяет конкретный случай.",
+    "note": "Некоторые учреждения имеют устойчивые формы: go to school — учиться, go to the school — идти в здание школы. Выбор зависит от смысла и регионального варианта; например, in hospital характерно для британского английского.",
+    "table": [
+      [
+        "общее",
+        "Education matters.",
+        "образование вообще"
+      ],
+      [
+        "конкретное",
+        "the education she received",
+        "полученное ею образование"
+      ],
+      [
+        "функция / здание",
+        "go to school / go to the school",
+        "учиться / идти в школу как место"
+      ]
+    ],
+    "examples": [
+      [
+        "Knowledge is important.",
+        "Знания важны.",
+        "Общее понятие без артикля."
+      ],
+      [
+        "The knowledge he gained helped him.",
+        "Полученные им знания помогли ему.",
+        "Уточнение выделяет конкретные знания."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "___ knowledge is valuable in general.",
+        "answers": [
+          "—"
+        ],
+        "wrong": [
+          "A",
+          "The"
+        ],
+        "why": "Knowledge в общем смысле."
+      },
+      {
+        "prompt": "___ knowledge she gained was valuable.",
+        "answers": [
+          "The"
+        ],
+        "wrong": [
+          "A",
+          "An"
+        ],
+        "why": "Конкретные знания."
+      },
+      {
+        "prompt": "Children go to ___ school to learn.",
+        "answers": [
+          "—"
+        ],
+        "wrong": [
+          "a",
+          "the"
+        ],
+        "why": "School как учреждение для учёбы."
+      },
+      {
+        "prompt": "She went to ___ school to meet her son's teacher. (конкретное здание)",
+        "answers": [
+          "the"
+        ],
+        "wrong": [
+          "—",
+          "an"
+        ],
+        "why": "Речь о конкретной школе."
+      },
+      {
+        "prompt": "___ life is short. (жизнь вообще)",
+        "answers": [
+          "—"
+        ],
+        "wrong": [
+          "The",
+          "A"
+        ],
+        "why": "Общее понятие."
+      },
+      {
+        "type": "translate",
+        "prompt": "Образование важно. (в общем смысле)",
+        "answers": [
+          "Education is important.",
+          "Education matters."
+        ],
+        "wrong": [],
+        "why": "Общее понятие без артикля."
+      },
+      {
+        "type": "correct",
+        "prompt": "The knowledge is important in general. (знания вообще)",
+        "answers": [
+          "Knowledge is important in general.",
+          "Knowledge is important."
+        ],
+        "wrong": [],
+        "why": "Без артикля в общем смысле."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "The life of a doctor can be stressful."
+        ],
+        "wrong": [],
+        "words": [
+          "The",
+          "life",
+          "of",
+          "a",
+          "doctor",
+          "can",
+          "be",
+          "stressful"
+        ],
+        "why": "Уточнённое понятие life."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Education matters. → Уточни, что речь об образовании, которое она получила, используя the education she received.",
+        "answers": [
+          "The education she received matters."
+        ],
+        "wrong": [],
+        "why": "The выделяет конкретный случай."
+      },
+      {
+        "type": "translate",
+        "prompt": "Жизнь коротка. (в общем смысле)",
+        "answers": [
+          "Life is short."
+        ],
+        "wrong": [],
+        "why": "Общее понятие."
+      }
+    ]
+  },
+  {
+    "id": "discourse-markers",
+    "level": "C1",
+    "category": "Предложения",
+    "title": "Discourse markers",
+    "subtitle": "Логические связи в тексте",
+    "rule": "However вводит контраст, therefore — следствие, moreover — добавление, nevertheless — неожиданный контраст, otherwise — альтернативное последствие. Они помогают читателю понять логику между высказываниями.",
+    "note": "However не соединяет два самостоятельных предложения одной запятой в формальном письме. Поставь точку или точку с запятой: It was late; however, we stayed.",
+    "table": [
+      [
+        "контраст",
+        "however / nevertheless",
+        "однако / тем не менее"
+      ],
+      [
+        "следствие",
+        "therefore",
+        "поэтому"
+      ],
+      [
+        "добавление",
+        "moreover",
+        "кроме того"
+      ]
+    ],
+    "examples": [
+      [
+        "The task was difficult. Nevertheless, we finished it.",
+        "Задача была трудной. Тем не менее мы её закончили.",
+        "Nevertheless подчёркивает неожиданный результат."
+      ],
+      [
+        "He was ill; therefore, he stayed home.",
+        "Он был болен, поэтому остался дома.",
+        "Therefore показывает следствие."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "The task was hard. ___, we finished it. (тем не менее)",
+        "answers": [
+          "Nevertheless"
+        ],
+        "wrong": [
+          "Therefore",
+          "Moreover"
+        ],
+        "why": "Контраст с ожидаемым результатом."
+      },
+      {
+        "prompt": "He was ill; ___, he stayed home. (поэтому)",
+        "answers": [
+          "therefore"
+        ],
+        "wrong": [
+          "however",
+          "moreover"
+        ],
+        "why": "Следствие."
+      },
+      {
+        "prompt": "It is cheap. ___, it is reliable. (кроме того)",
+        "answers": [
+          "Moreover"
+        ],
+        "wrong": [
+          "However",
+          "Otherwise"
+        ],
+        "why": "Добавление довода."
+      },
+      {
+        "prompt": "Hurry up; ___, we'll be late. (иначе)",
+        "answers": [
+          "otherwise"
+        ],
+        "wrong": [
+          "moreover",
+          "therefore"
+        ],
+        "why": "Альтернативное последствие."
+      },
+      {
+        "prompt": "It was late; ___, we stayed. (однако)",
+        "answers": [
+          "however"
+        ],
+        "wrong": [
+          "therefore",
+          "moreover"
+        ],
+        "why": "Контраст."
+      },
+      {
+        "type": "translate",
+        "prompt": "Он был болен; поэтому он остался дома. (therefore)",
+        "answers": [
+          "He was ill; therefore, he stayed home.",
+          "He was ill. Therefore, he stayed home.",
+          "He was ill; therefore, he stayed at home.",
+          "He was ill. Therefore, he stayed at home."
+        ],
+        "wrong": [],
+        "why": "Therefore — следствие."
+      },
+      {
+        "type": "correct",
+        "prompt": "It was late, however, we stayed. → Исправь пунктуацию.",
+        "answers": [
+          "It was late; however, we stayed.",
+          "It was late. However, we stayed."
+        ],
+        "wrong": [],
+        "why": "Два самостоятельных предложения."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "Nevertheless we finished the task."
+        ],
+        "wrong": [],
+        "words": [
+          "Nevertheless",
+          "we",
+          "finished",
+          "the",
+          "task"
+        ],
+        "why": "Nevertheless выражает контраст."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Hurry up, or we'll be late. → Используй otherwise.",
+        "answers": [
+          "Hurry up; otherwise, we'll be late.",
+          "Hurry up. Otherwise, we'll be late.",
+          "Hurry up; otherwise, we will be late.",
+          "Hurry up. Otherwise, we will be late."
+        ],
+        "wrong": [],
+        "why": "Otherwise — иначе."
+      },
+      {
+        "type": "translate",
+        "prompt": "Задача была трудной. Тем не менее мы её закончили. (nevertheless)",
+        "answers": [
+          "The task was difficult. Nevertheless, we finished it.",
+          "The task was hard. Nevertheless, we finished it.",
+          "The task was difficult; nevertheless, we finished it."
+        ],
+        "wrong": [],
+        "why": "Контраст с ожиданием."
+      }
+    ]
+  },
+  {
+    "id": "agreement",
+    "level": "C1",
+    "category": "Предложения",
+    "title": "Advanced subject–verb agreement",
+    "subtitle": "Согласование в сложных конструкциях",
+    "rule": "Глагол согласуется с главным словом подлежащего, а не с ближайшим существительным: The quality of the products is high. A number of people are — несколько людей; the number of people is — число людей. Некоторые собирательные существительные допускают варианты.",
+    "note": "В британском английском team is и team are могут различаться по смыслу: группа как целое или её участники. В американском английском чаще единственное. Не делай из регионального варианта универсальную ошибку.",
+    "table": [
+      [
+        "главное слово",
+        "The list of names is long.",
+        "list → is"
+      ],
+      [
+        "a number of",
+        "A number of people are waiting.",
+        "несколько людей"
+      ],
+      [
+        "the number of",
+        "The number of people is rising.",
+        "число людей"
+      ]
+    ],
+    "examples": [
+      [
+        "The quality of these products is high.",
+        "Качество этих товаров высокое.",
+        "Главное слово quality."
+      ],
+      [
+        "A number of students are absent.",
+        "Несколько студентов отсутствуют.",
+        "A number of + множественное."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "The quality of these products ___ high.",
+        "answers": [
+          "is"
+        ],
+        "wrong": [
+          "are",
+          "be"
+        ],
+        "why": "Главное слово quality."
+      },
+      {
+        "prompt": "A number of students ___ absent.",
+        "answers": [
+          "are"
+        ],
+        "wrong": [
+          "is",
+          "be"
+        ],
+        "why": "A number of + plural."
+      },
+      {
+        "prompt": "The number of students ___ rising.",
+        "answers": [
+          "is"
+        ],
+        "wrong": [
+          "are",
+          "be"
+        ],
+        "why": "Главное слово number."
+      },
+      {
+        "prompt": "The list of names ___ long.",
+        "answers": [
+          "is"
+        ],
+        "wrong": [
+          "are",
+          "be"
+        ],
+        "why": "List в единственном."
+      },
+      {
+        "prompt": "Each of the answers ___ correct.",
+        "answers": [
+          "is"
+        ],
+        "wrong": [
+          "are",
+          "be"
+        ],
+        "why": "Each — каждый в отдельности."
+      },
+      {
+        "type": "translate",
+        "prompt": "Число студентов растёт. (the number of)",
+        "answers": [
+          "The number of students is rising.",
+          "The number of students is increasing.",
+          "The number of students is growing."
+        ],
+        "wrong": [],
+        "why": "Number — главное слово."
+      },
+      {
+        "type": "correct",
+        "prompt": "The list of names are long.",
+        "answers": [
+          "The list of names is long."
+        ],
+        "wrong": [],
+        "why": "List требует is."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "A number of people are waiting."
+        ],
+        "wrong": [],
+        "words": [
+          "A",
+          "number",
+          "of",
+          "people",
+          "are",
+          "waiting"
+        ],
+        "why": "A number of относится к нескольким людям."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Many students are absent. → Начни с A number of students.",
+        "answers": [
+          "A number of students are absent."
+        ],
+        "wrong": [],
+        "why": "Множественное согласование."
+      },
+      {
+        "type": "translate",
+        "prompt": "Каждый из ответов правильный. (each of)",
+        "answers": [
+          "Each of the answers is correct."
+        ],
+        "wrong": [],
+        "why": "Each требует is."
       }
     ]
   },
