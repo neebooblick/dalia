@@ -415,11 +415,12 @@ function initEnglishMobileViewport(){
   if(Math.abs(width-lastWidth)>80){normalHeight=Math.max(layout,height);lastWidth=width;keyboardWasOpen=false}
   if(!zoomed&&(!focus&&!keyboardWasOpen||!normalHeight))normalHeight=Math.max(layout,height);
   if(!zoomed&&focus)normalHeight=Math.max(normalHeight,layout,height);
-  let keyboard=!zoomed&&(focus||keyboardWasOpen)&&normalHeight-height>100;
+  let keyboard=!zoomed&&focus&&normalHeight-height>100;
   keyboardWasOpen=keyboard;
   body.classList.toggle('keyboard-focus',!vv&&focus);
   body.classList.toggle('viewport-keyboard',keyboard);
-  if(!zoomed){root.style.setProperty('--english-shell-height',Math.round(height)+'px')}else root.style.removeProperty('--english-shell-height');
+  // Use the browser's dynamic viewport for normal browsing. A cached visualViewport height must not trap the footer after keyboard dismissal.
+  if(keyboard&&!zoomed){root.style.setProperty('--english-shell-height',Math.round(height)+'px')}else root.style.removeProperty('--english-shell-height');
   root.style.setProperty('--english-visible-height',Math.round(height)+'px');
   root.style.setProperty('--english-visible-top',Math.round(vv?.offsetTop||0)+'px');
   root.style.setProperty('--english-keyboard-inset',Math.max(0,Math.round(layout-height-(vv?.offsetTop||0)))+'px');
