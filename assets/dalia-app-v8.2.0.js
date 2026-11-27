@@ -289,7 +289,7 @@ function daliaSfx(kind='tap'){
   daliaNote(ctx,{freq,duration:.13,peak:.0018,attack:.032,cutoff:1000});
  }
 }
-let state=migrateState();state.practiceLevels=validPracticeLevels(state.practiceLevels);state.writingGuideMode=state.writingGuideMode==='trace'?'trace':'memory';state.writingStats=cleanWritingStats(state.writingStats);state.skillStats=cleanSkillStats(state.skillStats);state.autoLearned=unique(state.autoLearned).filter(ch=>state.learned.includes(ch));state.custom=state.custom.map(x=>normalizeWord(x,x?.origin||'custom')).filter(x=>validWord(x)&&(!builtins.has(x.ch)||builtins.get(x.ch).origin==='reference'));state.drafts=cleanPhotoDrafts(state.drafts);state.hidden=[];let displayLimit=48,page='learn',level='all',wordType='all',mode='meaning',dueOnly=false,question=null,previousQuestion=null,answered=false,scan=null,activeQuoteIndex=Math.floor(Math.random()*100),quoteFavoritesOnly=false,wordStack=[],currentWord=null,toastTimer=null,previewURL=null;
+let state=migrateState();state.practiceLevels=validPracticeLevels(state.practiceLevels);state.writingGuideMode=state.writingGuideMode==='trace'?'trace':'memory';state.writingStats=cleanWritingStats(state.writingStats);state.skillStats=cleanSkillStats(state.skillStats);state.autoLearned=unique(state.autoLearned).filter(ch=>state.learned.includes(ch));state.custom=state.custom.map(x=>normalizeWord(x,x?.origin||'custom')).filter(x=>validWord(x)&&(!builtins.has(x.ch)||builtins.get(x.ch).origin==='reference'));state.drafts=cleanPhotoDrafts(state.drafts);state.hidden=[];let displayLimit=48,page='learn',level='all',wordType='all',mode='meaning',dueOnly=false,question=null,previousQuestion=null,answered=false,activeQuoteIndex=Math.floor(Math.random()*100),quoteFavoritesOnly=false,wordStack=[],currentWord=null,toastTimer=null;
 // Wisdom entries are intentionally isolated from the dictionary, training and random cards.
 function isWisdomOnly(w){
  return w.origin==='saying'||WISDOM_ONLY_KEYS.has([...String(w.ch)].filter(c=>isHanzi(c)).join(''));
@@ -386,7 +386,7 @@ function recordReview(ch,rating){
 function recordAnswer(ch,correct){return recordReview(ch,correct?'good':'again')}
 function toast(text,kind=''){const t=$('toast');t.textContent=text;t.className=`toast ${kind}`;clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.add('hidden'),3300)}
 function stopSpeech(){try{if('speechSynthesis' in window)speechSynthesis.cancel()}catch(_){}}
-let closeWritingSession=null;function navigate(p){if(!['learn','practice','photo','motivation'].includes(p))return;if(p!==page)stopSpeech();if(p!=='practice'&&closeWritingSession)closeWritingSession();page=p;const hero=document.querySelector('.hero');if(hero)hero.classList.toggle('hidden',p!=='learn');document.querySelectorAll('.page').forEach(el=>el.classList.toggle('hidden',el.id!==`page-${p}`));document.querySelectorAll('[data-page]').forEach(btn=>{const active=btn.dataset.page===p;btn.classList.toggle('active',active);if(active)btn.setAttribute('aria-current','page');else btn.removeAttribute('aria-current')});if(p==='learn')renderWords();if(p==='practice')renderPractice();if(p==='photo')renderDrafts();if(p==='motivation'){activeQuoteIndex=randomWisdomIndex(activeQuoteIndex);renderMotivation();}window.scrollTo({top:0,behavior:'instant'});if(p==='practice')scrollPracticeIntoView()}
+let closeWritingSession=null;function navigate(p){if(!['learn','practice','motivation'].includes(p))return;if(p!==page)stopSpeech();if(p!=='practice'&&closeWritingSession)closeWritingSession();page=p;const hero=document.querySelector('.hero');if(hero)hero.classList.toggle('hidden',p!=='learn');document.querySelectorAll('.page').forEach(el=>el.classList.toggle('hidden',el.id!==`page-${p}`));document.querySelectorAll('[data-page]').forEach(btn=>{const active=btn.dataset.page===p;btn.classList.toggle('active',active);if(active)btn.setAttribute('aria-current','page');else btn.removeAttribute('aria-current')});if(p==='learn'){renderWords();renderDrafts()}if(p==='practice')renderPractice();if(p==='motivation'){activeQuoteIndex=randomWisdomIndex(activeQuoteIndex);renderMotivation();}window.scrollTo({top:0,behavior:'instant'});if(p==='practice')scrollPracticeIntoView()}
 document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>navigate(b.dataset.page)));
 function makeBtn(label,cls,callback){const btn=document.createElement('button');btn.type='button';btn.className=cls;btn.textContent=label;btn.addEventListener('click',callback);return btn}
 function openCardQuickActions(ch){
@@ -783,11 +783,11 @@ function addNewWord(prefill={}){showModal('Добавить слово или и
  if(builtins.has(w.ch)||state.custom.some(x=>x.ch===w.ch)){toast('Такое слово уже есть в каталоге — дубликат не добавлен.','bad');return}
  const complete=validWord(w);
  state.drafts=state.drafts.filter(x=>x.ch!==w.ch);
- if(complete)state.custom.push(w);else state.drafts.push({...w,origin:'photo'});
+ if(complete)state.custom.push(w);else state.drafts.push({...w,origin:'custom'});
  if(!save())return;
  closeModal();renderWords();renderDrafts();
  if(complete)toast(`✦ ${w.ch} добавлен в каталог.`,'good');
- else{navigate('photo');$('photo-drafts')?.scrollIntoView({behavior:'smooth',block:'start'});toast(`✦ ${w.ch} сохранён для уточнения. Можно дополнить позже.`,'good')}
+ else{navigate('learn');$('word-drafts')?.scrollIntoView({behavior:'smooth',block:'start'});toast(`✦ ${w.ch} сохранён для уточнения. Можно дополнить позже.`,'good')}
 },'Сохранить',true))}
 function openEditor(w){showModal(`Редактировать ${w.ch}`,wordForm(w,x=>{if(x.ch!==w.ch&&(builtins.has(x.ch)||state.custom.some(i=>i.ch===x.ch))){toast('Нельзя заменить на уже существующий символ.','bad');return}const index=state.custom.findIndex(i=>i.ch===w.ch);if(index<0)return;state.custom[index]={...x,origin:w.origin||'custom'};if(x.ch!==w.ch){state.learned=state.learned.map(c=>c===w.ch?x.ch:c);state.autoLearned=state.autoLearned.map(c=>c===w.ch?x.ch:c);state.favorites=state.favorites.map(c=>c===w.ch?x.ch:c);if(state.srs[w.ch]){state.srs[x.ch]=state.srs[w.ch];delete state.srs[w.ch]}if(state.skillStats[w.ch]){state.skillStats[x.ch]=state.skillStats[w.ch];delete state.skillStats[w.ch]}if(state.studyDays[w.ch]){state.studyDays[x.ch]=state.studyDays[w.ch];delete state.studyDays[w.ch]}if(state.writingStats[w.ch]){state.writingStats[x.ch]=state.writingStats[w.ch];delete state.writingStats[w.ch]}}save();renderWords();openWord(x.ch);toast('Карточка обновлена.','good')},'Сохранить изменения'))}
 $('manual-open').addEventListener('click',()=>addNewWord());
@@ -1221,55 +1221,6 @@ document.querySelectorAll('[data-mode]').forEach(btn=>btn.addEventListener('clic
 const levelContainer=document.querySelector('.practice-levels');if(levelContainer){const wrapper=document.createElement('details');wrapper.className='practice-level-disclosure';const summary=document.createElement('summary');summary.textContent='Уровни HSK · настроить';while(levelContainer.firstChild)wrapper.append(levelContainer.firstChild);wrapper.prepend(summary);levelContainer.append(wrapper);levelContainer.classList.add('is-collapsible')}
 document.querySelectorAll('[data-practice-level]').forEach(btn=>btn.addEventListener('click',()=>{const l=btn.dataset.practiceLevel;const initialAll=DEFAULT_PRACTICE_LEVELS.every(x=>state.practiceLevels.includes(x))&&state.practiceLevels.length===DEFAULT_PRACTICE_LEVELS.length;state.practiceLevels=initialAll?[l]:state.practiceLevels.includes(l)?state.practiceLevels.filter(x=>x!==l):PRACTICE_LEVELS.filter(x=>state.practiceLevels.includes(x)||x===l);save({quiet:true});renderPractice()}));
 $('practice-level-all').addEventListener('click',()=>{state.practiceLevels=[...DEFAULT_PRACTICE_LEVELS];save({quiet:true});renderPractice()});
-function clearPhoto(){ocrJobId++;scan=null;$('photo-result').replaceChildren();$('photo-input').value='';$('photo-gallery-input').value='';$('ocr-preview').classList.add('hidden');if(previewURL){URL.revokeObjectURL(previewURL);previewURL=null}$('ocr-preview').removeAttribute('src')}
-function scanCard(w,existing,selected){
- const card=document.createElement('div');card.className='scan-card';
- const checkbox=document.createElement('input');checkbox.type='checkbox';checkbox.disabled=existing;checkbox.checked=existing?true:selected.has(w.ch);checkbox.setAttribute('aria-label',`Выбрать ${w.ch}`);
- if(!existing)checkbox.addEventListener('change',()=>{checkbox.checked?selected.add(w.ch):selected.delete(w.ch);renderScanAction()});else checkbox.title='Уже в каталоге';
- card.append(checkbox);const glyph=document.createElement('div');glyph.className='scan-glyph';glyph.textContent=w.ch;card.append(glyph);
- const detail=document.createElement('div');detail.className='detail';
- const heading=document.createElement('strong');heading.textContent=(w.pinyin||'Чтение уточняется')+' · '+(w.meaning||'Значение уточняется');detail.append(heading);
- const example=document.createElement('p');example.textContent=w.cn||'Пример пока не найден';detail.append(example);
- const translation=document.createElement('small');translation.textContent=w.ru||'Перевод примера пока не найден';detail.append(translation);
- if(!existing){
-  const notice=document.createElement('div');notice.className='note'+(validWord(w)?' notice-good':'');notice.style.marginTop='11px';
-  notice.textContent=w.reason||(validWord(w)?'✓ Можно сохранить в словарь. Проверь значение перед добавлением.':'Можно сохранить для уточнения. Неизвестные значения не подменяем догадками.');detail.append(notice);
-  const details=document.createElement('details');details.className='scan-edit';
-  const summary=document.createElement('summary');summary.textContent='✎ Изменить данные';details.append(summary);
-  for(const [k,label] of [['pinyin','Пиньинь'],['meaning','Значение на русском'],['cn','Китайский пример'],['ru','Перевод примера']]){
-   const lbl=document.createElement('div');lbl.className='label';lbl.textContent=label;
-   const f=k==='cn'||k==='ru'?document.createElement('textarea'):document.createElement('input');f.className='field';f.value=w[k]||'';f.rows=2;
-   f.addEventListener('input',()=>{w[k]=f.value.trim();heading.textContent=(w.pinyin||'Чтение уточняется')+' · '+(w.meaning||'Значение уточняется');example.textContent=w.cn||'Пример пока не найден';translation.textContent=w.ru||'Перевод примера пока не найден';renderScanAction()});
-   details.append(lbl,f);
-  }
-  detail.append(details);
- }
- card.append(detail);return card;
-}
-
-// Build an offline character index from the verified word/example collection.
-// A contextual word gloss is explicitly labelled; it is NOT passed off as the character's literal meaning.
-const PHOTO_CONTEXT_INDEX=new Map();
-for(const w of builtins.values()){
- if(!w.cn||!w.ru)continue;
- for(const ch of [...new Set([...w.cn].filter(c=>isHanzi(c)))]){
-  const item=PHOTO_CONTEXT_INDEX.get(ch)||{examples:[],word:null};
-  if(item.examples.length<6&&!item.examples.some(x=>x.cn===w.cn))item.examples.push({cn:w.cn,ru:w.ru,origin:'словарь'});
-  if(w.ch.includes(ch)&&w.ch!==ch&&(!item.word||w.ch.length<item.word.ch.length))item.word=w;
-  PHOTO_CONTEXT_INDEX.set(ch,item);
- }
-}
-// Wisdom quotes are not used as photo examples outside the Wisdom tab.
-function localPhotoData(ch,recognized=''){
- const exact=builtins.get(ch)||state.custom.find(w=>w.ch===ch);
- if(exact)return {...exact,reason:'✓ Данные найдены во встроенном словаре.'};
- const context=PHOTO_CONTEXT_INDEX.get(ch);
- const example=context?.examples.find(x=>x.cn.length<=36)||context?.examples[0]||findExample(ch,recognized);
- const related=context?.word;
- // The approximate reading is a lookup in the embedded pinyin table, not a generated guess.
- const pinyin=approxPinyin(ch);
- return {ch,pinyin,meaning:'',cn:example?.cn||'',ru:example?.ru||'',origin:'photo',reason:related?`Есть похожее слово «${related.ch}» (${related.meaning}). Это подсказка, а не точный перевод знака. Можно сохранить для уточнения.`:'Значение не подтверждено. Можно сохранить символ для уточнения.'};
-}
 async function translateOnline(text){
  const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),4000);
  try{const params=new URLSearchParams({q:text,langpair:'zh-CN|ru'});const response=await fetch(`https://api.mymemory.translated.net/get?${params.toString()}`,{signal:controller.signal});if(!response.ok)throw Error(`Сервис перевода: HTTP ${response.status}`);const data=await response.json();if(Number(data?.responseStatus)!==200)throw Error(String(data?.responseDetails||'Сервис не дал ответа'));const result=String(data?.responseData?.translatedText||'').trim();if(!result||result===text||/[\u3400-\u9fff]/.test(result)||/NO QUERY|NOT TRANSLATED|INVALID LANGUAGE/i.test(result))throw Error('Сервис не смог подобрать проверяемый русский перевод');return result}
@@ -1280,169 +1231,24 @@ function findExample(ch,recognized){
  const chunks=String(recognized||'').split(/[。！？!?；;\n]/).map(x=>x.trim()).filter(x=>x.includes(ch)&&x.length>3&&x.length<=90);if(chunks.length)return {cn:chunks[0]+'。',ru:'',origin:'с фото'};
  return null
 }
-async function enrichScan(news,recognized,isCurrent=()=>true){
- const unknown=news.filter(w=>!validWord(w));if(!unknown.length)return;
- let done=0;
- // All new characters get a lookup, not only the first eight.
- for(let batch=0;batch<unknown.length&&isCurrent();batch+=4){
-  await Promise.all(unknown.slice(batch,batch+4).map(async w=>{
-   const local=localPhotoData(w.ch,recognized);
-   for(const k of ['pinyin','meaning','cn','ru'])if(!w[k]&&local[k])w[k]=local[k];
-   if(!w.meaning){
-    try{const translated=await translateOnline(w.ch);if(isCurrent()&&!w.meaning){w.meaning=translated;w.autoGenerated=true}}
-    catch(_){/* A missing translation never blocks saving the recognized character. */}
-   }
-   // Do not invent a sentence just to satisfy the validator. An incomplete card remains a draft.
-   if(w.cn&&!w.ru){try{const translated=await translateOnline(w.cn);if(isCurrent()&&!w.ru)w.ru=translated}catch(_){}}
-   if(validWord(w))w.reason=w.autoGenerated?'Перевод получен онлайн. Проверь его перед изучением.':'✓ Данные найдены в словаре. Проверь перевод перед сохранением.';
-   else w.reason='Не все данные удалось подтвердить. Символ можно сохранить в черновики, ничего не потеряется.';
-   done++;const progress=$('ocr-enrichment-note');if(progress&&isCurrent())progress.textContent=`✦ Уточняю значения: ${done} / ${unknown.length}. Можно сохранять символы уже сейчас.`;
-  }));
- }
-}
-
-function renderScanAction(){
- const b=$('scan-add');if(!b||!scan)return;
- const selected=scan.new.filter(w=>scan.selected.has(w.ch));const incomplete=selected.filter(w=>!validWord(w));
- b.disabled=!selected.length;b.textContent=`Сохранить выбранные (${selected.length}) ✦`;
- const status=$('scan-validation');if(status)status.textContent=!selected.length?'Выбери нужные символы.':incomplete.length?`Готовых карточек: ${selected.length-incomplete.length}. На уточнение: ${incomplete.length}. Все выбранные символы сохранятся.`:`Все ${selected.length} карточек готовы к сохранению.`;
-}
-function renderScan(){
- const r=$('photo-result');r.replaceChildren();if(!scan)return;
- const {existing,new:news,selected}=scan;
- const title=document.createElement('div');title.className='section-head';title.innerHTML=`<div><div class="eyebrow">Результат распознавания</div><h2>Найдено ${existing.length+news.length} <em>символов</em></h2><p>${news.length} новых · ${existing.length} уже есть в каталоге</p></div>`;r.append(title);
- if(news.length){const h=document.createElement('h3');h.textContent='✦ Новые символы';r.append(h);const tip=document.createElement('p');tip.className='muted tiny';tip.textContent='Готовые карточки попадут в словарь, остальные — в сохранённые черновики. При необходимости раскрой «Изменить данные».';r.append(tip);const list=document.createElement('div');list.className='scan-list';for(const w of news)list.append(scanCard(w,false,selected));r.append(list)}
- if(existing.length){const h=document.createElement('h3');h.textContent='✓ Уже есть в каталоге';r.append(h);const list=document.createElement('div');list.className='scan-list';for(const w of existing)list.append(scanCard(w,true,selected));r.append(list)}
- const status=document.createElement('p');status.className='tiny muted';status.id='scan-validation';r.append(status);
- const actions=document.createElement('div');actions.className='row';if(news.length){const add=makeBtn('Сохранить выбранные','primary',commitScan);add.id='scan-add';actions.append(add)}actions.append(makeBtn('Закрыть фото ×','ghost',clearPhoto));r.append(actions);renderScanAction();
-}
-function commitScan(){
- if(!scan)return;const selected=scan.new.filter(w=>scan.selected.has(w.ch));if(!selected.length)return toast('Выбери хотя бы один символ.','bad');
- let added=0,drafted=0;
- for(const raw of selected){const w=normalizeWord(raw,'photo');if(lookup(w.ch)||builtins.has(w.ch))continue;
-  state.custom=state.custom.filter(x=>x.ch!==w.ch);state.drafts=state.drafts.filter(x=>x.ch!==w.ch);
-  if(validWord(w)){state.custom.push(w);added++}else{state.drafts.push(w);drafted++}
- }
- save();renderWords();clearPhoto();renderDrafts();
- const result=$('photo-result');const card=document.createElement('div');card.className='note notice-good';card.textContent=`✦ Сохранено: ${added} в словарь${drafted?`, ${drafted} на уточнение`:''}. Ни один выбранный символ не потерян.`;result.append(card);
- const actions=document.createElement('div');actions.className='row';actions.style.marginTop='14px';
- if(added)actions.append(makeBtn('Открыть новые карточки →','primary',()=>{navigate('learn');level='custom';document.querySelectorAll('[data-level]').forEach(x=>x.classList.toggle('active',x.dataset.level===level));renderWords()}));
- if(drafted)actions.append(makeBtn('Открыть черновики ↓','soft',()=>{$('photo-drafts')?.scrollIntoView({behavior:'smooth',block:'start'})}));
- actions.append(makeBtn('Закрыть','ghost',()=>result.replaceChildren()));result.append(actions);
-}
-// OCR worker is reused for subsequent photos; don't download/load Chinese language data on every scan.
-let ocrWorkerPromise=null;
-let ocrJobId=0;
-function ocrStatus(message){const panel=$('photo-result');if(panel){panel.replaceChildren();const note=document.createElement('div');note.className='note';note.textContent=message;panel.append(note)}}
-async function getOCRWorker(){
- if(!ocrWorkerPromise){
-  ocrWorkerPromise=(async()=>{
-   if(!window.Tesseract){
-    await new Promise((resolve,reject)=>{
-     const script=document.createElement('script');script.src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';script.onload=resolve;script.onerror=()=>reject(Error('Не удалось загрузить модуль распознавания. Проверь интернет.'));document.head.append(script);
-    });
-   }
-   const worker=await window.Tesseract.createWorker('chi_sim',1,{logger:m=>{
-    if(m.status==='recognizing text'&&Number.isFinite(m.progress)){
-     const panel=$('photo-result');const label=panel?.firstElementChild;
-     if(label&&label.classList.contains('note')&&label.dataset.ocrProgress==='1')label.textContent=`✦ Распознаю китайский текст: ${Math.round(m.progress*100)}%`;
-    }
-   }});
-   // Sparse text: works better for signs, screenshots, isolated characters than assuming a full page.
-   try{await worker.setParameters({tessedit_pageseg_mode:'11',preserve_interword_spaces:'1'})}catch(_){}
-   return worker;
-  })().catch(err=>{ocrWorkerPromise=null;throw err});
- }
- return ocrWorkerPromise;
-}
-async function prepareOCRImage(file){
- // Browser handles orientation (including most phone EXIF metadata) while canvas limits giant photos.
- let bitmap=null, image=null, url=null;
- try{
-  if(typeof createImageBitmap==='function'){
-   try{bitmap=await createImageBitmap(file,{imageOrientation:'from-image'})}catch(_){bitmap=null}
-  }
-  if(!bitmap){
-   url=URL.createObjectURL(file);
-   image=await new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>reject(Error('Не удалось прочитать фотографию.'));img.src=url});
-  }
-  const width=bitmap?bitmap.width:image.naturalWidth;
-  const height=bitmap?bitmap.height:image.naturalHeight;
-  if(!width||!height)throw Error('Пустое изображение.');
-  // Shrink huge images to save memory; enlarge small screenshots to help recognize strokes.
-  const longest=Math.max(width,height);
-  const scale=longest>2200?2200/longest:longest<1000?Math.min(2,1400/longest):1;
-  const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(width*scale));canvas.height=Math.max(1,Math.round(height*scale));
-  const ctx=canvas.getContext('2d',{willReadFrequently:true});if(!ctx)throw Error('Обработка изображений недоступна в браузере.');
-  ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);
-  ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(bitmap||image,0,0,canvas.width,canvas.height);
-  return canvas;
- }finally{if(bitmap)bitmap.close();if(url)URL.revokeObjectURL(url)}
-}
-function panelContainsActiveEditor(){const panel=$('photo-result');return panel&&panel.contains(document.activeElement)&&['INPUT','TEXTAREA'].includes(document.activeElement.tagName)}
-function recognizedHanzi(text){return unique([...String(text||'')].filter(isHanzi))}
-async function startOCR(file){
- if(!file)return;
- if(!file.type.startsWith('image/'))return toast('Выбери изображение из галереи или сделай снимок.','bad');
- if(file.size>12*1024*1024)return toast('Фото слишком большое. Выбери изображение до 12 МБ.','bad');
- clearPhoto();const job=++ocrJobId;
- previewURL=URL.createObjectURL(file);$('ocr-preview').src=previewURL;$('ocr-preview').classList.remove('hidden');
- ocrStatus('✦ Подготавливаю фотографию…');
- try{
-  const [worker,prepared]=await Promise.all([getOCRWorker(),prepareOCRImage(file)]);
-  if(job!==ocrJobId)return;
-  ocrStatus('✦ Распознаю китайский текст…');
-  const progress=$('photo-result').firstElementChild;if(progress)progress.dataset.ocrProgress='1';
-  let {data}=await worker.recognize(prepared);
-  if(job!==ocrJobId)return;
-  let chars=recognizedHanzi(data.text);
-  // For photos where sparse-text recognition fails, try a second layout mode.
-  if(chars.length===0){
-   try{await worker.setParameters({tessedit_pageseg_mode:'3'});({data}=await worker.recognize(prepared));chars=recognizedHanzi(data.text)}
-   finally{try{await worker.setParameters({tessedit_pageseg_mode:'11'})}catch(_){}}
-  }
-  if(job!==ocrJobId)return;
-  if(!chars.length){
-   const panel=$('photo-result');panel.innerHTML='<div class="note notice-bad">Не получилось распознать китайский текст. Попробуй обрезать фото до области с иероглифами, убрать блики или сделать более чёткий снимок.</div>';
-   panel.append(makeBtn('Закрыть фото','ghost',clearPhoto));return;
-  }
-  const dictionary=wordsMap();
-  const existing=chars.filter(ch=>dictionary.has(ch)||builtins.has(ch)).map(ch=>dictionary.get(ch)||builtins.get(ch));
-  const news=chars.filter(ch=>!dictionary.has(ch)&&!builtins.has(ch)).map(ch=>{
-   const draft=state.drafts.find(w=>w.ch===ch);
-   return draft?{...localPhotoData(ch,String(data.text||'')),...draft}:localPhotoData(ch,String(data.text||''));
-  });
-  scan={existing,new:news,selected:new Set(news.map(w=>w.ch))};
-  renderScan(); // Display recognized characters immediately; online translation is optional.
-  if(news.length){
-   const panel=$('photo-result');const info=document.createElement('div');info.className='note';info.id='ocr-enrichment-note';
-   info.textContent='✦ Символы найдены. Уточняю данные в фоне; сохранить можно уже сейчас…';panel.prepend(info);
-   // Online translation runs in the background; it cannot hold the results hostage.
-   await enrichScan(news,String(data.text||''),()=>job===ocrJobId);
-   if(job!==ocrJobId)return;
-   const notice=$('ocr-enrichment-note');if(notice)notice.remove();
-   if(!panelContainsActiveEditor())renderScan();else $('photo-result').addEventListener('focusout',()=>{if(job===ocrJobId&&!panelContainsActiveEditor())renderScan()},{once:true});
-  }
- }catch(err){
-  if(job!==ocrJobId)return;
-  const panel=$('photo-result');panel.replaceChildren();
-  const note=document.createElement('div');note.className='note notice-bad';note.textContent=`Ошибка обработки фото: ${err.message||'Не удалось распознать текст.'}`;
-  panel.append(note,makeBtn('Попробовать ещё раз','ghost',()=>startOCR(file)));
- }
-}
-for(const inputId of ['photo-input','photo-gallery-input'])$(inputId).addEventListener('change',e=>{const file=e.target.files?.[0];if(file)startOCR(file)});
+function editDraft(draft){showModal('Уточнить '+draft.ch,wordForm(draft,w=>{
+ if(builtins.has(w.ch)||state.custom.some(x=>x.ch===w.ch)){toast('Такое слово уже есть в каталоге.','bad');return}
+ const complete=validWord(w);state.drafts=state.drafts.filter(x=>x.ch!==draft.ch&&x.ch!==w.ch);
+ if(complete)state.custom.push({...w,origin:'custom'});else state.drafts.push({...w,origin:'custom'});
+ if(!save())return;closeModal();renderWords();renderDrafts();toast(complete?'Карточка добавлена в каталог.':'Черновик сохранён.','good');
+},'Сохранить',true))}
 function renderDrafts(){
- const panel=$('photo-drafts');if(!panel)return;panel.replaceChildren();
+ const panel=$('word-drafts');if(!panel)return;panel.replaceChildren();
  const drafts=cleanPhotoDrafts(state.drafts).filter(w=>!lookup(w.ch));if(!drafts.length)return;
  const heading=document.createElement('h3');heading.textContent=`Сохранённые для уточнения · ${drafts.length}`;panel.append(heading);
- const hint=document.createElement('p');hint.className='muted tiny';hint.textContent='Здесь хранятся неполные карточки из фото и ручного добавления. Их можно дополнить позже; в упражнения они попадут после проверки полей.';panel.append(hint);
+ const hint=document.createElement('p');hint.className='muted tiny';hint.textContent='Здесь хранятся неполные карточки, которые можно дополнить вручную. Их можно дополнить позже; в упражнения они попадут после проверки полей.';panel.append(hint);
  const list=document.createElement('div');list.className='scan-list';
  for(const draft of drafts){const row=document.createElement('div');row.className='scan-card';
   const glyph=document.createElement('div');glyph.className='scan-glyph';glyph.textContent=draft.ch;
   const info=document.createElement('div');info.className='detail';
   const name=document.createElement('strong');name.textContent=`${draft.pinyin||'Чтение уточняется'} · ${draft.meaning||'Значение уточняется'}`;info.append(name);
   const actions=document.createElement('div');actions.className='row';actions.style.marginTop='10px';
-  actions.append(makeBtn('✎ Уточнить','soft',()=>{scan={existing:[],new:[{...draft}],selected:new Set([draft.ch])};renderScan();$('photo-result')?.scrollIntoView({behavior:'smooth',block:'start'})}));
+  actions.append(makeBtn('✎ Уточнить','soft',()=>editDraft(draft)));
   actions.append(makeBtn('Удалить','ghost',()=>{state.drafts=state.drafts.filter(x=>x.ch!==draft.ch);save();renderDrafts()}));
   info.append(actions);row.append(glyph,info);list.append(row);
  }
