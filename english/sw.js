@@ -1,8 +1,8 @@
 // English app only. Do not modify or purge the Chinese app's cache.
-const CACHE='dalia-english-shell-v71';
+const CACHE='dalia-english-shell-v72';
 const PREFIX='dalia-english-shell-';
 const base=new URL(self.registration.scope);
-const shell=['./','./index.html','./app.js?v=69','./blue.css?v=6','./grammar-data.js?v=2','./grammar.js?v=3','./manifest.webmanifest','../icons/icon-192.png','../icons/icon-512.png'].map(path=>new URL(path,base).href);
+const shell=['./','./index.html','./app.js?v=69','./blue.css?v=7','./grammar-data.js?v=3','./grammar.js?v=4','./manifest.webmanifest','../icons/icon-192.png','../icons/icon-512.png'].map(path=>new URL(path,base).href);
 self.addEventListener('install',event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE);await cache.addAll(shell.map(url=>new Request(url,{cache:'reload'})));await self.skipWaiting()})()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const key of await caches.keys()){if(key.startsWith(PREFIX)&&key!==CACHE)await caches.delete(key)}await self.clients.claim()})()));
 self.addEventListener('fetch',event=>{
