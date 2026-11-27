@@ -5212,7 +5212,7 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "He is not here is he"
+          "He is not here, is he?"
         ],
         "wrong": [],
         "words": [
@@ -5438,13 +5438,13 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "Turn ___ off. (это)",
+        "prompt": "Turn ___ off. (это, один предмет)",
         "answers": [
           "it"
         ],
         "wrong": [
           "its",
-          "off it"
+          "them"
         ],
         "why": "Местоимение между частями."
       },
@@ -6361,7 +6361,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "At eight tomorrow I will be ___ . (work)",
+        "prompt": "At eight tomorrow I will be ___. (work)",
         "answers": [
           "working"
         ],
@@ -6705,7 +6705,7 @@ window.daliaGrammarLessons=[
         "why": "For + длительность."
       },
       {
-        "prompt": "He was wet because he had been ___ . (walk)",
+        "prompt": "He was wet because he had been ___. (walk)",
         "answers": [
           "walking"
         ],
@@ -6871,7 +6871,7 @@ window.daliaGrammarLessons=[
         "why": "После modal начальная форма."
       },
       {
-        "prompt": "He might have ___ . (leave)",
+        "prompt": "He might have ___. (leave)",
         "answers": [
           "left"
         ],
@@ -7128,7 +7128,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "I had my hair ___ . (cut)",
+        "prompt": "I had my hair ___. (cut)",
         "answers": [
           "cut"
         ],
@@ -7139,7 +7139,7 @@ window.daliaGrammarLessons=[
         "why": "Объект + V3."
       },
       {
-        "prompt": "She got her phone ___ . (fix)",
+        "prompt": "She got her phone ___. (fix)",
         "answers": [
           "fixed"
         ],
@@ -7352,7 +7352,7 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "Having finished the work she left."
+          "Having finished the work, she left."
         ],
         "wrong": [],
         "words": [
@@ -7882,7 +7882,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "I suggest that he ___ . (leave, subjunctive)",
+        "prompt": "I suggest that he ___. (leave, subjunctive)",
         "answers": [
           "leave"
         ],
@@ -7904,7 +7904,7 @@ window.daliaGrammarLessons=[
         "why": "Be в неизменяемой форме."
       },
       {
-        "prompt": "They demanded that he ___ . (resign, subjunctive)",
+        "prompt": "They demanded that he ___. (resign, subjunctive)",
         "answers": [
           "resign"
         ],
@@ -7915,7 +7915,7 @@ window.daliaGrammarLessons=[
         "why": "Форма требования."
       },
       {
-        "prompt": "I recommend that she should ___ . (wait)",
+        "prompt": "I recommend that she should ___. (wait)",
         "answers": [
           "wait"
         ],
@@ -7926,15 +7926,15 @@ window.daliaGrammarLessons=[
         "why": "После should V1."
       },
       {
-        "prompt": "It is important that he ___ not be late. (subjunctive, вставь not перед be: выбери помощник, если нужен)",
+        "prompt": "It is important that he ___ late. (отрицательный subjunctive)",
         "answers": [
-          "—"
+          "not be"
         ],
         "wrong": [
-          "does",
-          "is"
+          "doesn't be",
+          "isn't"
         ],
-        "why": "В subjunctive отрицание — not be без помощника."
+        "why": "В отрицательном subjunctive ставим not перед начальной формой be."
       },
       {
         "type": "translate",
@@ -8111,7 +8111,7 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "Were I you I would wait."
+          "Were I you, I would wait."
         ],
         "wrong": [],
         "words": [
@@ -8366,7 +8366,7 @@ window.daliaGrammarLessons=[
         "why": "Yesterday — прошедшее."
       },
       {
-        "prompt": "He does ___ . (agree)",
+        "prompt": "He does ___. (agree)",
         "answers": [
           "agree"
         ],
@@ -8377,7 +8377,7 @@ window.daliaGrammarLessons=[
         "why": "После does V1."
       },
       {
-        "prompt": "They did ___ . (try)",
+        "prompt": "They did ___. (try)",
         "answers": [
           "try"
         ],
@@ -8864,7 +8864,7 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "Nevertheless we finished the task."
+          "Nevertheless, we finished the task."
         ],
         "wrong": [],
         "words": [
@@ -9357,6 +9357,605 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Albeit добавляет краткую оговорку."
+      }
+    ]
+  },
+  {
+    "id": "fronting",
+    "level": "C2",
+    "category": "Предложения",
+    "title": "Fronting and information focus",
+    "subtitle": "Как вынести важную информацию вперёд",
+    "rule": "В обычном предложении объект стоит после глагола, но в выразительной речи его можно вынести в начало: This I cannot accept — вот этого я принять не могу. Fronting помогает выделить тему, создать контраст или связать предложение с предыдущим.",
+    "note": "Не всякое вынесение вызывает инверсию. This I cannot accept сохраняет порядок I cannot; Never have I seen this требует инверсии из-за отрицательного наречия. В формальной нейтральной речи не злоупотребляй fronting.",
+    "table": [
+      [
+        "объект",
+        "This I cannot accept.",
+        "вот этого не приму"
+      ],
+      [
+        "контраст",
+        "The first option I like; the second I don't.",
+        "первая нравится, вторая нет"
+      ],
+      [
+        "обстоятельство места",
+        "On the wall hung a picture.",
+        "на стене висела картина"
+      ]
+    ],
+    "examples": [
+      [
+        "That much I can promise.",
+        "Вот это я могу обещать.",
+        "Объект that much вынесен для акцента."
+      ],
+      [
+        "On the hill stood an old castle.",
+        "На холме стоял старый замок.",
+        "Обстоятельство места может сочетаться с инверсией в описании."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "This I cannot ___. (accept)",
+        "answers": [
+          "accept"
+        ],
+        "wrong": [
+          "accepts",
+          "accepted"
+        ],
+        "why": "После cannot обычная форма."
+      },
+      {
+        "prompt": "That much I ___ promise. (могу)",
+        "answers": [
+          "can"
+        ],
+        "wrong": [
+          "am",
+          "have"
+        ],
+        "why": "Объект вынесен, порядок I can сохраняется."
+      },
+      {
+        "prompt": "On the hill ___ an old castle. (stand, Past Simple)",
+        "answers": [
+          "stood"
+        ],
+        "wrong": [
+          "standing",
+          "stand"
+        ],
+        "why": "Локативная инверсия в описании."
+      },
+      {
+        "prompt": "Never ___ I seen this before. (Present Perfect)",
+        "answers": [
+          "have"
+        ],
+        "wrong": [
+          "do",
+          "am"
+        ],
+        "why": "После never нужна инверсия."
+      },
+      {
+        "prompt": "This book I ___; that one I don't. (like)",
+        "answers": [
+          "like"
+        ],
+        "wrong": [
+          "likes",
+          "am like"
+        ],
+        "why": "Fronting объекта без обязательной инверсии."
+      },
+      {
+        "type": "translate",
+        "prompt": "Вот этого я принять не могу. (начни с This, используй accept)",
+        "answers": [
+          "This I cannot accept.",
+          "This I can't accept."
+        ],
+        "wrong": [],
+        "why": "Объект вынесен вперёд."
+      },
+      {
+        "type": "correct",
+        "prompt": "This cannot I accept. (сохрани fronting, нейтральный порядок подлежащего и помощника)",
+        "answers": [
+          "This I cannot accept.",
+          "This I can't accept."
+        ],
+        "wrong": [],
+        "why": "После объекта сохраняется I cannot."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "That much I can promise."
+        ],
+        "wrong": [],
+        "words": [
+          "That",
+          "much",
+          "I",
+          "can",
+          "promise"
+        ],
+        "why": "Объект в начале выделен."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "I can promise that much. → Начни с That much.",
+        "answers": [
+          "That much I can promise."
+        ],
+        "wrong": [],
+        "why": "Fronting выделяет that much."
+      },
+      {
+        "type": "translate",
+        "prompt": "На холме стоял старый замок. (начни с On the hill, используй stood перед подлежащим)",
+        "answers": [
+          "On the hill stood an old castle."
+        ],
+        "wrong": [],
+        "why": "Локативная инверсия."
+      }
+    ]
+  },
+  {
+    "id": "extraposition",
+    "level": "C2",
+    "category": "Предложения",
+    "title": "Extraposition and anticipatory it",
+    "subtitle": "Формальное it и длинное подлежащее",
+    "rule": "Когда подлежащее — длинная часть с that или to, английский часто ставит формальное it в начало, а смысловую часть — в конец: It is surprising that he left. Сравни That he left is surprising — грамматически возможно, но часто тяжелее. Похожая структура с объектом: I find it difficult to concentrate.",
+    "note": "It здесь не обозначает конкретный предмет. Не смешивай с cleft: It was John who called выделяет John, а It is clear that John called оценивает сам факт звонка.",
+    "table": [
+      [
+        "формальное подлежащее",
+        "It is clear that he left.",
+        "ясно, что он ушёл"
+      ],
+      [
+        "инфинитив",
+        "It is hard to explain.",
+        "трудно объяснить"
+      ],
+      [
+        "формальный объект",
+        "I find it hard to explain.",
+        "мне трудно объяснить"
+      ]
+    ],
+    "examples": [
+      [
+        "It seems unlikely that they will agree.",
+        "Маловероятно, что они согласятся.",
+        "It позволяет вынести длинную часть в конец."
+      ],
+      [
+        "I find it difficult to concentrate.",
+        "Мне трудно сосредоточиться.",
+        "It занимает место объекта перед difficult."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "___ is clear that she knows.",
+        "answers": [
+          "It"
+        ],
+        "wrong": [
+          "There",
+          "That"
+        ],
+        "why": "Формальное подлежащее it."
+      },
+      {
+        "prompt": "I find ___ hard to concentrate.",
+        "answers": [
+          "it"
+        ],
+        "wrong": [
+          "there",
+          "that"
+        ],
+        "why": "Формальный объект it."
+      },
+      {
+        "prompt": "It is difficult ___ explain. (инфинитив)",
+        "answers": [
+          "to"
+        ],
+        "wrong": [
+          "for",
+          "at"
+        ],
+        "why": "It is difficult to + V1."
+      },
+      {
+        "prompt": "It seems unlikely ___ he will agree.",
+        "answers": [
+          "that"
+        ],
+        "wrong": [
+          "what",
+          "which"
+        ],
+        "why": "That вводит смысловую часть."
+      },
+      {
+        "prompt": "We consider ___ essential to act now.",
+        "answers": [
+          "it"
+        ],
+        "wrong": [
+          "there",
+          "what"
+        ],
+        "why": "Формальный объект перед essential."
+      },
+      {
+        "type": "translate",
+        "prompt": "Ясно, что он ушёл. (начни с It is clear)",
+        "answers": [
+          "It is clear that he left.",
+          "It is clear he left.",
+          "It's clear that he left.",
+          "It's clear he left."
+        ],
+        "wrong": [],
+        "why": "It — формальное подлежащее."
+      },
+      {
+        "type": "correct",
+        "prompt": "I find difficult to concentrate.",
+        "answers": [
+          "I find it difficult to concentrate."
+        ],
+        "wrong": [],
+        "why": "It занимает место формального объекта."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "It is hard to explain."
+        ],
+        "wrong": [],
+        "words": [
+          "It",
+          "is",
+          "hard",
+          "to",
+          "explain"
+        ],
+        "why": "Длинная смысловая часть следует после hard."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "That she left is surprising. → Начни с It is surprising.",
+        "answers": [
+          "It is surprising that she left.",
+          "It's surprising that she left."
+        ],
+        "wrong": [],
+        "why": "That-clause переносится в конец."
+      },
+      {
+        "type": "translate",
+        "prompt": "Мне трудно сосредоточиться. (начни с I find)",
+        "answers": [
+          "I find it difficult to concentrate.",
+          "I find it hard to concentrate."
+        ],
+        "wrong": [],
+        "why": "Формальный объект it."
+      }
+    ]
+  },
+  {
+    "id": "nonfinite-perfect",
+    "level": "C2",
+    "category": "Глаголы",
+    "title": "Perfect non-finite forms",
+    "subtitle": "Инфинитив и -ing для более раннего действия",
+    "rule": "To have + V3 показывает действие, произошедшее раньше момента, о котором говорится: He seems to have left — похоже, он уже ушёл. Having + V3 тоже обозначает более раннее действие: Having finished the report, she left. В пассивном варианте появляется been: to have been informed, having been informed.",
+    "note": "Сравни He seems to be working — похоже, работает сейчас, и He seems to have worked — похоже, уже работал. Такие формы не всегда означают завершённость относительно настоящего: точка отсчёта зависит от главного глагола.",
+    "table": [
+      [
+        "perfect infinitive",
+        "to have left",
+        "уйти раньше"
+      ],
+      [
+        "perfect participle",
+        "having finished",
+        "закончив"
+      ],
+      [
+        "perfect passive",
+        "to have been informed",
+        "быть ранее уведомлённым"
+      ]
+    ],
+    "examples": [
+      [
+        "She appears to have forgotten the appointment.",
+        "Похоже, она забыла о встрече.",
+        "Забывание произошло раньше вывода."
+      ],
+      [
+        "Having completed the task, he went home.",
+        "Закончив задание, он пошёл домой.",
+        "Сначала завершение, затем уход."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "He seems to have ___. (leave)",
+        "answers": [
+          "left"
+        ],
+        "wrong": [
+          "leave",
+          "leaving"
+        ],
+        "why": "Perfect infinitive + V3."
+      },
+      {
+        "prompt": "Having ___ the report, she left. (finish)",
+        "answers": [
+          "finished"
+        ],
+        "wrong": [
+          "finish",
+          "finishing"
+        ],
+        "why": "Having + V3."
+      },
+      {
+        "prompt": "He claims to have been ___. (inform)",
+        "answers": [
+          "informed"
+        ],
+        "wrong": [
+          "inform",
+          "informing"
+        ],
+        "why": "Perfect passive."
+      },
+      {
+        "prompt": "She appears to ___ forgotten. (perfect infinitive)",
+        "answers": [
+          "have"
+        ],
+        "wrong": [
+          "has",
+          "had"
+        ],
+        "why": "To have + V3."
+      },
+      {
+        "prompt": "Having been ___, they began work. (brief)",
+        "answers": [
+          "briefed"
+        ],
+        "wrong": [
+          "brief",
+          "briefing"
+        ],
+        "why": "Having been + V3."
+      },
+      {
+        "type": "translate",
+        "prompt": "Похоже, он уже ушёл. (начни с He seems)",
+        "answers": [
+          "He seems to have left.",
+          "He seems to have already left."
+        ],
+        "wrong": [],
+        "why": "Perfect infinitive — более раннее действие."
+      },
+      {
+        "type": "correct",
+        "prompt": "She seems to have went home.",
+        "answers": [
+          "She seems to have gone home."
+        ],
+        "wrong": [],
+        "why": "После have нужна V3 gone."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "He claims to have been informed."
+        ],
+        "wrong": [],
+        "words": [
+          "He",
+          "claims",
+          "to",
+          "have",
+          "been",
+          "informed"
+        ],
+        "why": "Perfect passive infinitive."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "After she had finished the report, she left. → Начни с Having.",
+        "answers": [
+          "Having finished the report, she left."
+        ],
+        "wrong": [],
+        "why": "Having finished — более раннее действие."
+      },
+      {
+        "type": "translate",
+        "prompt": "Закончив работу, он ушёл домой. (начни с Having finished, используй the work)",
+        "answers": [
+          "Having finished the work, he went home.",
+          "Having finished the work he went home."
+        ],
+        "wrong": [],
+        "why": "Оборот относится к he."
+      }
+    ]
+  },
+  {
+    "id": "advanced-comparison",
+    "level": "C2",
+    "category": "Прилагательные",
+    "title": "Correlative and advanced comparison",
+    "subtitle": "Чем больше, тем лучше и другие сравнения",
+    "rule": "The more you practise, the easier it becomes — чем больше практикуешься, тем легче становится. Два сравнительных оборота выражают связь изменений. No sooner... than относится к почти одновременным событиям, а no more than и not more than различаются оттенком: всего лишь и не более.",
+    "note": "Не убирай the перед обеими сравнительными частями в конструкции the more..., the better. Это не обычный артикль перед существительным. В зависимости от контекста сокращённая форма тоже возможна: The sooner, the better.",
+    "table": [
+      [
+        "взаимосвязь",
+        "The more, the better.",
+        "чем больше, тем лучше"
+      ],
+      [
+        "полная форма",
+        "The harder you work, the better you get.",
+        "чем усерднее, тем лучше"
+      ],
+      [
+        "ограничение",
+        "no more than five",
+        "всего пять / не более пяти"
+      ]
+    ],
+    "examples": [
+      [
+        "The longer we wait, the harder it becomes.",
+        "Чем дольше ждём, тем труднее становится.",
+        "Два сравнения показывают связь."
+      ],
+      [
+        "The sooner, the better.",
+        "Чем скорее, тем лучше.",
+        "Сокращённая сравнительная конструкция."
+      ]
+    ],
+    "questions": [
+      {
+        "prompt": "___ more you read, the better you write.",
+        "answers": [
+          "The"
+        ],
+        "wrong": [
+          "A",
+          "An"
+        ],
+        "why": "Перед сравнительной частью нужен the."
+      },
+      {
+        "prompt": "The harder you work, the ___ you get. (good)",
+        "answers": [
+          "better"
+        ],
+        "wrong": [
+          "best",
+          "good"
+        ],
+        "why": "Сравнительная форма better."
+      },
+      {
+        "prompt": "The ___ we leave, the better. (soon)",
+        "answers": [
+          "sooner"
+        ],
+        "wrong": [
+          "soon",
+          "soonest"
+        ],
+        "why": "Сравнительная форма sooner."
+      },
+      {
+        "prompt": "The more you practise, the ___ it becomes. (easy)",
+        "answers": [
+          "easier"
+        ],
+        "wrong": [
+          "easy",
+          "easiest"
+        ],
+        "why": "Связь двух сравнительных степеней."
+      },
+      {
+        "prompt": "No sooner had she arrived ___ it started raining.",
+        "answers": [
+          "than"
+        ],
+        "wrong": [
+          "when",
+          "that"
+        ],
+        "why": "No sooner ... than."
+      },
+      {
+        "type": "translate",
+        "prompt": "Чем больше, тем лучше.",
+        "answers": [
+          "The more, the better.",
+          "The more the better."
+        ],
+        "wrong": [],
+        "why": "Две сравнительные части."
+      },
+      {
+        "type": "correct",
+        "prompt": "The more you read, better you write.",
+        "answers": [
+          "The more you read, the better you write."
+        ],
+        "wrong": [],
+        "why": "Нужен the во второй части."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "The sooner, the better."
+        ],
+        "wrong": [],
+        "words": [
+          "The",
+          "sooner",
+          "the",
+          "better"
+        ],
+        "why": "Сокращённое сравнение."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "We wait longer and it becomes harder. → Начни с The longer.",
+        "answers": [
+          "The longer we wait, the harder it becomes."
+        ],
+        "wrong": [],
+        "why": "Коррелятивное сравнение."
+      },
+      {
+        "type": "translate",
+        "prompt": "Чем раньше мы уйдём, тем лучше. (начни с The sooner)",
+        "answers": [
+          "The sooner we leave, the better.",
+          "The sooner we leave the better."
+        ],
+        "wrong": [],
+        "why": "The + сравнительная форма в обеих частях."
       }
     ]
   }
