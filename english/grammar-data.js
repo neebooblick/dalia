@@ -52,7 +52,7 @@ window.daliaGrammarLessons=[
           "is",
           "are"
         ],
-        "why": "I всегда сочетается с am. В русском «я студент» обходится без глагола, в английском он обязателен."
+        "why": "В Present Simple глагола be с I используется am. В русском «я студент» обходится без глагола, в английском он нужен."
       },
       {
         "prompt": "They ___ at home.",
@@ -63,7 +63,7 @@ window.daliaGrammarLessons=[
           "is",
           "am"
         ],
-        "why": "They — несколько людей; для they используется are."
+        "why": "С they используется are, даже когда they относится к одному человеку."
       },
       {
         "prompt": "___ she your sister?",
@@ -109,7 +109,8 @@ window.daliaGrammarLessons=[
         "type": "correct",
         "prompt": "She are my sister.",
         "answers": [
-          "She is my sister."
+          "She is my sister.",
+          "She's my sister."
         ],
         "wrong": [],
         "why": "С she используется is."
@@ -312,17 +313,17 @@ window.daliaGrammarLessons=[
     "category": "Артикли",
     "title": "A / an / the",
     "subtitle": "Артикли",
-    "rule": "В русском нет артиклей, поэтому сначала спроси себя: слушатель уже понимает, о каком предмете речь? A/an — один предмет, который можно посчитать, но пока не уточнено какой. The — конкретный предмет, понятный из ситуации. Когда говоришь о вещах вообще во множественном числе или о веществе в общем смысле, артикль часто не нужен.",
+    "rule": "В русском нет артиклей. A/an ставится перед исчисляемым существительным в единственном числе, когда не выделяем конкретный предмет: a book. The показывает, что слушатель может определить, о каком предмете речь: the book on the desk. С множественным числом и неисчисляемыми словами в общем смысле артикль часто не нужен. A/an также используется для профессий: an engineer.",
     "table": [
       [
         "a",
         "a book",
-        "один, пока не уточнённый предмет"
+        "один из возможных предметов"
       ],
       [
         "an",
         "an apple",
-        "перед гласным звуком"
+        "как a, но перед гласным звуком"
       ],
       [
         "the",
@@ -355,7 +356,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "She is ___ engineer. (название профессии)",
+        "prompt": "She is ___ engineer. (просто назови профессию; не выделяй конкретного инженера)",
         "answers": [
           "an"
         ],
@@ -377,7 +378,7 @@ window.daliaGrammarLessons=[
         "why": "University начинается со звука «й», а не с гласного звука. Поэтому a university."
       },
       {
-        "prompt": "I saw a dog. ___ dog was black.",
+        "prompt": "I saw a dog. ___ dog was black. (та же собака)",
         "answers": [
           "The"
         ],
@@ -472,7 +473,7 @@ window.daliaGrammarLessons=[
     "category": "Местоимения",
     "title": "Личные и притяжательные",
     "subtitle": "I, me, my, mine — я, меня, мой",
-    "rule": "По-русски «я», «меня», «мой» — разные формы. В английском так же: I — кто делает действие, me — на кого направлено действие, my — чей предмет перед названием предмета, mine — чей, если сам предмет уже назван. Например: I like you; you like me; my bag; the bag is mine.",
+    "rule": "В английском форма зависит от роли слова. I — я (подлежащее), me — меня/мне (дополнение), my — мой перед названием предмета, mine — мой без повторения названия. Например: I like you; you like me; my bag; the bag is mine. У каждого лица свои формы.",
     "table": [
       [
         "I / me",
@@ -641,7 +642,7 @@ window.daliaGrammarLessons=[
     "category": "Существительные",
     "title": "Множественное число",
     "subtitle": "Books, boxes, children",
-    "rule": "Чтобы сказать «две книги», обычно добавь к английскому слову -s: two books. После sh, ch, s, x обычно нужно -es: boxes. Если слово заканчивается на согласную и y, меняем y на -ies: city → cities. У некоторых частых слов форма особая: child → children, man → men.",
+    "rule": "Чтобы сказать «две книги», обычно добавь к английскому слову -s: two books. После sh, ch, s, x, z обычно нужно -es: boxes. Если слово заканчивается на согласную и y, меняем y на -ies: city → cities. После гласной + y обычно просто -s: toy → toys. У некоторых частых слов форма особая: child → children, man → men.",
     "table": [
       [
         "book → books",
@@ -963,7 +964,7 @@ window.daliaGrammarLessons=[
         "There aren't any books."
       ]
     ],
-    "note": "There is a cat in the room сообщает о наличии кота. The cat is in the room сообщает, где находится уже известный кот. Вопрос: Is there a cat?",
+    "note": "There is a cat in the room сообщает о наличии кота. The cat is in the room сообщает, где находится уже известный кот. Вопрос: Is there a cat? В разговорной речи встречается there's с несколькими предметами, но в учебных заданиях придерживаемся стандартного there are.",
     "examples": [
       [
         "There is a shop nearby.",
@@ -1041,7 +1042,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "correct",
-        "prompt": "There is two chairs.",
+        "prompt": "There is two chairs. (исправь для стандартной письменной речи)",
         "answers": [
           "There are two chairs."
         ],
@@ -1391,7 +1392,7 @@ window.daliaGrammarLessons=[
     "title": "Possessive ’s",
     "subtitle": "Как сказать «книга Анны»",
     "rule": "Чтобы показать, кому что принадлежит, часто добавляем 's к владельцу: Anna's book — книга Анны. У обычного множественного числа на -s ставим только апостроф: the students' books.",
-    "note": "Не путай 's принадлежности с сокращением is. Anna's bag — сумка Анны, Anna's tired — Анна устала. Children не заканчивается на s, поэтому children's toys.",
+    "note": "Не путай 's принадлежности с сокращением is. Anna's bag — сумка Анны, Anna's tired — Анна устала. Children не заканчивается на s, поэтому children's toys. Если владелец — один человек, имя которого заканчивается на s, обычно допустимо James's, а в некоторых стилях James'.",
     "table": [
       [
         "один владелец",
@@ -1695,7 +1696,7 @@ window.daliaGrammarLessons=[
     "title": "Always / usually / never",
     "subtitle": "Как часто что-то происходит",
     "rule": "Наречия частоты показывают привычки: always — всегда, usually — обычно, often — часто, sometimes — иногда, never — никогда. Обычно они стоят перед обычным глаголом, но после am/is/are: I often read, she is often late.",
-    "note": "Never уже содержит отрицание: I never smoke, а не I don't never smoke в стандартном английском. Sometimes может стоять и в начале предложения.",
+    "note": "Never уже содержит отрицание: I never smoke, а не I don't never smoke в стандартном английском. Sometimes может стоять и в начале предложения. Often и usually также могут стоять в начале или в других естественных позициях, в зависимости от акцента.",
     "table": [
       [
         "обычный глагол",
@@ -1846,7 +1847,7 @@ window.daliaGrammarLessons=[
     "title": "Countable / uncountable",
     "subtitle": "Что можно посчитать",
     "rule": "Book можно посчитать: one book, two books. Water, rice, information обычно считаются массой или общим понятием, поэтому не говорят two waters в нейтральном значении. Чтобы посчитать порции, назови единицу: two glasses of water.",
-    "note": "Advice и information в английском обычно неисчисляемые, хотя по-русски «советы» и «сведения» могут считаться. Используй a piece of advice, some information.",
+    "note": "Advice и information в английском обычно неисчисляемые, хотя по-русски «советы» и «сведения» могут считаться. Используй a piece of advice, some information. В кафе two waters может означать две порции или бутылки воды; это особый контекст, а не основное правило.",
     "table": [
       [
         "исчисляемое",
@@ -1889,13 +1890,13 @@ window.daliaGrammarLessons=[
         "why": "Information неисчисляемое."
       },
       {
-        "prompt": "Two ___ of water, please.",
+        "prompt": "Two ___ of water, please. (стакана)",
         "answers": [
           "glasses"
         ],
         "wrong": [
           "glass",
-          "water"
+          "a glass"
         ],
         "why": "Считаем стаканы."
       },
@@ -2030,7 +2031,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "I ___ him yesterday. (see)",
+        "prompt": "I ___ him yesterday. (see, законченное событие)",
         "answers": [
           "saw"
         ],
@@ -2233,7 +2234,7 @@ window.daliaGrammarLessons=[
       ],
       [
         "I have seen this film.",
-        "Я видел этот фильм.",
+        "Я уже видел этот фильм.",
         "После have нужна третья форма: seen, а не saw."
       ]
     ],
@@ -2340,7 +2341,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "rewrite",
-        "prompt": "Три формы глагола go (через пробел).",
+        "prompt": "Запиши три формы глагола go через пробел: начальная, прошедшая, третья.",
         "answers": [
           "go went gone"
         ],
@@ -2373,7 +2374,7 @@ window.daliaGrammarLessons=[
         "договорённость"
       ]
     ],
-    "note": "Will и going to иногда подходят в одной ситуации, но смысловой акцент отличается. После will нужен обычный глагол: will go. Перед going to нужен am, is или are.",
+    "note": "Will и going to иногда подходят в одной ситуации, но смысловой акцент отличается. После will нужен обычный глагол: will go. Перед going to нужен am, is или are. Для будущих договорённостей подходит и Present Continuous: I'm meeting Tom at six. Для расписаний часто используется Present Simple: The train leaves at six.",
     "examples": [
       [
         "Look at those clouds! It's going to rain.",
@@ -2648,14 +2649,14 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "translate",
-        "prompt": "У нас есть немного времени.",
+        "prompt": "У нас есть немного времени. (используй a little)",
         "answers": [
           "We have a little time.",
           "We've got a little time.",
           "We have got a little time."
         ],
         "wrong": [],
-        "why": "Time неисчисляемое. A little и some передают небольшое или неопределённое количество."
+        "why": "Time обычно неисчисляемое. A little time означает «немного времени»."
       }
     ]
   },
@@ -2665,7 +2666,7 @@ window.daliaGrammarLessons=[
     "category": "Прилагательные",
     "title": "Степени сравнения",
     "subtitle": "Bigger, more useful, the best",
-    "rule": "Если сравниваешь два предмета, нужна форма «больше/интереснее»: bigger, more interesting. Если выделяешь один среди группы — форма «самый»: the biggest, the most interesting. Короткие прилагательные часто получают -er/-est, длинные — more/most.",
+    "rule": "Если сравниваешь два предмета, нужна форма «больше/интереснее»: bigger, more interesting. Если выделяешь один среди группы — форма «самый»: the biggest, the most interesting. Короткие прилагательные часто получают -er/-est, длинные — more/most. У некоторых двусложных прилагательных возможны обе модели; не выбирай окончание только по числу букв.",
     "table": [
       [
         "small",
@@ -2859,7 +2860,7 @@ window.daliaGrammarLessons=[
         "не обязательно"
       ]
     ],
-    "note": "После can, must, should не добавляем to или -s: she can swim. Have to ведёт себя иначе: she has to work. Mustn't — нельзя, don't have to — не обязательно. Это разные смыслы.",
+    "note": "После can, must, should не добавляем to или -s: she can swim. Have to ведёт себя иначе: she has to work. Mustn't — нельзя, don't have to — не обязательно. Это разные смыслы. Must и have to часто пересекаются по смыслу; различие не сводится строго к внутренней и внешней обязанности.",
     "examples": [
       [
         "You should see a doctor.",
@@ -2908,7 +2909,7 @@ window.daliaGrammarLessons=[
         "why": "Нужен совет, а не запрет: should rest."
       },
       {
-        "prompt": "He ___ to work tomorrow.",
+        "prompt": "He ___ to work tomorrow. (have to)",
         "answers": [
           "has"
         ],
@@ -3141,7 +3142,7 @@ window.daliaGrammarLessons=[
     "note": "Не говори I enjoyed me, если имеешь в виду себя: I enjoyed myself. Но для обычных действий вроде wash или dress возвратное местоимение часто не нужно.",
     "table": [
       [
-        "I / you",
+        "I / you (один)",
         "myself / yourself",
         "себя / сам"
       ],
@@ -3153,6 +3154,11 @@ window.daliaGrammarLessons=[
       [
         "we / they",
         "ourselves / themselves",
+        "себя / сами"
+      ],
+      [
+        "you (несколько)",
+        "yourselves",
         "себя / сами"
       ]
     ],
@@ -3170,7 +3176,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "She hurt ___. (она поранилась сама)",
+        "prompt": "She hurt ___. (она поранилась)",
         "answers": [
           "herself"
         ],
@@ -3338,7 +3344,7 @@ window.daliaGrammarLessons=[
         "why": "Enough после прилагательного."
       },
       {
-        "prompt": "We don't have ___ time.",
+        "prompt": "We don't have ___ time. (недостаточно времени)",
         "answers": [
           "enough"
         ],
@@ -3408,10 +3414,9 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "rewrite",
-        "prompt": "The box is so heavy that I can't lift it. → Используй too heavy to.",
+        "prompt": "The box is so heavy that I can't lift it. → Используй too heavy и сохрани, что именно я не могу поднять коробку.",
         "answers": [
-          "The box is too heavy for me to lift.",
-          "The box is too heavy to lift."
+          "The box is too heavy for me to lift."
         ],
         "wrong": [],
         "why": "Too heavy выражает препятствие."
@@ -3436,7 +3441,7 @@ window.daliaGrammarLessons=[
     "title": "Used to",
     "subtitle": "Привычки в прошлом",
     "rule": "Used to + начальная форма описывает прежнюю привычку или состояние, которого теперь обычно нет. I used to live here — раньше я жил здесь. Это не просто разовое событие.",
-    "note": "После did/didn't обычно пишут use to: Did you use to live here? Не путай с be used to — быть привыкшим к чему-то: I'm used to working late.",
+    "note": "В стандартной учебной письменной речи после did/didn't используй use to: Did you use to live here? В реальной речи встречается и did used to, но для экзамена лучше use to. Не путай с be used to — быть привыкшим: I'm used to working late.",
     "table": [
       [
         "утверждение",
@@ -3479,7 +3484,7 @@ window.daliaGrammarLessons=[
         "why": "После used to начальная форма."
       },
       {
-        "prompt": "Did you ___ to work here?",
+        "prompt": "Did you ___ to work here? (стандартная письменная форма)",
         "answers": [
           "use"
         ],
@@ -3490,7 +3495,7 @@ window.daliaGrammarLessons=[
         "why": "После did — use."
       },
       {
-        "prompt": "He didn't ___ to drink tea.",
+        "prompt": "He didn't ___ to drink tea. (стандартная письменная форма)",
         "answers": [
           "use"
         ],
@@ -3618,7 +3623,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "He usually ___ tea. (drink)",
+        "prompt": "He usually ___ tea with breakfast. (drink, привычка)",
         "answers": [
           "drinks"
         ],
@@ -3889,7 +3894,7 @@ window.daliaGrammarLessons=[
     "category": "Времена",
     "title": "Present Perfect",
     "subtitle": "Настоящее совершенное",
-    "rule": "Present Perfect связывает прошлое с настоящим. I lost my keys yesterday — рассказываю о вчерашнем событии. I have lost my keys — важно, что ключей сейчас нет. Это время также подходит для жизненного опыта без указания завершённого момента и ситуаций, которые продолжаются до сих пор. Формула have/has + третья форма глагола.",
+    "rule": "Present Perfect связывает прошлое с настоящим. I lost my keys yesterday — рассказываю о вчерашнем событии. I have lost my keys — важно, что ключей сейчас нет. Это время также подходит для жизненного опыта без указания завершённого момента и ситуаций, которые продолжаются до сих пор. Формула have/has + третья форма глагола. В американском английском в некоторых ситуациях с недавним результатом также употребляется Past Simple.",
     "table": [
       [
         "Утверждение",
@@ -3922,7 +3927,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "I ___ lost my keys. I can't find them now.",
+        "prompt": "I ___ lost my keys. I can't find them now. (Present Perfect)",
         "answers": [
           "have"
         ],
@@ -4208,7 +4213,7 @@ window.daliaGrammarLessons=[
         "If I had time, I'd travel."
       ]
     ],
-    "note": "В обычном First Conditional после if ставится Present Simple, хотя речь о будущем: if she comes, не if she will come. Для совета If I were you — устойчивый и предпочтительный вариант.",
+    "note": "В обычном First Conditional после if ставится Present Simple, хотя речь о будущем: if she comes, не if she will come. Для совета If I were you — устойчивый и предпочтительный вариант. В результате возможны и другие модальные глаголы, например can/might; will и would — не единственные формы. If I were you — стандартный вариант совета.",
     "examples": [
       [
         "If I were you, I would wait.",
@@ -4245,7 +4250,7 @@ window.daliaGrammarLessons=[
         "why": "Если бы денег было больше — воображаемая ситуация. Для результата используем would."
       },
       {
-        "prompt": "If you heat ice, it ___. (общая закономерность)",
+        "prompt": "If you heat ice, it ___. (melt; общая закономерность, Zero Conditional)",
         "answers": [
           "melts"
         ],
@@ -4256,7 +4261,7 @@ window.daliaGrammarLessons=[
         "why": "Таяние льда при нагревании — закономерность, поэтому Present Simple: melts."
       },
       {
-        "prompt": "If she ___ tomorrow, we'll talk.",
+        "prompt": "If she ___ tomorrow, we'll talk. (come; обычное условие)",
         "answers": [
           "comes"
         ],
@@ -4267,17 +4272,16 @@ window.daliaGrammarLessons=[
         "why": "В обычном условии после if не ставим will, даже о завтра. С she — comes."
       },
       {
-        "prompt": "If I ___ you, I would apologize.",
+        "prompt": "If I ___ you, I would apologize. (стандартная форма для совета)",
         "answers": [
-          "were",
-          "was"
+          "were"
         ],
         "wrong": [],
-        "why": "If I were you — устойчивый способ дать совет; were предпочтительно, was встречается разговорно."
+        "why": "If I were you — стандартная конструкция совета. Was встречается в разговорной речи, но здесь отрабатываем were."
       },
       {
         "type": "translate",
-        "prompt": "Если завтра будет дождь, я останусь дома. (реальный план)",
+        "prompt": "Если завтра будет дождь, я останусь дома. (используй First Conditional и will)",
         "answers": [
           "If it rains tomorrow, I will stay home.",
           "If it rains tomorrow, I'll stay home.",
@@ -4328,10 +4332,9 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "translate",
-        "prompt": "Если нагревать лёд, он тает. (закономерность)",
+        "prompt": "Если нагревать лёд, он тает. (закономерность, используй if)",
         "answers": [
           "If you heat ice, it melts.",
-          "When you heat ice, it melts.",
           "If ice is heated, it melts."
         ],
         "wrong": [],
@@ -4482,7 +4485,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "translate",
-        "prompt": "Письмо уже отправлено. (Present Perfect Passive)",
+        "prompt": "Письмо уже отправлено. (Present Perfect Passive, речь о конкретном письме)",
         "answers": [
           "The letter has already been sent.",
           "The letter has been sent already."
@@ -4516,7 +4519,7 @@ window.daliaGrammarLessons=[
         "I'm interested in learning."
       ]
     ],
-    "note": "Иногда обе формы возможны, но меняют смысл: stop smoking — перестать курить, stop to smoke — остановиться ради перекура. Не пытайся переводить русский инфинитив одним универсальным английским способом.",
+    "note": "Иногда обе формы возможны, но меняют смысл: stop smoking — перестать курить, stop to smoke — остановиться ради перекура. Не пытайся переводить русский инфинитив одним универсальным английским способом. После предлога to (например, look forward to) также нужна -ing; это не то же to, что в инфинитиве.",
     "examples": [
       [
         "She avoided answering.",
@@ -4667,7 +4670,7 @@ window.daliaGrammarLessons=[
         "принадлежность"
       ]
     ],
-    "note": "Если часть предложения лишь добавляет необязательную информацию, выделяй её запятыми и не используй that: My bike, which is old, ... . Если who/which/that выступает объектом в уточняющей части без запятых, его часто можно опустить: the book I bought.",
+    "note": "Если часть предложения лишь добавляет необязательную информацию, выделяй её запятыми и не используй that: My bike, which is old, still works. Если who/which/that выступает объектом в уточняющей части без запятых, его часто можно опустить: the book I bought.",
     "examples": [
       [
         "The man who lives here is a doctor.",
@@ -4716,7 +4719,7 @@ window.daliaGrammarLessons=[
         "why": "Речь о дочери этого мужчины. Whose выражает принадлежность: чья дочь."
       },
       {
-        "prompt": "The book ___ I bought was useful. (вставь союзное слово)",
+        "prompt": "The book ___ I bought was useful. (вставь относительное местоимение)",
         "answers": [
           "that",
           "which"
@@ -4955,7 +4958,7 @@ window.daliaGrammarLessons=[
     "category": "Времена",
     "title": "Future time clauses",
     "subtitle": "Будущее после when, until, as soon as",
-    "rule": "В придаточной части времени после when, until, as soon as, before обычно не ставят will, даже если событие произойдёт завтра. I'll call when I arrive — позвоню, когда приеду. Главная часть может содержать will.",
+    "rule": "В придаточной части времени после when, until, as soon as, before обычно не ставят will, даже если событие произойдёт завтра. I'll call when I arrive — позвоню, когда приеду. Главная часть может содержать will. Иногда вместо Present Simple используется Present Perfect, чтобы подчеркнуть завершение: I'll call when I've finished.",
     "note": "Когда when вводит не временное условие, а вопрос, will возможен: I don't know when he will arrive. Сравни смысл: «когда приедет» как вопрос и как момент действия.",
     "table": [
       [
@@ -4988,7 +4991,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "I'll call when I ___. (arrive)",
+        "prompt": "I'll call when I ___. (arrive, Present Simple)",
         "answers": [
           "arrive"
         ],
@@ -5021,7 +5024,7 @@ window.daliaGrammarLessons=[
         "why": "As soon as + настоящее в будущем контексте."
       },
       {
-        "prompt": "Before she ___, we'll clean. (arrive)",
+        "prompt": "Before she ___, we'll clean. (arrive, Present Simple)",
         "answers": [
           "arrives"
         ],
@@ -5112,7 +5115,7 @@ window.daliaGrammarLessons=[
     "title": "Question tags",
     "subtitle": "Вопросы-хвостики",
     "rule": "Чтобы попросить подтверждение, добавь короткий вопрос в конце: You're tired, aren't you? В обычном подтверждающем вопросе после утверждения используется отрицательный хвостик, после отрицания — положительный. Помощник зависит от времени.",
-    "note": "I am right, aren't I? — особая форма. Если в утверждении нет помощника, используй do/does/did: She works here, doesn't she?",
+    "note": "I am right, aren't I? — особая форма. Если в утверждении нет помощника, используй do/does/did: She works here, doesn't she? Положительный хвостик после утверждения тоже возможен, например для удивления или уточнения новой информации. Здесь тренируем обычную модель с противоположной полярностью. Amn't I встречается в некоторых региональных вариантах, но aren't I — общеупотребительная форма.",
     "table": [
       [
         "утверждение",
@@ -5144,7 +5147,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "You're ready, ___ you?",
+        "prompt": "You're ready, ___ you? (обычный вопрос на подтверждение)",
         "answers": [
           "aren't"
         ],
@@ -5155,7 +5158,7 @@ window.daliaGrammarLessons=[
         "why": "Положительное be → отрицательный tag."
       },
       {
-        "prompt": "She works here, ___ she?",
+        "prompt": "She works here, ___ she? (обычный вопрос на подтверждение)",
         "answers": [
           "doesn't"
         ],
@@ -5166,7 +5169,7 @@ window.daliaGrammarLessons=[
         "why": "Present Simple, she → doesn't."
       },
       {
-        "prompt": "They didn't call, ___ they?",
+        "prompt": "They didn't call, ___ they? (обычный вопрос на подтверждение)",
         "answers": [
           "did"
         ],
@@ -5177,7 +5180,7 @@ window.daliaGrammarLessons=[
         "why": "Отрицание → положительный did."
       },
       {
-        "prompt": "He can swim, ___ he?",
+        "prompt": "He can swim, ___ he? (обычный вопрос на подтверждение)",
         "answers": [
           "can't"
         ],
@@ -5188,12 +5191,12 @@ window.daliaGrammarLessons=[
         "why": "Повторяем модальный can."
       },
       {
-        "prompt": "I'm late, ___ I?",
+        "prompt": "I'm late, ___ I? (обычный вопрос на подтверждение)",
         "answers": [
           "aren't"
         ],
         "wrong": [
-          "amn't",
+          "don't",
           "isn't"
         ],
         "why": "Стандартный tag для I am — aren't I."
@@ -5263,7 +5266,7 @@ window.daliaGrammarLessons=[
     "title": "Indirect questions",
     "subtitle": "Вежливые косвенные вопросы",
     "rule": "Вместо Where is the station? можно сказать Could you tell me where the station is? Внутри косвенного вопроса порядок как в утверждении: the station is. Если вопрос да/нет, используй if или whether.",
-    "note": "Не переноси do/does/did из прямого вопроса внутрь косвенного: Do you know where she lives? Но вопросительная форма внешней части сохраняется.",
+    "note": "Не переноси do/does/did из прямого вопроса внутрь косвенного: Do you know where she lives? Но вопросительная форма внешней части сохраняется. Do/does/did внутри косвенной части возможны для особого смыслового усиления, но не как обязательный показатель вопроса.",
     "table": [
       [
         "прямой вопрос",
@@ -5300,8 +5303,8 @@ window.daliaGrammarLessons=[
           "lives"
         ],
         "wrong": [
-          "does live",
-          "live"
+          "live",
+          "living"
         ],
         "why": "Внутри обычный порядок и форма lives."
       },
@@ -5334,8 +5337,8 @@ window.daliaGrammarLessons=[
           "said"
         ],
         "wrong": [
-          "did say",
-          "says"
+          "says",
+          "say"
         ],
         "why": "Внутри Past Simple без did."
       },
@@ -5345,8 +5348,8 @@ window.daliaGrammarLessons=[
           "costs"
         ],
         "wrong": [
-          "does cost",
-          "cost"
+          "cost",
+          "costing"
         ],
         "why": "It costs — порядок утверждения."
       },
@@ -5595,7 +5598,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "She's ___ kind.",
+        "prompt": "She's ___ kind. (такая добрая)",
         "answers": [
           "so"
         ],
@@ -5639,7 +5642,7 @@ window.daliaGrammarLessons=[
         "why": "Such перед группой с существительным во множественном."
       },
       {
-        "prompt": "He spoke ___ quickly.",
+        "prompt": "He spoke ___ quickly. (так быстро)",
         "answers": [
           "so"
         ],
@@ -5732,7 +5735,7 @@ window.daliaGrammarLessons=[
         "ушла ли к тому моменту"
       ]
     ],
-    "note": "Не используй Past Perfect автоматически для каждого старого события. Если последовательность ясна, Past Simple часто достаточно: I ate breakfast and went to work. Past Perfect нужен, когда важно подчеркнуть более раннее действие или его состояние к прошлому моменту.",
+    "note": "Не используй Past Perfect автоматически для каждого старого события. Если последовательность ясна, Past Simple часто достаточно: I ate breakfast and went to work. Past Perfect нужен, когда важно подчеркнуть более раннее действие или его состояние к прошлому моменту. Например: After she had finished, she left. В нейтральном рассказе также возможно After she finished, she left.",
     "examples": [
       [
         "When I arrived, she had already left.",
@@ -5891,7 +5894,7 @@ window.daliaGrammarLessons=[
         "She asked where I lived."
       ]
     ],
-    "note": "Say не требует собеседника, told обычно требует: she said that..., she told me that... . В косвенном вопросе порядок как в утверждении: He asked where I lived, а не where did I live.",
+    "note": "Say может употребляться без указания собеседника, а tell при пересказе обычно требует адресата: she said that..., she told me that... . В косвенном вопросе порядок как в утверждении: He asked where I lived, а не where did I live.",
     "examples": [
       [
         "She told me she was busy.",
@@ -5970,7 +5973,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "correct",
-        "prompt": "He asked where did I live.",
+        "prompt": "He asked where did I live. (исправь порядок слов, сохрани прошедшее время)",
         "answers": [
           "He asked where I lived."
         ],
@@ -6042,7 +6045,7 @@ window.daliaGrammarLessons=[
         "Has she been working?"
       ]
     ],
-    "note": "I've read three chapters — результат, три главы. I've been reading for two hours — длительность процесса. Глаголы состояния вроде know обычно используют с Perfect Simple: I've known her for years.",
+    "note": "I've read three chapters — результат, три главы. I've been reading for two hours — длительность процесса. Глаголы состояния вроде know обычно используют с Perfect Simple: I've known her for years. С некоторыми глаголами длительного состояния, например live и work, обе формы могут быть естественны: I've lived here / I've been living here.",
     "examples": [
       [
         "I've been waiting for an hour.",
@@ -6177,7 +6180,7 @@ window.daliaGrammarLessons=[
     "category": "Сложная грамматика",
     "title": "Third / Mixed Conditional",
     "subtitle": "Нереальные условия в прошлом",
-    "rule": "Third Conditional позволяет представить другое прошлое: If I had studied, I would have passed — если бы я учился, я бы сдал. Но события уже произошли иначе. Mixed Conditional связывает разные моменты: прошлое условие → результат сейчас или постоянное нереальное состояние → результат в прошлом.",
+    "rule": "Third Conditional позволяет представить другое прошлое: If I had studied, I would have passed — если бы я учился, я бы сдал. Но события уже произошли иначе. Mixed Conditional связывает разные моменты: прошлое условие → результат сейчас или постоянное нереальное состояние → результат в прошлом. Возможный результат можно также выражать could have или might have, в зависимости от смысла.",
     "table": [
       [
         "Third",
@@ -6279,7 +6282,8 @@ window.daliaGrammarLessons=[
         "answers": [
           "If she had left earlier, she would have caught the train.",
           "If she'd left earlier, she'd have caught the train.",
-          "If she had left earlier, she'd have caught the train."
+          "If she had left earlier, she'd have caught the train.",
+          "If she'd left earlier, she would have caught the train."
         ],
         "wrong": [],
         "why": "В условии о нереальном прошлом используем had."
@@ -6307,13 +6311,16 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "rewrite",
-        "prompt": "I didn't study, so I failed. → Начни с If I had studied и используй would have.",
+        "prompt": "I didn't study, so I failed. → Начни с If I had studied, используй would (или сокращение 'd) + have.",
         "answers": [
           "If I had studied, I would have passed.",
           "If I had studied, I would not have failed.",
           "If I had studied, I wouldn't have failed.",
           "If I had studied, I'd have passed.",
-          "If I had studied, I'd not have failed."
+          "If I had studied, I'd not have failed.",
+          "If I'd studied, I would have passed.",
+          "If I'd studied, I'd have passed.",
+          "If I'd studied, I wouldn't have failed."
         ],
         "wrong": [],
         "why": "Third Conditional показывает другой возможный итог прошлого."
@@ -6324,7 +6331,8 @@ window.daliaGrammarLessons=[
         "answers": [
           "If I had saved money, I would be able to travel now.",
           "If I'd saved money, I'd be able to travel now.",
-          "If I had saved money, I'd be able to travel now."
+          "If I had saved money, I'd be able to travel now.",
+          "If I'd saved money, I would be able to travel now."
         ],
         "wrong": [],
         "why": "Прошлое условие + результат сейчас."
@@ -6493,7 +6501,7 @@ window.daliaGrammarLessons=[
     "category": "Времена",
     "title": "Future Perfect",
     "subtitle": "Результат к моменту в будущем",
-    "rule": "Will have + V3 показывает, что к будущему моменту действие уже завершится. By Friday I'll have finished — к пятнице я уже закончу. By указывает крайний срок, а не длительность процесса.",
+    "rule": "Will have + V3 показывает результат или состояние к будущему моменту. By Friday I'll have finished — к пятнице я уже закончу. By указывает срок: не позднее пятницы. Для состояния, продолжающегося до этого момента, тоже возможен Future Perfect: By June, I will have known her for ten years.",
     "note": "Не путай by Friday — к пятнице, и until Friday — до пятницы. Future Perfect выделяет результат к моменту, Future Continuous — процесс в этот момент.",
     "table": [
       [
@@ -6741,7 +6749,9 @@ window.daliaGrammarLessons=[
         "prompt": "До её прихода я ждал уже час. (Past Perfect Continuous)",
         "answers": [
           "I had been waiting for an hour before she arrived.",
-          "I'd been waiting for an hour before she arrived."
+          "I'd been waiting for an hour before she arrived.",
+          "I had been waiting for an hour when she arrived.",
+          "I'd been waiting for an hour when she arrived."
         ],
         "wrong": [],
         "why": "Процесс до прошлого события."
@@ -6760,7 +6770,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "They had been waiting for hours."
+          "They had been waiting for hours.",
+          "For hours they had been waiting."
         ],
         "wrong": [],
         "words": [
@@ -6802,7 +6813,7 @@ window.daliaGrammarLessons=[
     "title": "Modal deduction",
     "subtitle": "Must, might, can't: выводы",
     "rule": "Must be — очень вероятный вывод по признакам, might/may/could be — возможность, can't be — уверенность, что это невозможно. He must be tired — должно быть, он устал. Это не приказ и не обязанность.",
-    "note": "Mustn't обычно означает запрет, а can't be — отрицательный вывод. Для предположений о прошлом используется have + V3: must have left.",
+    "note": "Mustn't обычно означает запрет, а can't be — отрицательный вывод. Для предположений о прошлом используется have + V3: must have left. Can't be — вывод о невозможности, а не абсолютное доказательство. В некоторых контекстах встречается must not в значении отрицательного предположения.",
     "table": [
       [
         "сильный вывод",
@@ -6834,7 +6845,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "He ___ be tired after that trip. (сильный вывод)",
+        "prompt": "He ___ be tired after that trip. (должно быть, устал)",
         "answers": [
           "must"
         ],
@@ -6845,7 +6856,7 @@ window.daliaGrammarLessons=[
         "why": "Must выражает уверенный вывод."
       },
       {
-        "prompt": "It ___ be true. (возможно)",
+        "prompt": "It ___ be true. (возможно; выбери модальный глагол)",
         "answers": [
           "might",
           "may",
@@ -6956,7 +6967,7 @@ window.daliaGrammarLessons=[
     "title": "Wish / if only",
     "subtitle": "Желание изменить реальность",
     "rule": "I wish I knew — жаль, что я не знаю; форма Past показывает нереальное настоящее. I wish I had studied — жаль, что не учился; Past Perfect относится к прошлому. I wish you would stop — желание, чтобы поведение изменилось.",
-    "note": "Для реальной надежды используй hope: I hope she comes. Wish с would часто выражает желание изменения или недовольство; для своего состояния обычно wish + Past.",
+    "note": "Для реальной надежды используй hope: I hope she comes. Wish с would часто выражает желание изменения или недовольство; для своего состояния обычно wish + Past. Для нереального настоящего с be часто используют were, а was распространено в менее формальной речи: I wish I were/was there.",
     "table": [
       [
         "сейчас",
@@ -7106,7 +7117,7 @@ window.daliaGrammarLessons=[
     "title": "Have / get something done",
     "subtitle": "Услуга: кто-то делает за тебя",
     "rule": "I had my hair cut — мне подстригли волосы. Have/get + объект + V3 показывает, что действие выполняет другой человек по твоей просьбе или что с объектом что-то случилось. I cut my hair — я сам подстригся.",
-    "note": "Have someone do something — попросить конкретного человека сделать что-то; get someone to do something — уговорить или организовать. Это не та же конструкция, что have something done.",
+    "note": "Have someone do something — попросить конкретного человека сделать что-то; get someone to do something — уговорить или организовать. Это не та же конструкция, что have something done. Необязательно речь об услуге: I had my phone stolen — у меня украли телефон, без моего желания.",
     "table": [
       [
         "услуга",
@@ -7253,7 +7264,7 @@ window.daliaGrammarLessons=[
     "title": "Participle clauses",
     "subtitle": "Обороты с -ing и V3",
     "rule": "Вместо отдельного придаточного можно использовать оборот: Walking home, I saw Tom — идя домой, я увидел Тома. -ing обычно выражает активное действие, V3 — пассивное: Written in 1900, the book is still popular.",
-    "note": "У оборота должен быть тот же смысловой исполнитель, что и у главной части. Walking home, the rain started — ошибка: дождь не шёл домой. Перефразируй: While I was walking home, it started to rain.",
+    "note": "В обычных оборотах без собственного подлежащего его подразумеваемое подлежащее совпадает с подлежащим главной части. Это относится и к пассивным оборотам. Walking home, the rain started — ошибка: дождь не шёл домой. Перефразируй: While I was walking home, it started to rain.",
     "table": [
       [
         "актив",
@@ -7343,8 +7354,7 @@ window.daliaGrammarLessons=[
         "type": "translate",
         "prompt": "Почувствовав усталость, он ушёл домой. (начни с Feeling)",
         "answers": [
-          "Feeling tired, he went home.",
-          "Feeling tired he went home."
+          "Feeling tired, he went home."
         ],
         "wrong": [],
         "why": "Исполнитель обоих действий — he."
@@ -7380,8 +7390,7 @@ window.daliaGrammarLessons=[
         "type": "rewrite",
         "prompt": "As she felt tired, she went home. → Начни с Feeling.",
         "answers": [
-          "Feeling tired, she went home.",
-          "Feeling tired she went home."
+          "Feeling tired, she went home."
         ],
         "wrong": [],
         "why": "Один исполнитель."
@@ -7390,8 +7399,7 @@ window.daliaGrammarLessons=[
         "type": "translate",
         "prompt": "Написанная простым языком, книга легко читается. (начни с Written, use simple language)",
         "answers": [
-          "Written in simple language, the book is easy to read.",
-          "Written in simple language the book is easy to read."
+          "Written in simple language, the book is easy to read."
         ],
         "wrong": [],
         "why": "Пассивный оборот."
@@ -7405,7 +7413,7 @@ window.daliaGrammarLessons=[
     "title": "Reduced relative clauses",
     "subtitle": "Сокращённые придаточные с who/which",
     "rule": "The man who is standing there → the man standing there. The book that was written in 1900 → the book written in 1900. Убираем относительное местоимение и соответствующую форму be, если смысл сохраняется. Активные обороты обычно используют -ing, пассивные — V3.",
-    "note": "Не сокращай механически любое придаточное. The man who called me yesterday не всегда равно the man calling me yesterday: меняется смысл действия. Проверяй время и значение.",
+    "note": "Не сокращай механически любое придаточное. The man who called me yesterday не всегда равно the man calling me yesterday: меняется смысл действия. Проверяй время и значение. Не путай сокращённую форму с полным предложением: The man standing there is my uncle, но The man is standing there — самостоятельное утверждение.",
     "table": [
       [
         "актив",
@@ -7766,7 +7774,7 @@ window.daliaGrammarLessons=[
           "shouldn't",
           "can't"
         ],
-        "why": "Исчезнувшее пальто — основание для уверенного вывода, поэтому must have left."
+        "why": "По отсутствию пальто делаем сильный, но не гарантированно верный вывод: must have left."
       },
       {
         "prompt": "The findings ___ suggest a link. (осторожное утверждение)",
@@ -8074,7 +8082,7 @@ window.daliaGrammarLessons=[
           "Would",
           "Do"
         ],
-        "why": "Should вводит возможное условие."
+        "why": "Should you need help — формальный условный оборот, эквивалентный If you should need help."
       },
       {
         "prompt": "Had he ___ earlier, we would have met. (leave)",
@@ -8162,8 +8170,8 @@ window.daliaGrammarLessons=[
     "category": "Предложения",
     "title": "Ellipsis and substitution",
     "subtitle": "Как не повторять слова",
-    "rule": "В английском часто опускают то, что уже понятно: I can swim and she can too. Здесь can заменяет can swim. Do so заменяет действие, one/ones — повторяемое исчисляемое существительное. Это делает речь естественнее.",
-    "note": "Выбирай заместитель по структуре. One/ones заменяет предмет, не вещество в общем смысле; so может заменять содержание мысли: I think so. Не оставляй пропуск, если смысл неясен.",
+    "rule": "В английском часто опускают то, что уже понятно: I can swim and she can too. Во второй части swim опущено после can, потому что действие уже известно. Do so заменяет действие, one/ones — повторяемое исчисляемое существительное. Это делает речь естественнее.",
+    "note": "Выбирай заместитель по структуре. One/ones заменяет предмет, не вещество в общем смысле; so может заменять содержание мысли: I think so. Не оставляй пропуск, если смысл неясен. После отрицания «тоже не» обычно either, а не too: I can't swim either.",
     "table": [
       [
         "помощник",
@@ -8667,18 +8675,18 @@ window.daliaGrammarLessons=[
         "why": "Конкретные знания."
       },
       {
-        "prompt": "Children go to ___ school to learn.",
+        "prompt": "Children go to ___ school to learn. (устойчивое выражение «ходить в школу» как ученик)",
         "answers": [
           "—"
         ],
         "wrong": [
-          "a",
+          "an",
           "the"
         ],
         "why": "School как учреждение для учёбы."
       },
       {
-        "prompt": "She went to ___ school to meet her son's teacher. (конкретное здание)",
+        "prompt": "She went to ___ school to meet her son's teacher. (конкретная, известная школа)",
         "answers": [
           "the"
         ],
@@ -8923,7 +8931,7 @@ window.daliaGrammarLessons=[
     "title": "Advanced subject–verb agreement",
     "subtitle": "Согласование в сложных конструкциях",
     "rule": "Глагол согласуется с главным словом подлежащего, а не с ближайшим существительным: The quality of the products is high. A number of people are — несколько людей; the number of people is — число людей. Некоторые собирательные существительные допускают варианты.",
-    "note": "В британском английском team is и team are могут различаться по смыслу: группа как целое или её участники. В американском английском чаще единственное. Не делай из регионального варианта универсальную ошибку.",
+    "note": "В британском английском team is и team are могут различаться по смыслу: группа как целое или её участники. В американском английском чаще единственное. Не делай из регионального варианта универсальную ошибку. Each of + множественное существительное обычно требует единственного глагола в формальном стандартном английском.",
     "table": [
       [
         "главное слово",
@@ -8999,7 +9007,7 @@ window.daliaGrammarLessons=[
         "why": "List в единственном."
       },
       {
-        "prompt": "Each of the answers ___ correct.",
+        "prompt": "Each of the answers ___ correct. (формальный стандарт)",
         "answers": [
           "is"
         ],
@@ -9048,7 +9056,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "rewrite",
-        "prompt": "Many students are absent. → Начни с A number of students.",
+        "prompt": "Several students are absent. → Начни с A number of students.",
         "answers": [
           "A number of students are absent."
         ],
@@ -9128,7 +9136,7 @@ window.daliaGrammarLessons=[
         "why": "What I need задаёт тему, is more time выделяет нужное: именно больше времени."
       },
       {
-        "prompt": "It was yesterday ___ I heard the news.",
+        "prompt": "It was yesterday ___ I heard the news. (it-cleft)",
         "answers": [
           "that"
         ],
@@ -9139,15 +9147,14 @@ window.daliaGrammarLessons=[
         "why": "It was yesterday ... выделяет момент времени через that."
       },
       {
-        "prompt": "All I want ___ a little peace.",
+        "prompt": "I need a little peace, not advice. → Выдели a little peace с помощью What, сохрани противопоставление.",
         "answers": [
-          "is"
+          "What I need is a little peace, not advice.",
+          "What I need is a little peace not advice."
         ],
-        "wrong": [
-          "are",
-          "be"
-        ],
-        "why": "All I want — «всё, чего я хочу». Перед a little peace используется is."
+        "wrong": [],
+        "why": "What I need задаёт тему, а после is стоит то, что говорящий выделяет.",
+        "type": "rewrite"
       },
       {
         "prompt": "What surprised me ___ his reaction. (в прошлом)",
@@ -9280,15 +9287,14 @@ window.daliaGrammarLessons=[
         "why": "Although вводит целое предложение. She was tired содержит подлежащее и глагол."
       },
       {
-        "prompt": "In spite ___ the delay, we arrived on time.",
+        "prompt": "Although the evidence was limited, the researchers drew a conclusion. → Начни с Despite и используй the fact that.",
         "answers": [
-          "of"
+          "Despite the fact that the evidence was limited, the researchers drew a conclusion.",
+          "Despite the fact that the evidence was limited the researchers drew a conclusion."
         ],
-        "wrong": [
-          "to",
-          "for"
-        ],
-        "why": "In spite of — устойчивое сочетание из трёх слов."
+        "wrong": [],
+        "why": "Despite может вводить целое предложение через the fact that. Само despite обычно требует именную группу или -ing.",
+        "type": "rewrite"
       },
       {
         "prompt": "The approach succeeded, ___ slowly.",
@@ -9299,7 +9305,7 @@ window.daliaGrammarLessons=[
           "despite of",
           "although of"
         ],
-        "why": "Albeit slowly означает «хотя и медленно»; после него допустимо наречие."
+        "why": "Albeit slowly — формальная краткая оговорка: «хотя и медленно»."
       },
       {
         "prompt": "Despite ___ tired, he kept working. (be)",
@@ -9364,7 +9370,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "translate",
-        "prompt": "План удался, хотя и медленно. (используй albeit)",
+        "prompt": "План удался, хотя и медленно. (используй albeit, plan и succeed/work)",
         "answers": [
           "The plan succeeded, albeit slowly.",
           "The plan succeeded albeit slowly.",
@@ -9382,7 +9388,7 @@ window.daliaGrammarLessons=[
     "title": "Fronting and information focus",
     "subtitle": "Как вынести важную информацию вперёд",
     "rule": "В обычном предложении объект стоит после глагола, но в выразительной речи его можно вынести в начало: This I cannot accept — вот этого я принять не могу. Fronting помогает выделить тему, создать контраст или связать предложение с предыдущим.",
-    "note": "Не всякое вынесение вызывает инверсию. This I cannot accept сохраняет порядок I cannot; Never have I seen this требует инверсии из-за отрицательного наречия. В формальной нейтральной речи не злоупотребляй fronting.",
+    "note": "Не всякое вынесение вызывает инверсию. This I cannot accept сохраняет порядок I cannot; Never have I seen this требует инверсии из-за отрицательного наречия. В формальной нейтральной речи не злоупотребляй fronting. В инверсии после обстоятельства места обычно употребляется полный именной субъект, а не местоимение: On the hill stood a castle, но There it stood.",
     "table": [
       [
         "объект",
@@ -9414,15 +9420,16 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "This I cannot ___. (accept)",
+        "prompt": "I will not tolerate this behaviour. → Выдели объект, начни с This behaviour.",
         "answers": [
-          "accept"
+          "This behaviour I will not tolerate.",
+          "This behaviour I won't tolerate.",
+          "This behavior I will not tolerate.",
+          "This behavior I won't tolerate."
         ],
-        "wrong": [
-          "accepts",
-          "accepted"
-        ],
-        "why": "После cannot обычная форма."
+        "wrong": [],
+        "why": "Объект вынесен в начало для контраста. Порядок I will сохраняется.",
+        "type": "rewrite"
       },
       {
         "prompt": "That much I ___ promise. (могу)",
@@ -9447,15 +9454,13 @@ window.daliaGrammarLessons=[
         "why": "Локативная инверсия в описании."
       },
       {
-        "prompt": "Never ___ I seen this before. (Present Perfect)",
+        "prompt": "This promise can I make. → Сохрани вынесенный объект, но исправь порядок слов в нейтральном утверждении.",
         "answers": [
-          "have"
+          "This promise I can make."
         ],
-        "wrong": [
-          "do",
-          "am"
-        ],
-        "why": "После never нужна инверсия."
+        "wrong": [],
+        "why": "Вынесение объекта само по себе не требует инверсии вспомогательного глагола.",
+        "type": "correct"
       },
       {
         "prompt": "This book I ___; that one I don't. (like)",
@@ -9585,18 +9590,17 @@ window.daliaGrammarLessons=[
         "why": "Формальный объект it."
       },
       {
-        "prompt": "It is difficult ___ explain. (инфинитив)",
+        "prompt": "To persuade him to change his mind is difficult. → Перенеси длинное подлежащее в конец, начни с It is difficult.",
         "answers": [
-          "to"
+          "It is difficult to persuade him to change his mind.",
+          "It's difficult to persuade him to change his mind."
         ],
-        "wrong": [
-          "for",
-          "at"
-        ],
-        "why": "It is difficult to + V1."
+        "wrong": [],
+        "why": "Формальное it занимает позицию подлежащего; инфинитивный оборот переносится в конец.",
+        "type": "rewrite"
       },
       {
-        "prompt": "It seems unlikely ___ he will agree.",
+        "prompt": "It seems unlikely ___ he will agree. (вставь союз, не опускай его)",
         "answers": [
           "that"
         ],
@@ -9748,15 +9752,13 @@ window.daliaGrammarLessons=[
         "why": "Perfect passive."
       },
       {
-        "prompt": "She appears to ___ forgotten. (perfect infinitive)",
+        "prompt": "It appears that she forgot the appointment. → Начни с She appears, используй perfect infinitive.",
         "answers": [
-          "have"
+          "She appears to have forgotten the appointment."
         ],
-        "wrong": [
-          "has",
-          "had"
-        ],
-        "why": "To have + V3."
+        "wrong": [],
+        "why": "To have forgotten обозначает событие раньше момента, в который делается вывод.",
+        "type": "rewrite"
       },
       {
         "prompt": "Having been ___, they began work. (brief)",
@@ -9818,8 +9820,7 @@ window.daliaGrammarLessons=[
         "type": "translate",
         "prompt": "Закончив работу, он ушёл домой. (начни с Having finished, используй the work)",
         "answers": [
-          "Having finished the work, he went home.",
-          "Having finished the work he went home."
+          "Having finished the work, he went home."
         ],
         "wrong": [],
         "why": "Оборот относится к he."
@@ -9914,15 +9915,14 @@ window.daliaGrammarLessons=[
         "why": "Связь двух сравнительных степеней."
       },
       {
-        "prompt": "No sooner had she arrived ___ it started raining.",
+        "prompt": "She arrived and immediately afterwards it started raining. → Начни с No sooner, сохрани последовательность событий.",
         "answers": [
-          "than"
+          "No sooner had she arrived than it started raining.",
+          "No sooner had she arrived than it started to rain."
         ],
-        "wrong": [
-          "when",
-          "that"
-        ],
-        "why": "No sooner ... than."
+        "wrong": [],
+        "why": "После No sooner в начале нужна инверсия had she arrived; следующее событие вводится than.",
+        "type": "rewrite"
       },
       {
         "type": "translate",
