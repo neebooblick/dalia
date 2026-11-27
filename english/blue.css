@@ -1067,3 +1067,26 @@ button:disabled{cursor:not-allowed;opacity:.58}
 .grammar-note,.grammar-example,.grammar-feedback:not(:empty){margin-top:14px;border:1px solid var(--stroke);border-radius:15px;background:var(--surface2);padding:14px;line-height:1.5;overflow-wrap:anywhere}.grammar-note strong,.grammar-example strong{color:var(--pink2)}.grammar-note p,.grammar-example p,.grammar-feedback p{margin:6px 0 0;color:var(--muted)}.grammar-example-line{display:flex;align-items:center;justify-content:space-between;gap:10px}.grammar-example-line strong{flex:1;min-width:0}.grammar-start{display:block;width:100%;margin-top:14px;min-height:46px}.grammar-task-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.grammar-question{font-size:clamp(20px,4vw,30px);line-height:1.4;margin:12px 0 20px;overflow-wrap:anywhere}.grammar-options{display:grid;gap:8px}.grammar-option{width:100%;min-height:48px;text-align:left;padding:13px 16px;white-space:normal;overflow-wrap:anywhere}.grammar-input{width:100%;min-height:56px;box-sizing:border-box;font-size:16px;text-align:center}.grammar-practice-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.grammar-practice-actions>.primary{flex:1 1 100%;min-height:48px}.grammar-practice-actions>.ghost{flex:1 1 120px;min-height:42px}.grammar-good{color:var(--good)}.grammar-bad{color:var(--bad)}.grammar-option:disabled{opacity:1}.grammar-option.correct{border-color:var(--good)}.grammar-option.wrong{border-color:var(--bad)}.grammar-lesson-card:focus-visible,.grammar-chip:focus-visible,.grammar-tab:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
 @media(max-width:700px){.grammar-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.grammar-lesson-card{padding:13px;min-height:152px}.grammar-controls{grid-template-columns:1fr 1fr}.grammar-table td,.grammar-table th{padding:9px 7px}.grammar-table{font-size:12px}.grammar-table th{font-size:10px}.mobile-nav .navbtn[data-page="grammar"]{font-size:10px}.mobile-nav .navbtn{min-width:0;flex:1;font-size:10px;padding-inline:2px}}
 @media(max-width:355px){.grammar-grid{grid-template-columns:1fr}.grammar-controls{grid-template-columns:1fr}.grammar-levels{grid-template-columns:repeat(4,minmax(0,1fr))}.grammar-tab{font-size:12px}.mobile-nav .navbtn{font-size:9px}.mobile-nav .navbtn[data-page="grammar"]{font-size:9px}}
+
+
+/* Grammar clarity: lesson flow, short mixed sessions and clear feedback. */
+.grammar-filter-label{font-size:13px;font-weight:650;color:var(--text);margin:5px 0 0}
+.grammar-mix-setup{padding:16px;border:1px solid var(--stroke);border-radius:18px;background:var(--surface);margin:16px 0 20px}
+.grammar-mix-setup>strong{font-size:17px;color:var(--text);line-height:1.4}
+.grammar-size-options{display:flex;gap:7px;margin:8px 0;flex-wrap:wrap}
+.grammar-size-options .grammar-chip{flex:1;min-width:55px}
+.grammar-mix-setup .grammar-mixed{margin:10px 0 0}
+.grammar-section-heading{font-size:17px;font-weight:650;color:var(--text);margin:0 0 10px;line-height:1.4}
+.grammar-result-stats+.grammar-section-heading{margin-top:22px}
+.grammar-legend{font-size:13px;line-height:1.6;color:var(--muted);margin:13px 0 0}
+.grammar-progress{height:5px;background:var(--stroke);border-radius:5px;overflow:hidden;margin:0 0 18px}
+.grammar-progress-fill{height:100%;border-radius:5px;background:var(--pink)}
+.grammar-instruction{color:var(--muted);font-size:14px;line-height:1.5;margin:0}
+.grammar-task-topic{font-size:12px;color:var(--muted)}
+.grammar-feedback .grammar-correct-sentence{color:var(--text);font-size:18px;font-weight:650;line-height:1.5;margin:8px 0}
+.grammar-result-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:16px 0}
+.grammar-stat{padding:12px 6px;border:1px solid var(--stroke);border-radius:13px;display:flex;flex-direction:column;gap:4px;text-align:center;overflow-wrap:anywhere}
+.grammar-stat strong{font-size:23px;color:var(--pink2)}
+.grammar-session .grammar-option:disabled{cursor:default}
+.grammar-practice-actions button:disabled{opacity:.45;cursor:default}
+@media(max-width:550px){.grammar-result-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.grammar-table{font-size:13px;line-height:1.5}.grammar-table th{font-size:11px;line-height:1.4}.grammar-mix-setup{padding:14px}.grammar-rule{line-height:1.65}.grammar-start{min-height:48px}.grammar-section-heading{font-size:16px}}
