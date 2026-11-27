@@ -117,7 +117,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Ты готов?",
         "answers": [
           "Are you ready?"
         ],
@@ -273,7 +273,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Они живут здесь?",
         "answers": [
           "Do they live here?"
         ],
@@ -433,7 +433,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Солнце яркое.",
         "answers": [
           "The sun is bright."
         ],
@@ -603,7 +603,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Эта книга твоя.",
         "answers": [
           "This book is yours."
         ],
@@ -758,7 +758,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Коробки пустые.",
         "answers": [
           "The boxes are empty."
         ],
@@ -906,7 +906,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Мы встречаемся в понедельник.",
         "answers": [
           "We meet on Monday.",
           "On Monday we meet."
@@ -1051,7 +1051,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Есть молоко?",
         "answers": [
           "Is there any milk?"
         ],
@@ -1201,7 +1201,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Они смотрят телевизор.",
         "answers": [
           "They are watching TV."
         ],
@@ -1351,7 +1351,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Это мои друзья (рядом).",
         "answers": [
           "These are my friends."
         ],
@@ -1498,7 +1498,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Велосипед девочки синий.",
         "answers": [
           "The girl's bike is blue."
         ],
@@ -1650,7 +1650,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Пожалуйста, выключи свет.",
         "answers": [
           "Please turn off the light.",
           "Turn off the light please.",
@@ -1793,7 +1793,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "correct",
-        "prompt": "He doesn't never read. (убери лишнее отрицание)",
+        "prompt": "He doesn't never read. (сохрани смысл never; стандартная письменная речь)",
         "answers": [
           "He never reads."
         ],
@@ -1802,7 +1802,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Она обычно дома.",
         "answers": [
           "She is usually at home.",
           "Usually she is at home.",
@@ -1956,7 +1956,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Есть две чашки чая.",
         "answers": [
           "There are two cups of tea."
         ],
@@ -2104,7 +2104,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Ты звонил ему вчера?",
         "answers": [
           "Did you call him yesterday?"
         ],
@@ -2314,7 +2314,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Вчера она поехала на автобусе.",
         "answers": [
           "She took the bus yesterday.",
           "Yesterday she took the bus."
@@ -2464,7 +2464,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Мы собираемся путешествовать.",
         "answers": [
           "We are going to travel."
         ],
@@ -2621,7 +2621,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Молока не осталось.",
         "answers": [
           "There isn't any milk left."
         ],
@@ -2781,7 +2781,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Она лучший игрок.",
         "answers": [
           "She is the best player."
         ],
@@ -2949,7 +2949,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Вам нельзя входить.",
         "answers": [
           "You must not enter."
         ],
@@ -3099,7 +3099,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Что ты купил?",
         "answers": [
           "What did you buy?"
         ],
@@ -3250,7 +3250,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Она сделала это сама.",
         "answers": [
           "She did it herself."
         ],
@@ -3399,7 +3399,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "У нас достаточно еды.",
         "answers": [
           "We have enough food."
         ],
@@ -3547,7 +3547,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Раньше мы встречались каждую неделю.",
         "answers": [
           "We used to meet every week.",
           "Every week we used to meet."
@@ -3700,7 +3700,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Он часто играет в теннис.",
         "answers": [
           "He often plays tennis.",
           "Often he plays tennis.",
@@ -3853,7 +3853,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Мы шли вдоль реки.",
         "answers": [
           "We walked along the river."
         ],
@@ -4002,7 +4002,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Мы живём здесь с 2020 года.",
         "answers": [
           "We have lived here since 2020.",
           "Since 2020 we have lived here."
@@ -4150,7 +4150,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Она читала, когда я приехал.",
         "answers": [
           "She was reading when I arrived.",
           "When I arrived, she was reading."
@@ -4303,7 +4303,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Если бы у меня было время, я бы помог.",
         "answers": [
           "If I had time, I would help.",
           "I would help if I had time."
@@ -4458,7 +4458,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Комнату уберут завтра.",
         "answers": [
           "The room will be cleaned tomorrow.",
           "Tomorrow the room will be cleaned."
@@ -4605,7 +4605,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Он заинтересован в изучении английского.",
         "answers": [
           "He is interested in learning English."
         ],
@@ -4761,7 +4761,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Я знаю женщину, чей сын работает здесь.",
         "answers": [
           "I know the woman whose son works here."
         ],
@@ -4916,7 +4916,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Ты когда-нибудь бывал в Лондоне?",
         "answers": [
           "Have you ever visited London?"
         ],
@@ -5069,7 +5069,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Мы уйдём, когда она придёт.",
         "answers": [
           "We will leave when she arrives.",
           "When she arrives we will leave."
@@ -5222,7 +5222,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Его ведь здесь нет? Используй вопрос-хвостик.",
         "answers": [
           "He is not here, is he?"
         ],
@@ -5373,7 +5373,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Интересно, дома ли она.",
         "answers": [
           "I wonder if she is home."
         ],
@@ -5525,7 +5525,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Она присматривает за своей сестрой.",
         "answers": [
           "She looks after her sister."
         ],
@@ -5676,7 +5676,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Было так тихо.",
         "answers": [
           "It was so quiet."
         ],
@@ -5825,7 +5825,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Она закончила до моего приезда.",
         "answers": [
           "She had finished before I arrived.",
           "Before I arrived, she had finished."
@@ -5982,7 +5982,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Она сказала, что позвонит на следующий день.",
         "answers": [
           "She said she would call the next day."
         ],
@@ -6135,7 +6135,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Они работают весь день.",
         "answers": [
           "They have been working all day.",
           "All day they have been working."
@@ -6290,7 +6290,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Если бы я поспал, сейчас чувствовал бы себя лучше.",
         "answers": [
           "If I had slept, I would feel better now.",
           "I would feel better now if I had slept."
@@ -6457,7 +6457,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Мы будем ждать тебя.",
         "answers": [
           "We will be waiting for you."
         ],
@@ -6612,7 +6612,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "К тому времени они уже уйдут.",
         "answers": [
           "They will have left by then.",
           "By then they will have left."
@@ -6768,7 +6768,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Они ждали несколько часов.",
         "answers": [
           "They had been waiting for hours.",
           "For hours they had been waiting."
@@ -6923,7 +6923,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Возможно, это ошибка.",
         "answers": [
           "It could be a mistake."
         ],
@@ -7074,7 +7074,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Жаль, что я не послушал.",
         "answers": [
           "I wish I had listened."
         ],
@@ -7223,7 +7223,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Мне отремонтировали телефон.",
         "answers": [
           "I got my phone fixed."
         ],
@@ -7354,7 +7354,8 @@ window.daliaGrammarLessons=[
         "type": "translate",
         "prompt": "Почувствовав усталость, он ушёл домой. (начни с Feeling)",
         "answers": [
-          "Feeling tired, he went home."
+          "Feeling tired, he went home.",
+          "Feeling tired he went home."
         ],
         "wrong": [],
         "why": "Исполнитель обоих действий — he."
@@ -7370,7 +7371,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Закончив работу, она ушла. Используй причастный оборот.",
         "answers": [
           "Having finished the work, she left.",
           "She left having finished the work."
@@ -7390,7 +7391,8 @@ window.daliaGrammarLessons=[
         "type": "rewrite",
         "prompt": "As she felt tired, she went home. → Начни с Feeling.",
         "answers": [
-          "Feeling tired, she went home."
+          "Feeling tired, she went home.",
+          "Feeling tired she went home."
         ],
         "wrong": [],
         "why": "Один исполнитель."
@@ -7399,7 +7401,8 @@ window.daliaGrammarLessons=[
         "type": "translate",
         "prompt": "Написанная простым языком, книга легко читается. (начни с Written, use simple language)",
         "answers": [
-          "Written in simple language, the book is easy to read."
+          "Written in simple language, the book is easy to read.",
+          "Written in simple language the book is easy to read."
         ],
         "wrong": [],
         "why": "Пассивный оборот."
@@ -7520,7 +7523,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Мужчина, стоящий там, — мой дядя.",
         "answers": [
           "The man standing there is my uncle."
         ],
@@ -7674,7 +7677,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Мы редко согласны по этому вопросу. Используй инверсию.",
         "answers": [
           "Rarely do we agree on this issue."
         ],
@@ -7827,7 +7830,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Результаты могут указывать на тенденцию.",
         "answers": [
           "The results may indicate a trend."
         ],
@@ -7976,7 +7979,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Важно, чтобы все присутствовали.",
         "answers": [
           "It is essential that everyone be present."
         ],
@@ -8128,7 +8131,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "На твоём месте я бы подождал. Используй условную инверсию.",
         "answers": [
           "Were I you, I would wait."
         ],
@@ -8277,10 +8280,9 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Она умеет плавать, и я тоже.",
         "answers": [
-          "She can swim and I can too.",
-          "I can swim and she can too."
+          "She can swim and I can too."
         ],
         "wrong": [],
         "words": [
@@ -8427,7 +8429,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Он действительно звонил мне вчера.",
         "answers": [
           "He did call me yesterday.",
           "Yesterday he did call me."
@@ -8576,7 +8578,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Расширение сети заняло годы.",
         "answers": [
           "The expansion of the network took years."
         ],
@@ -8729,7 +8731,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Жизнь врача может быть напряжённой.",
         "answers": [
           "The life of a doctor can be stressful."
         ],
@@ -8883,7 +8885,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Тем не менее мы закончили задание.",
         "answers": [
           "Nevertheless, we finished the task.",
           "We nevertheless finished the task.",
@@ -9039,7 +9041,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Несколько людей ждут.",
         "answers": [
           "A number of people are waiting."
         ],
@@ -9185,7 +9187,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Вот что мне нужно — больше времени. Используй What-cleft.",
         "answers": [
           "What I need is more time."
         ],
@@ -9340,7 +9342,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Хотя она устала, она продолжила.",
         "answers": [
           "Although she was tired, she continued.",
           "She continued although she was tired."
@@ -9495,7 +9497,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Вот это я могу обещать. Вынеси объект в начало.",
         "answers": [
           "That much I can promise."
         ],
@@ -9644,7 +9646,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Это трудно объяснить. Используй формальное it.",
         "answers": [
           "It is hard to explain."
         ],
@@ -9792,7 +9794,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Он утверждает, что его уже уведомили.",
         "answers": [
           "He claims to have been informed."
         ],
@@ -9820,7 +9822,8 @@ window.daliaGrammarLessons=[
         "type": "translate",
         "prompt": "Закончив работу, он ушёл домой. (начни с Having finished, используй the work)",
         "answers": [
-          "Having finished the work, he went home."
+          "Having finished the work, he went home.",
+          "Having finished the work he went home."
         ],
         "wrong": [],
         "why": "Оборот относится к he."
@@ -9848,7 +9851,7 @@ window.daliaGrammarLessons=[
       ],
       [
         "no sooner... than",
-        "No sooner had she arrived than it rained.",
+        "No sooner had she arrived than it started raining.",
         "едва она приехала, как пошёл дождь"
       ],
       [
@@ -9945,7 +9948,7 @@ window.daliaGrammarLessons=[
       },
       {
         "type": "order",
-        "prompt": "",
+        "prompt": "Чем скорее, тем лучше.",
         "answers": [
           "The sooner, the better."
         ],
