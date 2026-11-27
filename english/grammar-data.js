@@ -94,6 +94,64 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "We сочетается с are: мы друзья — we are friends."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я дома.",
+        "answers": [
+          "I am at home.",
+          "I'm at home."
+        ],
+        "wrong": [],
+        "why": "С I нужна форма am."
+      },
+      {
+        "type": "correct",
+        "prompt": "She are my sister.",
+        "answers": [
+          "She is my sister."
+        ],
+        "wrong": [],
+        "why": "С she используется is."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "Are you ready?"
+        ],
+        "wrong": [],
+        "words": [
+          "Are",
+          "you",
+          "ready"
+        ],
+        "why": "В вопросе are идёт перед you."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "We are tired. → Сделай отрицание.",
+        "answers": [
+          "We are not tired.",
+          "We aren't tired.",
+          "We're not tired."
+        ],
+        "wrong": [],
+        "why": "Not ставится после are."
+      },
+      {
+        "type": "translate",
+        "prompt": "Он не дома.",
+        "answers": [
+          "He is not at home.",
+          "He isn't at home.",
+          "He's not at home.",
+          "He is not home.",
+          "He isn't home.",
+          "He's not home."
+        ],
+        "wrong": [],
+        "why": "С he нужна is, отрицание образует not."
       }
     ]
   },
@@ -191,6 +249,60 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "On Sundays — регулярность. С they не добавляем -s: play."
+      },
+      {
+        "type": "translate",
+        "prompt": "Она работает каждый день.",
+        "answers": [
+          "She works every day.",
+          "She works daily."
+        ],
+        "wrong": [],
+        "why": "Регулярное действие: works с she."
+      },
+      {
+        "type": "correct",
+        "prompt": "He doesn't likes tea.",
+        "answers": [
+          "He doesn't like tea.",
+          "He does not like tea."
+        ],
+        "wrong": [],
+        "why": "После doesn't глагол без -s."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "Do they live here?"
+        ],
+        "wrong": [],
+        "words": [
+          "Do",
+          "they",
+          "live",
+          "here"
+        ],
+        "why": "Вопрос с they начинается с do."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Tom plays football. → Задай общий вопрос.",
+        "answers": [
+          "Does Tom play football?"
+        ],
+        "wrong": [],
+        "why": "Does уже выражает третье лицо, play без -s."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я не пью кофе.",
+        "answers": [
+          "I don't drink coffee.",
+          "I do not drink coffee."
+        ],
+        "wrong": [],
+        "why": "С I отрицание через don't."
       }
     ]
   },
@@ -296,6 +408,61 @@ window.daliaGrammarLessons=[
           "—"
         ],
         "why": "В hour буква h не произносится. Первый звук гласный, поэтому an hour."
+      },
+      {
+        "type": "translate",
+        "prompt": "У меня есть яблоко.",
+        "answers": [
+          "I have an apple.",
+          "I've got an apple.",
+          "I have got an apple."
+        ],
+        "wrong": [],
+        "why": "Apple — один неопределённый предмет, начинается с гласного звука."
+      },
+      {
+        "type": "correct",
+        "prompt": "She is a artist.",
+        "answers": [
+          "She is an artist.",
+          "She's an artist."
+        ],
+        "wrong": [],
+        "why": "Artist начинается с гласного звука."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "The sun is bright."
+        ],
+        "wrong": [],
+        "words": [
+          "The",
+          "sun",
+          "is",
+          "bright"
+        ],
+        "why": "The указывает на единственный в данном контексте объект."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "I saw a cat. A cat was black. → Во втором предложении речь о том же коте. Исправь только второе предложение.",
+        "answers": [
+          "The cat was black."
+        ],
+        "wrong": [],
+        "why": "Повторно упомянутый кот требует the."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я люблю музыку.",
+        "answers": [
+          "I like music.",
+          "I love music."
+        ],
+        "wrong": [],
+        "why": "Music в общем смысле не требует артикля."
       }
     ]
   },
@@ -413,6 +580,58 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Они — they, но «их» после know — them: I know them."
+      },
+      {
+        "type": "translate",
+        "prompt": "Это моя сумка.",
+        "answers": [
+          "This is my bag.",
+          "This is my handbag."
+        ],
+        "wrong": [],
+        "why": "My ставится перед названием предмета."
+      },
+      {
+        "type": "correct",
+        "prompt": "She knows I.",
+        "answers": [
+          "She knows me."
+        ],
+        "wrong": [],
+        "why": "После knows нужна объектная форма me."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "This book is yours."
+        ],
+        "wrong": [],
+        "words": [
+          "This",
+          "book",
+          "is",
+          "yours"
+        ],
+        "why": "Yours заменяет your book."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "This is her bag. → Перепиши: начни с This bag.",
+        "answers": [
+          "This bag is hers."
+        ],
+        "wrong": [],
+        "why": "Hers употребляется без существительного после него."
+      },
+      {
+        "type": "translate",
+        "prompt": "Они знают нас.",
+        "answers": [
+          "They know us."
+        ],
+        "wrong": [],
+        "why": "They — кто знает, us — кого знают."
       }
     ]
   },
@@ -515,6 +734,59 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Man — неправильное существительное: один man, несколько men."
+      },
+      {
+        "type": "translate",
+        "prompt": "У меня две книги.",
+        "answers": [
+          "I have two books.",
+          "I've got two books.",
+          "I have got two books."
+        ],
+        "wrong": [],
+        "why": "После two используем множественное число books."
+      },
+      {
+        "type": "correct",
+        "prompt": "Two childs are here.",
+        "answers": [
+          "Two children are here."
+        ],
+        "wrong": [],
+        "why": "Child → children, без дополнительного -s."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "The boxes are empty."
+        ],
+        "wrong": [],
+        "words": [
+          "The",
+          "boxes",
+          "are",
+          "empty"
+        ],
+        "why": "Box → boxes; с несколькими коробками используется are."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "There is one child. → Замени one child на two children и согласуй глагол.",
+        "answers": [
+          "There are two children."
+        ],
+        "wrong": [],
+        "why": "Children — множественное число, поэтому are."
+      },
+      {
+        "type": "translate",
+        "prompt": "Три города (словосочетание).",
+        "answers": [
+          "Three cities."
+        ],
+        "wrong": [],
+        "why": "City → cities после согласной и y."
       }
     ]
   },
@@ -612,6 +884,57 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "С городом, внутри которого живёт человек, используем in: in Paris."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я живу в Лондоне.",
+        "answers": [
+          "I live in London."
+        ],
+        "wrong": [],
+        "why": "С городами используется in."
+      },
+      {
+        "type": "correct",
+        "prompt": "The lesson starts in nine.",
+        "answers": [
+          "The lesson starts at nine."
+        ],
+        "wrong": [],
+        "why": "At ставим перед точным временем."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "We meet on Monday."
+        ],
+        "wrong": [],
+        "words": [
+          "We",
+          "meet",
+          "on",
+          "Monday"
+        ],
+        "why": "On используется с днями недели."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Meet me on Friday. → Замени Friday на six o'clock, измени предлог.",
+        "answers": [
+          "Meet me at six o'clock."
+        ],
+        "wrong": [],
+        "why": "At — конкретный момент времени."
+      },
+      {
+        "type": "translate",
+        "prompt": "Ключи на столе.",
+        "answers": [
+          "The keys are on the table."
+        ],
+        "wrong": [],
+        "why": "On обозначает поверхность."
       }
     ]
   },
@@ -704,6 +1027,58 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Water — неисчисляемое существительное, поэтому there is some water."
+      },
+      {
+        "type": "translate",
+        "prompt": "В комнате есть кот.",
+        "answers": [
+          "There is a cat in the room.",
+          "There's a cat in the room."
+        ],
+        "wrong": [],
+        "why": "There is сообщает о наличии одного кота."
+      },
+      {
+        "type": "correct",
+        "prompt": "There is two chairs.",
+        "answers": [
+          "There are two chairs."
+        ],
+        "wrong": [],
+        "why": "Два стула — множественное число."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "Is there any milk?"
+        ],
+        "wrong": [],
+        "words": [
+          "Is",
+          "there",
+          "any",
+          "milk"
+        ],
+        "why": "Milk неисчисляемое; is перед there образует вопрос."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "There is a shop nearby. → Задай общий вопрос.",
+        "answers": [
+          "Is there a shop nearby?"
+        ],
+        "wrong": [],
+        "why": "Переноси is в начало."
+      },
+      {
+        "type": "translate",
+        "prompt": "На столе три книги.",
+        "answers": [
+          "There are three books on the table."
+        ],
+        "wrong": [],
+        "why": "There are сообщает о нескольких предметах."
       }
     ]
   },
@@ -797,6 +1172,67 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Are уже стоит на месте. Для действия нужен глагол cook с -ing: cooking."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я сейчас читаю.",
+        "answers": [
+          "I am reading now.",
+          "I'm reading now.",
+          "I am reading right now.",
+          "I'm reading right now.",
+          "I am reading.",
+          "I'm reading."
+        ],
+        "wrong": [],
+        "why": "Действие сейчас: am reading."
+      },
+      {
+        "type": "correct",
+        "prompt": "She is cook dinner now.",
+        "answers": [
+          "She is cooking dinner now.",
+          "She's cooking dinner now."
+        ],
+        "wrong": [],
+        "why": "После is для процесса нужен -ing."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "They are watching TV."
+        ],
+        "wrong": [],
+        "words": [
+          "They",
+          "are",
+          "watching",
+          "TV"
+        ],
+        "why": "Are + watching описывает действие в процессе."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "He is sleeping. → Сделай отрицание.",
+        "answers": [
+          "He is not sleeping.",
+          "He isn't sleeping.",
+          "He's not sleeping."
+        ],
+        "wrong": [],
+        "why": "Not ставится после is."
+      },
+      {
+        "type": "translate",
+        "prompt": "Ты сейчас работаешь?",
+        "answers": [
+          "Are you working now?",
+          "Are you working right now?",
+          "Are you working?"
+        ],
+        "wrong": [],
+        "why": "Are ставится перед you, working остаётся."
       }
     ]
   },
@@ -889,6 +1325,63 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Open — обычный глагол. Для Past Simple добавляем -ed: opened."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я видел её вчера.",
+        "answers": [
+          "I saw her yesterday.",
+          "Yesterday I saw her."
+        ],
+        "wrong": [],
+        "why": "Yesterday — законченное прошлое, see → saw."
+      },
+      {
+        "type": "correct",
+        "prompt": "She didn't went home.",
+        "answers": [
+          "She didn't go home.",
+          "She did not go home."
+        ],
+        "wrong": [],
+        "why": "После did нужна начальная форма go."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "Did you call him yesterday?"
+        ],
+        "wrong": [],
+        "words": [
+          "Did",
+          "you",
+          "call",
+          "him",
+          "yesterday"
+        ],
+        "why": "Did перед you, call без прошедшего окончания."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "They visited Rome. → Задай общий вопрос.",
+        "answers": [
+          "Did they visit Rome?"
+        ],
+        "wrong": [],
+        "why": "Did уже выражает прошлое."
+      },
+      {
+        "type": "translate",
+        "prompt": "Мы были дома вчера.",
+        "answers": [
+          "We were at home yesterday.",
+          "We were home yesterday.",
+          "Yesterday we were at home.",
+          "Yesterday we were home."
+        ],
+        "wrong": [],
+        "why": "С we прошедшая форма be — were."
       }
     ]
   },
@@ -1041,6 +1534,62 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Три формы take: take, took, taken. Последняя — taken."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я купил книгу вчера.",
+        "answers": [
+          "I bought a book yesterday.",
+          "I bought the book yesterday.",
+          "Yesterday I bought a book."
+        ],
+        "wrong": [],
+        "why": "Buy → bought в Past Simple."
+      },
+      {
+        "type": "correct",
+        "prompt": "He has wrote a letter.",
+        "answers": [
+          "He has written a letter.",
+          "He's written a letter."
+        ],
+        "wrong": [],
+        "why": "После has нужна третья форма written."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "She took the bus yesterday."
+        ],
+        "wrong": [],
+        "words": [
+          "She",
+          "took",
+          "the",
+          "bus",
+          "yesterday"
+        ],
+        "why": "Took — вторая форма take."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "I see him every day. → Перепиши про вчера, убрав every day.",
+        "answers": [
+          "I saw him yesterday.",
+          "Yesterday I saw him."
+        ],
+        "wrong": [],
+        "why": "See → saw в законченном прошлом."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Три формы глагола go (через пробел).",
+        "answers": [
+          "go went gone"
+        ],
+        "wrong": [],
+        "why": "Go, went, gone — три формы."
       }
     ]
   },
@@ -1133,6 +1682,64 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Конструкция намерения: are going to + travel. To — её обязательная часть."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я обещаю, что позвоню тебе.",
+        "answers": [
+          "I promise I will call you.",
+          "I promise I'll call you.",
+          "I promise that I will call you.",
+          "I promise that I'll call you."
+        ],
+        "wrong": [],
+        "why": "Will естественно для обещания."
+      },
+      {
+        "type": "correct",
+        "prompt": "She will goes home.",
+        "answers": [
+          "She will go home.",
+          "She'll go home."
+        ],
+        "wrong": [],
+        "why": "После will начальная форма go."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "We are going to travel."
+        ],
+        "wrong": [],
+        "words": [
+          "We",
+          "are",
+          "going",
+          "to",
+          "travel"
+        ],
+        "why": "Are going to выражает намерение."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "I plan to study tonight. → Перепиши с be going to.",
+        "answers": [
+          "I am going to study tonight.",
+          "I'm going to study tonight."
+        ],
+        "wrong": [],
+        "why": "План: am going to + study."
+      },
+      {
+        "type": "translate",
+        "prompt": "Посмотри на тучи! Пойдёт дождь. (переведи только второе предложение с going to)",
+        "answers": [
+          "It is going to rain.",
+          "It's going to rain."
+        ],
+        "wrong": [],
+        "why": "Видимые признаки: be going to."
       }
     ]
   },
@@ -1235,6 +1842,65 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Apples можно посчитать. A few значит «несколько», a little — для неисчисляемых."
+      },
+      {
+        "type": "translate",
+        "prompt": "Сколько книг у тебя?",
+        "answers": [
+          "How many books do you have?",
+          "How many books have you got?"
+        ],
+        "wrong": [],
+        "why": "Books — исчисляемое, поэтому many."
+      },
+      {
+        "type": "correct",
+        "prompt": "How many water do you need?",
+        "answers": [
+          "How much water do you need?"
+        ],
+        "wrong": [],
+        "why": "Water неисчисляемое, поэтому much."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "There isn't any milk left."
+        ],
+        "wrong": [],
+        "words": [
+          "There",
+          "isn't",
+          "any",
+          "milk",
+          "left"
+        ],
+        "why": "Any естественно в отрицании."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "We have some apples. → Сделай отрицание с any.",
+        "answers": [
+          "We don't have any apples.",
+          "We do not have any apples.",
+          "We haven't got any apples.",
+          "We have not got any apples."
+        ],
+        "wrong": [],
+        "why": "В нейтральном отрицании some заменяется any."
+      },
+      {
+        "type": "translate",
+        "prompt": "У нас есть немного времени.",
+        "answers": [
+          "We have a little time.",
+          "We've got a little time.",
+          "We have got a little time.",
+          "We have some time."
+        ],
+        "wrong": [],
+        "why": "Time неисчисляемое. A little и some передают небольшое или неопределённое количество."
       }
     ]
   },
@@ -1337,6 +2003,65 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Than требует сравнительной формы. Bad → worse, не badder."
+      },
+      {
+        "type": "translate",
+        "prompt": "Этот дом больше того.",
+        "answers": [
+          "This house is bigger than that one.",
+          "This house is bigger than that house."
+        ],
+        "wrong": [],
+        "why": "Big → bigger; than вводит второй объект."
+      },
+      {
+        "type": "correct",
+        "prompt": "This book is more cheaper.",
+        "answers": [
+          "This book is cheaper."
+        ],
+        "wrong": [],
+        "why": "More и -er не совмещают."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "She is the best player."
+        ],
+        "wrong": [],
+        "words": [
+          "She",
+          "is",
+          "the",
+          "best",
+          "player"
+        ],
+        "why": "Best — превосходная форма good."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "This bag is small. → Сравни с той сумкой: эта меньше.",
+        "answers": [
+          "This bag is smaller than that one.",
+          "This bag is smaller than that bag."
+        ],
+        "wrong": [],
+        "why": "Small → smaller, затем than."
+      },
+      {
+        "type": "translate",
+        "prompt": "Это самый интересный фильм.",
+        "answers": [
+          "This is the most interesting film.",
+          "This is the most interesting movie.",
+          "It is the most interesting film.",
+          "It's the most interesting film.",
+          "It is the most interesting movie.",
+          "It's the most interesting movie."
+        ],
+        "wrong": [],
+        "why": "Длинное прилагательное: the most interesting."
       }
     ]
   },
@@ -1445,6 +2170,61 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Can уже выражает способность, после него обычная форма speak."
+      },
+      {
+        "type": "translate",
+        "prompt": "Тебе стоит отдохнуть. (используй should)",
+        "answers": [
+          "You should rest.",
+          "You should get some rest.",
+          "You should take a rest."
+        ],
+        "wrong": [],
+        "why": "Should выражает совет."
+      },
+      {
+        "type": "correct",
+        "prompt": "He can to swim.",
+        "answers": [
+          "He can swim."
+        ],
+        "wrong": [],
+        "why": "После can не ставим to."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "You must not enter."
+        ],
+        "wrong": [],
+        "words": [
+          "You",
+          "must",
+          "not",
+          "enter"
+        ],
+        "why": "Must not выражает запрет."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "It isn't necessary for you to come. → Перепиши с have to.",
+        "answers": [
+          "You don't have to come.",
+          "You do not have to come."
+        ],
+        "wrong": [],
+        "why": "Don't have to означает отсутствие необходимости."
+      },
+      {
+        "type": "translate",
+        "prompt": "Ей нужно работать завтра. (используй have to)",
+        "answers": [
+          "She has to work tomorrow.",
+          "Tomorrow she has to work."
+        ],
+        "wrong": [],
+        "why": "Have to с she меняется на has to."
       }
     ]
   },
@@ -1542,6 +2322,57 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Действие выражено going. С they нужна форма are, которую ставим перед they в вопросе."
+      },
+      {
+        "type": "translate",
+        "prompt": "Где ты живёшь?",
+        "answers": [
+          "Where do you live?"
+        ],
+        "wrong": [],
+        "why": "Where + do + you + live."
+      },
+      {
+        "type": "correct",
+        "prompt": "Where she does live?",
+        "answers": [
+          "Where does she live?"
+        ],
+        "wrong": [],
+        "why": "В вопросе does перед подлежащим she."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "What did you buy?"
+        ],
+        "wrong": [],
+        "words": [
+          "What",
+          "did",
+          "you",
+          "buy"
+        ],
+        "why": "What + did + you + начальная форма buy."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Someone called you. → Спроси, кто тебе позвонил.",
+        "answers": [
+          "Who called you?"
+        ],
+        "wrong": [],
+        "why": "Who само является подлежащим."
+      },
+      {
+        "type": "translate",
+        "prompt": "Почему он ушёл?",
+        "answers": [
+          "Why did he leave?"
+        ],
+        "wrong": [],
+        "why": "Why первым, затем did + he + leave."
       }
     ]
   },
@@ -1634,6 +2465,64 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "После has нужна третья форма do — done, не did."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я уже закончил работу. (Present Perfect)",
+        "answers": [
+          "I have already finished the work.",
+          "I've already finished the work.",
+          "I have already finished my work.",
+          "I've already finished my work."
+        ],
+        "wrong": [],
+        "why": "Already и результат сейчас: have + finished."
+      },
+      {
+        "type": "correct",
+        "prompt": "She has saw this film.",
+        "answers": [
+          "She has seen this film.",
+          "She's seen this film."
+        ],
+        "wrong": [],
+        "why": "После has нужна V3 seen."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "We have lived here since 2020."
+        ],
+        "wrong": [],
+        "words": [
+          "We",
+          "have",
+          "lived",
+          "here",
+          "since",
+          "2020"
+        ],
+        "why": "Since указывает начало продолжающегося периода."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "She has finished the report. → Задай общий вопрос.",
+        "answers": [
+          "Has she finished the report?"
+        ],
+        "wrong": [],
+        "why": "Has переносится перед she."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я никогда не был в Париже. (Present Perfect)",
+        "answers": [
+          "I have never been to Paris.",
+          "I've never been to Paris."
+        ],
+        "wrong": [],
+        "why": "Жизненный опыт: have never been to."
       }
     ]
   },
@@ -1726,6 +2615,63 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "После was нужен глагол с -ing: reading."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я спал, когда ты позвонил. (Past Continuous)",
+        "answers": [
+          "I was sleeping when you called.",
+          "When you called, I was sleeping."
+        ],
+        "wrong": [],
+        "why": "Was sleeping показывает процесс; called — отдельное событие."
+      },
+      {
+        "type": "correct",
+        "prompt": "They was watching TV.",
+        "answers": [
+          "They were watching TV."
+        ],
+        "wrong": [],
+        "why": "С they используется were."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "She was reading when I arrived."
+        ],
+        "wrong": [],
+        "words": [
+          "She",
+          "was",
+          "reading",
+          "when",
+          "I",
+          "arrived"
+        ],
+        "why": "Чтение — фон, приезд — отдельное событие."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "He was working at six. → Задай общий вопрос.",
+        "answers": [
+          "Was he working at six?"
+        ],
+        "wrong": [],
+        "why": "Was переносится перед he."
+      },
+      {
+        "type": "translate",
+        "prompt": "Вчера в восемь мы готовили ужин. (Past Continuous)",
+        "answers": [
+          "We were cooking dinner at eight yesterday.",
+          "At eight yesterday we were cooking dinner.",
+          "Yesterday at eight we were cooking dinner.",
+          "We were preparing dinner at eight yesterday."
+        ],
+        "wrong": [],
+        "why": "Процесс в определённый момент прошлого: were cooking/preparing."
       }
     ]
   },
@@ -1819,6 +2765,67 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "If I were you — устойчивый способ дать совет; were предпочтительно, was встречается разговорно."
+      },
+      {
+        "type": "translate",
+        "prompt": "Если завтра будет дождь, я останусь дома. (реальный план)",
+        "answers": [
+          "If it rains tomorrow, I will stay home.",
+          "If it rains tomorrow, I'll stay home.",
+          "If it rains tomorrow, I will stay at home.",
+          "If it rains tomorrow, I'll stay at home."
+        ],
+        "wrong": [],
+        "why": "В условии Present Simple, в результате will."
+      },
+      {
+        "type": "correct",
+        "prompt": "If she will call, I will answer. (обычное условие о будущем)",
+        "answers": [
+          "If she calls, I will answer.",
+          "If she calls, I'll answer."
+        ],
+        "wrong": [],
+        "why": "После if в обычном First Conditional ставим Present Simple."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "If I had time, I would help."
+        ],
+        "wrong": [],
+        "words": [
+          "If",
+          "I",
+          "had",
+          "time,",
+          "I",
+          "would",
+          "help"
+        ],
+        "why": "Had и would показывают воображаемую ситуацию."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "I don't have enough money, so I can't travel. → Перепиши с If I had enough money и would.",
+        "answers": [
+          "If I had enough money, I would travel.",
+          "If I had enough money, I'd travel."
+        ],
+        "wrong": [],
+        "why": "Second Conditional: условие воображаемое, результат с would."
+      },
+      {
+        "type": "translate",
+        "prompt": "Если нагревать лёд, он тает. (закономерность)",
+        "answers": [
+          "If you heat ice, it melts.",
+          "When you heat ice, it melts.",
+          "If ice is heated, it melts."
+        ],
+        "wrong": [],
+        "why": "Для общего факта обе части в Present Simple."
       }
     ]
   },
@@ -1916,6 +2923,61 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Книга — объект действия. После was употребляется третья форма write: written."
+      },
+      {
+        "type": "translate",
+        "prompt": "Мост построили в 1990 году. (пассивный залог)",
+        "answers": [
+          "The bridge was built in 1990.",
+          "A bridge was built in 1990."
+        ],
+        "wrong": [],
+        "why": "Was + built показывает объект действия в прошлом."
+      },
+      {
+        "type": "correct",
+        "prompt": "The letters are send every day.",
+        "answers": [
+          "The letters are sent every day."
+        ],
+        "wrong": [],
+        "why": "После are нужна третья форма sent."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "The room will be cleaned tomorrow."
+        ],
+        "wrong": [],
+        "words": [
+          "The",
+          "room",
+          "will",
+          "be",
+          "cleaned",
+          "tomorrow"
+        ],
+        "why": "Will be + cleaned — пассив в будущем."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "They built the house in 2000. → Начни с The house.",
+        "answers": [
+          "The house was built in 2000."
+        ],
+        "wrong": [],
+        "why": "Дом становится подлежащим; was built."
+      },
+      {
+        "type": "translate",
+        "prompt": "Письмо уже отправлено. (Present Perfect Passive)",
+        "answers": [
+          "The letter has already been sent.",
+          "The letter has been sent already."
+        ],
+        "wrong": [],
+        "why": "Has been + sent."
       }
     ]
   },
@@ -2008,6 +3070,60 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "После hope обычно идёт to + начальная форма: hope to see."
+      },
+      {
+        "type": "translate",
+        "prompt": "Мне нравится читать книги. (используй enjoy)",
+        "answers": [
+          "I enjoy reading books."
+        ],
+        "wrong": [],
+        "why": "После enjoy нужна форма -ing."
+      },
+      {
+        "type": "correct",
+        "prompt": "She decided going home.",
+        "answers": [
+          "She decided to go home."
+        ],
+        "wrong": [],
+        "why": "После decide нужен инфинитив с to."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "He is interested in learning English."
+        ],
+        "wrong": [],
+        "words": [
+          "He",
+          "is",
+          "interested",
+          "in",
+          "learning",
+          "English"
+        ],
+        "why": "После предлога in нужна форма -ing."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "I want to stop my habit of smoking. → Перепиши с I want to stop и формой smoke.",
+        "answers": [
+          "I want to stop smoking."
+        ],
+        "wrong": [],
+        "why": "Stop smoking — перестать курить, не остановиться ради курения."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я надеюсь скоро увидеть тебя. (используй hope)",
+        "answers": [
+          "I hope to see you soon.",
+          "I hope to see you shortly."
+        ],
+        "wrong": [],
+        "why": "Hope + to see."
       }
     ]
   },
@@ -2107,6 +3223,68 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Дополнительная информация о человеке между запятыми вводится who, а не that."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я знаю человека, который живёт здесь. (используй man)",
+        "answers": [
+          "I know a man who lives here.",
+          "I know the man who lives here.",
+          "I know a man that lives here.",
+          "I know the man that lives here."
+        ],
+        "wrong": [],
+        "why": "Who/that уточняет, о каком человеке речь."
+      },
+      {
+        "type": "correct",
+        "prompt": "My car, that is old, still works.",
+        "answers": [
+          "My car, which is old, still works."
+        ],
+        "wrong": [],
+        "why": "В дополнительной части с запятыми that не употребляется."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "I know the woman whose son works here."
+        ],
+        "wrong": [],
+        "words": [
+          "I",
+          "know",
+          "the",
+          "woman",
+          "whose",
+          "son",
+          "works",
+          "here"
+        ],
+        "why": "Whose выражает принадлежность."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "The book is useful. I bought it yesterday. → Объедини, начни с The book, используй which или that.",
+        "answers": [
+          "The book which I bought yesterday is useful.",
+          "The book that I bought yesterday is useful."
+        ],
+        "wrong": [],
+        "why": "Уточняющая часть относится к book."
+      },
+      {
+        "type": "translate",
+        "prompt": "Это мужчина, чья дочь учится здесь.",
+        "answers": [
+          "This is the man whose daughter studies here.",
+          "This is a man whose daughter studies here.",
+          "That's the man whose daughter studies here.",
+          "That is the man whose daughter studies here."
+        ],
+        "wrong": [],
+        "why": "Whose означает «чья»."
       }
     ]
   },
@@ -2199,6 +3377,67 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "После had ставим третью форму do — done."
+      },
+      {
+        "type": "translate",
+        "prompt": "Когда я приехал, она уже ушла. (Past Perfect для ухода)",
+        "answers": [
+          "When I arrived, she had already left.",
+          "When I arrived, she'd already left.",
+          "She had already left when I arrived.",
+          "She'd already left when I arrived."
+        ],
+        "wrong": [],
+        "why": "Had left произошло раньше arrived."
+      },
+      {
+        "type": "correct",
+        "prompt": "He had went home before noon.",
+        "answers": [
+          "He had gone home before noon.",
+          "He'd gone home before noon."
+        ],
+        "wrong": [],
+        "why": "После had нужна V3 gone."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "She had finished before I arrived."
+        ],
+        "wrong": [],
+        "words": [
+          "She",
+          "had",
+          "finished",
+          "before",
+          "I",
+          "arrived"
+        ],
+        "why": "Had finished — более раннее действие в прошлом."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "He had eaten before the meeting. → Сделай отрицание.",
+        "answers": [
+          "He had not eaten before the meeting.",
+          "He hadn't eaten before the meeting."
+        ],
+        "wrong": [],
+        "why": "Not после had."
+      },
+      {
+        "type": "translate",
+        "prompt": "Они уже закончили работу к шести вчера. (Past Perfect)",
+        "answers": [
+          "They had already finished the work by six yesterday.",
+          "They'd already finished the work by six yesterday.",
+          "They had already finished their work by six yesterday.",
+          "They'd already finished their work by six yesterday."
+        ],
+        "wrong": [],
+        "why": "By six yesterday — прошлая точка отсчёта."
       }
     ]
   },
@@ -2297,6 +3536,64 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Вопрос без вопросительного слова передаётся через if или whether — «ли»."
+      },
+      {
+        "type": "translate",
+        "prompt": "Она сказала мне, что занята. (используй told и сдвиг времени)",
+        "answers": [
+          "She told me she was busy.",
+          "She told me that she was busy."
+        ],
+        "wrong": [],
+        "why": "Told требует адресата; is/am → was при сдвиге."
+      },
+      {
+        "type": "correct",
+        "prompt": "He asked where did I live.",
+        "answers": [
+          "He asked where I lived."
+        ],
+        "wrong": [],
+        "why": "В косвенном вопросе порядок слов как в утверждении."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "She said she would call the next day."
+        ],
+        "wrong": [],
+        "words": [
+          "She",
+          "said",
+          "she",
+          "would",
+          "call",
+          "the",
+          "next",
+          "day"
+        ],
+        "why": "Will → would при сдвиге времени."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Tom said, 'I am tired.' → Перескажи со сдвигом времени, начни с Tom said.",
+        "answers": [
+          "Tom said he was tired.",
+          "Tom said that he was tired."
+        ],
+        "wrong": [],
+        "why": "I становится he, am → was."
+      },
+      {
+        "type": "translate",
+        "prompt": "Он спросил, готов ли я. (со сдвигом времени)",
+        "answers": [
+          "He asked if I was ready.",
+          "He asked whether I was ready."
+        ],
+        "wrong": [],
+        "why": "If/whether вводят косвенный общий вопрос."
       }
     ]
   },
@@ -2389,6 +3686,66 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Learn получает -ing: have been learning."
+      },
+      {
+        "type": "translate",
+        "prompt": "Я жду уже час. (Present Perfect Continuous)",
+        "answers": [
+          "I have been waiting for an hour.",
+          "I've been waiting for an hour.",
+          "I have been waiting an hour.",
+          "I've been waiting an hour."
+        ],
+        "wrong": [],
+        "why": "Have been waiting + длительность."
+      },
+      {
+        "type": "correct",
+        "prompt": "She have been studying since nine.",
+        "answers": [
+          "She has been studying since nine.",
+          "She's been studying since nine."
+        ],
+        "wrong": [],
+        "why": "С she используется has been."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "They have been working all day."
+        ],
+        "wrong": [],
+        "words": [
+          "They",
+          "have",
+          "been",
+          "working",
+          "all",
+          "day"
+        ],
+        "why": "All day подчёркивает длительность процесса."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "He has been waiting for two hours. → Задай общий вопрос.",
+        "answers": [
+          "Has he been waiting for two hours?"
+        ],
+        "wrong": [],
+        "why": "Has переносится перед he."
+      },
+      {
+        "type": "translate",
+        "prompt": "Мы изучаем английский с января. (Present Perfect Continuous)",
+        "answers": [
+          "We have been learning English since January.",
+          "We've been learning English since January.",
+          "We have been studying English since January.",
+          "We've been studying English since January."
+        ],
+        "wrong": [],
+        "why": "Since задаёт начало продолжающегося процесса."
       }
     ]
   },
@@ -2481,6 +3838,73 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Условие относится к прошлому: had + третья форма called."
+      },
+      {
+        "type": "translate",
+        "prompt": "Если бы я знал, я бы помог. (оба события в прошлом)",
+        "answers": [
+          "If I had known, I would have helped.",
+          "If I'd known, I'd have helped.",
+          "If I had known, I'd have helped.",
+          "If I'd known, I would have helped."
+        ],
+        "wrong": [],
+        "why": "If + had known; результат would have helped."
+      },
+      {
+        "type": "correct",
+        "prompt": "If she would have left earlier, she would have caught the train.",
+        "answers": [
+          "If she had left earlier, she would have caught the train.",
+          "If she'd left earlier, she'd have caught the train.",
+          "If she had left earlier, she'd have caught the train."
+        ],
+        "wrong": [],
+        "why": "В условии о нереальном прошлом используем had."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "If I had slept, I would feel better now."
+        ],
+        "wrong": [],
+        "words": [
+          "If",
+          "I",
+          "had",
+          "slept,",
+          "I",
+          "would",
+          "feel",
+          "better",
+          "now"
+        ],
+        "why": "Прошлое условие влияет на настоящее."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "I didn't study, so I failed. → Начни с If I had studied и используй would have.",
+        "answers": [
+          "If I had studied, I would have passed.",
+          "If I had studied, I would not have failed.",
+          "If I had studied, I wouldn't have failed.",
+          "If I had studied, I'd have passed.",
+          "If I had studied, I'd not have failed."
+        ],
+        "wrong": [],
+        "why": "Third Conditional показывает другой возможный итог прошлого."
+      },
+      {
+        "type": "translate",
+        "prompt": "Если бы я накопил денег, сейчас я мог бы путешествовать. (используй save money и be able to)",
+        "answers": [
+          "If I had saved money, I would be able to travel now.",
+          "If I'd saved money, I'd be able to travel now.",
+          "If I had saved money, I'd be able to travel now."
+        ],
+        "wrong": [],
+        "why": "Прошлое условие + результат сейчас."
       }
     ]
   },
@@ -2578,6 +4002,63 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Never вызывает инверсию. Для Present Perfect с we помощник have стоит перед we."
+      },
+      {
+        "type": "translate",
+        "prompt": "Никогда я не видел ничего подобного. (начни с Never, Present Perfect)",
+        "answers": [
+          "Never have I seen anything like this.",
+          "Never have I seen anything like it.",
+          "Never have I seen anything like that."
+        ],
+        "wrong": [],
+        "why": "После Never нужна инверсия have I."
+      },
+      {
+        "type": "correct",
+        "prompt": "Only then she realized the truth.",
+        "answers": [
+          "Only then did she realize the truth."
+        ],
+        "wrong": [],
+        "why": "После Only then инверсия с did и начальной формой."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "Rarely do we agree on this issue."
+        ],
+        "wrong": [],
+        "words": [
+          "Rarely",
+          "do",
+          "we",
+          "agree",
+          "on",
+          "this",
+          "issue"
+        ],
+        "why": "Rarely вынесено вперёд, поэтому do перед we."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "I had never felt so relieved. → Начни с Never.",
+        "answers": [
+          "Never had I felt so relieved."
+        ],
+        "wrong": [],
+        "why": "Had ставится перед I."
+      },
+      {
+        "type": "translate",
+        "prompt": "Лишь тогда мы осознали опасность. (начни с Only then)",
+        "answers": [
+          "Only then did we realize the danger.",
+          "Only then did we realise the danger."
+        ],
+        "wrong": [],
+        "why": "В Past Simple инверсия с did."
       }
     ]
   },
@@ -2675,6 +4156,60 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Might have выражает возможность в прошлом. Третья форма be — been."
+      },
+      {
+        "type": "translate",
+        "prompt": "Возможно, она забыла о встрече. (используй might have)",
+        "answers": [
+          "She might have forgotten about the meeting.",
+          "She might have forgotten the meeting."
+        ],
+        "wrong": [],
+        "why": "Might have + V3 передаёт возможность в прошлом."
+      },
+      {
+        "type": "correct",
+        "prompt": "He must have went home.",
+        "answers": [
+          "He must have gone home."
+        ],
+        "wrong": [],
+        "why": "После must have нужна третья форма gone."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "The results may indicate a trend."
+        ],
+        "wrong": [],
+        "words": [
+          "The",
+          "results",
+          "may",
+          "indicate",
+          "a",
+          "trend"
+        ],
+        "why": "May обозначает осторожный вывод."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Perhaps he missed the message. → Перепиши с may have.",
+        "answers": [
+          "He may have missed the message."
+        ],
+        "wrong": [],
+        "why": "May have missed относится к прошлому предположению."
+      },
+      {
+        "type": "translate",
+        "prompt": "Ему пришлось уйти рано. (прошлая необходимость)",
+        "answers": [
+          "He had to leave early."
+        ],
+        "wrong": [],
+        "why": "Had to — обязанность, не предположение."
       }
     ]
   },
@@ -2768,6 +4303,61 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "Прошлое событие задано в surprised и условии, поэтому was."
+      },
+      {
+        "type": "translate",
+        "prompt": "Именно Джейн позвонила мне. (начни с It was)",
+        "answers": [
+          "It was Jane who called me.",
+          "It was Jane that called me."
+        ],
+        "wrong": [],
+        "why": "It-cleft выделяет Jane."
+      },
+      {
+        "type": "correct",
+        "prompt": "It was yesterday who I heard the news.",
+        "answers": [
+          "It was yesterday that I heard the news."
+        ],
+        "wrong": [],
+        "why": "Для выделения времени используется that."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "What I need is more time."
+        ],
+        "wrong": [],
+        "words": [
+          "What",
+          "I",
+          "need",
+          "is",
+          "more",
+          "time"
+        ],
+        "why": "What I need выделяет тему, more time — главное."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "The delay caused the problem. → Выдели the delay, начни с It was.",
+        "answers": [
+          "It was the delay that caused the problem."
+        ],
+        "wrong": [],
+        "why": "It-cleft подчёркивает причину."
+      },
+      {
+        "type": "translate",
+        "prompt": "Всё, чего я хочу, — немного покоя. (начни с All)",
+        "answers": [
+          "All I want is a little peace.",
+          "All I want is some peace."
+        ],
+        "wrong": [],
+        "why": "All-cleft выделяет единственное желание."
       }
     ]
   },
@@ -2865,6 +4455,69 @@ window.daliaGrammarLessons=[
         ],
         "wrong": [],
         "why": "После despite здесь нужна форма -ing. Be → being."
+      },
+      {
+        "type": "translate",
+        "prompt": "Несмотря на дождь, мы продолжили. (используй despite)",
+        "answers": [
+          "Despite the rain, we continued.",
+          "Despite the rain we continued.",
+          "We continued despite the rain."
+        ],
+        "wrong": [],
+        "why": "Despite + именная группа."
+      },
+      {
+        "type": "correct",
+        "prompt": "Despite of the delay, we arrived on time.",
+        "answers": [
+          "Despite the delay, we arrived on time.",
+          "Despite the delay we arrived on time.",
+          "In spite of the delay, we arrived on time.",
+          "In spite of the delay we arrived on time."
+        ],
+        "wrong": [],
+        "why": "Despite без of; in spite of — устойчивое сочетание."
+      },
+      {
+        "type": "order",
+        "prompt": "",
+        "answers": [
+          "Although she was tired, she continued."
+        ],
+        "wrong": [],
+        "words": [
+          "Although",
+          "she",
+          "was",
+          "tired,",
+          "she",
+          "continued"
+        ],
+        "why": "Although вводит полноценное предложение."
+      },
+      {
+        "type": "rewrite",
+        "prompt": "Although he was tired, he kept working. → Начни с Despite и сохрани смысл.",
+        "answers": [
+          "Despite being tired, he kept working.",
+          "Despite being tired he kept working.",
+          "Despite his tiredness, he kept working.",
+          "Despite his tiredness he kept working."
+        ],
+        "wrong": [],
+        "why": "После despite возможна форма -ing или существительное."
+      },
+      {
+        "type": "translate",
+        "prompt": "План удался, хотя и медленно. (используй albeit)",
+        "answers": [
+          "The plan succeeded, albeit slowly.",
+          "The plan succeeded albeit slowly.",
+          "The plan worked, albeit slowly."
+        ],
+        "wrong": [],
+        "why": "Albeit добавляет краткую оговорку."
       }
     ]
   }
