@@ -1090,3 +1090,10 @@ button:disabled{cursor:not-allowed;opacity:.58}
 .grammar-session .grammar-option:disabled{cursor:default}
 .grammar-practice-actions button:disabled{opacity:.45;cursor:default}
 @media(max-width:550px){.grammar-result-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.grammar-table{font-size:13px;line-height:1.5}.grammar-table th{font-size:11px;line-height:1.4}.grammar-mix-setup{padding:14px}.grammar-rule{line-height:1.65}.grammar-start{min-height:48px}.grammar-section-heading{font-size:16px}}
+
+/* Grammar examples: explanation distinct from the translation. */
+.grammar-example-explanation{border-top:1px solid var(--stroke);margin-top:12px;padding-top:11px;line-height:1.6}
+.grammar-example-label{display:block;font-size:12px;font-weight:650;color:var(--pink2);margin-bottom:3px}
+.grammar-example-explanation p{font-size:14px;color:var(--text);margin:0}
+.grammar-rule,.grammar-note p{overflow-wrap:anywhere}
+@media(max-width:550px){.grammar-example-explanation p{font-size:14px}.grammar-rule{font-size:15px}}
