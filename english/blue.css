@@ -1120,15 +1120,20 @@ button:disabled{cursor:not-allowed;opacity:.58}
 .grammar-level-heading span{white-space:nowrap}
 @media(max-width:550px){.grammar-level-heading h3{font-size:15px}.grammar-level-heading{margin-top:14px}}
 
-/* Mobile navigation: stay in the document's sticky layout instead of
-   a fixed compositor layer, which can retain stale iOS keyboard geometry. */
+/* Mobile app shell: header, independent scroll area, normal-flow navigation.
+   No fixed/sticky navigation or document scrolling on phone-sized viewports. */
 @media(max-width:760px){
- html{scroll-padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
- body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
- body>main{flex:1 0 auto;width:100%;margin:0 auto;padding-bottom:24px}
- body>.mobile-nav{position:-webkit-sticky;position:sticky;top:auto;bottom:0;left:auto;right:auto;flex:0 0 auto;width:100%;margin:0;padding-bottom:calc(7px + env(safe-area-inset-bottom,0px));background:#131c22;border-top:1px solid #344754;backdrop-filter:none;-webkit-backdrop-filter:none;transform:none}
+ html{height:100%;overflow:hidden;overscroll-behavior:none;scroll-behavior:auto;scroll-padding:0}
+ body{display:grid;grid-template-rows:auto minmax(0,1fr) auto;grid-template-columns:minmax(0,1fr);height:100vh;height:100dvh;height:var(--english-shell-height,100dvh);min-height:0;max-height:var(--english-shell-height,100dvh);overflow:hidden;overscroll-behavior:none}
+ body>.topbar{grid-row:1;grid-column:1;position:relative;top:auto;min-width:0}
+ body>main{grid-row:2;grid-column:1;min-height:0;min-width:0;width:100%;max-width:1230px;margin:0 auto;padding-bottom:24px;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;scroll-padding-top:8px;scroll-padding-bottom:16px}
+ body>.mobile-nav{grid-row:3;grid-column:1;position:relative;inset:auto;display:flex;min-width:0;width:100%;margin:0;padding-bottom:calc(7px + env(safe-area-inset-bottom,0px));background:#131c22;border-top:1px solid #344754;backdrop-filter:none;-webkit-backdrop-filter:none;transform:none;z-index:8}
+ body.keyboard-focus,body.viewport-keyboard{grid-template-rows:auto minmax(0,1fr);min-height:0}
  body.keyboard-focus>.mobile-nav,body.viewport-keyboard>.mobile-nav{display:none!important}
- body.keyboard-focus,body.viewport-keyboard{min-height:100vh;min-height:100dvh}
+ body.keyboard-focus>main,body.viewport-keyboard>main{padding-bottom:22px}
+ body.english-dialog-open>main,body.english-collection-open>main{overflow-y:hidden}
+ #page-learn,#quiz-area{scroll-margin-top:8px}
+ #grammar-root{scroll-margin-top:8px}
 }
 @media(max-width:760px) and (max-height:480px){
  body>.mobile-nav{padding-top:3px;padding-bottom:calc(3px + env(safe-area-inset-bottom,0px))}
