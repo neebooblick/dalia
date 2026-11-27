@@ -1768,7 +1768,7 @@ window.daliaGrammarLessons=[
     ],
     "questions": [
       {
-        "prompt": "If it rains tomorrow, I ___ stay home. (First Conditional)",
+        "prompt": "If it rains tomorrow, I ___ stay home. (реальный план на завтра)",
         "answers": [
           "will"
         ],
@@ -1779,7 +1779,7 @@ window.daliaGrammarLessons=[
         "why": "Завтрашний дождь — возможное условие. В результате First Conditional подходит will."
       },
       {
-        "prompt": "If I had more money, I ___ travel. (Second Conditional)",
+        "prompt": "If I had more money, I ___ travel. (но сейчас денег недостаточно)",
         "answers": [
           "would"
         ],
@@ -2762,7 +2762,7 @@ window.daliaGrammarLessons=[
         "why": "All I want — «всё, чего я хочу». Перед a little peace используется is."
       },
       {
-        "prompt": "What surprised me ___ his reaction. (прошлое)",
+        "prompt": "What surprised me ___ his reaction. (в прошлом)",
         "answers": [
           "was"
         ],
