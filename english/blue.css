@@ -1097,3 +1097,18 @@ button:disabled{cursor:not-allowed;opacity:.58}
 .grammar-example-explanation p{font-size:14px;color:var(--text);margin:0}
 .grammar-rule,.grammar-note p{overflow-wrap:anywhere}
 @media(max-width:550px){.grammar-example-explanation p{font-size:14px}.grammar-rule{font-size:15px}}
+
+/* Grammar exercise types: full sentences and word assembly. */
+.grammar-task-kind{display:inline-block;font-size:12px;font-weight:650;color:var(--pink2);margin:0 0 8px}
+.grammar-sentence-input{display:block;min-height:100px;resize:vertical;line-height:1.55;padding:13px 14px;text-align:left;white-space:pre-wrap;font-size:16px}
+.grammar-order-answer,.grammar-word-bank{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-width:0}
+.grammar-order-answer{margin:16px 0 14px;padding:12px;border:1px dashed var(--stroke);border-radius:15px;min-height:76px;background:var(--surface2);align-content:flex-start}
+.grammar-order-placeholder{font-size:14px;color:var(--muted);margin:auto}
+.grammar-word-bank{padding:4px 0}
+.grammar-word{font:inherit;font-size:16px;line-height:1.25;min-height:44px;padding:9px 13px;border:1px solid var(--stroke);border-radius:12px;background:var(--surface2);color:var(--text);cursor:pointer;overflow-wrap:anywhere;max-width:100%}
+.grammar-word.selected{background:color-mix(in srgb,var(--pink) 15%,var(--surface));border-color:var(--pink);color:var(--text)}
+.grammar-word:disabled{opacity:.36;cursor:default}.grammar-word.selected:disabled{opacity:1}
+.grammar-word:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
+.grammar-order-reset{min-height:44px;margin-top:8px}
+.grammar-match-note{font-size:13px;line-height:1.5}
+@media(max-width:550px){.grammar-word{padding:9px 11px}.grammar-order-answer,.grammar-word-bank{gap:6px}.grammar-sentence-input{min-height:110px}}
