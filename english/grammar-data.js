@@ -907,7 +907,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "We meet on Monday."
+          "We meet on Monday.",
+          "On Monday we meet."
         ],
         "wrong": [],
         "words": [
@@ -1560,7 +1561,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "She took the bus yesterday."
+          "She took the bus yesterday.",
+          "Yesterday she took the bus."
         ],
         "wrong": [],
         "words": [
@@ -2639,7 +2641,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "She was reading when I arrived."
+          "She was reading when I arrived.",
+          "When I arrived, she was reading."
         ],
         "wrong": [],
         "words": [
@@ -2792,7 +2795,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "If I had time, I would help."
+          "If I had time, I would help.",
+          "I would help if I had time."
         ],
         "wrong": [],
         "words": [
@@ -2947,7 +2951,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "The room will be cleaned tomorrow."
+          "The room will be cleaned tomorrow.",
+          "Tomorrow the room will be cleaned."
         ],
         "wrong": [],
         "words": [
@@ -3404,7 +3409,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "She had finished before I arrived."
+          "She had finished before I arrived.",
+          "Before I arrived, she had finished."
         ],
         "wrong": [],
         "words": [
@@ -3713,7 +3719,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "They have been working all day."
+          "They have been working all day.",
+          "All day they have been working."
         ],
         "wrong": [],
         "words": [
@@ -3866,7 +3873,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "If I had slept, I would feel better now."
+          "If I had slept, I would feel better now.",
+          "I would feel better now if I had slept."
         ],
         "wrong": [],
         "words": [
@@ -4483,7 +4491,8 @@ window.daliaGrammarLessons=[
         "type": "order",
         "prompt": "",
         "answers": [
-          "Although she was tired, she continued."
+          "Although she was tired, she continued.",
+          "She continued although she was tired."
         ],
         "wrong": [],
         "words": [
